@@ -1,0 +1,31 @@
+asset_id,model,serial,site,site_name,customer,region,install_date,firmware,oil_type,contract_end
+FRS-P-0007,HCP-200,HCP200-180566,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,9/24/2018,1.9,,12/31/2027
+FRS-P-0012,HCP-350,HCP350-221034,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,4/11/2022,3.1,,12/31/2027
+FRS-P-0031,HCP-350,HCP350-241187,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,8/19/2024,3.4,,12/31/2027
+FRS-P-0033,HCP-500,HCP500-250412,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,5/2/2025,3.4,,12/31/2027
+FRS-C-0101,VRS-75,VRS75-220318,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,2/7/2022,4.6,SynLube 46,12/31/2027
+FRS-C-0104,VRS-45,VRS45-230992,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,6/15/2023,4.8,Mineral ISO 46,12/31/2027
+FRS-V-0201,BX-12,BX12-240077,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,3/4/2024,2.2,,12/31/2027
+FRS-V-0202,BX-12,BX12-240078,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,3/4/2024,2.2,,12/31/2027
+FRS-V-0205,BX-20,BX20-250031,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,9/29/2025,2.5,,12/31/2027
+FRS-H-0301,NK-300,NK300-230144,FRS,Fresno Bottling Plant,Sierra Springs Beverage,NA,4/20/2023,7.2,,12/31/2027
+TAC-C-0142,VRS-110,VRS110-230877,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,3/28/2023,5.0,SynLube 46,6/30/2028
+TAC-C-0143,VRS-110,VRS110-240210,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,5/13/2024,5.1,SynLube 46,6/30/2028
+TAC-C-0150,VRS-75,VRS75-250051,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,2/17/2025,5.1,SynLube 46,6/30/2028
+TAC-P-0044,HCP-500,HCP500-230198,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,7/10/2023,3.2,,6/30/2028
+TAC-P-0045,HCP-350,HCP350-231650,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,7/10/2023,3.2,,6/30/2028
+TAC-V-0210,BX-20,BX20-240019,TAC,Tacoma Cold Storage,Puget Cold Chain,NA,11/25/2024,2.4,,6/30/2028
+RTM-H-0007,NK-600,NK600-230415,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,5/30/2023,7.0,,3/31/2027
+RTM-H-0008,NK-600,NK600-240702,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,9/9/2024,7.2,,3/31/2027
+RTM-H-0011,NK-300,NK300-220880,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,10/3/2022,7.2,,3/31/2027
+RTM-C-0120,VRS-110,VRS110-220455,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,8/22/2022,5.1,SynLube 46,3/31/2027
+RTM-C-0121,VRS-75,VRS75-230640,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,1/16/2023,4.9,SynLube 46,3/31/2027
+RTM-V-0230,BX-20,BX20-230202,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,11/6/2023,2.3,,3/31/2027
+RTM-P-0060,HCP-500,HCP500-240333,RTM,Rotterdam Distribution Hub,Maasvlakte Fresh Logistics,EU,2/26/2024,3.3,,3/31/2027
+GDN-H-0014,NK-600,NK600-221190,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,12/12/2022,7.2,,12/31/2026
+GDN-H-0015,NK-300,NK300-250316,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,4/7/2025,7.2,,12/31/2026
+GDN-C-0130,VRS-45,VRS45-240511,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,6/3/2024,5.0,SynLube 46,12/31/2026
+GDN-C-0131,VRS-110,VRS110-250102,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,3/24/2025,5.2,SynLube 46,12/31/2026
+GDN-P-0070,HCP-350,HCP350-250877,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,6/30/2025,3.4,,12/31/2026
+GDN-V-0240,BX-12,BX12-230441,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,8/21/2023,2.1,,12/31/2026
+GDN-V-0241,BX-12,BX12-250120,GDN,Gdansk Food Processing,Baltic Prime Foods,EU,10/13/2025,2.5,,12/31/2026

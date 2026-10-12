@@ -1,0 +1,465 @@
+Received: from CH0PR07MB8819.namprd07.prod.outlook.com (2603:10b6:610:fd::14) by BY5PR07MB7243.namprd07.prod.outlook.com
+ with HTTPS; Mon, 11 May 2026 08:14:31 +0000
+Received: from LO4P265MB5873.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:1a2::9) by CH0PR07MB8819.namprd07.prod.outlook.com
+ (2603:10b6:610:fd::14) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8722.31; Mon, 11 May 2026 08:14:29 +0000
+From: Henrik Sauer <h.sauer@belton-conveyors.co.uk>
+To: Olu Adeyemi <o.adeyemi@corvane.com>
+CC: Tom Becker <t.becker@corvane.com>
+Subject: RE: BX-12 tracking after belt change
+Thread-Topic: BX-12 tracking after belt change
+Thread-Index: HNDcx8j14sS/3EPw2S5zJCJNu1bSxJeRiWMNxqyMkk1+JX0wzSpK
+Date: Mon, 11 May 2026 08:14:22 +0000
+Message-ID: <LO4P265MB5873F3B07D41C6A2E59B0C88E1A31@LO4P265MB5873.GBRP265.PROD.OUTLOOK.COM>
+In-Reply-To: <BY5PR07MB7243E85D20B6C1F4A90C3D17A8202@BY5PR07MB7243.namprd07.prod.outlook.com>
+References: <BY5PR07MB72430C3E1F0A9B44D2E71C55A8202@BY5PR07MB7243.namprd07.prod.outlook.com>
+ <LO4P265MB58739A1C2E7F5B0D9E2C4A7B1A831@LO4P265MB5873.GBRP265.PROD.OUTLOOK.COM>
+ <BY5PR07MB7243E85D20B6C1F4A90C3D17A8202@BY5PR07MB7243.namprd07.prod.outlook.com>
+Accept-Language: en-GB, en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-SCL: 1
+X-MS-Exchange-Organization-AuthSource: CH0PR07MB8819.namprd07.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-Network-Message-Id: 6b1e2f04-93a7-4c5d-0e8f-08de8f7a1c22
+X-Corvane-ExternalTag: applied
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="===============6043149375597370560=="
+Content-Language: en-GB
+
+--===============6043149375597370560==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+CAUTION: This email originated from outside of Corvane Field Services. Do not click links or open attachments unless yo=
+u recognize the sender and know the content is safe.
+
+Morning Olu, Tom,
+
+Thanks for the photos and the lot number, that confirms it. And the wobble you saw is real, it's not your eyes.
+
+Return idlers from production lot 23-11 have an off-centre bore. It was a machining problem at our roller supplier. We =
+caught it in early 2025, but by then the lot had gone out on new machines and as spares. The roller runs very slightly =
+eccentric, which is enough to steer the return side of the belt. On a belt that's been running a while you often don't =
+see it, because the old belt has taken a set and its edges have worn in. Put a new belt on and it follows the idler. Th=
+e belt walks to the drive side every time, which is exactly what you've got.
+
+The fix is to replace that return idler with the revised part, 77-0419. Same roller, corrected bore, and it has a blue =
+end cap instead of black so you can tell them apart on the frame. It isn't in the parts list of your Rev B manual. Quot=
+e 77-0419 to the distributor and they'll find it, or I can ship from Leeds. I'll send two at no charge, one for 0201 an=
+d one for 0202 (see below). Please send me a delivery address in Fresno.
+
+Until the idler arrives, this will let them run at full speed:
+
+1. Set both take-up screws back to equal, at the position that gives you the 0.4% you measured. Your tension was right,=
+ don't change it.
+2. Shim the tail pulley bearing on the drive side by 0.5 mm. The shim goes behind the bearing block, between the block =
+and the take-up slide, so the drive-side end of the tail pulley moves 0.5 mm back towards the tail. Use one 0.5 mm piec=
+e of stainless shim, not a stack of thin ones.
+3. Run the belt and re-check the tracking after three belt revolutions. On that length at line speed that's a couple of=
+ minutes. It should settle and hold centre. If it's still walking after three revolutions, stop and ring me, because th=
+en it's something else.
+4. When you fit the 77-0419, take the shim out again, set the take-up even, and re-check after three revolutions as bef=
+ore.
+
+This affects BX-12 built in 2023 and 2024. Your 0202 (BX12-240078) came off the line the same week as 0201 and very lik=
+ely has a 23-11 idler as well. It will show itself the day you change that belt, so I'd swap the idler at its next PM r=
+ather than wait. If you have BX-20s anywhere, they use a different idler and aren't affected.
+
+Sorry this has cost you and the plant a week. We should have put a bulletin out on it, and we haven't. I've raised that=
+ again internally this morning.
+
+Kind regards,
+Henrik
+
+Henrik Sauer
+Field Application Engineer
+
+Belton Conveyors Ltd
+Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ, United Kingdom
+T +44 113 496 0732  |  M +44 7700 900418
+www.belton-conveyors.co.uk
+
+Belton Conveyors Ltd. Registered in England and Wales, company no. 01847720. Registered office: Aire Valley Works, Stoc=
+kbridge Road, Leeds LS11 9PQ. This email and any files transmitted with it are confidential and intended solely for the=
+ use of the individual or entity to whom they are addressed. If you have received this email in error please notify the=
+ sender and delete it. Technical advice given by email is provided in good faith on the basis of the information suppli=
+ed and does not form part of any contract unless confirmed in writing by Belton Conveyors Ltd.
+
+________________________________
+From: Olu Adeyemi <o.adeyemi@corvane.com>
+Sent: 08 May 2026 23:31
+To: Henrik Sauer <h.sauer@belton-conveyors.co.uk>
+Cc: Tom Becker <t.becker@corvane.com>
+Subject: RE: BX-12 tracking after belt change
+
+Henrik,
+
+Photos attached (4). Tom went back out after lunch and we pulled the guard.
+
+The lot stamp on the return idler nearest the tail reads 23-11. It was faint, Tom had to clean it with brake cleaner be=
+fore we could read it. The label on the other end says 77-0410.
+
+Belt edge at the tail is about 15 mm left of where it starts after 20 minutes, then it reaches the sensor. That's photo=
+ 3.
+
+Take-up: we don't have a record of where the screws were before the change. Tom thinks they were close to even, near th=
+e factory marks. Before your email the left screw was about four turns further in than the right. Yes, I know.
+
+One thing I didn't mention before. With the belt slack, if you spin that idler by hand it doesn't look perfectly true t=
+o me, there's a slight wobble you can see against the frame member behind it. Could be my eyes. The other return idlers=
+ look fine.
+
+We've put the take-up back to roughly even and the plant has agreed to run line 2 at reduced speed over the weekend wit=
+h an operator watching the conveyor. They're not happy about it but it's better than the stops.
+
+Thanks,
+Olu
+
+Olu Adeyemi
+Field Technician, Conveyors
+Corvane Field Services
+Sacramento, CA  |  M +1 916 555 0147
+o.adeyemi@corvane.com
+
+CONFIDENTIALITY NOTICE: This e-mail message and any attachments are intended only for the named recipient(s) and may co=
+ntain confidential or proprietary information of Corvane Field Services, Inc. If you are not the intended recipient, pl=
+ease notify the sender by reply e-mail and delete this message. Any other use, disclosure, copying or distribution is p=
+rohibited.
+
+________________________________
+From: Henrik Sauer <h.sauer@belton-conveyors.co.uk>
+Sent: Friday, May 8, 2026 9:36 AM
+To: Olu Adeyemi <o.adeyemi@corvane.com>
+Cc: Tom Becker <t.becker@corvane.com>
+Subject: RE: BX-12 tracking after belt change
+
+CAUTION: This email originated from outside of Corvane Field Services. Do not click links or open attachments unless yo=
+u recognize the sender and know the content is safe.
+
+Hi Olu,
+
+Email is fine, the ticket and I will catch up with each other.
+
+Thanks for the detail, that saves us a round. Before I say anything that sends you down the wrong road, could you send =
+me:
+
+1. A photo of the return idler nearest the tail, the one under the frame roughly 600 mm in from the tail pulley. One fr=
+om the side and one looking along the roller.
+2. The lot number stamped on the roller end. It's on the end face of the roller tube, at the opposite end to the part n=
+umber label. Four digits with a dash. You'll want a torch and probably a rag, they're not easy to read once there's bee=
+n some washdown on them.
+3. A photo of the belt edge at the tail pulley with the belt running, so I can see how far over it has gone.
+4. If you know it, roughly how far you've moved each take-up screw from where it was before the belt change.
+
+And please don't adjust the take-up any further for now. Four rounds of adjustment that keep coming back usually means =
+you're correcting something that isn't at the tail, and the more you skew the tail pulley the harder the new belt edge =
+works against the side guide.
+
+I'm on a customer site in Coventry on Monday morning but will have the laptop with me.
+
+Kind regards,
+Henrik
+
+Henrik Sauer
+Field Application Engineer
+
+Belton Conveyors Ltd
+Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ, United Kingdom
+T +44 113 496 0732  |  M +44 7700 900418
+www.belton-conveyors.co.uk
+
+Belton Conveyors Ltd. Registered in England and Wales, company no. 01847720. Registered office: Aire Valley Works, Stoc=
+kbridge Road, Leeds LS11 9PQ. This email and any files transmitted with it are confidential and intended solely for the=
+ use of the individual or entity to whom they are addressed. If you have received this email in error please notify the=
+ sender and delete it. Technical advice given by email is provided in good faith on the basis of the information suppli=
+ed and does not form part of any contract unless confirmed in writing by Belton Conveyors Ltd.
+
+________________________________
+From: Olu Adeyemi <o.adeyemi@corvane.com>
+Sent: 08 May 2026 15:52
+To: Henrik Sauer <h.sauer@belton-conveyors.co.uk>
+Cc: Tom Becker <t.becker@corvane.com>
+Subject: BX-12 tracking after belt change
+
+Hi Henrik,
+
+Belton support in Leeds gave me your name and said you're the FAE who covers the BX range for North American customers.=
+ They've logged it on their side too, but said email would get to you faster. Apologies if it should have gone through =
+the ticket.
+
+We service a BX-12 at Sierra Springs Beverage in Fresno, California: asset FRS-V-0201, serial BX12-240077, commissioned=
+ March 2024. It's the case conveyor feeding the shrink wrapper on line 2. On Wednesday (May 6) Tom Becker and I replace=
+d the belt. The old one had a torn edge next to the splice. The new belt is your 77-1012, 600 mm PU food grade, bought =
+through your US distributor, fitted per the belt replacement section of the Rev B manual, direction of travel checked a=
+gainst the arrow on the belt.
+
+Since then the belt runs left. Looking downstream toward the wrapper, left is the motor side. It isn't dramatic at firs=
+t. Over 20 to 30 minutes it creeps over until the edge sensor trips C-02 and the line stops. Yesterday they had seven C=
+-02 stops on one shift, and the plant noticed.
+
+What we've done so far:
+- Tracking adjustment per the manual, on the tail take-up. I've adjusted it four times now. Each time it runs centred f=
+or a while and then drifts back left. The two take-up screws are now a long way from even, which can't be right.
+- Belt tension checked with the elongation method, marks 1,000 mm apart: 0.4%, which is inside the range in the manual.=
+ I didn't want to go tighter.
+- Frame checked for square, diagonals within 2 mm of each other.
+- Drive and tail pulleys clean, no product build-up, lagging on the drive pulley is fine.
+- The sister conveyor next to it, FRS-V-0202 (BX12-240078), still has its original belt and tracks fine.
+
+The old belt ran centred for two years on this frame, so I don't think the frame has moved. Is there anything known abo=
+ut new belts on the BX-12? I'd rather not keep cranking the take-up. The customer wants it right before their Monday ru=
+n, they have a promotional pack going through next week.
+
+Our reference is Corvane case 00041750 if you need one.
+
+Thanks,
+Olu
+
+Olu Adeyemi
+Field Technician, Conveyors
+Corvane Field Services
+Sacramento, CA  |  M +1 916 555 0147
+o.adeyemi@corvane.com
+
+CONFIDENTIALITY NOTICE: This e-mail message and any attachments are intended only for the named recipient(s) and may co=
+ntain confidential or proprietary information of Corvane Field Services, Inc. If you are not the intended recipient, pl=
+ease notify the sender by reply e-mail and delete this message. Any other use, disclosure, copying or distribution is p=
+rohibited.
+
+--===============6043149375597370560==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sche=
+mas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/=
+TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+@font-face {font-family:Calibri; panose-1:2 15 5 2 2 2 4 3 2 4;}
+p.MsoNormal, li.MsoNormal, div.MsoNormal {margin:0cm; font-size:11.0pt; font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink {color:#0563C1; text-decoration:underline;}
+.MsoChpDefault {mso-style-type:export-only; font-size:10.0pt;}
+@page WordSection1 {size:612.0pt 792.0pt; margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1 {page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"EN-GB" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:break-word">
+<div class=3D"WordSection1">
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%;b=
+ackground:#FFF2CC;border:solid #E0B000 1.0pt"><tr><td style=3D"padding:4.0pt 6.0pt"><p class=3D"MsoNormal"><b><span sty=
+le=3D"font-size:9.0pt;color:#7F6000">CAUTION: This email originated from outside of Corvane Field Services. Do not clic=
+k links or open attachments unless you recognize the sender and know the content is safe.</span></b></p></td></tr></tab=
+le>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Morning Olu, Tom,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Thanks for the photos and the lot number, that confirms it. And the wobble you saw is real, it&#=
+x27;s not your eyes.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Return idlers from production lot 23-11 have an off-centre bore. It was a machining problem at o=
+ur roller supplier. We caught it in early 2025, but by then the lot had gone out on new machines and as spares. The rol=
+ler runs very slightly eccentric, which is enough to steer the return side of the belt. On a belt that&#x27;s been runn=
+ing a while you often don&#x27;t see it, because the old belt has taken a set and its edges have worn in. Put a new bel=
+t on and it follows the idler. The belt walks to the drive side every time, which is exactly what you&#x27;ve got.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">The fix is to replace that return idler with the revised part, 77-0419. Same roller, corrected b=
+ore, and it has a blue end cap instead of black so you can tell them apart on the frame. It isn&#x27;t in the parts lis=
+t of your Rev B manual. Quote 77-0419 to the distributor and they&#x27;ll find it, or I can ship from Leeds. I&#x27;ll =
+send two at no charge, one for 0201 and one for 0202 (see below). Please send me a delivery address in Fresno.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Until the idler arrives, this will let them run at full speed:</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">1. Set both take-up screws back to equal, at the position that gives you the 0.4% you measured. =
+Your tension was right, don&#x27;t change it.<br>
+2. Shim the tail pulley bearing on the drive side by 0.5 mm. The shim goes behind the bearing block, between the block =
+and the take-up slide, so the drive-side end of the tail pulley moves 0.5 mm back towards the tail. Use one 0.5 mm piec=
+e of stainless shim, not a stack of thin ones.<br>
+3. Run the belt and re-check the tracking after three belt revolutions. On that length at line speed that&#x27;s a coup=
+le of minutes. It should settle and hold centre. If it&#x27;s still walking after three revolutions, stop and ring me, =
+because then it&#x27;s something else.<br>
+4. When you fit the 77-0419, take the shim out again, set the take-up even, and re-check after three revolutions as bef=
+ore.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">This affects BX-12 built in 2023 and 2024. Your 0202 (BX12-240078) came off the line the same we=
+ek as 0201 and very likely has a 23-11 idler as well. It will show itself the day you change that belt, so I&#x27;d swa=
+p the idler at its next PM rather than wait. If you have BX-20s anywhere, they use a different idler and aren&#x27;t af=
+fected.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Sorry this has cost you and the plant a week. We should have put a bulletin out on it, and we ha=
+ven&#x27;t. I&#x27;ve raised that again internally this morning.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Kind regards,<br>
+Henrik</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Henrik Sauer<br>
+Field Application Engineer</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Belton Conveyors Ltd<br>
+Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ, United Kingdom<br>
+T +44 113 496 0732  |  M +44 7700 900418<br>
+www.belton-conveyors.co.uk</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">Belton Conveyors Ltd. Registered in England and Wales, c=
+ompany no. 01847720. Registered office: Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ. This email and any files t=
+ransmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addres=
+sed. If you have received this email in error please notify the sender and delete it. Technical advice given by email i=
+s provided in good faith on the basis of the information supplied and does not form part of any contract unless confirm=
+ed in writing by Belton Conveyors Ltd.</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">&nbsp;</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b>From:</b>=
+ Olu Adeyemi &lt;o.adeyemi@corvane.com&gt;<br>
+<b>Sent:</b> 08 May 2026 23:31<br>
+<b>To:</b> Henrik Sauer &lt;h.sauer@belton-conveyors.co.uk&gt;<br>
+<b>Cc:</b> Tom Becker &lt;t.becker@corvane.com&gt;<br>
+<b>Subject:</b> RE: BX-12 tracking after belt change</p></div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Henrik,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Photos attached (4). Tom went back out after lunch and we pulled the guard.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">The lot stamp on the return idler nearest the tail reads 23-11. It was faint, Tom had to clean i=
+t with brake cleaner before we could read it. The label on the other end says 77-0410.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Belt edge at the tail is about 15 mm left of where it starts after 20 minutes, then it reaches t=
+he sensor. That&#x27;s photo 3.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Take-up: we don&#x27;t have a record of where the screws were before the change. Tom thinks they=
+ were close to even, near the factory marks. Before your email the left screw was about four turns further in than the =
+right. Yes, I know.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">One thing I didn&#x27;t mention before. With the belt slack, if you spin that idler by hand it d=
+oesn&#x27;t look perfectly true to me, there&#x27;s a slight wobble you can see against the frame member behind it. Cou=
+ld be my eyes. The other return idlers look fine.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">We&#x27;ve put the take-up back to roughly even and the plant has agreed to run line 2 at reduce=
+d speed over the weekend with an operator watching the conveyor. They&#x27;re not happy about it but it&#x27;s better t=
+han the stops.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Thanks,<br>
+Olu</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Olu Adeyemi<br>
+Field Technician, Conveyors<br>
+Corvane Field Services<br>
+Sacramento, CA  |  M +1 916 555 0147<br>
+o.adeyemi@corvane.com</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">CONFIDENTIALITY NOTICE: This e-mail message and any atta=
+chments are intended only for the named recipient(s) and may contain confidential or proprietary information of Corvane=
+ Field Services, Inc. If you are not the intended recipient, please notify the sender by reply e-mail and delete this m=
+essage. Any other use, disclosure, copying or distribution is prohibited.</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">&nbsp;</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b>From:</b>=
+ Henrik Sauer &lt;h.sauer@belton-conveyors.co.uk&gt;<br>
+<b>Sent:</b> Friday, May 8, 2026 9:36 AM<br>
+<b>To:</b> Olu Adeyemi &lt;o.adeyemi@corvane.com&gt;<br>
+<b>Cc:</b> Tom Becker &lt;t.becker@corvane.com&gt;<br>
+<b>Subject:</b> RE: BX-12 tracking after belt change</p></div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%;b=
+ackground:#FFF2CC;border:solid #E0B000 1.0pt"><tr><td style=3D"padding:4.0pt 6.0pt"><p class=3D"MsoNormal"><b><span sty=
+le=3D"font-size:9.0pt;color:#7F6000">CAUTION: This email originated from outside of Corvane Field Services. Do not clic=
+k links or open attachments unless you recognize the sender and know the content is safe.</span></b></p></td></tr></tab=
+le>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Hi Olu,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Email is fine, the ticket and I will catch up with each other.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Thanks for the detail, that saves us a round. Before I say anything that sends you down the wron=
+g road, could you send me:</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">1. A photo of the return idler nearest the tail, the one under the frame roughly 600 mm in from =
+the tail pulley. One from the side and one looking along the roller.<br>
+2. The lot number stamped on the roller end. It&#x27;s on the end face of the roller tube, at the opposite end to the p=
+art number label. Four digits with a dash. You&#x27;ll want a torch and probably a rag, they&#x27;re not easy to read o=
+nce there&#x27;s been some washdown on them.<br>
+3. A photo of the belt edge at the tail pulley with the belt running, so I can see how far over it has gone.<br>
+4. If you know it, roughly how far you&#x27;ve moved each take-up screw from where it was before the belt change.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">And please don&#x27;t adjust the take-up any further for now. Four rounds of adjustment that kee=
+p coming back usually means you&#x27;re correcting something that isn&#x27;t at the tail, and the more you skew the tai=
+l pulley the harder the new belt edge works against the side guide.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I&#x27;m on a customer site in Coventry on Monday morning but will have the laptop with me.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Kind regards,<br>
+Henrik</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Henrik Sauer<br>
+Field Application Engineer</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Belton Conveyors Ltd<br>
+Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ, United Kingdom<br>
+T +44 113 496 0732  |  M +44 7700 900418<br>
+www.belton-conveyors.co.uk</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">Belton Conveyors Ltd. Registered in England and Wales, c=
+ompany no. 01847720. Registered office: Aire Valley Works, Stockbridge Road, Leeds LS11 9PQ. This email and any files t=
+ransmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addres=
+sed. If you have received this email in error please notify the sender and delete it. Technical advice given by email i=
+s provided in good faith on the basis of the information supplied and does not form part of any contract unless confirm=
+ed in writing by Belton Conveyors Ltd.</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">&nbsp;</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b>From:</b>=
+ Olu Adeyemi &lt;o.adeyemi@corvane.com&gt;<br>
+<b>Sent:</b> 08 May 2026 15:52<br>
+<b>To:</b> Henrik Sauer &lt;h.sauer@belton-conveyors.co.uk&gt;<br>
+<b>Cc:</b> Tom Becker &lt;t.becker@corvane.com&gt;<br>
+<b>Subject:</b> BX-12 tracking after belt change</p></div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Hi Henrik,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Belton support in Leeds gave me your name and said you&#x27;re the FAE who covers the BX range f=
+or North American customers. They&#x27;ve logged it on their side too, but said email would get to you faster. Apologie=
+s if it should have gone through the ticket.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">We service a BX-12 at Sierra Springs Beverage in Fresno, California: asset FRS-V-0201, serial BX=
+12-240077, commissioned March 2024. It&#x27;s the case conveyor feeding the shrink wrapper on line 2. On Wednesday (May=
+ 6) Tom Becker and I replaced the belt. The old one had a torn edge next to the splice. The new belt is your 77-1012, 6=
+00 mm PU food grade, bought through your US distributor, fitted per the belt replacement section of the Rev B manual, d=
+irection of travel checked against the arrow on the belt.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Since then the belt runs left. Looking downstream toward the wrapper, left is the motor side. It=
+ isn&#x27;t dramatic at first. Over 20 to 30 minutes it creeps over until the edge sensor trips C-02 and the line stops=
+. Yesterday they had seven C-02 stops on one shift, and the plant noticed.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">What we&#x27;ve done so far:<br>
+- Tracking adjustment per the manual, on the tail take-up. I&#x27;ve adjusted it four times now. Each time it runs cent=
+red for a while and then drifts back left. The two take-up screws are now a long way from even, which can&#x27;t be rig=
+ht.<br>
+- Belt tension checked with the elongation method, marks 1,000 mm apart: 0.4%, which is inside the range in the manual.=
+ I didn&#x27;t want to go tighter.<br>
+- Frame checked for square, diagonals within 2 mm of each other.<br>
+- Drive and tail pulleys clean, no product build-up, lagging on the drive pulley is fine.<br>
+- The sister conveyor next to it, FRS-V-0202 (BX12-240078), still has its original belt and tracks fine.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">The old belt ran centred for two years on this frame, so I don&#x27;t think the frame has moved.=
+ Is there anything known about new belts on the BX-12? I&#x27;d rather not keep cranking the take-up. The customer want=
+s it right before their Monday run, they have a promotional pack going through next week.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Our reference is Corvane case 00041750 if you need one.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Thanks,<br>
+Olu</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Olu Adeyemi<br>
+Field Technician, Conveyors<br>
+Corvane Field Services<br>
+Sacramento, CA  |  M +1 916 555 0147<br>
+o.adeyemi@corvane.com</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">CONFIDENTIALITY NOTICE: This e-mail message and any atta=
+chments are intended only for the named recipient(s) and may contain confidential or proprietary information of Corvane=
+ Field Services, Inc. If you are not the intended recipient, please notify the sender by reply e-mail and delete this m=
+essage. Any other use, disclosure, copying or distribution is prohibited.</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">&nbsp;</p>
+</div>
+</body>
+</html>
+
+--===============6043149375597370560==--

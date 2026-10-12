@@ -1,0 +1,13 @@
+# Part status overrides (spec M6). Everything else in the parts catalogue is built from the corpus.
+63-1170:
+  status: blocked
+  note: "EXV-2 rev 2, NK-600: blocked for sale; removed parts are returned to Nordkyl (SB-2025-014)"
+  superseded_by: 63-1180
+18-0355:
+  status: superseded
+  superseded_by: 18-0356
+  note: "HCP-350 seal kit; superseded by 18-0356 (SB-2025-018); old stock may be used up"
+41-1470:
+  status: superseded
+  superseded_by: 41-1475
+  note: "VRS-75 oil filter relabelled as 41-1475 (same filter, VRS-75 manual Rev C)"

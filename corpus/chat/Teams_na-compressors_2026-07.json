@@ -1,0 +1,1399 @@
+{
+  "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#teams('3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69')/channels('19%3Ana-compressors%40thread.tacv2')/messages",
+  "exportedBy": "eDiscovery export, Corvane IT",
+  "exportedDateTime": "2026-09-30T18:04:11Z",
+  "channel": {
+    "displayName": "na-compressors",
+    "team": "Field Service NA"
+  },
+  "value": [
+    {
+      "id": "1751400000000",
+      "replyToId": null,
+      "etag": "1751400000000",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T13:41:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T13:41:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>0142 tripped E-14 again overnight, Dave Ortiz called me at 6. I'm on site.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T13:46:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400007919",
+      "replyToId": "1751400000000",
+      "etag": "1751400007919",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T13:44:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T13:44:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>again?? we swapped TS-2 on that one in March</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400015838",
+      "replyToId": "1751400000000",
+      "etag": "1751400015838",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:20:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T14:23:00.000Z",
+      "lastEditedDateTime": "2026-07-02T14:23:00.000Z",
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Cooler fins were pretty bad on the exhaust side so I blew them out yesterday afternoon and restarted. Ran fine until about 01:30 then E-14. Ambient by the unit is 38C right now. Controller shows TS-2 at 113, my handheld at the discharge flange says 102.</p><attachment id=\"a1f0\"></attachment>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [
+        {
+          "id": "a1f0",
+          "contentType": "reference",
+          "name": "IMG_4471.jpg",
+          "contentUrl": "https://corvane.sharepoint.com/sites/FieldService/Shared Documents/Teams/na-compressors/IMG_4471.jpg"
+        }
+      ],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400023757",
+      "replyToId": "1751400000000",
+      "etag": "1751400023757",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:22:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T14:22:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>so 11 degrees off</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400031676",
+      "replyToId": "1751400000000",
+      "etag": "1751400031676",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:31:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T14:31:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>What firmware is 0142 on?</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400039595",
+      "replyToId": "1751400000000",
+      "etag": "1751400039595",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:38:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T14:38:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>5.0</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400047514",
+      "replyToId": "1751400000000",
+      "etag": "1751400047514",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:52:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T14:52:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Ok. Read the Vastra bulletin on 5.1 (SB-2026-003). Below 5.1 a failing TS-2 shows up as E-14, so from the code alone you can't tell a dead sensor from a real overtemp. 5.1 splits them, a sensor problem comes up as E-15. 0143 is on 5.1 and hasn't done any of this.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T14:57:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T14:58:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400055433",
+      "replyToId": "1751400000000",
+      "etag": "1751400055433",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T14:58:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T15:04:00.000Z",
+      "lastEditedDateTime": "2026-07-02T15:04:00.000Z",
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>And two sensors in four months on the same unit is not a bad batch. On 0142 the TS-2 harness runs along the freezer exhaust duct for about a metre and a half before it goes into the cabinet. It cooks. When you do the firmware, reroute the harness under the cable tray on the other side of the unit. I told Dave about it last year but we never got to it.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "heart",
+          "createdDateTime": "2026-07-02T15:03:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400063352",
+      "replyToId": "1751400000000",
+      "etag": "1751400063352",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T15:05:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T15:05:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Got it. Should I swap the sensor now or wait for the firmware?</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400071271",
+      "replyToId": "1751400000000",
+      "etag": "1751400071271",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T15:09:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T15:09:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Swap it now, they need the unit. 41-2207. <at id=\"0\">Daniel Reyes</at> you still have one in the van?</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [
+        {
+          "id": 0,
+          "mentionText": "Daniel Reyes",
+          "mentioned": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": "Daniel Reyes",
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ],
+      "reactions": []
+    },
+    {
+      "id": "1751400079190",
+      "replyToId": "1751400000000",
+      "etag": "1751400079190",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T15:15:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T15:15:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>yep one left. I'm at TAC-P-0044 till 10, I'll drop it by</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400087109",
+      "replyToId": "1751400000000",
+      "etag": "1751400087109",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T15:16:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T15:16:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>firmware though, I don't have the X10 cable, lent it to Fresno. earliest next week</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "sad",
+          "createdDateTime": "2026-07-02T15:21:00.000Z",
+          "user": {
+            "user": {
+              "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400095028",
+      "replyToId": null,
+      "etag": "1751400095028",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T16:30:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T16:30:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "0a6b3e58-91d4-4c7f-8e20-7b4d2c1f9a64",
+          "displayName": "Rachel Lindqvist",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Reminder: Q2 first-time fix numbers go to the customers on Friday. Please close your cases with an actual resolution. \"fixed\" and \"ok now\" are not resolutions. Thank you!</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T16:35:00.000Z",
+          "user": {
+            "user": {
+              "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-02T16:36:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400102947",
+      "replyToId": "1751400095028",
+      "etag": "1751400102947",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T16:41:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T16:41:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>\"ok now\" was one time Rachel</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-02T16:46:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-02T16:47:00.000Z",
+          "user": {
+            "user": {
+              "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400110866",
+      "replyToId": "1751400000000",
+      "etag": "1751400110866",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T18:47:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T18:47:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>TS-2 swapped, unit running. Controller and handheld within 4 degrees now. Case 00042388 updated.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T18:52:00.000Z",
+          "user": {
+            "user": {
+              "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-02T18:53:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400118785",
+      "replyToId": "1751400000000",
+      "etag": "1751400118785",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T18:52:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T18:52:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Thanks. Put the harness routing in the case too, otherwise it gets lost again.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400126704",
+      "replyToId": "1751400000000",
+      "etag": "1751400126704",
+      "messageType": "message",
+      "createdDateTime": "2026-07-02T18:53:00.000Z",
+      "lastModifiedDateTime": "2026-07-02T18:53:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>will do</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400134623",
+      "replyToId": null,
+      "etag": "1751400134623",
+      "messageType": "message",
+      "createdDateTime": "2026-07-03T14:05:00.000Z",
+      "lastModifiedDateTime": "2026-07-03T14:05:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+          "displayName": "Tom Becker",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Anyone in Tacoma have a spare 41-1512 air filter for a VRS-110? Fresno is out and the order is 2 weeks</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400142542",
+      "replyToId": "1751400134623",
+      "etag": "1751400142542",
+      "messageType": "message",
+      "createdDateTime": "2026-07-03T14:40:00.000Z",
+      "lastModifiedDateTime": "2026-07-03T14:40:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>I have two. Will send one with the X10 cable when you send it back <span>&#128578;</span></p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-03T14:45:00.000Z",
+          "user": {
+            "user": {
+              "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400150461",
+      "replyToId": "1751400134623",
+      "etag": "1751400150461",
+      "messageType": "message",
+      "createdDateTime": "2026-07-03T14:42:00.000Z",
+      "lastModifiedDateTime": "2026-07-03T14:42:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+          "displayName": "Tom Becker",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>deal. cable goes in the mail today</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400158380",
+      "replyToId": null,
+      "etag": "1751400158380",
+      "messageType": "message",
+      "createdDateTime": "2026-07-06T15:00:00.000Z",
+      "lastModifiedDateTime": "2026-07-06T15:00:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Happy birthday <at id=\"0\">Daniel Reyes</at>! &#127874;</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [
+        {
+          "id": 0,
+          "mentionText": "Daniel Reyes",
+          "mentioned": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": "Daniel Reyes",
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ],
+      "reactions": [
+        {
+          "reactionType": "heart",
+          "createdDateTime": "2026-07-06T15:05:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "heart",
+          "createdDateTime": "2026-07-06T15:06:00.000Z",
+          "user": {
+            "user": {
+              "id": "0a6b3e58-91d4-4c7f-8e20-7b4d2c1f9a64",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "heart",
+          "createdDateTime": "2026-07-06T15:07:00.000Z",
+          "user": {
+            "user": {
+              "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "heart",
+          "createdDateTime": "2026-07-06T15:08:00.000Z",
+          "user": {
+            "user": {
+              "id": "9b7d1e26-0c5f-4a38-b1e4-3f6a2d8c7e90",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400166299",
+      "replyToId": "1751400158380",
+      "etag": "1751400166299",
+      "messageType": "message",
+      "createdDateTime": "2026-07-06T15:12:00.000Z",
+      "lastModifiedDateTime": "2026-07-06T15:12:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>thanks all. 41 and still crawling behind compressors</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-06T15:17:00.000Z",
+          "user": {
+            "user": {
+              "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400174218",
+      "replyToId": null,
+      "etag": "1751400174218",
+      "messageType": "message",
+      "createdDateTime": "2026-07-06T20:22:00.000Z",
+      "lastModifiedDateTime": "2026-07-06T20:22:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Question for the HV folks: if a 110 trips E-31 and I'm the only one on site, is there anything I can do before someone certified gets there?</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400182137",
+      "replyToId": "1751400174218",
+      "etag": "1751400182137",
+      "messageType": "message",
+      "createdDateTime": "2026-07-06T20:35:00.000Z",
+      "lastModifiedDateTime": "2026-07-06T20:35:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Read the alarm log, note what the unit was doing when it tripped (load, ambient, any power dip), check the site didn't have a grid event, and put all that in the case. That saves whoever comes 30 minutes. Do not open the VFD cabinet. Request HV on the work order and the supervisor will send Daniel or me.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-06T20:40:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400190056",
+      "replyToId": "1751400174218",
+      "etag": "1751400190056",
+      "messageType": "message",
+      "createdDateTime": "2026-07-06T20:36:00.000Z",
+      "lastModifiedDateTime": "2026-07-06T20:36:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "8f1c2a77-3b0e-4c1d-9a51-2f7e6d0b4c11",
+          "displayName": "Kenji Watanabe",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>(the panel won't let you reset an E-31 anyway)</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400197975",
+      "replyToId": null,
+      "etag": "1751400197975",
+      "messageType": "message",
+      "createdDateTime": "2026-07-07T17:15:00.000Z",
+      "lastModifiedDateTime": "2026-07-07T17:15:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "9b7d1e26-0c5f-4a38-b1e4-3f6a2d8c7e90",
+          "displayName": "Maria Okafor",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Wrong channel probably but does anyone know where the torque wrench calibration certificates went after the SharePoint move?</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400205894",
+      "replyToId": "1751400197975",
+      "etag": "1751400205894",
+      "messageType": "message",
+      "createdDateTime": "2026-07-07T17:31:00.000Z",
+      "lastModifiedDateTime": "2026-07-07T17:31:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "0a6b3e58-91d4-4c7f-8e20-7b4d2c1f9a64",
+          "displayName": "Rachel Lindqvist",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Quality &gt; Tools &gt; Calibration. I'll pin it.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-07T17:36:00.000Z",
+          "user": {
+            "user": {
+              "id": "9b7d1e26-0c5f-4a38-b1e4-3f6a2d8c7e90",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400213813",
+      "replyToId": "1751400000000",
+      "etag": "1751400213813",
+      "messageType": "message",
+      "createdDateTime": "2026-07-08T23:02:00.000Z",
+      "lastModifiedDateTime": "2026-07-08T23:02:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>0142 update: no trips since the swap. Dave is asking when we do the firmware.</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400221732",
+      "replyToId": "1751400000000",
+      "etag": "1751400221732",
+      "messageType": "message",
+      "createdDateTime": "2026-07-08T23:20:00.000Z",
+      "lastModifiedDateTime": "2026-07-08T23:20:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>cable is back from Fresno tomorrow. I can do it Thursday if Dave gives me a 2h window</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    },
+    {
+      "id": "1751400229651",
+      "replyToId": "1751400000000",
+      "etag": "1751400229651",
+      "messageType": "message",
+      "createdDateTime": "2026-07-08T23:25:00.000Z",
+      "lastModifiedDateTime": "2026-07-08T23:25:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>He said Thursday doesn't work, they have a big inbound. Probably after the 20th</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "sad",
+          "createdDateTime": "2026-07-08T23:30:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400237570",
+      "replyToId": "1751400134623",
+      "etag": "1751400237570",
+      "messageType": "message",
+      "createdDateTime": "2026-07-09T14:50:00.000Z",
+      "lastModifiedDateTime": "2026-07-09T14:50:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+          "displayName": "Tom Becker",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>filter received, thanks Daniel</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-09T14:55:00.000Z",
+          "user": {
+            "user": {
+              "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400245489",
+      "replyToId": null,
+      "etag": "1751400245489",
+      "messageType": "message",
+      "createdDateTime": "2026-07-09T16:12:00.000Z",
+      "lastModifiedDateTime": "2026-07-09T16:12:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": null,
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "1d9e44b0-7a2c-4f63-b8e2-90c5a3d7e512",
+          "displayName": "Daniel Reyes",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": "<p>Heads up for anyone doing VRS-75 PMs, the new oil filter boxes say 41-1475 not 41-1470. Same filter, new box. Don't send them back like I did</p>"
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": [
+        {
+          "reactionType": "laugh",
+          "createdDateTime": "2026-07-09T16:17:00.000Z",
+          "user": {
+            "user": {
+              "id": "5e2f8c03-d4a1-4b96-9c73-1a8e6f0d2b45",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        },
+        {
+          "reactionType": "like",
+          "createdDateTime": "2026-07-09T16:18:00.000Z",
+          "user": {
+            "user": {
+              "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+              "displayName": null,
+              "userIdentityType": "aadUser"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "1751400253408",
+      "replyToId": "1751400245489",
+      "etag": "1751400253408",
+      "messageType": "message",
+      "createdDateTime": "2026-07-09T16:14:00.000Z",
+      "lastModifiedDateTime": "2026-07-09T16:14:00.000Z",
+      "lastEditedDateTime": null,
+      "deletedDateTime": "2026-07-09T16:16:00.000Z",
+      "subject": null,
+      "importance": "normal",
+      "locale": "en-us",
+      "from": {
+        "application": null,
+        "device": null,
+        "user": {
+          "id": "c47a0d19-6e5b-4b2a-a3f8-5d1e9c2b7a03",
+          "displayName": "Priya Natarajan",
+          "userIdentityType": "aadUser"
+        }
+      },
+      "body": {
+        "contentType": "html",
+        "content": ""
+      },
+      "channelIdentity": {
+        "teamId": "3c2f1e8a-9b7d-4e6c-a5f4-1d2e3c4b5a69",
+        "channelId": "19:na-compressors@thread.tacv2"
+      },
+      "attachments": [],
+      "mentions": [],
+      "reactions": []
+    }
+  ]
+}

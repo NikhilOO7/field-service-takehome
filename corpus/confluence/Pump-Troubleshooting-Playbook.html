@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Field Service : Pump Troubleshooting Playbook</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first"><span><a href="index.html">Field Service</a></span></li>
+                            <li><span><a href="Field-Service-Home_98306.html">Field Service Home</a></span></li>
+                            <li><span><a href="Equipment_98311.html">Equipment</a></span></li>
+                            <li><span><a href="Pumps-Halden-HCP_98320.html">Pumps (Halden HCP)</a></span></li>
+                        </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Field Service : Pump Troubleshooting Playbook
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        Created by <span class='author'> Maria Okafor</span>, last modified on Sep 08, 2026
+                    </div>
+                    <div id="main-content" class="wiki-content group">
+<p><style type="text/css">/*<![CDATA[*/div.rbtoc1759392840211 {padding: 0px;} div.rbtoc1759392840211 ul {list-style: disc;margin-left: 0px;} div.rbtoc1759392840211 li {margin-left: 0px;padding-left: 0px;} /*]]>*/</style></p><div class="toc-macro rbtoc1759392840211"><ul class="toc-indentation"><li><a href="#PumpTroubleshootingPlaybook-Whytherearenonumbersonthispage">Why there are no numbers on this page</a></li><li><a href="#PumpTroubleshootingPlaybook-Quicktable">Quick table</a></li><li><a href="#PumpTroubleshootingPlaybook-Lowfloworlowhead">Low flow or low head</a></li><li><a href="#PumpTroubleshootingPlaybook-GravelnoiseandP-07cavitation">Gravel noise and P-07 (cavitation)</a></li><li><a href="#PumpTroubleshootingPlaybook-VibrationandP-03">Vibration and P-03</a></li><li><a href="#PumpTroubleshootingPlaybook-HotbearingsandP-02">Hot bearings and P-02</a></li><li><a href="#PumpTroubleshootingPlaybook-SealleaksandP-04">Seal leaks and P-04</a></li><li><a href="#PumpTroubleshootingPlaybook-Casingjointweepingafterasealchange">Casing joint weeping after a seal change</a></li><li><a href="#PumpTroubleshootingPlaybook-MotortrippingandP-05">Motor tripping and P-05</a></li><li><a href="#PumpTroubleshootingPlaybook-DryrunningandP-06">Dry running and P-06</a></li><li><a href="#PumpTroubleshootingPlaybook-SensorfaultandP-08">Sensor fault and P-08</a></li><li><a href="#PumpTroubleshootingPlaybook-Partswecarry">Parts we carry</a></li><li><a href="#PumpTroubleshootingPlaybook-Related">Related</a></li></ul></div>
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">How to use this page</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Symptoms to causes for the Halden HCP pumps (HCP-200, HCP-350, HCP-500). Start from what you see and hear, not from the code on the controller. <strong>This page has no thresholds or clearances in it, on purpose.</strong> They're different for each model, and Halden changes them by bulletin. Read them from the fault table and the technical data in the manual for the model in front of you, and check the bulletins for the serial.</p></div></div>
+<h2 id="PumpTroubleshootingPlaybook-Whytherearenonumbersonthispage">Why there are no numbers on this page</h2>
+<p>People keep asking me to put the limits in here so they don't have to open the manual. I'm not going to, and here's why. The HCP-350 and the HCP-500 use the same fault codes with different trigger values. The HCP-200 is a different generation altogether. And Halden has already changed a value on the 350 by service bulletin without revising the manual, which means a number copied into a wiki in 2024 could be wrong for a pump installed in 2025. We found that out the expensive way in June 2026 (see Casing joint weeping, below).</p>
+<p>So: this page tells you what's likely and what to check first. The manual's fault table (chapter 9 in the Halden IOMs) and technical data table (4.3) tell you the numbers. The bulletins tell you when the manual is wrong for your serial. Open all three. On the PC-3 controller the fault table is also in Menu, Service, Fault help, if you don't have the PDF handy.</p>
+<h2 id="PumpTroubleshootingPlaybook-Quicktable">Quick table</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">What you see or hear</th>
+<th class="confluenceTh">Likely causes, most common first</th>
+<th class="confluenceTh">Check first</th>
+<th class="confluenceTh">Controller code</th>
+</tr>
+<tr>
+<td class="confluenceTd">Low flow or low head</td>
+<td class="confluenceTd">Worn wear rings, strainer loading up, air getting into the suction, wrong rotation after motor work</td>
+<td class="confluenceTd">Strainer dP, then rotation, then clearance</td>
+<td class="confluenceTd">Often none, sometimes P-01</td>
+</tr>
+<tr>
+<td class="confluenceTd">Crackling, gravel noise</td>
+<td class="confluenceTd">Cavitation: strainer, suction valve, tank level, warm liquid</td>
+<td class="confluenceTd">Strainer dP at PI-01/PI-02, then the rest of the fault table row</td>
+<td class="confluenceTd">P-07</td>
+</tr>
+<tr>
+<td class="confluenceTd">Vibration rising</td>
+<td class="confluenceTd">Loose foundation bolts, misalignment, bearings, impeller fouling</td>
+<td class="confluenceTd">Foundation bolt torque, then alignment</td>
+<td class="confluenceTd">P-03</td>
+</tr>
+<tr>
+<td class="confluenceTd">Hot bearing</td>
+<td class="confluenceTd">Over-greasing after a PM, by a wide margin</td>
+<td class="confluenceTd">Grease record</td>
+<td class="confluenceTd">P-02</td>
+</tr>
+<tr>
+<td class="confluenceTd">Seal leaking</td>
+<td class="confluenceTd">Flush line, dry run at start-up, O-rings fitted with grease</td>
+<td class="confluenceTd">Flush line, then how it was last started</td>
+<td class="confluenceTd">P-04</td>
+</tr>
+<tr>
+<td class="confluenceTd">Motor tripping</td>
+<td class="confluenceTd">Rubbing impeller, voltage imbalance, running far right of the curve</td>
+<td class="confluenceTd">Three phase currents</td>
+<td class="confluenceTd">P-05</td>
+</tr>
+<tr>
+<td class="confluenceTd">Pump runs, nothing comes out</td>
+<td class="confluenceTd">Not primed, air lock, empty tank</td>
+<td class="confluenceTd">Stop. Vent and refill</td>
+<td class="confluenceTd">P-06</td>
+</tr>
+<tr>
+<td class="confluenceTd">Readings jump around or go to zero</td>
+<td class="confluenceTd">Wet connector, broken wire, transmitter</td>
+<td class="confluenceTd">Connector seals at the transmitter</td>
+<td class="confluenceTd">P-08</td>
+</tr>
+<tr>
+<td class="confluenceTd">Casing joint weeping after a seal change</td>
+<td class="confluenceTd">Wrong casing bolt torque for the serial</td>
+<td class="confluenceTd">Bulletins for the serial</td>
+<td class="confluenceTd">None</td>
+</tr>
+</tbody></table></div>
+<h2 id="PumpTroubleshootingPlaybook-Lowfloworlowhead">Low flow or low head</h2>
+<p>The customer usually tells you this one before the controller does: "the line is slow", "the tank takes longer to fill". The pump is running and there's no alarm, so the first thing is to get a number for "low". Read suction and discharge pressure on the controller and compare them with the commissioning record in the site binder. If the pump makes less head at the same flow than it did at commissioning, the hydraulics have worn. If the suction pressure has dropped, the problem is upstream of the pump.</p>
+<p>In the order I'd check:</p>
+<ol><li><strong>Strainer.</strong> Read the differential across the strainer (PI-01 minus PI-02). A strainer that's loading up gives you low flow long before it's bad enough to cause cavitation.</li><li><strong>Rotation.</strong> If anybody has had the motor off (rewind, new motor, site electrical work), check the rotation arrow on the bearing housing. A centrifugal pump running backwards still pumps a bit, which is why people miss it.</li><li><strong>Air in the suction.</strong> Look for a leaking gasket or a loose fitting on the suction side, and check the suction line still rises toward the pump. Air in the suction gives a noisy, wandering discharge pressure.</li><li><strong>Wear rings.</strong> Measure the impeller-to-casing clearance with feeler gauges at four points (manual section 8.5) and compare with the limit for that model. Worn rings are the usual cause on older pumps that have done years of duty.</li></ol>
+<p>On the HCP-200s, the clearance limit is only in the old scanned paper manual in the library (it's a 1998 manual and there's no newer one). It's an image scan, so you can't search it. Find the technical data table and read it off. Don't use the 350 or 500 limit on a 200, the impeller and rings are different. FRS-P-0007 in September 2026 is the example: about a fifth down on flow, clearance well over the limit, wear rings on order.</p>
+<h2 id="PumpTroubleshootingPlaybook-GravelnoiseandP-07cavitation">Gravel noise and P-07 (cavitation)</h2>
+<p>If it sounds like someone poured gravel into the pump, it's cavitation. The liquid is boiling at the impeller inlet because the pressure there is too low, and the bubbles collapse against the impeller. Left alone it pits the impeller inlet and you'll be replacing it. The PC-3 flags it as P-07 when the suction pressure starts fluctuating.</p>
+<p>Use the P-07 row in the fault table for the model you're on, and <strong>read the whole row</strong>. The first measure on the HCP-500 isn't the same as on the HCP-350, and the strainer threshold is different between them. People who've worked mostly on 350s get this wrong on the 500s.</p>
+<p>What actually causes it at our sites:</p>
+<ul><li><strong>Strainer loaded.</strong> The usual one. Fresno gets label scraps and bits of shrink film into the return water. Clean the basket, check the mesh for tears (18-1120), new cover gasket (18-1121) every time.</li><li><strong>Suction valve not fully open.</strong> Somebody did work on the line, reopened the valve by feel, and left it partly closed. A partly closed suction valve looks fine from a distance. Count the turns or check the position indicator.</li><li><strong>Tank level low.</strong> Ask the operator what level they've been running at. Less liquid above the pump means less pressure at the inlet.</li><li><strong>Warm liquid.</strong> Hot summer days at Fresno raise the water temperature in the return tank, and warmer water cavitates sooner. If P-07 only happens on hot afternoons, that's your clue. It's still worth cleaning the strainer, because it gives you margin.</li></ul>
+<p>FRS-P-0033 (HCP-500) in August 2026 had two of these at once: the strainer was loaded <em>and</em> the suction valve had been left three-quarters open after pipework changes. Cleaning the strainer alone would have brought it back in a week. Case 00043015 if you want the details.</p>
+<p>After cleaning, confirm the strainer differential has dropped back to near zero (the manual gives the clean value) before you leave.</p>
+<h2 id="PumpTroubleshootingPlaybook-VibrationandP-03">Vibration and P-03</h2>
+<p>Take readings at both bearings with the handheld and compare them with the last few PM readings in MaintPro. A sudden jump and a slow climb over weeks are different problems.</p>
+<p>Sudden jump after maintenance: check the foundation bolt torque first, then coupling alignment. In my experience it's usually the bolts. Someone loosened them to shim the motor and didn't torque them back. Then alignment, preferably with the laser kit.</p>
+<p>Slow climb: bearings or impeller. If you have the spectrum function on the analyser, use it. The manual (section 9.2) explains what a peak at running speed, twice running speed and blade pass usually means. Trend it, put the readings in the case, and plan a bearing change before it becomes an emergency.</p>
+<p>Use the vibration bands in the manual rather than a number someone told you. They're for that pump on that kind of foundation.</p>
+<h2 id="PumpTroubleshootingPlaybook-HotbearingsandP-02">Hot bearings and P-02</h2>
+<p>Ask when the pump was last greased. If it was in the last few weeks, it's almost certainly over-greased. People keep pumping until grease comes out somewhere, and a bearing housing packed full runs hot. Open the grease relief plug and run the pump. The temperature should come down over an hour or two as the excess works out. Do not add more grease to a hot bearing that was greased recently. The P-02 row in the fault table says the same thing.</p>
+<p>The grease quantity per bearing is different for each model and it's smaller than people think. It's in the technical data table.</p>
+<p>If the pump hasn't been greased in a long time, it's the opposite problem. Grease it, by the book, and keep an eye on the temperature.</p>
+<h2 id="PumpTroubleshootingPlaybook-SealleaksandP-04">Seal leaks and P-04</h2>
+<p>A new seal that leaks within days was nearly always damaged at fitting or at start-up. Two things to check:</p>
+<ul><li>Did someone lubricate the O-rings with oil or grease? Halden says water or glycerine only. Mineral grease swells the elastomers.</li><li>Was the pump vented properly before the first start? A few seconds of dry running is enough to damage the seal faces.</li></ul>
+<p>An older seal that starts leaking: check the seal flush line first. Aisha found a kinked flush line on GDN-P-0070 in August 2025 (case 00039115). The seal was cooking because no flush water was reaching it. Rerouting the line was the actual fix, the new seal was a bonus.</p>
+<p>Seal kits:</p>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Model</th>
+<th class="confluenceTh">Seal kit</th>
+<th class="confluenceTh">Note</th>
+</tr>
+<tr>
+<td class="confluenceTd">HCP-200</td>
+<td class="confluenceTd">18-0201</td>
+<td class="confluenceTd"></td>
+</tr>
+<tr>
+<td class="confluenceTd">HCP-350</td>
+<td class="confluenceTd">18-0356</td>
+<td class="confluenceTd">Supersedes 18-0355 (Halden SB-2025-018). If you find an 18-0355 in a van, use it up on older pumps only if 18-0356 isn't available, and tell stores</td>
+</tr>
+<tr>
+<td class="confluenceTd">HCP-500</td>
+<td class="confluenceTd">18-0502</td>
+<td class="confluenceTd">Split case, two seals per pump, so two kits</td>
+</tr>
+</tbody></table></div>
+<h2 id="PumpTroubleshootingPlaybook-Casingjointweepingafterasealchange">Casing joint weeping after a seal change</h2>
+<div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Check the bulletins for the serial before you torque casing bolts.</strong> Halden revised the casing on newer HCP-350 serials and changed the casing bolt torque in Service Bulletin SB-2025-009. The manual (Rev D) was never updated, so the manual value is wrong for those pumps. Over-torquing cracks the gasket seat. SB-2025-009 also has a note about the HCP-500, so read it to the end if you're on a 500.</p></div></div>
+<p>This is what happened on FRS-P-0031 in June 2026. Tom did a seal change, torqued the casing bolts to the manual value like any of us would have, and the joint started weeping. When we opened it again the gasket seat was cracked. The serial was in the bulletin's range. A new casing half went on and it was torqued to the bulletin value. Case 00041988, and there's an email thread with Stefan Wirth at Halden if you want the background.</p>
+<p>I asked Halden why the manual wasn't revised. No answer yet. Until there is one: <strong>serial first, bulletin second, manual third</strong>, for anything with a torque value.</p>
+<h2 id="PumpTroubleshootingPlaybook-MotortrippingandP-05">Motor tripping and P-05</h2>
+<p>Read the three phase currents at the motor and compare them. If one is well off the other two, it's a supply problem or a winding problem, and that's the site electrician. If all three are high and equal, the pump is asking for more power than it should. Check whether the impeller is rubbing (turn the shaft by hand with the pump isolated, it should turn freely) and whether the pump is running far right on its curve because someone opened a bypass or a discharge valve all the way.</p>
+<h2 id="PumpTroubleshootingPlaybook-DryrunningandP-06">Dry running and P-06</h2>
+<p>Stop the pump and don't restart it until the casing is full. Vent it through the vent plug until liquid without bubbles comes out. Then find out why it ran dry: empty supply tank, a valve closed upstream, or an air lock after maintenance. If the pump ran dry for more than a few seconds, plan a seal inspection, because the seal faces take the damage first.</p>
+<h2 id="PumpTroubleshootingPlaybook-SensorfaultandP-08">Sensor fault and P-08</h2>
+<p>On the pumps in wash-down areas (the bottling hall at Fresno, the processing hall at Gdansk) this is nearly always water in the transmitter connector. Unplug, dry, check the connector seal, replug. If the seal is perished, replace it. If the transmitter itself has failed, it's 19-0301 for both PT-1 and PT-2. Check the wiring at the X3 terminals in the controller before you condemn the transmitter.</p>
+<h2 id="PumpTroubleshootingPlaybook-Partswecarry">Parts we carry</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Part</th>
+<th class="confluenceTh">What</th>
+<th class="confluenceTh">Van stock</th>
+</tr>
+<tr>
+<td class="confluenceTd">18-0201</td>
+<td class="confluenceTd">Seal kit HCP-200</td>
+<td class="confluenceTd">Fresno vans only</td>
+</tr>
+<tr>
+<td class="confluenceTd">18-0356</td>
+<td class="confluenceTd">Seal kit HCP-350</td>
+<td class="confluenceTd">All pump vans</td>
+</tr>
+<tr>
+<td class="confluenceTd">18-0502</td>
+<td class="confluenceTd">Seal kit HCP-500</td>
+<td class="confluenceTd">Two per van where we look after a 500</td>
+</tr>
+<tr>
+<td class="confluenceTd">18-1120</td>
+<td class="confluenceTd">Strainer basket, 3 mm mesh, HCP-350/500</td>
+<td class="confluenceTd">One per van</td>
+</tr>
+<tr>
+<td class="confluenceTd">18-1121</td>
+<td class="confluenceTd">Strainer cover gasket</td>
+<td class="confluenceTd">Several. Use a new one every time</td>
+</tr>
+<tr>
+<td class="confluenceTd">19-0301</td>
+<td class="confluenceTd">Pressure transmitter PT-1/PT-2</td>
+<td class="confluenceTd">One in Fresno stores</td>
+</tr>
+</tbody></table></div>
+<p>Wear rings, bearings and casing gaskets are ordered per job through stores with the serial number. Don't guess part numbers on the order, write the description and the serial and let stores look it up.</p>
+<h2 id="PumpTroubleshootingPlaybook-Related">Related</h2>
+<ul><li><a href="HCP-500-Maintenance-Quick-Reference.html" data-linked-resource-type="page">HCP-500 Maintenance Quick Reference</a></li><li><a href="Compressor-Troubleshooting-Playbook.html" data-linked-resource-type="page">Compressor Troubleshooting Playbook</a></li><li>CS-PROC-03 Confined Space Entry, Pump Pits (SharePoint). The FRS pit pumps are confined space entries. Don't go in without the permit and a certified attendant.</li><li>Halden manuals and bulletins: OEM library on SharePoint</li></ul>
+                    </div>
+
+
+                    <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments (5)</h2>
+                        </div>
+                        <table border="0" width="100%">
+                        <tbody>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316402"></a>
+                <font class="smallfont"><p>Could we add the P-07 and torque values for each model in a table here? Would save a lot of digging on site.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Tom Becker at Aug 22, 2024 11:15
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316439"></a>
+                <font class="smallfont"><p>I'd rather not. The values are in the manual and they change by bulletin. If they're here too, someone will use this page when it's out of date. Open the manual, it's two clicks on the tablet.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Maria Okafor at Aug 22, 2024 12:02
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316476"></a>
+                <font class="smallfont"><p>Very useful for us in Gdansk and Rotterdam too, same pumps. Can I add the flush line story from GDN-P-0070?</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Aisha Rahman at Nov 04, 2025 09:37
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316513"></a>
+                <font class="smallfont"><p>Done, it's in the seal section. Thanks Aisha.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Maria Okafor at Nov 04, 2025 15:20
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316550"></a>
+                <font class="smallfont"><p>Well. I take back the table idea.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Tom Becker at Jun 15, 2026 08:48
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>             </div>
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Oct 02, 2026 09:14</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

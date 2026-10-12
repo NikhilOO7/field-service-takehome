@@ -1,0 +1,2285 @@
+{
+  "totalSize": 38,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000DGoU6MRl"
+      },
+      "Id": "5008d00000DGoU6MRl",
+      "CaseNumber": "00044116",
+      "Subject": "service due message on TAC-C-0150 display",
+      "Status": "New",
+      "Priority": "Low",
+      "Origin": "Monitoring",
+      "CreatedDate": "2026-09-29T13:10:00.000+0000",
+      "ClosedDate": null,
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000001kXANPA0"
+        },
+        "Name": "TAC-C-0150"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-250051",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "Service interval reminder on the 0150 display. PM to be booked.",
+      "Resolution__c": null,
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+        },
+        "Name": "Priya Natarajan"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000NoZwDYJq"
+      },
+      "Id": "5008d00000NoZwDYJq",
+      "CaseNumber": "00044010",
+      "Subject": "PM 4000h TAC-C-0142",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-09-22T14:30:00.000+0000",
+      "ClosedDate": "2026-09-22T19:10:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000aPshmohS"
+        },
+        "Name": "TAC-C-0142"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-230877",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "4,000 h PM.",
+      "Resolution__c": "4,000 h PM. Oil, oil filter, air filter. Controller log shows 3 E-14 auto-restart events since July (07/28, 08/30, 09/17), no callouts. Recommend firmware 5.1 update; still not done.",
+      "Parts_Used__c": "41-0046 x2; 41-1480 x1; 41-1512 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000VUkp1wml"
+            },
+            "Id": "00a8d00000VUkp1wml",
+            "CommentBody": "3x e-14 auto restart in ctrl log since july, customer didnt notice. fw 5.1 still not done, need a 2h window from dave. raising separate wo?",
+            "CreatedDate": "2026-09-22T19:08:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+              },
+              "Name": "Daniel Reyes"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000000sSMx8v2"
+      },
+      "Id": "5008d000000sSMx8v2",
+      "CaseNumber": "00043754",
+      "Subject": "FRS-P-0031 casing joint follow up",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-09-15T20:00:00.000+0000",
+      "ClosedDate": "2026-09-15T20:40:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000y4J0FaCm"
+        },
+        "Name": "FRS-P-0031"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-241187",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "3 month check of casing joint after the June casing replacement (00041988).",
+      "Resolution__c": "Joint dry, no residue. Closing.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+        },
+        "Name": "Tom Becker"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000009dikVMdp"
+      },
+      "Id": "5008d000009dikVMdp",
+      "CaseNumber": "00043570",
+      "Subject": "strainer basket torn 0044",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-09-10T17:20:00.000+0000",
+      "ClosedDate": "2026-09-10T18:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000006tCUtpM6"
+        },
+        "Name": "TAC-P-0044"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-230198",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "Strainer basket mesh torn, found at strainer round.",
+      "Resolution__c": "Replaced basket 18-1120 and cover gasket 18-1121.",
+      "Parts_Used__c": "18-1120 x1; 18-1121 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000jkmH4N8i"
+      },
+      "Id": "5008d00000jkmH4N8i",
+      "CaseNumber": "00043505",
+      "Subject": "HCP-200 wear ring replacement FRS-P-0007",
+      "Status": "Waiting on Parts",
+      "Priority": "Medium",
+      "Origin": "Technician",
+      "CreatedDate": "2026-09-08T15:00:00.000+0000",
+      "ClosedDate": null,
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000CIjNQVAQ"
+        },
+        "Name": "FRS-P-0007"
+      },
+      "Equipment_Model__c": "HCP-200",
+      "Serial_Number__c": "HCP200-180566",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Follow-up to 00043360. Fit new wear rings on the pit pump. Rings on order from Halden, ETA mid October.",
+      "Resolution__c": null,
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+        },
+        "Name": "Maria Okafor"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000A1pdLtTm"
+            },
+            "Id": "00a8d00000A1pdLtTm",
+            "CommentBody": "Halden quoted 4-5 weeks. Pump stays in service meanwhile, customer aware flow is down.",
+            "CreatedDate": "2026-09-08T15:05:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+              },
+              "Name": "Maria Okafor"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000XduD7w40"
+      },
+      "Id": "5008d00000XduD7w40",
+      "CaseNumber": "00043360",
+      "Subject": "HCP-200 pit pump low flow",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2026-09-04T17:30:00.000+0000",
+      "ClosedDate": "2026-09-05T21:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000CIjNQVAQ"
+        },
+        "Name": "FRS-P-0007"
+      },
+      "Equipment_Model__c": "HCP-200",
+      "Serial_Number__c": "HCP200-180566",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Customer reports the pit pump FRS-P-0007 is about 20% down on flow. No alarms.",
+      "Resolution__c": "Clearance measured 0.71 mm, over the limit in the old scanned manual. Wear rings ordered. Follow-up case for fitting.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+        },
+        "Name": "Maria Okafor"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000bQLQQ6ft"
+            },
+            "Id": "00a8d00000bQLQQ6ft",
+            "CommentBody": "FYI for whoever does the follow-up: the clearance limit for the HCP-200 is only in the scanned paper manual (the 1998 Halden one in the manual library), it's not in MaintPro or on the wiki.",
+            "CreatedDate": "2026-09-05T20:55:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+              },
+              "Name": "Maria Okafor"
+            }
+          }
+        ]
+      },
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000U2Ibmdyw"
+            },
+            "Id": "02s8d00000U2Ibmdyw",
+            "Subject": "Pit pump flow",
+            "FromName": "Gary Pham",
+            "FromAddress": "g.pham@sierrasprings.com",
+            "ToAddress": "service.na@corvane.com",
+            "MessageDate": "2026-09-04T17:30:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Hi team,\n\nOur flow meter on the pit return shows about 20% less than in the spring with the same level. No alarms. Can Maria take a look when she's here?\n\nGary Pham\nMaintenance Planner, Sierra Springs Beverage - Fresno"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000VQB3ob6r"
+      },
+      "Id": "5008d00000VQB3ob6r",
+      "CaseNumber": "00043210",
+      "Subject": "BX-20 drive coupling worn",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-08-26T16:30:00.000+0000",
+      "ClosedDate": "2026-08-26T18:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000ZKGf5OsQ"
+        },
+        "Name": "FRS-V-0205"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-250031",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Found drive coupling insert worn on line 4 BX-20 during PM.",
+      "Resolution__c": "Replaced 77-0500.",
+      "Parts_Used__c": "77-0500 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000x6NxEwNj"
+      },
+      "Id": "5008d00000x6NxEwNj",
+      "CaseNumber": "00043015",
+      "Subject": "P-07 cavitation FRS-P-0033",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2026-08-14T14:25:00.000+0000",
+      "ClosedDate": "2026-08-15T16:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000IfqvhSIn"
+        },
+        "Name": "FRS-P-0033"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-250412",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "P-07",
+      "Description": "P-07 cavitation alarm, operators report gravel noise from the HCP-500.",
+      "Resolution__c": "Strainer dP read 0.42 bar, cleaned strainer. Suction valve found three-quarters open, opened fully. P-07 cleared, no noise after 30 min.",
+      "Parts_Used__c": "18-1121 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+        },
+        "Name": "Maria Okafor"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000Et6B2hpx"
+            },
+            "Id": "00a8d00000Et6B2hpx",
+            "CommentBody": "No P-07 overnight. Suction valve handwheel tagged so nobody throttles it again.",
+            "CreatedDate": "2026-08-15T15:58:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+              },
+              "Name": "Maria Okafor"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000sYnvqOPy"
+      },
+      "Id": "5008d00000sYnvqOPy",
+      "CaseNumber": "00042851",
+      "Subject": "E-11 delivery pressure high 0143",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2026-08-03T19:10:00.000+0000",
+      "ClosedDate": "2026-08-03T21:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000dBFL9TAN"
+        },
+        "Name": "TAC-C-0143"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-240210",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "E-11",
+      "Description": "0143 tripped E-11 at 11:40.",
+      "Resolution__c": "Customer's contractor closed the main header valve to tie in a new drop. Valve opened, unit reset. Asked Dave to warn us next time.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+        },
+        "Name": "Priya Natarajan"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000XjHvE4Uq"
+      },
+      "Id": "5008d00000XjHvE4Uq",
+      "CaseNumber": "00042559",
+      "Subject": "Oil change FRS-C-0101",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-07-14T14:30:00.000+0000",
+      "ClosedDate": "2026-07-14T18:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000ziF1GPKu"
+        },
+        "Name": "FRS-C-0101"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-220318",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Scheduled oil change, 4,000 h since last change.",
+      "Resolution__c": "Oil changed (SynLube 46), oil filter, air filter. Separator dP 0.41 bar.",
+      "Parts_Used__c": "41-0046 x1; 41-1475 x1; 41-1510 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+        },
+        "Name": "Luis Ferreira"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000iy50mmDa"
+      },
+      "Id": "5008d00000iy50mmDa",
+      "CaseNumber": "00042388",
+      "Subject": "repeat E-14 on 0142",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2026-07-02T13:10:00.000+0000",
+      "ClosedDate": "2026-07-06T23:20:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000aPshmohS"
+        },
+        "Name": "TAC-C-0142"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-230877",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "E-14",
+      "Description": "Repeat E-14 on 0142. Unit tripped 07/01 afternoon, cooler fins cleaned on the exhaust side and restarted. Tripped again around 01:30 on 07/02. Ambient at the unit 38 C. Dave Ortiz called at 06:00.",
+      "Resolution__c": "Controller TS-2 113 C vs handheld 102 C at the discharge flange, 11 C high. TS-2 replaced again (41-2207, from Daniel's van). Controller and handheld within 4 C after the swap. Firmware is 5.0. Update not done, no X10 cable available. Firmware update to be scheduled.",
+      "Parts_Used__c": "41-2207 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+        },
+        "Name": "Priya Natarajan"
+      },
+      "CaseComments": {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000K6GZBACD"
+            },
+            "Id": "00a8d00000K6GZBACD",
+            "CommentBody": "On site. TS-2 controller 113 C, handheld 102 C. Same as March?",
+            "CreatedDate": "2026-07-02T14:45:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+              },
+              "Name": "Priya Natarajan"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000006WpoyIGJ"
+            },
+            "Id": "00a8d000006WpoyIGJ",
+            "CommentBody": "Second TS-2 on this unit since March. Check SB-2026-003 before you close this: on firmware below 5.1 a failing TS-2 is reported as E-14, so these may never have been real high temps. 0142 is still on 5.0 and needs the 5.1 update.",
+            "CreatedDate": "2026-07-02T15:02:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+              },
+              "Name": "Kenji Watanabe"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000009mY5AJaQ"
+            },
+            "Id": "00a8d000009mY5AJaQ",
+            "CommentBody": "TS-2 swapped, unit running, within 4 C.",
+            "CreatedDate": "2026-07-02T18:50:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+              },
+              "Name": "Priya Natarajan"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000mbfDCLG2"
+            },
+            "Id": "00a8d00000mbfDCLG2",
+            "CommentBody": "No trips since 07/02. Closing. Firmware update open, Dave can't give us a window this week (big inbound).",
+            "CreatedDate": "2026-07-06T23:18:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+              },
+              "Name": "Priya Natarajan"
+            }
+          }
+        ]
+      },
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000ADVLlnnl"
+            },
+            "Id": "02s8d00000ADVLlnnl",
+            "Subject": "RE: 0142",
+            "FromName": "Dave Ortiz",
+            "FromAddress": "dortiz@pugetcoldchain.com",
+            "ToAddress": "p.natarajan@corvane.com",
+            "MessageDate": "2026-07-06T17:41:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Priya,\n\nNo trips since Thursday. When do you want to do the software update? This week is bad, we have the big inbound. Week of the 20th should work.\n\nDave"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000GQkiNNxH"
+      },
+      "Id": "5008d00000GQkiNNxH",
+      "CaseNumber": "00042268",
+      "Subject": "TAC-P-0045 seal weep",
+      "Status": "Monitoring",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-06-22T15:15:00.000+0000",
+      "ClosedDate": null,
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000RcuIh6zI"
+        },
+        "Name": "TAC-P-0045"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-231650",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "P-04",
+      "Description": "Slight weep at seal faces on 0045, under the P-04 trigger. Seal kit ordered.",
+      "Resolution__c": null,
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000b5hsZIsS"
+            },
+            "Id": "00a8d00000b5hsZIsS",
+            "CommentBody": "18-0356 on order. weep is maybe 1 drop/min, ok to run till it comes.",
+            "CreatedDate": "2026-06-22T15:20:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+              },
+              "Name": "Daniel Reyes"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000kog2RGy5"
+            },
+            "Id": "00a8d00000kog2RGy5",
+            "CommentBody": "Kit is in Tacoma stock. Do it at the next PM, not as a separate trip.",
+            "CreatedDate": "2026-07-20T16:02:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+              },
+              "Name": "Kenji Watanabe"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000002p9rO8Bm"
+      },
+      "Id": "5008d000002p9rO8Bm",
+      "CaseNumber": "00041988",
+      "Subject": "FRS-P-0031 casing joint weeping after seal change",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Technician",
+      "CreatedDate": "2026-06-03T16:15:00.000+0000",
+      "ClosedDate": "2026-06-12T22:05:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000y4J0FaCm"
+        },
+        "Name": "FRS-P-0031"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-241187",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Casing joint weeping after the seal change on 06/02. Casing bolts torqued to 45 N-m per the manual (IOM Rev D 8.4). Joint weeping at about 4 o'clock after 2 h in service, ~5.5 bar discharge. Duty switched to FRS-P-0012.",
+      "Resolution__c": "Gasket seat cracked (dye penetrant, two bolt holes). Serial HCP350-241187 is in the Halden SB-2025-009 range (revised casing from HCP350-240001). New casing half fitted with new gasket, torqued to 38 N-m cross pattern, two passes, per SB-2025-009. 24 h run, dry.",
+      "Parts_Used__c": "18-0356 x1 (seal, 06/02); casing half + gasket (Halden, no charge)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+        },
+        "Name": "Tom Becker"
+      },
+      "CaseComments": {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d0000019yx8Qss"
+            },
+            "Id": "00a8d0000019yx8Qss",
+            "CommentBody": "emailed Stefan Wirth at Halden w/ photos. not going above 45.",
+            "CreatedDate": "2026-06-03T17:50:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+              },
+              "Name": "Tom Becker"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000jcm0Ir7L"
+            },
+            "Id": "00a8d00000jcm0Ir7L",
+            "CommentBody": "dye pen shows cracks at 2 bolt holes. casing ordered from Halden.",
+            "CreatedDate": "2026-06-04T23:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+              },
+              "Name": "Tom Becker"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000YyaKq1n8"
+            },
+            "Id": "00a8d00000YyaKq1n8",
+            "CommentBody": "Halden says this serial is in SB-2025-009, revised casing, 38 N-m not 45. Manual Rev D still says 45. I've asked Stefan why the manual was never updated.",
+            "CreatedDate": "2026-06-05T15:12:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+              },
+              "Name": "Maria Okafor"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000xwRi4gqg"
+            },
+            "Id": "00a8d00000xwRi4gqg",
+            "CommentBody": "casing fitted 6/11, 24h run dry. closing",
+            "CreatedDate": "2026-06-12T22:03:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+              },
+              "Name": "Tom Becker"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d0000082trVBQA"
+      },
+      "Id": "5008d0000082trVBQA",
+      "CaseNumber": "00041876",
+      "Subject": "Chiller flow fault",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2026-05-19T17:45:00.000+0000",
+      "ClosedDate": "2026-05-19T20:20:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000N0HcEKeX"
+        },
+        "Name": "FRS-H-0301"
+      },
+      "Equipment_Model__c": "NK-300",
+      "Serial_Number__c": "NK300-230144",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "L-06",
+      "Description": "L-06 chilled water flow fault, chiller off.",
+      "Resolution__c": "Customer's chilled water strainer blocked (their side). Customer cleaned it, flow restored, chiller reset and running. LWT 7.1 C.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000NwvFiGrR"
+        },
+        "Name": "Grace Liu"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000rRaMW446"
+      },
+      "Id": "5008d00000rRaMW446",
+      "CaseNumber": "00041750",
+      "Subject": "BX-12 tracking left after belt change - line 2",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Technician",
+      "CreatedDate": "2026-05-08T15:05:00.000+0000",
+      "ClosedDate": "2026-05-12T22:40:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000PCnKWjZD"
+        },
+        "Name": "FRS-V-0201"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-240077",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "C-02",
+      "Description": "Belt replaced 05/06 on line 2 case conveyor (FRS-V-0201). Since restart the belt tracks to the left (motor side) and rubs the side guide at the tail end. C-02 stops: 7 on 2nd shift 05/07. Take-up adjusted several times, it keeps coming back.",
+      "Resolution__c": "Belton confirmed a known issue, see email thread. Fix applied, tracking OK.",
+      "Parts_Used__c": "77-0419 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000m8T0iV5m"
+            },
+            "Id": "00a8d00000m8T0iV5m",
+            "CommentBody": "emailed Belton (Henrik Sauer) with details, waiting.",
+            "CreatedDate": "2026-05-08T15:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+              },
+              "Name": "Olu Adeyemi"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000bknZETms"
+            },
+            "Id": "00a8d00000bknZETms",
+            "CommentBody": "Pulled the guard with Olu, photos sent to Belton. Line 2 running slow over the weekend with an operator watching.",
+            "CreatedDate": "2026-05-09T19:10:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+              },
+              "Name": "Tom Becker"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000003JdDc3bg"
+            },
+            "Id": "00a8d000003JdDc3bg",
+            "CommentBody": "Belton replied, known issue on this model. Part on order, interim fix done this morning.",
+            "CreatedDate": "2026-05-11T16:05:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+              },
+              "Name": "Olu Adeyemi"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000Ca1pghE8"
+            },
+            "Id": "00a8d00000Ca1pghE8",
+            "CommentBody": "new idler fitted, tracking ok after 2h at full speed. closing",
+            "CreatedDate": "2026-05-12T22:38:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+              },
+              "Name": "Olu Adeyemi"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000B4PLPWa6"
+      },
+      "Id": "5008d00000B4PLPWa6",
+      "CaseNumber": "00041572",
+      "Subject": "Guard interlock nuisance trips",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Email",
+      "CreatedDate": "2026-04-20T22:30:00.000+0000",
+      "ClosedDate": "2026-04-21T17:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000qSXk26Oj"
+        },
+        "Name": "TAC-V-0210"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-240019",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "C-06",
+      "Description": "C-06 safety relay fault with the guard closed, 3-4 times a day.",
+      "Resolution__c": "Guard switch actuator bent, realigned and tightened. Tested 20 open/close cycles.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000007pmKEgOB"
+      },
+      "Id": "5008d000007pmKEgOB",
+      "CaseNumber": "00041408",
+      "Subject": "suction pressure low P-01",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Phone",
+      "CreatedDate": "2026-04-02T16:10:00.000+0000",
+      "ClosedDate": "2026-04-02T18:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000xjHzFn0L"
+        },
+        "Name": "FRS-P-0012"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-221034",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "P-01",
+      "Description": "P-01 on 0012 while running as duty during customer CIP.",
+      "Resolution__c": "Customer side. Supply tank level transmitter reading high, tank actually low. Customer instrument tech recalibrated it. Nothing wrong on the pump.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+        },
+        "Name": "Tom Becker"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000zKjr82dY"
+      },
+      "Id": "5008d00000zKjr82dY",
+      "CaseNumber": "00041207",
+      "Subject": "E-14 high discharge temp TAC-C-0142",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2026-03-12T13:47:00.000+0000",
+      "ClosedDate": "2026-03-13T15:15:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000aPshmohS"
+        },
+        "Name": "TAC-C-0142"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-230877",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "E-14",
+      "Description": "Compressor 0142 shut down overnight on E-14 high discharge temperature. Customer restarted it at 06:30, running, wants it checked.",
+      "Resolution__c": "E-14 overnight. Controller TS-2 112 C vs handheld 96 C at the discharge flange. Replaced TS-2 (41-2207). Readings within 3 C after the swap.",
+      "Parts_Used__c": "41-2207 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000gJotTi0W"
+            },
+            "Id": "00a8d00000gJotTi0W",
+            "CommentBody": "ts-2 reading 16c high vs handheld. sensor swapped, unit running.",
+            "CreatedDate": "2026-03-12T18:20:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+              },
+              "Name": "Daniel Reyes"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000olx1l3uj"
+            },
+            "Id": "00a8d00000olx1l3uj",
+            "CommentBody": "no trips overnight, closing",
+            "CreatedDate": "2026-03-13T15:14:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+              },
+              "Name": "Daniel Reyes"
+            }
+          }
+        ]
+      },
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000s3kRXGX1"
+            },
+            "Id": "02s8d00000s3kRXGX1",
+            "Subject": "comp 0142 tripped overnight",
+            "FromName": "Dave Ortiz",
+            "FromAddress": "dortiz@pugetcoldchain.com",
+            "ToAddress": "service.na@corvane.com",
+            "MessageDate": "2026-03-12T13:47:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Morning,\n\n0142 shut down sometime after 2am with E-14 high discharge temp. Night shift didn't call it in. I restarted it at 6:30 and it's running but I'd like someone to look at it today. It's not hot in there, 9 degrees outside.\n\nDave Ortiz\nMaintenance Manager | Puget Cold Chain | Tacoma"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000SLIzPOwI"
+      },
+      "Id": "5008d00000SLIzPOwI",
+      "CaseNumber": "00041137",
+      "Subject": "VRS-45 coupling inspection per Vastra",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-03-03T18:00:00.000+0000",
+      "ClosedDate": "2026-05-12T22:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000x3EXpHM2"
+        },
+        "Name": "FRS-C-0104"
+      },
+      "Equipment_Model__c": "VRS-45",
+      "Serial_Number__c": "VRS45-230992",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Check coupling element at next service per Vastra.",
+      "Resolution__c": "Coupling element inspected through window, no cracks, no rubber dust. Compressor room ventilation ok.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+        },
+        "Name": "Luis Ferreira"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000000SWHQmRj"
+      },
+      "Id": "5008d000000SWHQmRj",
+      "CaseNumber": "00041084",
+      "Subject": "Line 1 belt tracking right",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-02-24T21:05:00.000+0000",
+      "ClosedDate": "2026-02-24T22:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000Ok3bS7BE"
+        },
+        "Name": "FRS-V-0202"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-240078",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "C-02",
+      "Description": "Line 1 belt drifting right after customer washdown, C-02 twice.",
+      "Resolution__c": "Washdown hose had knocked the tail take-up. Adjusted take-up half a turn, tracking centred. No belt change on this unit.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000000KhEKrZj"
+      },
+      "Id": "5008d000000KhEKrZj",
+      "CaseNumber": "00040858",
+      "Subject": "TAC-P-0044 vibration high",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Monitoring",
+      "CreatedDate": "2026-01-27T15:40:00.000+0000",
+      "ClosedDate": "2026-01-27T20:15:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000006tCUtpM6"
+        },
+        "Name": "TAC-P-0044"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-230198",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "P-03",
+      "Description": "P-03 on 0044 overnight. NDE overall 7.6 mm/s at panel.",
+      "Resolution__c": "Two foundation bolts loose on the NDE side. Re-torqued all foundation bolts, alignment re-checked (ok). NDE 2.1 mm/s after.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Ilod1W9O"
+      },
+      "Id": "5008d00000Ilod1W9O",
+      "CaseNumber": "00040730",
+      "Subject": "oil level low fresno comp",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-01-12T18:30:00.000+0000",
+      "ClosedDate": "2026-01-12T20:10:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000x3EXpHM2"
+        },
+        "Name": "FRS-C-0104"
+      },
+      "Equipment_Model__c": "VRS-45",
+      "Serial_Number__c": "VRS45-230992",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": null,
+      "Resolution__c": "fixed",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+        },
+        "Name": "Luis Ferreira"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000CrLUyiA4"
+      },
+      "Id": "5008d00000CrLUyiA4",
+      "CaseNumber": "00040455",
+      "Subject": "noisy on start",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Phone",
+      "CreatedDate": "2025-12-08T16:45:00.000+0000",
+      "ClosedDate": "2025-12-08T19:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000001kXANPA0"
+        },
+        "Name": "TAC-C-0150"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-250051",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "Customer says compressor 0150 makes a rattling noise when it starts.",
+      "Resolution__c": "ok now",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+        },
+        "Name": "Priya Natarajan"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000W8T5l4z7"
+      },
+      "Id": "5008d00000W8T5l4z7",
+      "CaseNumber": "00040311",
+      "Subject": "TAC-C-0143 down on E-31",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-11-20T13:02:00.000+0000",
+      "ClosedDate": "2025-11-20T17:40:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000dBFL9TAN"
+        },
+        "Name": "TAC-C-0143"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-240210",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "E-31",
+      "Description": "Dave Ortiz called the on-call line at 05:02. Compressor 0143 down on E-31 since about 04:10, site had a power dip at that time (lights flickered in dock 3). 0142 restarted on its own. Customer running on 0142 only.",
+      "Resolution__c": "E-31 after a grid dip at 04:10. Reset by Daniel Reyes per HV-PROC-07. Insulation 2.4 GOhm. Back in service 07:55, no repeat during the morning. Customer confirmed the dip with their utility.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000vkiopitH"
+            },
+            "Id": "00a8d00000vkiopitH",
+            "CommentBody": "reset done per hv-proc-07, 0143 back on line 07:55. insulation 2.4 gohm.",
+            "CreatedDate": "2025-11-20T16:02:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+              },
+              "Name": "Daniel Reyes"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000BTZwkVPm"
+            },
+            "Id": "00a8d00000BTZwkVPm",
+            "CommentBody": "Thanks Daniel. Closing. Dave asked if we can give them a list of what to record before we arrive next time, I'll send him one.",
+            "CreatedDate": "2025-11-20T17:38:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+              },
+              "Name": "Kenji Watanabe"
+            }
+          }
+        ]
+      },
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000Y0Qw9vKN"
+            },
+            "Id": "02s8d00000Y0Qw9vKN",
+            "Subject": "RE: 0143 E-31",
+            "FromName": "Dave Ortiz",
+            "FromAddress": "dortiz@pugetcoldchain.com",
+            "ToAddress": "service.na@corvane.com",
+            "MessageDate": "2025-11-20T17:12:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Daniel, thanks for getting here so fast. Utility confirmed a voltage sag at 04:09 on our feeder. Both units running now.\n\nDave"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000K71MDK0t"
+      },
+      "Id": "5008d00000K71MDK0t",
+      "CaseNumber": "00039869",
+      "Subject": "Air filter alarm TAC-C-0143",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Monitoring",
+      "CreatedDate": "2025-10-14T18:20:00.000+0000",
+      "ClosedDate": "2025-10-14T20:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000dBFL9TAN"
+        },
+        "Name": "TAC-C-0143"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-240210",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "E-18",
+      "Description": "E-18 air filter differential pressure on 0143.",
+      "Resolution__c": "Air filter element replaced (41-1512). Old one was full of frost dust from the dock door.",
+      "Parts_Used__c": "41-1512 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000Tk7rm60Z"
+        },
+        "Name": "Priya Natarajan"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000kSU08se1"
+      },
+      "Id": "5008d00000kSU08se1",
+      "CaseNumber": "00039700",
+      "Subject": "BX-20 install support line 4",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2025-09-29T15:00:00.000+0000",
+      "ClosedDate": "2025-10-01T23:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000ZKGf5OsQ"
+        },
+        "Name": "FRS-V-0205"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-250031",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "New BX-20 on line 4. Corvane to support Belton install and take over PM from commissioning.",
+      "Resolution__c": "Commissioned with Belton FAE remote. Tracking and tension set, PE sensors aligned, PM plan created in MaintPro.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000wKrGUTGd"
+            },
+            "Id": "00a8d00000wKrGUTGd",
+            "CommentBody": "PM every 6 wks same as the 12s. Belton manual for the 20 is on order, we only have the BX-12 one.",
+            "CreatedDate": "2025-10-01T23:02:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+              },
+              "Name": "Olu Adeyemi"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000FAweiorq"
+      },
+      "Id": "5008d00000FAweiorq",
+      "CaseNumber": "00039379",
+      "Subject": "belt splice lifting line 2",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2025-09-02T20:15:00.000+0000",
+      "ClosedDate": "2025-09-03T00:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000PCnKWjZD"
+        },
+        "Name": "FRS-V-0201"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-240077",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Splice on line 2 belt lifting at one edge, catching on the scraper.",
+      "Resolution__c": "Re-spliced with hot splice kit. Scraper reset.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000zmpTkXdN"
+        },
+        "Name": "Tom Becker"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000jHxHSGKr"
+      },
+      "Id": "5008d00000jHxHSGKr",
+      "CaseNumber": "00039044",
+      "Subject": "TAC-P-0044 P-07 cavitation",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-08-05T13:55:00.000+0000",
+      "ClosedDate": "2025-08-05T17:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000006tCUtpM6"
+        },
+        "Name": "TAC-P-0044"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-230198",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "P-07",
+      "Description": "Dave reports noise from 0044 and P-07 on the panel.",
+      "Resolution__c": "Strainer packed with cardboard fibre from their glycol tank lid that fell in. Strainer dP 0.55 bar before cleaning. Cleaned, P-07 cleared. Customer fishing the rest out of the tank.",
+      "Parts_Used__c": "18-1121 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+        },
+        "Name": "Kenji Watanabe"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000b3gpCX7y"
+      },
+      "Id": "5008d00000b3gpCX7y",
+      "CaseNumber": "00038845",
+      "Subject": "P-08 sensor fault new HCP-500",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Email",
+      "CreatedDate": "2025-07-21T16:40:00.000+0000",
+      "ClosedDate": "2025-07-22T18:15:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000IfqvhSIn"
+        },
+        "Name": "FRS-P-0033"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-250412",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "P-08",
+      "Description": "Intermittent P-08 on the new HCP-500, about once a day since startup.",
+      "Resolution__c": "Moisture in PT-2 connector, gland not tightened at install. Dried, resealed, replaced PT-2 as a precaution (19-0301).",
+      "Parts_Used__c": "19-0301 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+        },
+        "Name": "Maria Okafor"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000004JPtW7Pv"
+      },
+      "Id": "5008d000004JPtW7Pv",
+      "CaseNumber": "00038577",
+      "Subject": "E-14 high discharge temp FRS-C-0101",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-06-30T21:18:00.000+0000",
+      "ClosedDate": "2025-07-01T01:40:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000ziF1GPKu"
+        },
+        "Name": "FRS-C-0101"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-220318",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "E-14",
+      "Description": "Compressor tripped E-14 twice today. Outside temp 41 C, compressor room hot.",
+      "Resolution__c": "Real over-temperature. Cooler fins clogged, cleaned. Room at 44 C, room exhaust fan not running (customer's fan, breaker tripped). Customer reset fan breaker. TS-2 matched handheld within 2 C. Ran 2 h loaded, discharge 92 C.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+        },
+        "Name": "Luis Ferreira"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000B062kJM4"
+            },
+            "Id": "00a8d00000B062kJM4",
+            "CommentBody": "NO TRIPS OVERNIGHT. CUSTOMER TO PUT FAN ON THEIR PM LIST.",
+            "CreatedDate": "2025-07-01T14:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+              },
+              "Name": "Luis Ferreira"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000LKmg7xko"
+      },
+      "Id": "5008d00000LKmg7xko",
+      "CaseNumber": "00038317",
+      "Subject": "TAC-V-0210 belt slipping on start",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2025-06-09T17:12:00.000+0000",
+      "ClosedDate": "2025-06-09T22:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000qSXk26Oj"
+        },
+        "Name": "TAC-V-0210"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-240019",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "C-03",
+      "Description": null,
+      "Resolution__c": "Drive coupling insert cracked, replaced 77-0500. Belt slip on start was the coupling, tension was fine.",
+      "Parts_Used__c": "77-0500 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000bRZY7yfP"
+      },
+      "Id": "5008d00000bRZY7yfP",
+      "CaseNumber": "00037989",
+      "Subject": "FRS-P-0012 seal leak",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Technician",
+      "CreatedDate": "2025-05-15T14:20:00.000+0000",
+      "ClosedDate": "2025-05-15T21:05:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000xjHzFn0L"
+        },
+        "Name": "FRS-P-0012"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-221034",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "P-04",
+      "Description": "Found seal leaking on standby pump 0012 during strainer round. Leak sensor wet.",
+      "Resolution__c": "Mechanical seal replaced with 18-0355. Ran 1 h, dry.",
+      "Parts_Used__c": "18-0355 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ybn60BEI"
+        },
+        "Name": "Maria Okafor"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000008uEsYwnt"
+      },
+      "Id": "5008d000008uEsYwnt",
+      "CaseNumber": "00037699",
+      "Subject": "oil in air downstream of 0142",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2025-04-22T15:31:00.000+0000",
+      "ClosedDate": "2025-04-25T17:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000aPshmohS"
+        },
+        "Name": "TAC-C-0142"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-230877",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "Dave reports oil in the air line after the dryer on compressor 0142, noticed at a drop in the packing area.",
+      "Resolution__c": "Separator element replaced (41-3075), scavenge line orifice cleaned. Checked again after 2 days, dry.",
+      "Parts_Used__c": "41-3075 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000HmmOBG1h"
+        },
+        "Name": "Daniel Reyes"
+      },
+      "CaseComments": null,
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000CDU0ltWO"
+            },
+            "Id": "02s8d00000CDU0ltWO",
+            "Subject": "oil in air line comp 0142",
+            "FromName": "Dave Ortiz",
+            "FromAddress": "dortiz@pugetcoldchain.com",
+            "ToAddress": "service.na@corvane.com",
+            "MessageDate": "2025-04-22T15:31:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Hi,\n\nWe're getting oil at the drop by packing (after the dryer). Looks like it's coming from 0142, 0143 side is dry.\nCan someone come out this week?\n\nThanks\nDave Ortiz\nMaintenance Manager | Puget Cold Chain | Tacoma"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000biIf9dMN"
+      },
+      "Id": "5008d00000biIf9dMN",
+      "CaseNumber": "00037506",
+      "Subject": "NK-300 high pressure trips",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-04-07T18:02:00.000+0000",
+      "ClosedDate": "2025-04-07T22:45:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000N0HcEKeX"
+        },
+        "Name": "FRS-H-0301"
+      },
+      "Equipment_Model__c": "NK-300",
+      "Serial_Number__c": "NK300-230144",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "L-01",
+      "Description": "Chiller tripping L-01 in the afternoons. Customer says it started this week.",
+      "Resolution__c": "Condenser coils packed with cottonwood seed. Washed both coils from inside out. Head pressure back to normal. Recommended a coil screen before next spring.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000NwvFiGrR"
+        },
+        "Name": "Grace Liu"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000bpFByvqi"
+            },
+            "Id": "00a8d00000bpFByvqi",
+            "CommentBody": "Quoted coil screens to the customer, they will think about it.",
+            "CreatedDate": "2025-04-08T15:10:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000NwvFiGrR"
+              },
+              "Name": "Grace Liu"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000lnne4EN0"
+      },
+      "Id": "5008d00000lnne4EN0",
+      "CaseNumber": "00037163",
+      "Subject": "line 1 conveyor stopping C-05",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2025-03-11T20:40:00.000+0000",
+      "ClosedDate": "2025-03-11T23:20:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000Ok3bS7BE"
+        },
+        "Name": "FRS-V-0202"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-240078",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": "C-05",
+      "Description": "Customer reports BX-12 on line 1 stopping on C-05 product jam several times per shift.",
+      "Resolution__c": "Carton jams at the transfer plate, plate bent upward about 4 mm. Straightened and re-set the gap. No C-04 since.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000uiwAzGwZ"
+        },
+        "Name": "Olu Adeyemi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000DjP8VDgA"
+      },
+      "Id": "5008d00000DjP8VDgA",
+      "CaseNumber": "00036925",
+      "Subject": "TAC-C-0150 startup punch list",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2025-02-20T18:05:00.000+0000",
+      "ClosedDate": "2025-02-27T23:10:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000001kXANPA0"
+        },
+        "Name": "TAC-C-0150"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-250051",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": null,
+      "Description": "New VRS-75 commissioned 02/17. Punch list: condensate drain line not sloped, missing label on isolator, customer wants remote run signal to BMS.",
+      "Resolution__c": "Drain line re-sloped by customer contractor, labels fitted, BMS run signal wired to dry contact by customer electrician. Signed off with Dave Ortiz.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+        },
+        "Name": "Kenji Watanabe"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Dnf4ds0N"
+      },
+      "Id": "5008d00000Dnf4ds0N",
+      "CaseNumber": "00036701",
+      "Subject": "TAC-P-0045 bearing temp alarm",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2025-02-03T17:15:00.000+0000",
+      "ClosedDate": "2025-02-03T20:40:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000jpqN9yqm"
+        },
+        "Name": "Puget Cold Chain"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000RcuIh6zI"
+        },
+        "Name": "TAC-P-0045"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-231650",
+      "Site__c": "TAC - Tacoma Cold Storage",
+      "Fault_Code__c": "P-02",
+      "Description": "P-02 on standby pump 0045 after it was swapped to duty for the 0044 PM.",
+      "Resolution__c": "Over-greased at last PM. Opened relief plug and ran 30 min, DE bearing down from 88 C to 61 C. Reminded team about the relief plug.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+        },
+        "Name": "Kenji Watanabe"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000001aZJH7bB"
+            },
+            "Id": "00a8d000001aZJH7bB",
+            "CommentBody": "Second time this year on 0045. Whoever greases it, open the relief plug and leave it open 5 min.",
+            "CreatedDate": "2025-02-03T20:44:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000v8tblwfz"
+              },
+              "Name": "Kenji Watanabe"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000vHsX2vRJ"
+      },
+      "Id": "5008d00000vHsX2vRJ",
+      "CaseNumber": "00036450",
+      "Subject": "Compressor not loading - Fresno",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-01-14T15:52:00.000+0000",
+      "ClosedDate": "2025-01-14T21:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d00000rGSx4Vk5"
+        },
+        "Name": "Sierra Springs Beverage"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000x3EXpHM2"
+        },
+        "Name": "FRS-C-0104"
+      },
+      "Equipment_Model__c": "VRS-45",
+      "Serial_Number__c": "VRS45-230992",
+      "Site__c": "FRS - Fresno Bottling Plant",
+      "Fault_Code__c": null,
+      "Description": "Plant air at 5.2 bar and dropping, compressor running but won't load. Customer has backup diesel rental on standby.",
+      "Resolution__c": "Inlet valve solenoid coil open circuit. Replaced coil (local purchase, 24 VDC). Loads normally.",
+      "Parts_Used__c": "Solenoid coil 24VDC (local)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000eSaed68G"
+        },
+        "Name": "Luis Ferreira"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    }
+  ]
+}

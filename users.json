@@ -1,0 +1,135 @@
+{
+  "groups": {
+    "region-na": "Works North America sites (Fresno, Tacoma)",
+    "region-eu": "Works Europe sites (Rotterdam, Gdansk)",
+    "family-pumps": "Trained on Halden HCP pumps",
+    "family-compressors": "Trained on Vastra VRS compressors",
+    "family-chillers": "Trained on Nordkyl NK chillers",
+    "family-conveyors": "Trained on Belton BX conveyors",
+    "cert-hv": "High-voltage electrical certification (VFD cabinets)",
+    "cert-refrigerant": "Refrigerant handling certification (EPA 608 / EU F-gas)",
+    "cert-confined-space": "Confined space entry certification",
+    "role-lead": "Field team leads"
+  },
+  "users": [
+    {
+      "id": "u01",
+      "name": "Maria Okafor",
+      "title": "Field Technician II",
+      "groups": [
+        "region-na",
+        "family-pumps"
+      ]
+    },
+    {
+      "id": "u02",
+      "name": "Daniel Reyes",
+      "title": "Field Technician II",
+      "groups": [
+        "region-na",
+        "family-compressors",
+        "cert-hv"
+      ]
+    },
+    {
+      "id": "u03",
+      "name": "Priya Natarajan",
+      "title": "Field Technician I",
+      "groups": [
+        "region-na",
+        "family-compressors"
+      ]
+    },
+    {
+      "id": "u04",
+      "name": "Tom Becker",
+      "title": "Field Technician",
+      "groups": [
+        "region-na",
+        "family-pumps",
+        "family-conveyors"
+      ]
+    },
+    {
+      "id": "u05",
+      "name": "Sofie de Vries",
+      "title": "Senior Refrigeration Engineer",
+      "groups": [
+        "region-eu",
+        "family-chillers",
+        "cert-refrigerant"
+      ]
+    },
+    {
+      "id": "u06",
+      "name": "Jakub Nowak",
+      "title": "Field Technician",
+      "groups": [
+        "region-eu",
+        "family-chillers"
+      ]
+    },
+    {
+      "id": "u07",
+      "name": "Lena Hoffmann",
+      "title": "EU Field Team Lead",
+      "groups": [
+        "region-eu",
+        "family-compressors",
+        "cert-hv",
+        "role-lead"
+      ]
+    },
+    {
+      "id": "u08",
+      "name": "Kenji Watanabe",
+      "title": "Senior Field Engineer, NA Team Lead",
+      "groups": [
+        "region-na",
+        "family-pumps",
+        "family-compressors",
+        "cert-hv",
+        "cert-confined-space",
+        "role-lead"
+      ]
+    },
+    {
+      "id": "u09",
+      "name": "Aisha Rahman",
+      "title": "Field Technician",
+      "groups": [
+        "region-eu",
+        "family-pumps",
+        "family-conveyors"
+      ]
+    },
+    {
+      "id": "u10",
+      "name": "Marco Bianchi",
+      "title": "Field Technician",
+      "groups": [
+        "region-eu",
+        "family-compressors"
+      ]
+    },
+    {
+      "id": "u11",
+      "name": "Grace Liu",
+      "title": "Field Technician",
+      "groups": [
+        "region-na",
+        "family-chillers",
+        "cert-refrigerant"
+      ]
+    },
+    {
+      "id": "u12",
+      "name": "Olu Adeyemi",
+      "title": "Field Technician",
+      "groups": [
+        "region-na",
+        "family-conveyors"
+      ]
+    }
+  ]
+}

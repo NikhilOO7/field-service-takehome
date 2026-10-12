@@ -1,0 +1,237 @@
+# Curated metadata for the known corpus (spec M3). Keys are paths relative to the project root,
+# exactly as in permissions.json. Unknown files fall back to automatic metadata extraction.
+#
+# doc_type: oem_bulletin | oem_manual | controlled_procedure | legacy_wi | wiki | email | chat |
+#           cmms_export | case_export | asset_register | ops_review | record
+# status:   current | superseded | stale | unofficial
+
+corpus/bulletins/Halden_SB-2025-009_HCP-350_Casing_Torque.pdf:
+  doc_type: oem_bulletin
+  doc_number: SB-2025-009
+  revision: "0"
+  effective_date: 2025-06-18
+  models: [HCP-350, HCP-500]
+  language: [en, de]
+
+corpus/bulletins/Halden_SB-2025-018_Seal_Kit_Supersession.pdf:
+  doc_type: oem_bulletin
+  doc_number: SB-2025-018
+  revision: "0"
+  effective_date: 2025-11-04
+  models: [HCP-350]
+  language: [en, de]
+
+corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf:
+  doc_type: oem_bulletin
+  doc_number: SB-2025-014
+  revision: "0"
+  effective_date: 2025-09-02
+  models: [NK-600]
+
+corpus/bulletins/Vastra_SB-2026-003_VRS-110_Firmware_5.1.pdf:
+  doc_type: oem_bulletin
+  doc_number: SB-2026-003
+  revision: "0"
+  effective_date: 2026-01-27
+  models: [VRS-110]
+
+corpus/bulletins/Vastra_SB-2026-015_VRS-45_Coupling.pdf:
+  doc_type: oem_bulletin
+  doc_number: SB-2026-015
+  revision: "0"
+  effective_date: 2026-04-21
+  models: [VRS-45]
+
+corpus/chat/Teams_na-compressors_2026-07.json:
+  doc_type: chat
+  models: [VRS-45, VRS-75, VRS-110]
+
+corpus/confluence/Compressor-Troubleshooting-Playbook.html:
+  doc_type: wiki
+  effective_date: 2026-02-11
+  models: [VRS-45, VRS-75, VRS-110]
+
+corpus/confluence/EU-Chiller-Field-Guide.html:
+  doc_type: wiki
+  effective_date: 2025-10-14
+  models: [NK-300, NK-600]
+
+corpus/confluence/HCP-500-Maintenance-Quick-Reference.html:
+  doc_type: wiki
+  effective_date: 2023-04-26
+  models: [HCP-500]
+  status: stale
+  stale_reason: "Written from the 2023 training; HCP-500 IOM Rev B (2025-01-30) changed the strainer interval from 500 h to 750 h"
+
+corpus/confluence/Lessons-Learned-2025.html:
+  doc_type: wiki
+  effective_date: 2026-07-15
+
+corpus/confluence/Pump-Troubleshooting-Playbook.html:
+  doc_type: wiki
+  effective_date: 2026-09-08
+  models: [HCP-200, HCP-350, HCP-500]
+
+corpus/confluence/Rotterdam-Site-Notes.html:
+  doc_type: wiki
+  effective_date: 2026-03-02
+
+corpus/confluence/Tacoma-Site-Notes.html:
+  doc_type: wiki
+  effective_date: 2026-04-14
+
+corpus/confluence/VRS-Series-Oil-and-Filter-Quick-Reference.html:
+  doc_type: wiki
+  effective_date: 2024-03-21
+  models: [VRS-45, VRS-75, VRS-110]
+  status: stale
+  stale_reason: "Values from the March 2024 manuals; VRS-75 Service Manual Rev C (2026-04-20) changed the oil interval and filter part number"
+
+corpus/confluence/VRS-110-VFD-quick-reset-unofficial.html:
+  doc_type: wiki
+  effective_date: 2025-03-14
+  models: [VRS-110]
+  status: unofficial
+
+corpus/confluence/Work-Order-Writing-Guide.html:
+  doc_type: wiki
+  effective_date: 2026-01-21
+
+corpus/data/Q2_2026_Field_Service_Ops_Review.pdf:
+  doc_type: ops_review
+  effective_date: 2026-07-21
+
+corpus/data/fleet_register.csv:
+  doc_type: asset_register
+
+corpus/data/maintpro_history_NA_2023-2026.csv:
+  doc_type: cmms_export
+
+corpus/data/salesforce_cases_EU_2025-2026.json:
+  doc_type: case_export
+
+corpus/data/salesforce_cases_NA_2025-2026.json:
+  doc_type: case_export
+
+corpus/data/servio_export_EU_2023-2026.csv:
+  doc_type: cmms_export
+  language: [nl, en]
+
+corpus/email/FW_RTM-H-0007_repeat_alarm_customer_escalation.eml:
+  doc_type: email
+  effective_date: 2026-09-30
+  models: [NK-600]
+
+corpus/email/HCP-350_casing_leak_FRS-P-0031_Halden_thread.pdf:
+  doc_type: email
+  effective_date: 2026-06-12
+  models: [HCP-350]
+
+corpus/email/RE_BX-12_tracking_after_belt_change.eml:
+  doc_type: email
+  effective_date: 2026-05-11
+  models: [BX-12]
+
+corpus/manuals/Belton_BX-12_OM_Manual_RevB.pdf:
+  doc_type: oem_manual
+  doc_number: BC-OM-012
+  revision: B
+  effective_date: 2024-10-01
+  models: [BX-12]
+
+corpus/manuals/Halden_HCP-200_Betriebsanleitung_1998_scan.pdf:
+  doc_type: oem_manual
+  doc_number: HDN-BA-200
+  revision: A
+  effective_date: 1998-03-16
+  models: [HCP-200]
+  language: [de, en]
+
+corpus/manuals/Halden_HCP-350_IOM_RevD.pdf:
+  doc_type: oem_manual
+  doc_number: HDN-IOM-350
+  revision: D
+  effective_date: 2023-05-22
+  models: [HCP-350]
+
+corpus/manuals/Halden_HCP-500_IOM_RevB.pdf:
+  doc_type: oem_manual
+  doc_number: HDN-IOM-500
+  revision: B
+  effective_date: 2025-01-30
+  models: [HCP-500]
+
+corpus/manuals/NK600_manual_final_v2.pdf:
+  doc_type: oem_manual
+  doc_number: NK-SM-600-EN
+  revision: C
+  effective_date: 2025-03-05
+  models: [NK-600]
+
+corpus/manuals/Nordkyl_NK-600_Service_Manual_RevC.pdf:
+  doc_type: oem_manual
+  doc_number: NK-SM-600-EN
+  revision: C
+  effective_date: 2025-03-05
+  models: [NK-600]
+  canonical: true            # preferred copy when byte-identical duplicates exist
+
+corpus/manuals/Vastra_VRS-110_Service_Manual_RevA.pdf:
+  doc_type: oem_manual
+  doc_number: "9821 0110 01"
+  revision: A
+  effective_date: 2023-11-14
+  models: [VRS-110]
+
+corpus/manuals/Vastra_VRS-75_Service_Manual_RevB_2024.pdf:
+  doc_type: oem_manual
+  doc_number: "9821 0075 01"
+  revision: B
+  effective_date: 2024-02-12
+  models: [VRS-75]
+  status: superseded
+  superseded_by: corpus/manuals/Vastra_VRS-75_Service_Manual_RevC_2026.pdf
+
+corpus/manuals/Vastra_VRS-75_Service_Manual_RevC_2026.pdf:
+  doc_type: oem_manual
+  doc_number: "9821 0075 01"
+  revision: C
+  effective_date: 2026-04-20
+  models: [VRS-75]
+
+corpus/sharepoint/CS-PROC-03_Confined_Space_Entry_Pump_Pits.docx:
+  doc_type: controlled_procedure
+  doc_number: CS-PROC-03
+  models: [HCP-200]
+
+corpus/sharepoint/FS-STD-001_Field_Service_Standard.docx:
+  doc_type: controlled_procedure
+  doc_number: FS-STD-001
+
+corpus/sharepoint/HV-PROC-02_Electrical_Isolation_Verification.docx:
+  doc_type: controlled_procedure
+  doc_number: HV-PROC-02
+
+corpus/sharepoint/HV-PROC-07_VRS-110_VFD_Fault_Reset.docx:
+  doc_type: controlled_procedure
+  doc_number: HV-PROC-07
+  models: [VRS-110]
+
+corpus/sharepoint/Inspection_Checklist_Q3_FINAL.docx:
+  doc_type: record
+
+corpus/sharepoint/KT-WI-14_Low_Suction_Pressure_Chillers_EN.docx:
+  doc_type: legacy_wi
+  doc_number: KT-WI-14
+  models: [NK-300, NK-600]
+  language: [en, nl]
+  conflicts_with: [corpus/sharepoint/SOP-020_Chiller_Leak_Test_and_Recharge.docx]
+
+corpus/sharepoint/SOP-020_Chiller_Leak_Test_and_Recharge.docx:
+  doc_type: controlled_procedure
+  doc_number: SOP-020
+  models: [NK-300, NK-600]
+
+corpus/sharepoint/Technician_Certification_Matrix_2026.docx:
+  doc_type: record
+  doc_number: FS-REC-002

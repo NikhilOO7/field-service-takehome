@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Field Service : HCP-500 Maintenance Quick Reference</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first"><span><a href="index.html">Field Service</a></span></li>
+                            <li><span><a href="Field-Service-Home_98306.html">Field Service Home</a></span></li>
+                            <li><span><a href="Equipment_98311.html">Equipment</a></span></li>
+                            <li><span><a href="Pumps-Halden-HCP_98320.html">Pumps (Halden HCP)</a></span></li>
+                        </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Field Service : HCP-500 Maintenance Quick Reference
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        Created by <span class='author'> Tom Becker</span>, last modified on Apr 26, 2023
+                    </div>
+                    <div id="main-content" class="wiki-content group">
+<p>My notes from the Halden HCP-500 online training (March 2023), tidied up. The first 500 in our fleet goes in at Tacoma in July (TAC-P-0044) and we're helping with commissioning, so I wanted the PM tasks somewhere everyone can find them. This is the short version. The manual (HDN-IOM-500) has the details.</p>
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>The HCP-500 is a split-case pump, not end-suction like the 350. Two bearing housings, two mechanical seals, top half of the casing lifts off. Don't plan a seal job on a 500 like a 350 job, it's twice the work.</p></div></div>
+<h2 id="HCP500MaintenanceQuickReference-PMintervals">PM intervals</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Task</th>
+<th class="confluenceTh">Interval</th>
+<th class="confluenceTh">Notes</th>
+</tr>
+<tr>
+<td class="confluenceTd">Grease bearings (pump and motor)</td>
+<td class="confluenceTd">2,000 h</td>
+<td class="confluenceTd">25 g per bearing, lithium complex NLGI 2. With the pump running, relief plug open. Don't overdo it</td>
+</tr>
+<tr>
+<td class="confluenceTd">Clean suction strainer</td>
+<td class="confluenceTd">Every 500 h</td>
+<td class="confluenceTd">Or when the strainer dP alarm comes up. New cover gasket each time (18-1121). Basket is 18-1120</td>
+</tr>
+<tr>
+<td class="confluenceTd">Vibration readings, both bearings</td>
+<td class="confluenceTd">1,000 h</td>
+<td class="confluenceTd">Write them in MaintPro so we can trend them</td>
+</tr>
+<tr>
+<td class="confluenceTd">Inspect mechanical seals for leakage</td>
+<td class="confluenceTd">4,000 h</td>
+<td class="confluenceTd">Both sides. Kit is 18-0502, you need two</td>
+</tr>
+<tr>
+<td class="confluenceTd">Check coupling alignment</td>
+<td class="confluenceTd">4,000 h or 12 months</td>
+<td class="confluenceTd">Laser kit from Fresno</td>
+</tr>
+<tr>
+<td class="confluenceTd">Measure wear ring clearance</td>
+<td class="confluenceTd">8,000 h</td>
+<td class="confluenceTd">Limit in the manual, section 8.5</td>
+</tr>
+<tr>
+<td class="confluenceTd">Check foundation bolt torque</td>
+<td class="confluenceTd">8,000 h</td>
+<td class="confluenceTd"></td>
+</tr>
+<tr>
+<td class="confluenceTd">Calibrate PT-1 / PT-2</td>
+<td class="confluenceTd">24 months</td>
+<td class="confluenceTd">Transmitters are 19-0301</td>
+</tr>
+</tbody></table></div>
+<h2 id="HCP500MaintenanceQuickReference-Strainer">Strainer</h2>
+<p>The Halden trainer said new installations load the strainer a lot faster in the first weeks because of debris left in new pipework, welding beads, gasket bits and so on. For TAC-P-0044, check the strainer dP daily for the first two weeks and clean as needed, then go to the normal interval.</p>
+<p>Cleaning: stop and lock out the pump, close both valves, drain the strainer through its drain, take the cover off, lift out the basket, clean with water and a soft brush, check the mesh, refit with a new cover gasket, open the valves, vent, restart. Check the dP has dropped back.</p>
+<h2 id="HCP500MaintenanceQuickReference-Vibration">Vibration</h2>
+<p>Under 2.8 mm/s is good. 2.8 to 7.1 is OK but trend it. Over 7.1 the controller will alarm (P-03) and you need to do something.</p>
+<h2 id="HCP500MaintenanceQuickReference-Thingsthetrainerstressed">Things the trainer stressed</h2>
+<ul><li>Suction isolation valve fully open in operation. No throttling on the suction side, ever.</li><li>Never run against a closed discharge valve for more than 30 seconds.</li><li>Casing bolts in a cross pattern, two passes. Torque is in the manual. Don't overtighten, the casing gasket seat can crack.</li><li>O-rings on the seals: water or glycerine only.</li></ul>
+                    </div>
+
+
+                    <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments (1)</h2>
+                        </div>
+                        <table border="0" width="100%">
+                        <tbody>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316402"></a>
+                <font class="smallfont"><p>Used this for TAC-P-0044 commissioning. Strainer was full of welding slag on day 3, the trainer was right. Thanks Tom.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Kenji Watanabe at Jul 19, 2023 18:20
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>             </div>
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Oct 02, 2026 09:14</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

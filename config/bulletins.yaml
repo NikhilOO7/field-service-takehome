@@ -1,0 +1,89 @@
+# Curated bulletin applicability (spec M6). Serial ranges are compared numerically against the fleet
+# register in code; the LLM never decides whether a bulletin applies.
+# serial_to: null = open-ended. region: null = all regions. firmware_lt: applies if installed firmware < value.
+
+SB-2025-009:
+  path: corpus/bulletins/Halden_SB-2025-009_HCP-350_Casing_Torque.pdf
+  oem: Halden
+  category: safety
+  issue_date: 2025-06-18
+  claim_code: HW-25-009
+  summary: "HCP-350 from serial HCP350-240001 has a revised casing cover; casing bolts 38 N-m (cross pattern, two passes) instead of 45 N-m in IOM Rev D."
+  applies:
+    - model: HCP-350
+      serial_prefix: HCP350
+      serial_from: 240001
+      serial_to: null
+      effect: "Revised casing (V2): casing bolt torque 38 N-m, cross pattern, two passes (about 20 N-m then 38 N-m). Supersedes 45 N-m in HDN-IOM-350 Rev D sections 4.3, 8.4, 8.7."
+      caveat: "Pumps before HCP350-240001 fitted with a V2 spare cover (sold after January 2024) are also affected: check the 'V2' cast mark."
+    - model: HCP-350
+      serial_prefix: HCP350
+      serial_from: 210001
+      serial_to: 239999
+      effect: "Original casing (V1): casing bolt torque 45 N-m per IOM Rev D (unchanged), unless a V2 spare cover has been fitted."
+      caveat: "Check for the 'V2' cast mark next to the drain plug boss; a V2 cover means 38 N-m."
+    - model: HCP-500
+      serial_prefix: HCP500
+      serial_from: 250001
+      serial_to: null
+      effect: "HCP-500 from HCP500-250001 also uses the revised casing; torque values are in Halden torque chart HDN-TC-2025, which is not in the document library."
+      caveat: "Do not assume the 52 N-m in HDN-IOM-500 Rev B applies; ask Halden technical support for HDN-TC-2025."
+
+SB-2025-018:
+  path: corpus/bulletins/Halden_SB-2025-018_Seal_Kit_Supersession.pdf
+  oem: Halden
+  category: information
+  issue_date: 2025-11-04
+  summary: "HCP-350 seal kit 18-0355 superseded by 18-0356 (SiC/SiC faces); interchangeable."
+  applies:
+    - model: HCP-350
+      serial_prefix: HCP350
+      serial_from: 210001
+      serial_to: null
+      effect: "Use seal kit 18-0356 (replaces 18-0355; interchangeable, old stock may be used up)."
+
+SB-2025-014:
+  path: corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf
+  oem: Nordkyl
+  category: campaign
+  issue_date: 2025-09-02
+  campaign_code: NK-C25-14
+  claim_code: NK-C25-14
+  summary: "NK-600 EXV-2 rev 2 can stick partly closed after idle periods, giving L-03 with a normal charge. Check EXV position first; replace with 63-1180 rev 3 on both circuits."
+  applies:
+    - model: NK-600
+      serial_prefix: NK600
+      serial_from: 220001
+      serial_to: 231999
+      region: EU
+      effect: "In campaign NK-C25-14: check EXV position before leak testing or adding refrigerant; if position stays below 15% while the request is higher, the valve is stuck. Replace EXV-2 on both circuits with 63-1180 rev 3 and filter drier cores 63-0410 (x2)."
+      caveat: "Units outside the EU in this serial range have a different valve supplier and are not affected."
+
+SB-2026-003:
+  path: corpus/bulletins/Vastra_SB-2026-003_VRS-110_Firmware_5.1.pdf
+  oem: Vastra
+  category: reliability
+  issue_date: 2026-01-27
+  claim_code: VK-26003-FW
+  summary: "VRS-110 controller firmware 5.1.0. Below 5.1 a failing TS-2 reports as E-14; 5.1 adds E-15 'TS-2 sensor fault'."
+  applies:
+    - model: VRS-110
+      serial_prefix: VRS110
+      serial_from: 210001
+      serial_to: null
+      firmware_lt: "5.1"
+      effect: "Update controller firmware to 5.1.0 (X10 cable + VastraLink 3.4). On firmware below 5.1 a failing TS-2 is reported as E-14; with repeated E-14, check TS-2 against a contact thermometer and update at the same visit."
+
+SB-2026-015:
+  path: corpus/bulletins/Vastra_SB-2026-015_VRS-45_Coupling.pdf
+  oem: Vastra
+  category: reliability
+  issue_date: 2026-04-21
+  summary: "VRS-45 drive coupling element 41-5031 can harden and crack early at high ambient. File is damaged: only page 1 is readable."
+  applies:
+    - model: VRS-45
+      serial_prefix: VRS45
+      serial_from: 230001
+      serial_to: 251399
+      effect: "Inspect coupling element 41-5031 at the next scheduled service; replace if needed."
+      caveat: "The bulletin file is damaged; page 2 (remaining instructions) could not be read. Ask Vastra for a new copy."

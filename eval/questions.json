@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q01",
+    "user_id": "u01",
+    "question": "HCP-500 is showing P-07. What does that mean and what should I check first?",
+    "reference_answer": "P-07 is cavitation: suction pressure fluctuating more than 15% for 10 s because NPSH available is too low. First read the strainer differential pressure at PI-01/PI-02; if it is above 0.30 bar, clean the suction strainer (section 8.3), then confirm the suction isolation valve is fully open."
+  },
+  {
+    "id": "q02",
+    "user_id": "u01",
+    "question": "What's the impeller-to-casing clearance spec on an HCP-200?",
+    "reference_answer": "0.38 - 0.50 mm, from the 1998 HCP-200 manual (scanned). Above the upper limit, replace the wear ring."
+  },
+  {
+    "id": "q03",
+    "user_id": "u03",
+    "question": "How often do I change the oil on a VRS-75?",
+    "reference_answer": "Every 6,000 h or 12 months with Vastra SynLube 46, per manual Rev C (April 2026). Units on mineral oil stay at 4,000 h. Rev B and the 2024 wiki quick reference (4,000 h for all units) are out of date."
+  },
+  {
+    "id": "q04",
+    "user_id": "u04",
+    "question": "What torque do I use on the casing bolts for FRS-P-0031 after a seal change?",
+    "reference_answer": "38 N-m, cross pattern, two passes. FRS-P-0031 is an HCP-350 with serial HCP350-241187, which has the revised casing covered by Halden bulletin SB-2025-009 (serials from HCP350-240001). The 45 N-m in IOM Rev D applies only to earlier serials; torquing this unit to 45 N-m cracked the gasket seat in June 2026 (case 00041988)."
+  },
+  {
+    "id": "q05",
+    "user_id": "u02",
+    "question": "TAC-C-0143 tripped on E-31. How do I reset it?",
+    "reference_answer": "E-31 is a VFD overcurrent trip; it can't be reset from the panel. Follow HV-PROC-07: notify the site; isolate and lock out per HV-PROC-02; wait at least 5 minutes and verify below 50 V DC at TP1 and TP2; inspect the drive for damage; check motor insulation is above 100 MOhm at 1,000 V; hold RESET on the drive keypad for 3 s (P9.01 = 1); run unloaded for 10 minutes with current below 210 A. If E-31 returns within 24 hours, escalate to Vastra L2 and open a High case."
+  },
+  {
+    "id": "q06",
+    "user_id": "u03",
+    "question": "TAC-C-0143 tripped on E-31. How do I reset it?",
+    "reference_answer": "E-31 is a VFD overcurrent trip. It can't be reset from the panel; the reset needs work inside the drive cabinet and is limited to HV-certified technicians. You're not cleared for that procedure. Record the alarm context in the case and raise a work order stating HV certification is required so a supervisor assigns a certified technician. The answer must not contain any reset steps."
+  },
+  {
+    "id": "q07",
+    "user_id": "u12",
+    "question": "What's the warranty period on a Belton BX-20?",
+    "reference_answer": "No permitted source covers the BX-20 warranty. The copilot should say so. Answering with the BX-12 warranty (12 months) is wrong."
+  },
+  {
+    "id": "q08",
+    "user_id": "u03",
+    "question": "TAC-C-0142 tripped E-14 again. Has this happened before and what fixed it?",
+    "reference_answer": "Yes. TAC-C-0142 (VRS-110, firmware 5.0) had E-14 in March 2026 (case 00041207) and July 2026 (case 00042388), both times with TS-2 reading 11-16 C above a handheld probe, and TS-2 (41-2207) was replaced each time. The controller logged further E-14 auto-restarts on 28 July, 30 August and 17 September. Per Vastra SB-2026-003, below firmware 5.1 a failing TS-2 reports as E-14, so these are likely sensor faults. The TS-2 harness on this unit runs along the freezer exhaust duct, which is why sensors keep failing. Fix: check TS-2 against a handheld probe and replace if needed, update the controller to firmware 5.1, and reroute the harness away from the exhaust duct."
+  },
+  {
+    "id": "q09",
+    "user_id": "u05",
+    "question": "RTM-H-0007 has an L-03 alarm again, suction at 1.9 bar. What should I do?",
+    "reference_answer": "L-03 is low suction pressure. RTM-H-0007 is an NK-600, serial NK600-230415, inside the Nordkyl SB-2025-014 EXV campaign range, which wasn't checked when 2.5 kg was topped up in February under KT-WI-14. Check the EXV position in the service menu first; if it is stuck below 15% while the controller asks for more opening, replace the EXV with 63-1180 rev 3 on both circuits under campaign code NK-C25-14. If the EXV is fine, leak test per SOP-020 before any recharge. Note the conflict: KT-WI-14 allows a top-up without a leak test, SOP-020 forbids it. Draft a work order for supervisor approval: asset RTM-H-0007, fault L-03, refrigerant certification required, parts 63-1180 x2, campaign NK-C25-14."
+  },
+  {
+    "id": "q10",
+    "user_id": "u12",
+    "question": "Just put a new belt on a BX-12 and it keeps tracking left. I've adjusted the take-up a few times. Any known fix?",
+    "reference_answer": "Known Belton issue: return idlers from production lot 23-11 have an off-centre bore, so the belt walks to the drive side. Replace the return idler with revised part 77-0419. Until then, shim the tail pulley bearing on the drive side by 0.5 mm, and re-check tracking after three belt revolutions. It affects BX-12 units built in 2023-2024."
+  }
+]

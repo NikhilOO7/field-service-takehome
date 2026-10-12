@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Field Service : Compressor Troubleshooting Playbook</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first"><span><a href="index.html">Field Service</a></span></li>
+                            <li><span><a href="Field-Service-Home_98306.html">Field Service Home</a></span></li>
+                            <li><span><a href="Equipment_98311.html">Equipment</a></span></li>
+                            <li><span><a href="Compressors-Vastra-VRS_98322.html">Compressors (Vastra VRS)</a></span></li>
+                        </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Field Service : Compressor Troubleshooting Playbook
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        Created by <span class='author'> Kenji Watanabe</span>, last modified on Feb 11, 2026
+                    </div>
+                    <div id="main-content" class="wiki-content group">
+<p><style type="text/css">/*<![CDATA[*/div.rbtoc1759392840211 {padding: 0px;} div.rbtoc1759392840211 ul {list-style: disc;margin-left: 0px;} div.rbtoc1759392840211 li {margin-left: 0px;padding-left: 0px;} /*]]>*/</style></p><div class="toc-macro rbtoc1759392840211"><ul class="toc-indentation"><li><a href="#CompressorTroubleshootingPlaybook-Whythispageexists">Why this page exists</a></li><li><a href="#CompressorTroubleshootingPlaybook-Beforeyoutouchanything">Before you touch anything</a></li><li><a href="#CompressorTroubleshootingPlaybook-Quicktable">Quick table</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-02Supplyfault">E-02 Supply fault</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-05Mainmotoroverload">E-05 Main motor overload</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-07Oilfilterdifferentialhigh">E-07 Oil filter differential high</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-11Deliverypressurehigh">E-11 Delivery pressure high</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-14Dischargetemperaturehigh">E-14 Discharge temperature high</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-18Airfilterrestriction">E-18 Air filter restriction</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-20Motortemperature">E-20 Motor temperature</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-31VFDovercurrentVRS-110only">E-31 VFD overcurrent (VRS-110 only)</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-33DCbusovervoltageVRS-110only">E-33 DC bus overvoltage (VRS-110 only)</a></li><li><a href="#CompressorTroubleshootingPlaybook-E-35VFDheatsinktemperatureVRS-110only">E-35 VFD heatsink temperature (VRS-110 only)</a></li><li><a href="#CompressorTroubleshootingPlaybook-Thingsthatlooklikefaultsbutarent">Things that look like faults but aren't</a></li><li><a href="#CompressorTroubleshootingPlaybook-CallingVastra">Calling Vastra</a></li><li><a href="#CompressorTroubleshootingPlaybook-Tools">Tools</a></li><li><a href="#CompressorTroubleshootingPlaybook-Relatedpages">Related pages</a></li></ul></div>
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">Read this first</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>This is field advice, not a procedure. It covers the Vastra VRS-45, VRS-75 and VRS-110 units we look after in NA, and since 2025 the same models in the EU. Where a controlled procedure exists (HV-PROC, SOP), the procedure wins and this page only tells you when to reach for it. If something here disagrees with the service manual for your model, the manual wins, and please tell me so I can fix the page.</p><p><a href="/display/~k.watanabe" class="confluence-userlink user-mention" data-username="k.watanabe" data-linked-resource-type="userinfo">Kenji Watanabe</a></p></div></div>
+<h2 id="CompressorTroubleshootingPlaybook-Whythispageexists">Why this page exists</h2>
+<p>The Vastra manuals tell you what each code means. They don't tell you what it usually turns out to be at our sites, and they don't tell you which checks we've learned to do first because we got burned skipping them. That's what this page is for. Most of it comes from Tacoma and Fresno since 2019, plus a lot of phone calls with Anders Holm at Vastra L2.</p>
+<p>It is not a complete code list. If a code isn't here, it's either rare for us or the manual explains it fine. Use the fault list in the service manual for your model, and check the manual revision while you're in there. Vastra changes things between revisions without making much noise about it, and the copy in your van might be two revisions old.</p>
+<p>What this page deliberately doesn't cover: anything inside the VFD cabinet on the 110s (that's HV work under the HV procedures), oil and filter intervals (see the quick reference linked at the bottom), and airend replacement, which we don't do in the field.</p>
+<h2 id="CompressorTroubleshootingPlaybook-Beforeyoutouchanything">Before you touch anything</h2>
+<p>Every compressor call, whatever the code, starts the same way. I know it's tempting to clear the fault and see if it comes back. Don't, or at least not before you've done this:</p>
+<ol><li><strong>Read the event log, not just the screen.</strong> The screen shows the last code. The log (Service menu, Event log, needs the level 2 code from the site binder) shows the sequence, and the sequence is usually the answer. An E-14 that follows two hours of high delivery pressure warnings is a different problem from an E-14 out of nowhere at 2 a.m. on a cool night.</li><li><strong>Write down the conditions.</strong> Load, pressure setpoint, ambient temperature <em>at the unit</em> (not the weather app), and what the site was doing when it tripped. Ask the operator. They'll know if the dock doors were open all night or if the line was down for a changeover.</li><li><strong>Check the firmware version</strong> on the controller info screen and put it in the case. On the 110s this matters more than people think. See E-14.</li><li><strong>Look up the history.</strong> MaintPro for NA, the Servio export for the EU (Salesforce only has the EU from January 2025 onwards). Last PM, last oil change, anything replaced in the last 12 months. If a part was swapped recently and the same code is back, that's your biggest clue.</li><li><strong>Photograph the controller screen and the log page.</strong> Thirty seconds. It's the first thing Vastra asks for, and it settles arguments later.</li></ol>
+<p>Then decide whether you're fixing it or just restarting it, and be honest in the case about which one you did. A restart with no cause written down is how we end up at the same unit three times in a month. FS-STD-001 makes three trips in 24 hours a High priority case anyway, so if you don't find it now you'll be back tonight.</p>
+<h2 id="CompressorTroubleshootingPlaybook-Quicktable">Quick table</h2><p>One line per code we actually see. Details further down.</p>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Code</th>
+<th class="confluenceTh">Controller text</th>
+<th class="confluenceTh">What it usually is for us</th>
+<th class="confluenceTh">Check first</th>
+<th class="confluenceTh">Who</th>
+</tr>
+<tr>
+<td class="confluenceTd">E-02</td>
+<td class="confluenceTd">Supply fault</td>
+<td class="confluenceTd">Site power. Grid dips, a breaker upstream, phase loss after site electrical work</td>
+<td class="confluenceTd">Ask the site about power events. Incoming supply indicator on the panel</td>
+<td class="confluenceTd">Anyone to diagnose. Electrical repair is the site electrician or HV</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-05</td>
+<td class="confluenceTd">Main motor overload</td>
+<td class="confluenceTd">Fouled cooler making the unit work harder, or someone raised the pressure setpoint</td>
+<td class="confluenceTd">Setpoint against the commissioning sheet, then the cooler</td>
+<td class="confluenceTd">Anyone</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-07</td>
+<td class="confluenceTd">Oil filter differential high</td>
+<td class="confluenceTd">Overdue filter. Sometimes a cold start with cold oil</td>
+<td class="confluenceTd">Hours since the last filter change. Was the room cold overnight?</td>
+<td class="confluenceTd">Anyone</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-11</td>
+<td class="confluenceTd">Delivery pressure high</td>
+<td class="confluenceTd">Downstream valve closed, blocked dryer. Fresno changeovers</td>
+<td class="confluenceTd">Walk the line to the receiver</td>
+<td class="confluenceTd">Anyone</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-14</td>
+<td class="confluenceTd">Discharge temperature high</td>
+<td class="confluenceTd">Fouled cooler, low oil, hot room, or the sensor. See below, and on the 110s check firmware first</td>
+<td class="confluenceTd">Firmware, then TS-2 against a handheld, then cooler and oil</td>
+<td class="confluenceTd">Anyone (not the VFD side)</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-18</td>
+<td class="confluenceTd">Air filter restriction</td>
+<td class="confluenceTd">Dirty element. Cold store dust is worse than you'd think</td>
+<td class="confluenceTd">Air filter element</td>
+<td class="confluenceTd">Anyone</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-20</td>
+<td class="confluenceTd">Motor temperature (PTC)</td>
+<td class="confluenceTd">Motor fan cowl blocked, or too many starts per hour</td>
+<td class="confluenceTd">Fan cowl, starts per hour in the log</td>
+<td class="confluenceTd">Anyone</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-31</td>
+<td class="confluenceTd">VFD overcurrent (110 only)</td>
+<td class="confluenceTd">Grid dip, motor or cable fault, occasionally a tight airend</td>
+<td class="confluenceTd">Read the log. Do not open the cabinet</td>
+<td class="confluenceTd">HV-certified only</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-33</td>
+<td class="confluenceTd">DC bus overvoltage (110 only)</td>
+<td class="confluenceTd">Grid event, often in the same minute as an E-31</td>
+<td class="confluenceTd">Log, site power events</td>
+<td class="confluenceTd">HV-certified only</td>
+</tr>
+<tr>
+<td class="confluenceTd">E-35</td>
+<td class="confluenceTd">VFD heatsink temperature (110 only)</td>
+<td class="confluenceTd">Clogged door filter mats, dead cabinet fan</td>
+<td class="confluenceTd">Door filter mats, from the outside</td>
+<td class="confluenceTd">Mats: anyone. Inside the cabinet: HV only</td>
+</tr>
+</tbody></table></div>
+<p>The VRS-45 uses the same numbers up to E-22 but has no VFD codes, and the older 45s don't report E-18 at all. If your unit shows a code that isn't in its own manual, write it down exactly and call me before you do anything clever.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-02Supplyfault">E-02 Supply fault</h2>
+<p>Nine times out of ten this is the site, not the compressor. Tacoma gets grid dips in winter storms, and Fresno had a run of them in 2024 when the utility was working on the substation down the road. The controller is sensitive on purpose.</p>
+<p>Ask the site whether anything else tripped at the same time (lights, conveyors, the ammonia plant at TAC). If it did, it's power, and the case note should say so. If the compressor tripped alone and keeps doing it, check the incoming supply indicator and the phase sequence relay on the panel, and get a site electrician to look at the supply. We don't open the incoming supply terminals without isolation and the right person.</p>
+<p>On a 110, an E-02 can come together with E-31 or E-33. If you see a VFD code in the same minute, the VFD code is the one that matters, and that's HV work.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-05Mainmotoroverload">E-05 Main motor overload</h2>
+<p>The motor is working harder than it should. The two usual reasons are boring: the cooler is fouled and the unit runs hotter and harder, or somebody at the site turned the pressure setpoint up because "the air was weak at the end of the line". The real fix for weak air at the end of the line is usually a leak or an undersized pipe, not two more bar from the compressor.</p>
+<p>Check the setpoint against the commissioning sheet in the site binder. If someone changed it, put it back and tell the site contact why, politely. Then look at the cooler (see the cooler notes under E-14, same story).</p>
+<p>On the 110 the VFD protects the motor before the motor overload trips, so you'll rarely see E-05 there. You'll see an E-3x instead.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-07Oilfilterdifferentialhigh">E-07 Oil filter differential high</h2>
+<p>First question: how many hours since the last oil filter change? If it's due or overdue, change it and move on. If it was changed recently, look at the timing of the trip. A cold start in a cold room (Tacoma compressor room in January, or the GDN plant room) gives a high differential for the first few minutes because the oil is thick. If the log shows the trip within minutes of a cold start and never during running, it's the cold, not the filter.</p>
+<p>Use the right filter for the model. The VRS-75 filter is now boxed as 41-1475. Older boxes say 41-1470. It's the same filter, don't send the new boxes back. The 110 uses 41-1480.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-11Deliverypressurehigh">E-11 Delivery pressure high</h2>
+<p>The compressor is pushing against something closed. At Fresno this is almost always the bottling line: on changeovers they close the header valve and nobody tells the compressor (thanks to Daniel for chasing this one down on FRS-C-0101). Elsewhere it's a dryer that's blocked or bypassed wrong, or a receiver isolation valve someone closed during their own maintenance.</p>
+<p>Walk the line from the compressor to the receiver and on to the first user. Don't raise the alarm setpoint to make it go away. The setpoint is there to protect the separator vessel.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-14Dischargetemperaturehigh">E-14 Discharge temperature high</h2>
+<p>This is the one that gets us. It's our most common compressor code by a distance, and it has more possible causes than anything else on the list. The controller trips the unit when the discharge temperature goes above 110 C. Usually the temperature really was that high. Sometimes it wasn't.</p>
+<h3 id="CompressorTroubleshootingPlaybook-Checkthefirmwarefirstonthe110s">Check the firmware first on the 110s</h3>
+<div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Firmware matters for E-14 on the 110s.</strong> Before you replace anything on a VRS-110 with an E-14, check the firmware version on the info screen and read the bulletin: Vastra SB-2026-003 (January 2026), on SharePoint under OEM bulletins, Vastra. I'm not summarising it here on purpose, because people skim this page and get it half right. Read the bulletin, and put the firmware version in the case.</p><p>Firmware updates need the X10 service cable and a laptop with ServiceTool. See Tools below.</p></div></div>
+<h3 id="CompressorTroubleshootingPlaybook-TheorderIcheckthingsin">The order I check things in</h3>
+<ol><li>Firmware (110s only, see the box above).</li><li>Is the reading real? Compare the controller's TS-2 reading with a handheld.</li><li>Cooler condition.</li><li>Oil level and oil type.</li><li>Thermostatic valve.</li><li>The room: ventilation, ambient, what's blowing on the unit.</li></ol>
+<h3 id="CompressorTroubleshootingPlaybook-IsthereadingrealTS-2check">Is the reading real (TS-2 check)</h3>
+<p>With the unit running loaded and settled, read the discharge temperature on the controller (that's TS-2) and measure the discharge flange with a calibrated contact thermometer. Use a contact probe, not the IR gun. The paint on the flange throws the IR reading off by several degrees and you'll fool yourself. If the two readings are more than 8 C apart, the sensor is suspect. The check is written up in the E-14 section of the VRS-110 manual and it works the same way on the 45 and the 75.</p>
+<p>TS-2 is part 41-2207, same part across the whole VRS series. Keep one in the van.</p>
+<p>One rule of mine: if you're replacing TS-2 on the same unit for the second time in a year, stop swapping sensors and find out why. Sensors don't die in pairs on their own. Something on that unit is killing them, or something is making a good sensor look bad. Write it up and call me.</p>
+<h3 id="CompressorTroubleshootingPlaybook-Cooler">Cooler</h3>
+<p>The cooler is the cause more often than everything else on this list put together. Each site fouls it differently:</p>
+<ul><li><strong>Fresno:</strong> sugar and syrup mist from the bottling hall gets into the cooling air and coats the fins with a sticky film. Compressed air alone just moves it around. Use the foaming coil cleaner from the van, let it work, rinse, then air.</li><li><strong>Tacoma:</strong> fluff and dust from the cold store evaporator fans and the dock. Blow from the fan side outwards, against the normal airflow. Blowing from the outside packs the dirt deeper into the core.</li><li><strong>EU sites:</strong> Lena says Rotterdam is mostly salt and fine sand on the roof intake side, and Gdansk is flour dust from the processing hall. Same rule, clean against the airflow.</li></ul>
+<p>A cooler that looks clean on the outside face can still be blocked in the middle. Shine a torch through it. If you can't see light, it isn't clean.</p>
+<h3 id="CompressorTroubleshootingPlaybook-Oil">Oil</h3>
+<p>Check the level at standstill after the unit has been stopped for at least five minutes, in the sight glass on the separator vessel. Low oil means less heat carried away and a hotter discharge. If the level is low, find out where it went: a leak at the oil filter housing, carryover into the air system (check the condensate), or someone drained it during a PM and didn't fill it properly.</p>
+<p>Don't mix oil types. Most of our units run Vastra SynLube 46 (41-0046), but FRS-C-0104 (VRS-45) is still on mineral oil. Check the fleet register before you top up anything, and don't top up 0104 with SynLube from the van.</p>
+<h3 id="CompressorTroubleshootingPlaybook-Thermostaticvalve">Thermostatic valve</h3>
+<p>The thermostatic valve sends oil through the cooler once it's warm. If it sticks in bypass, the oil never gets cooled and the discharge temperature climbs steadily with load. Feel the oil lines either side of the cooler after the unit has warmed up: if the line into the cooler is hot and the line out is the same temperature as the room, the oil isn't flowing through. The valve element is in the manual's spare parts list. We don't keep it on the van, order through stores.</p>
+<h3 id="CompressorTroubleshootingPlaybook-Theroom">The room</h3>
+<p>A compressor room that's more than 10 C warmer than outside isn't being ventilated properly. Check the room exhaust fan runs and the louvres open. In summer at Tacoma and Fresno, ambient at the unit is often well above the outdoor temperature, and a unit that's fine in April trips in July. Write the ambient at the unit in the case. It helps the next person.</p>
+<p>Also look at what's around the unit. Anything hot nearby, recirculating cooling air because a door was left open the wrong way, cardboard stacked against the intake. You'd be surprised.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-18Airfilterrestriction">E-18 Air filter restriction</h2><p>Dirty air filter. Change it (41-1510 on the 45 and 75, 41-1512 on the 110). At Tacoma the filters load up much faster than the manual interval suggests, so if a unit there is on the standard interval and still tripping E-18, shorten the interval and note it on the asset in MaintPro so the PM schedule gets fixed and not just the filter.</p><p>If the filter is clean and you still get E-18, check the restriction indicator hose for a kink or a crack.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-20Motortemperature">E-20 Motor temperature</h2><p>The PTC thermistors in the motor windings tripped. Look at the motor fan cowl first. Cold store fluff and cardboard dust collect on the cowl grille and starve the motor of air. Then look at starts per hour in the log. A fixed-speed unit (45 or 75) that's oversized for the demand will short-cycle, and repeated starts heat the motor. That one's a conversation with the site about demand, or a pressure band change, not a part.</p><p>Let the motor cool down before you reset. If it trips again within an hour with a clean cowl and normal starts, call me.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-31VFDovercurrentVRS-110only">E-31 VFD overcurrent (VRS-110 only)</h2>
+<div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>HV-certified technicians only.</strong> The panel reset is disabled for E-31 on purpose. The reset is done under HV-PROC-07, which you can open on SharePoint if you hold the HV certification. If you don't: do not open the VFD cabinet, not even to have a look. The DC bus stays charged after the unit is isolated.</p></div></div>
+<p>E-31 means the drive saw more current than it allows. Common reasons, in the order we see them: a grid dip or power event, a motor or motor cable fault, and occasionally an airend that's getting tight. The drive can't tell you which. The log and the conditions can.</p>
+<p><strong>If you're not HV-certified and you're first on site, here's what you can do</strong>, and it genuinely saves the HV tech half an hour:</p>
+<ul><li>Read the event log and write down every code in the hour before the trip, with times.</li><li>Note what the unit was doing: load, ambient, whether it was starting or running.</li><li>Ask the site whether there was a power event. Did anything else trip? Did lights flicker?</li><li>Photograph the controller screen and the log.</li><li>Put all of it in the case, then raise the work order with <em>Certification required: HV</em> (see the Work Order Writing Guide). The supervisor assigns. Don't call around to find someone yourself.</li><li>Tell the site contact the unit is out until an HV tech arrives, and roughly when. Don't promise a time you don't control.</li></ul>
+<p>Example of how it should go: TAC-C-0143 tripped E-31 at 04:10 on November 20, 2025 after a grid dip that also tripped half the dock lighting. Daniel came in, did the reset under HV-PROC-07, the insulation test was clean and it's been fine since. Case 00040311. Short, because the cause was obvious and written down.</p>
+<p>If a 110 trips E-31 again soon after a reset, it's not the grid. HV-PROC-07 covers what to do with a repeat, including when to get Vastra L2 involved. Don't keep resetting it.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-33DCbusovervoltageVRS-110only">E-33 DC bus overvoltage (VRS-110 only)</h2>
+<p>Almost always a grid event: the supply swings up as it comes back after a dip and the drive protects itself. It often shows up in the same minute as an E-31 or E-02. Same rules as E-31: HV only, don't open the cabinet, collect the log and the conditions and raise the work order. If you see E-33 on its own, repeatedly, on a steady supply, the drive's braking or its supply side has a problem, and that's a Vastra call through me or Lena.</p>
+<h2 id="CompressorTroubleshootingPlaybook-E-35VFDheatsinktemperatureVRS-110only">E-35 VFD heatsink temperature (VRS-110 only)</h2>
+<p>The drive is too hot. The cabinet has filter mats in the door louvres, and they clog. You can change the door filter mats from the outside without opening the cabinet, so anyone can do that part, and it fixes this code most of the time. Check the cabinet fan is running (you can hear it and feel the airflow at the outlet louvre). If the mats are clean and the fan runs and it still trips, it's HV work from there.</p>
+<h2 id="CompressorTroubleshootingPlaybook-Thingsthatlooklikefaultsbutarent">Things that look like faults but aren't</h2>
+<ul><li>A loud hiss for a few seconds after the unit unloads. That's the blowdown valve venting the separator. Normal.</li><li>A 110 running for hours at low speed and not stopping. That's the VFD matching demand. It's supposed to do that.</li><li>A bit of oil mist in the condensate drain for the first day after an oil change, especially if it was overfilled slightly. Check again the next day before you call it carryover.</li><li>The controller clock being wrong. Half our controllers are an hour out since the last daylight saving change. Note the offset in the case so the log times make sense.</li></ul>
+<h2 id="CompressorTroubleshootingPlaybook-CallingVastra">Calling Vastra</h2>
+<p>Vastra Level 2 is Anders Holm. He's good, but he'll ask for the same things every time, so have them ready before you call or he'll just ask you to call back:</p>
+<ul><li>Model, serial number and firmware version</li><li>Event log export from the controller (USB stick formatted FAT32, the controller doesn't read exFAT)</li><li>Photos of the controller screen</li><li>Running hours and the date of the last PM</li><li>What you've already checked, and the readings</li></ul>
+<p>Please go through me (NA) or Lena (EU) for Level 2 tickets. Last year we had three tickets open with Vastra for the same unit from three different people, and Anders was polite about it but it didn't help us.</p>
+<h2 id="CompressorTroubleshootingPlaybook-Tools">Tools</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Tool</th>
+<th class="confluenceTh">Where</th>
+<th class="confluenceTh">Notes</th>
+</tr>
+<tr>
+<td class="confluenceTd">X10 service cable</td>
+<td class="confluenceTd">One in Daniel's van, one in Fresno</td>
+<td class="confluenceTd">Needed for firmware updates. If it isn't where it should be, ask in #na-compressors before you drive anywhere</td>
+</tr>
+<tr>
+<td class="confluenceTd">Laptop with Vastra ServiceTool</td>
+<td class="confluenceTd">Team laptops (Tacoma, Fresno)</td>
+<td class="confluenceTd">Works offline. Download the firmware file before you go to site, TAC compressor room has no signal</td>
+</tr>
+<tr>
+<td class="confluenceTd">Contact thermometer</td>
+<td class="confluenceTd">Every van</td>
+<td class="confluenceTd">Calibration sticker must be in date. For the TS-2 check</td>
+</tr>
+<tr>
+<td class="confluenceTd">USB stick, FAT32</td>
+<td class="confluenceTd">Every van, supposedly</td>
+<td class="confluenceTd">For log exports</td>
+</tr>
+</tbody></table></div>
+<h2 id="CompressorTroubleshootingPlaybook-Relatedpages">Related pages</h2>
+<ul><li><a href="VRS-Series-Oil-and-Filter-Quick-Reference.html" data-linked-resource-type="page">VRS Series Oil and Filter Quick Reference</a></li><li><a href="Tacoma-Site-Notes.html" data-linked-resource-type="page">Tacoma Site Notes</a></li><li><a href="Work-Order-Writing-Guide.html" data-linked-resource-type="page">Work Order Writing Guide</a></li><li><a href="Pump-Troubleshooting-Playbook.html" data-linked-resource-type="page">Pump Troubleshooting Playbook</a> (Maria's, same idea for the Halden pumps)</li><li>HV-PROC-07 VRS-110 VFD Fault Reset (SharePoint, Field Procedures, restricted to HV-certified)</li></ul>
+<div id="expander-4484" class="expand-container"><div id="expander-control-4484" class="expand-control"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Page history notes (click to expand)</span></div><div id="expander-content-4484" class="expand-content"><div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">When</th>
+<th class="confluenceTh">Who</th>
+<th class="confluenceTh">What</th>
+</tr>
+<tr>
+<td class="confluenceTd">Jun 2023</td>
+<td class="confluenceTd">Kenji</td>
+<td class="confluenceTd">First version, Tacoma codes only</td>
+</tr>
+<tr>
+<td class="confluenceTd">Jun 2024</td>
+<td class="confluenceTd">Kenji</td>
+<td class="confluenceTd">E-11 Fresno changeovers added after Daniel's comment</td>
+</tr>
+<tr>
+<td class="confluenceTd">Mar 2025</td>
+<td class="confluenceTd">Kenji / Lena</td>
+<td class="confluenceTd">Reviewed for EU use after the Kyltek integration. EU cooler notes added</td>
+</tr>
+<tr>
+<td class="confluenceTd">Dec 2025</td>
+<td class="confluenceTd">Kenji</td>
+<td class="confluenceTd">E-31 section rewritten after the TAC-C-0143 grid dip. Added the list of what non-HV techs can do</td>
+</tr>
+<tr>
+<td class="confluenceTd">Feb 2026</td>
+<td class="confluenceTd">Kenji</td>
+<td class="confluenceTd">E-14: firmware note added for the 110s (SB-2026-003). VRS-75 filter box number</td>
+</tr>
+</tbody></table></div></div></div>
+                    </div>
+
+
+                    <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments (6)</h2>
+                        </div>
+                        <table border="0" width="100%">
+                        <tbody>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316402"></a>
+                <font class="smallfont"><p>E-11 at FRS: the bottling line closes the header valve on changeovers and nobody tells the compressor. Had it twice on 0101 this month. Worth a line?</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Daniel Reyes at Jun 12, 2024 16:40
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316439"></a>
+                <font class="smallfont"><p>Added. Thanks.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Kenji Watanabe at Jun 13, 2024 07:05
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316476"></a>
+                <font class="smallfont"><p>Is this valid for the EU 110s too? We have RTM-C-0120 and soon one in Gdansk.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Marco Bianchi at Mar 18, 2025 10:22
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316513"></a>
+                <font class="smallfont"><p>Same machines, same codes. Lena went through it this month. The Fresno and Tacoma specific bits obviously don't apply to you.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Kenji Watanabe at Mar 18, 2025 17:51
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316550"></a>
+                <font class="smallfont"><p>For E-31, what are the actual steps? I'd like to at least understand them in case I'm first on site.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Priya Natarajan at Feb 19, 2026 13:02
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316587"></a>
+                <font class="smallfont"><p>Get Daniel or me, don't open the cabinet. What actually helps is the list above: log, conditions, power events, photos, all in the case. The steps are in HV-PROC-07 and you'll see it once you're HV-certified. Happy to go through the theory with you at the next team day.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Kenji Watanabe at Feb 19, 2026 13:40
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>             </div>
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Oct 02, 2026 09:14</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

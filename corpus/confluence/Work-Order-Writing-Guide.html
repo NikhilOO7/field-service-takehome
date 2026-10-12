@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Field Service : Work Order Writing Guide</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first"><span><a href="index.html">Field Service</a></span></li>
+                            <li><span><a href="Field-Service-Home_98306.html">Field Service Home</a></span></li>
+                            <li><span><a href="Standards-and-How-To_98314.html">Standards and How-To</a></span></li>
+                        </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Field Service : Work Order Writing Guide
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        Created by <span class='author'> Rachel Lindqvist</span>, last modified on Jan 21, 2026
+                    </div>
+                    <div id="main-content" class="wiki-content group">
+<p><style type="text/css">/*<![CDATA[*/div.rbtoc1759392840211 {padding: 0px;} div.rbtoc1759392840211 ul {list-style: disc;margin-left: 0px;} div.rbtoc1759392840211 li {margin-left: 0px;padding-left: 0px;} /*]]>*/</style></p><div class="toc-macro rbtoc1759392840211"><ul class="toc-indentation"><li><a href="#WorkOrderWritingGuide-Whythismatters">Why this matters</a></li><li><a href="#WorkOrderWritingGuide-Requiredfields">Required fields</a></li><li><a href="#WorkOrderWritingGuide-Certificationrequiredtherule">Certification required: the rule</a></li><li><a href="#WorkOrderWritingGuide-Priority">Priority</a></li><li><a href="#WorkOrderWritingGuide-Examples">Examples</a></li><li><a href="#WorkOrderWritingGuide-Beforeyousubmit">Before you submit</a></li></ul></div>
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">Scope</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>This page explains how to fill in a work order in Salesforce Field Service so it can be approved and assigned without a phone call. It supports FS-STD-001 (section on work orders and approval). If this page and FS-STD-001 disagree, FS-STD-001 applies. Applies to NA and EU.</p></div></div>
+<h2 id="WorkOrderWritingGuide-Whythismatters">Why this matters</h2>
+<p>Every work order is approved by a supervisor before the work is scheduled. The supervisor decides who goes, when, and with what parts, from what you wrote. They usually haven't seen the unit. If the work order says "fix compressor", they have to call you, and if they can't reach you, the job waits. Most of the delays I see in the scheduling queue are work orders that are missing one of the fields below.</p>
+<p>The work order is also the record. Six months from now, somebody standing in front of the same unit will read it to find out what was done and why. Write it for that person.</p>
+<h2 id="WorkOrderWritingGuide-Requiredfields">Required fields</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Field</th>
+<th class="confluenceTh">What to put in it</th>
+<th class="confluenceTh">Common mistakes</th>
+</tr>
+<tr>
+<td class="confluenceTd">Asset ID</td>
+<td class="confluenceTd">The asset ID from the fleet register, e.g. FRS-P-0031. One asset per work order</td>
+<td class="confluenceTd">Writing the model instead of the asset. "The 350 at Fresno" could be two pumps</td>
+</tr>
+<tr>
+<td class="confluenceTd">Fault code</td>
+<td class="confluenceTd">The code exactly as shown on the controller, e.g. E-14, P-07, L-03. "None" if there isn't one</td>
+<td class="confluenceTd">Writing the description instead of the code. Inventing a code. EU: putting old Servio codes here</td>
+</tr>
+<tr>
+<td class="confluenceTd">Summary</td>
+<td class="confluenceTd">One line: what's wrong and what you propose. "E-14 repeat, TS-2 reading 11 C high vs handheld, replace TS-2"</td>
+<td class="confluenceTd">"Broken", "see case", "as discussed"</td>
+</tr>
+<tr>
+<td class="confluenceTd">Work steps</td>
+<td class="confluenceTd">The steps you expect to do, in order, with the document number for any procedure you'll follow</td>
+<td class="confluenceTd">Pasting the steps of a controlled procedure. Reference the document number instead</td>
+</tr>
+<tr>
+<td class="confluenceTd">Parts</td>
+<td class="confluenceTd">Part numbers and quantities, from the parts list. If you don't know the number, write the description and the serial and let stores find it</td>
+<td class="confluenceTd">Guessing part numbers</td>
+</tr>
+<tr>
+<td class="confluenceTd">Certification required</td>
+<td class="confluenceTd">None, HV, Refrigerant (EPA 608 / F-gas), Confined space. Multi-select</td>
+<td class="confluenceTd">Leaving it blank when the work needs one. Selecting None because you think you can do it</td>
+</tr>
+<tr>
+<td class="confluenceTd">Estimated duration</td>
+<td class="confluenceTd">Hours on site, not including travel. Travel is calculated by the scheduler</td>
+<td class="confluenceTd">Including travel. Writing "half a day"</td>
+</tr>
+<tr>
+<td class="confluenceTd">Priority</td>
+<td class="confluenceTd">Low, Medium, High, Emergency, per the rules below</td>
+<td class="confluenceTd">Everything High</td>
+</tr>
+<tr>
+<td class="confluenceTd">Campaign code</td>
+<td class="confluenceTd">If the work is under an OEM campaign or warranty bulletin, the code from the bulletin, e.g. NK-C25-14 for the Nordkyl NK-600 EXV campaign. Blank otherwise</td>
+<td class="confluenceTd">Leaving it blank. Without the code, the OEM doesn't pay and we eat the labour</td>
+</tr>
+</tbody></table></div>
+<h2 id="WorkOrderWritingGuide-Certificationrequiredtherule">Certification required: the rule</h2>
+<div class="confluence-information-macro confluence-information-macro-note"><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>State the certification the work needs. Don't assign yourself.</strong> The supervisor assigns the technician, and checks the certification against the Technician Certification Matrix when they do. This applies even if you hold the certification and you're standing next to the unit. In that case say so in the summary, and the supervisor will usually assign you.</p></div></div>
+<p>Some examples of what needs what:</p>
+<ul><li>Anything inside a VFD cabinet on a VRS-110, including fault resets the panel won't do (E-31): <strong>HV</strong>.</li><li>Connecting gauges, recovering or charging refrigerant, brazing on a refrigerant circuit: <strong>Refrigerant</strong>.</li><li>Entering a pump pit at Fresno or any other permit space: <strong>Confined space</strong>, plus the permit under CS-PROC-03.</li><li>Cleaning a condenser coil, changing an air filter, reading an alarm log: <strong>None</strong>.</li></ul>
+<p>If you're not sure, select the certification. It's much cheaper to send a certified technician who didn't need to be certified than the other way round.</p>
+<h2 id="WorkOrderWritingGuide-Priority">Priority</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Priority</th>
+<th class="confluenceTh">Use when</th>
+<th class="confluenceTh">Target response</th>
+</tr>
+<tr>
+<td class="confluenceTd">Emergency</td>
+<td class="confluenceTd">Safety risk, or the customer's production or cold chain is stopped with no backup</td>
+<td class="confluenceTd">Same day, supervisor phones the on-call</td>
+</tr>
+<tr>
+<td class="confluenceTd">High</td>
+<td class="confluenceTd">Equipment down with a backup running, or three trips of the same fault in 24 hours (FS-STD-001)</td>
+<td class="confluenceTd">Next working day</td>
+</tr>
+<tr>
+<td class="confluenceTd">Medium</td>
+<td class="confluenceTd">Equipment running with a fault that will get worse</td>
+<td class="confluenceTd">Within 5 working days</td>
+</tr>
+<tr>
+<td class="confluenceTd">Low</td>
+<td class="confluenceTd">Planned work, improvements, non-urgent findings from a PM</td>
+<td class="confluenceTd">Next planned visit</td>
+</tr>
+</tbody></table></div>
+<p>Customer pressure isn't a priority level. If a customer is unhappy, say so in the summary and tell your team lead, but set the priority by the rules.</p>
+<h2 id="WorkOrderWritingGuide-Examples">Examples</h2>
+<p>All examples below are based on real work orders from 2025, lightly edited.</p>
+<div class="panel" style="border-color: #d04437;border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;border-bottom-color: #d04437;"><b>Bad</b></div><div class="panelContent"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl"><pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Confluence" data-theme="Confluence">Asset: TAC compressor
+Fault code: overheating
+Summary: tripped again, needs looking at
+Work steps: fix
+Parts: sensor?
+Certification: None
+Duration:
+Priority: High
+Campaign code: </pre></div></div></div></div>
+<p>What's wrong with it: no asset ID (Tacoma has three compressors), no fault code, no idea what was found, "sensor?" isn't a part, no duration, and High without a reason. The supervisor had to call the technician twice.</p>
+<div class="panel" style="border-color: #14892c;border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;border-bottom-color: #14892c;"><b>Good</b></div><div class="panelContent"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl"><pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Confluence" data-theme="Confluence">Asset: TAC-C-0143
+Fault code: E-31
+Summary: E-31 at 04:10 after site grid dip (dock lighting also tripped). Panel reset disabled.
+         Unit isolated by site. Requesting HV reset.
+Work steps: 1. Read and export event log. 2. Reset per HV-PROC-07.
+            3. Monitor first run. 4. Update case with readings.
+Parts: none expected
+Certification: HV
+Duration: 2.5 h
+Priority: High (customer running on 0142 only, no further backup)
+Campaign code: </pre></div></div></div></div>
+<p>Why it works: the supervisor knows which unit, what happened, that it needs HV, roughly how long, and why it's High. Note the work steps reference HV-PROC-07 by number and don't copy the procedure.</p>
+<div class="panel" style="border-color: #14892c;border-width: 1px;"><div class="panelHeader" style="border-bottom-width: 1px;border-bottom-color: #14892c;"><b>Good (EU, with campaign)</b></div><div class="panelContent"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl"><pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Confluence" data-theme="Confluence">Asset: GDN-H-0014
+Fault code: L-03
+Summary: L-03 circuit 2 after weekend idle. Charge looks normal, no oil marks.
+         Serial in SB-2025-014 range. EXV replacement under campaign.
+Work steps: 1. Confirm serial against SB-2025-014. 2. Replace EXV both circuits
+            per bulletin. 3. Leak test, record. 4. Monitor restart.
+Parts: 63-1180 x2, 63-0410 x2
+Certification: Refrigerant
+Duration: 6 h
+Priority: Medium
+Campaign code: NK-C25-14</pre></div></div></div></div>
+<h2 id="WorkOrderWritingGuide-Beforeyousubmit">Before you submit</h2>
+<ul><li>Is the asset ID from the fleet register?</li><li>Is the fault code exactly what the controller showed?</li><li>Would someone who has never seen the unit understand the summary?</li><li>Did you reference procedures by number instead of copying them?</li><li>Did you select every certification the work needs?</li><li>If there's a bulletin for this serial, is the campaign code in?</li></ul>
+<p>Questions to me or your team lead. <a href="/display/~r.lindqvist" class="confluence-userlink user-mention" data-username="r.lindqvist" data-linked-resource-type="userinfo">Rachel Lindqvist</a></p>
+                    </div>
+
+
+                    <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments (3)</h2>
+                        </div>
+                        <table border="0" width="100%">
+                        <tbody>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316402"></a>
+                <font class="smallfont"><p>Can certification required be more than one? Pit pumps with a VFD would be HV and confined space.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Daniel Reyes at Jan 21, 2026 09:12
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316439"></a>
+                <font class="smallfont"><p>Yes, it's multi-select. I've made that clearer in the table.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Rachel Lindqvist at Jan 21, 2026 10:45
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316476"></a>
+                <font class="smallfont"><p>For the EU team: the same fields apply since the Salesforce move. If you want to keep the old Servio storingscode, put it in the summary, not in the fault code field.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Lena Hoffmann at Jan 26, 2026 13:30
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>             </div>
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Oct 02, 2026 09:14</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,344 @@
+Received: from DB8PR09MB3384.eurprd09.prod.outlook.com (2603:10a6:10:12c::7) by DB8PR09MB3384.eurprd09.prod.outlook.com
+ with HTTPS; Wed, 30 Sep 2026 05:48:12 +0000
+From: Sofie de Vries <s.devries@corvane.eu>
+To: Lena Hoffmann <l.hoffmann@corvane.eu>
+Subject: RE: FW: RTM-H-0007 alarm again - second visit this year
+Thread-Topic: RTM-H-0007 alarm again - second visit this year
+Thread-Index: 3jyy2oJKJEdCVzA4dAmf53KULrya0Za0wgk5bxk7A2z/FQ==
+Date: Wed, 30 Sep 2026 05:48:09 +0000
+Message-ID: <DB8PR09MB33847E09D3B5A14C2F80E6D7A1C7@DB8PR09MB3384.eurprd09.prod.outlook.com>
+In-Reply-To: <DB8PR09MB3384C1A5F7E2D0B96E4A1F3B9C77@DB8PR09MB3384.eurprd09.prod.outlook.com>
+References: <AM9PR02MB7710B44E2C1D9F07A3E6B2C1D5E40@AM9PR02MB7710.eurprd02.prod.outlook.com>
+ <DB8PR09MB3384C1A5F7E2D0B96E4A1F3B9C77@DB8PR09MB3384.eurprd09.prod.outlook.com>
+Accept-Language: nl-NL, en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-SCL: -1
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthSource: DB8PR09MB3384.eurprd09.prod.outlook.com
+X-MS-Exchange-Organization-Network-Message-Id: a03d7c19-5e2b-4f81-6c94-08defe2b7d10
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="===============9084772958273843517=="
+Content-Language: nl-NL
+
+--===============9084772958273843517==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hoi Lena,
+
+As promised on the phone last night, here it is in writing so you have it for Pieter and for the file. Sorry it didn't =
+make 15:00 yesterday, I was on a roof in Botlek with no signal most of the afternoon.
+
+February first, because you asked and because it was my visit.
+
+I did the February call-out (00041055). L-03 on circuit 2 after the winter restart, suction 2.1 bar. I worked to KT-WI-=
+14: visual inspection of circuit 2, the joints, service valves and around the compressor, no oil traces, no leak found.=
+ The deficit came out under 10% of nameplate charge, so per KT-WI-14 I topped up 2.5 kg R-513A and left it running to m=
+onitor. That is what the work instruction says, and it's how we did it at Kyltek for years. KT-WI-14 also says to sched=
+ule a full leak test at the next planned visit. I can't find in Servio or Salesforce that it was ever scheduled. I shou=
+ld have made sure it was.
+
+What I didn't do: I did not check the EXV campaign. RTM-H-0007 is serial NK600-230415. That is inside the serial range =
+of the Nordkyl bulletin SB-2025-014 (NK600-220001 up to NK600-231999), campaign NK-C25-14. The symptom in the bulletin =
+is L-03 after idle periods with normal charge, because the expansion valve sticks. A winter restart is exactly an idle =
+period. So your memory is right, and it is quite possible the February alarm was the valve and not the charge at all, a=
+nd I put 2.5 kg into a circuit that didn't need it. I'll check for that too.
+
+Eerlijk gezegd, the worst part is that I put the campaign warning on the EU chiller field guide myself last October. I =
+didn't connect it on the day. Balen.
+
+I've checked what we have. No record of the campaign being done on 0007. RTM-H-0008 is NK600-240702, outside the range,=
+ so that one is fine. GDN-H-0014 in Gdansk is NK600-221190, also inside the range, but that one Jakub and I did last Oc=
+tober. That is the unit that taught us about the valve in the first place, which makes missing it on 0007 worse.
+
+Who goes: me. Jakub can't, he isn't F-gas certified yet, and he did the right thing on Monday by not putting gauges on =
+it. I can be on site Thursday 1 October at 07:00. Jakub has asked Pieter's shift lead for roof access and the work at h=
+eight permit for Thursday morning. I'll take Jakub with me so he sees it done.
+
+Plan on site:
+1. Check the EXV on circuit 2 first, before anything is connected to the refrigerant side: valve position in the servic=
+e menu at restart and under load, superheat, and whether it's modulating or stuck. Also check which valve is fitted, re=
+v 2 or rev 3. The label is readable on that unit.
+2. If it's the valve: replace with 63-1180 rev 3 on both circuits as the campaign says, booked under NK-C25-14. I email=
+ed Mette Kjaer at Nordkyl this morning to confirm 0007 is still open on their campaign list and to get two valves sent =
+to Rotterdam. If they're not here by Thursday, I do the diagnosis Thursday and come back for the swap.
+3. If the valve is fine, or the charge is still short after the valve: leak test per SOP-020 and repair. No top-up. If =
+I can't find the leak, I tag the unit and escalate, which is what SOP-020 says to do.
+4. Either way I recover and weigh what's in circuit 2, so we know what the February 2.5 kg actually did.
+
+For Pieter, I would say: in February we followed an instruction that allowed a top-up without a leak test; we missed a =
+manufacturer campaign on the expansion valve that matches his symptoms; a certified engineer (me) is there Thursday at =
+07:00; we will not top up; and he gets the root cause in writing after the visit. I would not promise him it's the valv=
+e until I've seen it.
+
+One more thing, and I'd like you to take it up because I can't. KT-WI-14 and SOP-020 say opposite things. SOP-020 says =
+never top up without a leak test, and check the bulletins for the serial first. KT-WI-14, my own instruction from 2021,=
+ says top up if there's no visible leak and the deficit is under 10%. Both are in SharePoint, both look valid, and FS-S=
+TD-001 says the Kyltek instructions stay valid until superseded without saying which ones. So a technician here can do =
+exactly what I did in February and be following procedure. I wrote KT-WI-14, but I don't own it any more. It was migrat=
+ed in 2024 and nobody took it over. Who owns retiring it? Rachel? I'm happy to do the work, but someone on the Corvane =
+side has to sign it off, otherwise this happens again on the next NK-600 after a cold week.
+
+Groetjes,
+Sofie
+
+Sofie de Vries
+Senior Refrigeration Engineer  |  F-gassen cat. I
+Corvane Field Services B.V. (formerly Kyltek Service B.V.)
+Rotterdam, NL  |  M +31 (0)6 5550 2264
+
+________________________________
+Van: Lena Hoffmann <l.hoffmann@corvane.eu>
+Verzonden: dinsdag 29 september 2026 10:41
+Aan: Sofie de Vries <s.devries@corvane.eu>
+Onderwerp: FW: RTM-H-0007 alarm again - second visit this year
+
+Sofie,
+
+See below from Pieter Jansen. He also called me at 08:30 this morning and he wasn't shouting, which is worse.
+
+Two things I need from you today, ideally before 15:00 because I promised to call him back with a date:
+
+1. Why did we top it up in February? I've looked at 00041055 and it says 2.5 kg topped up, no leak found. If there was =
+no leak, where did 2.5 kg go? I need to understand what we did before I explain it to the customer. Not to blame anyone=
+, I just don't want to tell Pieter something that turns out to be wrong next week.
+
+2. Who can go. Jakub was there yesterday (00044102), 1.9 bar on circuit 2, and he did the right thing by not touching i=
+t, but he can't do the work and his exam isn't until November. Marco is compressors only. So unless I borrow someone fr=
+om Gdansk, that's you.
+
+Also, is this the Nordkyl valve thing? I have a vague memory of a bulletin last year.
+
+Thanks,
+Lena
+
+Lena Hoffmann
+EU Field Team Lead
+Corvane Field Services B.V. (formerly Kyltek Service B.V.)
+Rotterdam, NL  |  M +31 (0)6 5550 2291
+
+________________________________
+From: Pieter Jansen <p.jansen@maasvlaktefresh.nl>
+Sent: 29 September 2026 08:12
+To: Lena Hoffmann <l.hoffmann@corvane.eu>
+Subject: RTM-H-0007 alarm again - second visit this year
+
+[EXTERNE AFZENDER / EXTERNAL SENDER] Wees voorzichtig met links en bijlagen. Be careful with links and attachments. Mel=
+den / Report: ict-security@corvane.eu
+
+Dear Lena,
+
+I am writing to you directly because I don't think this is being handled at the right level.
+
+Yesterday morning (Monday 28/9) the chiller on the roof of hall B, your number RTM-H-0007, went into alarm again with t=
+he same low pressure alarm as in February. Your technician Jakub came in the afternoon. He was polite and he spent more=
+ than an hour on it, but he told our shift lead that he is not allowed to work on the refrigerant side and that a certi=
+fied colleague has to come. Nobody has given us a date for that. Since then the unit is running on one circuit.
+
+This is the second visit for the same fault this year. In February your engineer added refrigerant, told us the unit wa=
+s fine, and left. We were not told there was anything to follow up. Seven months later we are back where we started, an=
+d frankly, dit kan zo niet langer.
+
+I want to be clear about what is at stake for us. RTM-H-0007 cools the chilled rooms in hall B (AGF, fresh produce, set=
+ point 2 to 4 C). On one circuit the rooms held overnight, but yesterday at 16:00 cold room B3 was at 6.8 C and we had =
+to move pallets into B1 and B2, which are now overfull. Our QA has raised a temperature deviation. We have two retail c=
+ustomers auditing us in October and they will look at those logs.
+
+What I need from Corvane:
+1. A root cause. Not "low refrigerant", but why it is low, or why the alarm keeps coming back.
+2. A date when a certified engineer will be on site. This week, please.
+3. Confirmation that you will not simply top it up again.
+
+I am on site all week. Please call me if that is quicker than email.
+
+Met vriendelijke groet / Kind regards,
+
+Pieter Jansen
+Facilities Manager
+
+Maasvlakte Fresh Logistics B.V.
+Europaweg 910  |  3199 LC Maasvlakte Rotterdam
+T +31 (0)10 555 4420  |  M +31 (0)6 5550 1873
+
+Dit e-mailbericht is uitsluitend bestemd voor de geadresseerde(n) en kan vertrouwelijke informatie bevatten. Aan dit be=
+richt kunnen geen rechten worden ontleend. Op al onze diensten zijn de Nederlandse Algemene Voorwaarden van FENEX van t=
+oepassing. This e-mail is intended only for the addressee(s). No rights can be derived from this message.
+
+--===============9084772958273843517==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:sche=
+mas-microsoft-com:office:word" xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" xmlns=3D"http://www.w3.org/=
+TR/REC-html40">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+<meta name=3D"Generator" content=3D"Microsoft Word 15 (filtered medium)">
+<style><!--
+@font-face {font-family:Calibri; panose-1:2 15 5 2 2 2 4 3 2 4;}
+p.MsoNormal, li.MsoNormal, div.MsoNormal {margin:0cm; font-size:11.0pt; font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink {color:#0563C1; text-decoration:underline;}
+.MsoChpDefault {mso-style-type:export-only; font-size:10.0pt;}
+@page WordSection1 {size:612.0pt 792.0pt; margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1 {page:WordSection1;}
+--></style>
+</head>
+<body lang=3D"NL-NL" link=3D"#0563C1" vlink=3D"#954F72" style=3D"word-wrap:break-word">
+<div class=3D"WordSection1">
+<p class=3D"MsoNormal">Hoi Lena,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">As promised on the phone last night, here it is in writing so you have it for Pieter and for the=
+ file. Sorry it didn&#x27;t make 15:00 yesterday, I was on a roof in Botlek with no signal most of the afternoon.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">February first, because you asked and because it was my visit.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I did the February call-out (00041055). L-03 on circuit 2 after the winter restart, suction 2.1 =
+bar. I worked to KT-WI-14: visual inspection of circuit 2, the joints, service valves and around the compressor, no oil=
+ traces, no leak found. The deficit came out under 10% of nameplate charge, so per KT-WI-14 I topped up 2.5 kg R-513A a=
+nd left it running to monitor. That is what the work instruction says, and it&#x27;s how we did it at Kyltek for years.=
+ KT-WI-14 also says to schedule a full leak test at the next planned visit. I can&#x27;t find in Servio or Salesforce t=
+hat it was ever scheduled. I should have made sure it was.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">What I didn&#x27;t do: I did not check the EXV campaign. RTM-H-0007 is serial NK600-230415. That=
+ is inside the serial range of the Nordkyl bulletin SB-2025-014 (NK600-220001 up to NK600-231999), campaign NK-C25-14. =
+The symptom in the bulletin is L-03 after idle periods with normal charge, because the expansion valve sticks. A winter=
+ restart is exactly an idle period. So your memory is right, and it is quite possible the February alarm was the valve =
+and not the charge at all, and I put 2.5 kg into a circuit that didn&#x27;t need it. I&#x27;ll check for that too.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Eerlijk gezegd, the worst part is that I put the campaign warning on the EU chiller field guide =
+myself last October. I didn&#x27;t connect it on the day. Balen.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I&#x27;ve checked what we have. No record of the campaign being done on 0007. RTM-H-0008 is NK60=
+0-240702, outside the range, so that one is fine. GDN-H-0014 in Gdansk is NK600-221190, also inside the range, but that=
+ one Jakub and I did last October. That is the unit that taught us about the valve in the first place, which makes miss=
+ing it on 0007 worse.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Who goes: me. Jakub can&#x27;t, he isn&#x27;t F-gas certified yet, and he did the right thing on=
+ Monday by not putting gauges on it. I can be on site Thursday 1 October at 07:00. Jakub has asked Pieter&#x27;s shift =
+lead for roof access and the work at height permit for Thursday morning. I&#x27;ll take Jakub with me so he sees it don=
+e.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Plan on site:<br>
+1. Check the EXV on circuit 2 first, before anything is connected to the refrigerant side: valve position in the servic=
+e menu at restart and under load, superheat, and whether it&#x27;s modulating or stuck. Also check which valve is fitte=
+d, rev 2 or rev 3. The label is readable on that unit.<br>
+2. If it&#x27;s the valve: replace with 63-1180 rev 3 on both circuits as the campaign says, booked under NK-C25-14. I =
+emailed Mette Kjaer at Nordkyl this morning to confirm 0007 is still open on their campaign list and to get two valves =
+sent to Rotterdam. If they&#x27;re not here by Thursday, I do the diagnosis Thursday and come back for the swap.<br>
+3. If the valve is fine, or the charge is still short after the valve: leak test per SOP-020 and repair. No top-up. If =
+I can&#x27;t find the leak, I tag the unit and escalate, which is what SOP-020 says to do.<br>
+4. Either way I recover and weigh what&#x27;s in circuit 2, so we know what the February 2.5 kg actually did.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">For Pieter, I would say: in February we followed an instruction that allowed a top-up without a =
+leak test; we missed a manufacturer campaign on the expansion valve that matches his symptoms; a certified engineer (me=
+) is there Thursday at 07:00; we will not top up; and he gets the root cause in writing after the visit. I would not pr=
+omise him it&#x27;s the valve until I&#x27;ve seen it.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">One more thing, and I&#x27;d like you to take it up because I can&#x27;t. KT-WI-14 and SOP-020 s=
+ay opposite things. SOP-020 says never top up without a leak test, and check the bulletins for the serial first. KT-WI-=
+14, my own instruction from 2021, says top up if there&#x27;s no visible leak and the deficit is under 10%. Both are in=
+ SharePoint, both look valid, and FS-STD-001 says the Kyltek instructions stay valid until superseded without saying wh=
+ich ones. So a technician here can do exactly what I did in February and be following procedure. I wrote KT-WI-14, but =
+I don&#x27;t own it any more. It was migrated in 2024 and nobody took it over. Who owns retiring it? Rachel? I&#x27;m h=
+appy to do the work, but someone on the Corvane side has to sign it off, otherwise this happens again on the next NK-60=
+0 after a cold week.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Groetjes,<br>
+Sofie</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Sofie de Vries<br>
+Senior Refrigeration Engineer  |  F-gassen cat. I<br>
+Corvane Field Services B.V. (formerly Kyltek Service B.V.)<br>
+Rotterdam, NL  |  M +31 (0)6 5550 2264</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b>Van:</b> =
+Lena Hoffmann &lt;l.hoffmann@corvane.eu&gt;<br>
+<b>Verzonden:</b> dinsdag 29 september 2026 10:41<br>
+<b>Aan:</b> Sofie de Vries &lt;s.devries@corvane.eu&gt;<br>
+<b>Onderwerp:</b> FW: RTM-H-0007 alarm again - second visit this year</p></div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Sofie,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">See below from Pieter Jansen. He also called me at 08:30 this morning and he wasn&#x27;t shoutin=
+g, which is worse.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Two things I need from you today, ideally before 15:00 because I promised to call him back with =
+a date:</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">1. Why did we top it up in February? I&#x27;ve looked at 00041055 and it says 2.5 kg topped up, =
+no leak found. If there was no leak, where did 2.5 kg go? I need to understand what we did before I explain it to the c=
+ustomer. Not to blame anyone, I just don&#x27;t want to tell Pieter something that turns out to be wrong next week.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">2. Who can go. Jakub was there yesterday (00044102), 1.9 bar on circuit 2, and he did the right =
+thing by not touching it, but he can&#x27;t do the work and his exam isn&#x27;t until November. Marco is compressors on=
+ly. So unless I borrow someone from Gdansk, that&#x27;s you.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Also, is this the Nordkyl valve thing? I have a vague memory of a bulletin last year.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Thanks,<br>
+Lena</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Lena Hoffmann<br>
+EU Field Team Lead<br>
+Corvane Field Services B.V. (formerly Kyltek Service B.V.)<br>
+Rotterdam, NL  |  M +31 (0)6 5550 2291</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm"><p class=3D"MsoNormal"><b>From:</b>=
+ Pieter Jansen &lt;p.jansen@maasvlaktefresh.nl&gt;<br>
+<b>Sent:</b> 29 September 2026 08:12<br>
+<b>To:</b> Lena Hoffmann &lt;l.hoffmann@corvane.eu&gt;<br>
+<b>Subject:</b> RTM-H-0007 alarm again - second visit this year</p></div>
+<p class=3D"MsoNormal">&nbsp;</p>
+<table class=3D"MsoNormalTable" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"width:100.0%;b=
+ackground:#FFF2CC;border:solid #E0B000 1.0pt"><tr><td style=3D"padding:4.0pt 6.0pt"><p class=3D"MsoNormal"><b><span sty=
+le=3D"font-size:9.0pt;color:#7F6000">[EXTERNE AFZENDER / EXTERNAL SENDER] Wees voorzichtig met links en bijlagen. Be ca=
+reful with links and attachments. Melden / Report: ict-security@corvane.eu</span></b></p></td></tr></table>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Dear Lena,</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I am writing to you directly because I don&#x27;t think this is being handled at the right level=
+.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">Yesterday morning (Monday 28/9) the chiller on the roof of hall B, your number RTM-H-0007, went =
+into alarm again with the same low pressure alarm as in February. Your technician Jakub came in the afternoon. He was p=
+olite and he spent more than an hour on it, but he told our shift lead that he is not allowed to work on the refrigeran=
+t side and that a certified colleague has to come. Nobody has given us a date for that. Since then the unit is running =
+on one circuit.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">This is the second visit for the same fault this year. In February your engineer added refrigera=
+nt, told us the unit was fine, and left. We were not told there was anything to follow up. Seven months later we are ba=
+ck where we started, and frankly, dit kan zo niet langer.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I want to be clear about what is at stake for us. RTM-H-0007 cools the chilled rooms in hall B (=
+AGF, fresh produce, set point 2 to 4 C). On one circuit the rooms held overnight, but yesterday at 16:00 cold room B3 w=
+as at 6.8 C and we had to move pallets into B1 and B2, which are now overfull. Our QA has raised a temperature deviatio=
+n. We have two retail customers auditing us in October and they will look at those logs.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">What I need from Corvane:<br>
+1. A root cause. Not &quot;low refrigerant&quot;, but why it is low, or why the alarm keeps coming back.<br>
+2. A date when a certified engineer will be on site. This week, please.<br>
+3. Confirmation that you will not simply top it up again.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal">I am on site all week. Please call me if that is quicker than email.</p>
+<p class=3D"MsoNormal">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Met vriendelijke groet / Kind regards,</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Pieter Jansen<br>
+Facilities Manager</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">Maasvlakte Fresh Logistics B.V.<br>
+Europaweg 910  |  3199 LC Maasvlakte Rotterdam<br>
+T +31 (0)10 555 4420  |  M +31 (0)6 5550 1873</p>
+<p class=3D"MsoNormal" style=3D"color:#404040;font-size:10.0pt">&nbsp;</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">Dit e-mailbericht is uitsluitend bestemd voor de geadres=
+seerde(n) en kan vertrouwelijke informatie bevatten. Aan dit bericht kunnen geen rechten worden ontleend. Op al onze di=
+ensten zijn de Nederlandse Algemene Voorwaarden van FENEX van toepassing. This e-mail is intended only for the addresse=
+e(s). No rights can be derived from this message.</p>
+<p class=3D"MsoNormal" style=3D"color:#7F7F7F;font-size:7.5pt">&nbsp;</p>
+</div>
+</body>
+</html>
+
+--===============9084772958273843517==--

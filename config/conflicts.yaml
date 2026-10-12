@@ -1,0 +1,71 @@
+# Curated conflict register (spec M6). The answer's conflict box must agree with `resolution`.
+
+C1:
+  topic: "VRS-75 oil change interval"
+  models: [VRS-75]
+  doc_numbers: ["9821 0075 01"]
+  positions:
+    - "VRS-75 Service Manual Rev B (2024) and the 2024 wiki quick reference: 4,000 h for all oils"
+    - "VRS-75 Service Manual Rev C (2026-04-20): 6,000 h or 12 months with Vastra SynLube 46; mineral oil stays at 4,000 h"
+  resolution: "Rev C is the current manual and supersedes Rev B; the 2024 wiki page is out of date."
+  resolution_doc: "9821 0075 01"
+
+C2:
+  topic: "HCP-350 casing bolt torque"
+  models: [HCP-350]
+  doc_numbers: [HDN-IOM-350, SB-2025-009]
+  positions:
+    - "HDN-IOM-350 Rev D (2023): 45 N-m in sections 4.3, 8.4 and 8.7"
+    - "Halden SB-2025-009 (2025): 38 N-m for serials from HCP350-240001 (revised casing)"
+  resolution: "The bulletin applies to the serial range it names (FS-STD-001 section 8; IOM 1.1): 38 N-m from HCP350-240001, 45 N-m for earlier serials with the original cover."
+  resolution_doc: SB-2025-009
+
+C3:
+  topic: "HCP-350 mechanical seal kit"
+  models: [HCP-350]
+  doc_numbers: [HDN-IOM-350, SB-2025-018]
+  positions:
+    - "HDN-IOM-350 Rev D lists seal kit 18-0355"
+    - "Halden SB-2025-018: 18-0356 replaces 18-0355"
+  resolution: "Use 18-0356; 18-0355 stock may be used up (interchangeable)."
+  resolution_doc: SB-2025-018
+
+C4:
+  topic: "HCP-500 suction strainer cleaning interval"
+  models: [HCP-500]
+  doc_numbers: [HDN-IOM-500]
+  positions:
+    - "HCP-500 Maintenance Quick Reference wiki (2023): every 500 h"
+    - "HDN-IOM-500 Rev B (2025): 750 h, or when the strainer dP alarm is active"
+  resolution: "The manual (Rev B) applies; the wiki page predates the change."
+  resolution_doc: HDN-IOM-500
+
+C5:
+  topic: "Refrigerant top-up without a leak test (low suction pressure on chillers)"
+  models: [NK-300, NK-600]
+  doc_numbers: [KT-WI-14, SOP-020]
+  positions:
+    - "KT-WI-14 (Kyltek, 2021) 5.6.5: if no leak is visible and the deficit is below 10% of nameplate charge, top up and plan a leak test at the next visit"
+    - "SOP-020 (Corvane, 2025) section 5 and 6.2: never top up to clear a low suction pressure alarm; no top-up without a leak test; check bulletins and campaigns first"
+  resolution: "The stricter rule applies (FS-STD-001 section 1): no top-up without a leak test, and check open bulletins/campaigns for the serial first. The NK-600 manual (6.3, 8.3) also forbids adding refrigerant to clear L-03."
+  resolution_doc: FS-STD-001
+
+C6:
+  topic: "NK-600 EXV position reading"
+  models: [NK-600]
+  doc_numbers: [NK-SM-600-EN, SB-2025-014]
+  positions:
+    - "NK-600 Service Manual Rev C 6.3/7.4: the displayed EXV position is calculated from steps sent, so a sticking valve can show a normal position; use the manual test"
+    - "Nordkyl SB-2025-014: the position feedback reports the real needle position; position below 15% while the request is higher means the valve is stuck"
+  resolution: "For NK-600 units in the SB-2025-014 serial range the bulletin's diagnosis applies; otherwise use the manual's manual test (7.4.3)."
+  resolution_doc: SB-2025-014
+
+C7:
+  topic: "NK-600 EXV replacement method"
+  models: [NK-600]
+  doc_numbers: [NK-SM-600-EN, SB-2025-014]
+  positions:
+    - "NK-600 Service Manual Rev C 7.5: flanged assembly, no brazing"
+    - "Nordkyl SB-2025-014: braze the new rev 3 valve with a nitrogen purge"
+  resolution: "For campaign units follow the bulletin (rev 3 kit)."
+  resolution_doc: SB-2025-014

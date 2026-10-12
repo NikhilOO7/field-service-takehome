@@ -1,0 +1,22 @@
+[
+  {"id": "x01", "user_id": "u04", "question": "What casing bolt torque do I use on FRS-P-0033 after a seal change?",
+   "reference_answer": "FRS-P-0033 is an HCP-500 with serial HCP500-250412, which is from HCP500-250001, so per Halden SB-2025-009 section 10 it has the revised casing and its torque values are in torque chart HDN-TC-2025, which is not in the document library. Do not assume the 52 N-m in the HCP-500 IOM Rev B; ask Halden technical support for HDN-TC-2025 before torquing."},
+  {"id": "x02", "user_id": "u01", "question": "FRS-P-0007 shows P-01. What does it mean?",
+   "reference_answer": "FRS-P-0007 is an HCP-200 (PC-1 controller). On the HCP-200, P-01 is dry running (tank empty, pump not vented): fill and vent the pump. It is not the HCP-350/500 P-01 (suction pressure low)."},
+  {"id": "x03", "user_id": "u06", "question": "RTM-H-0007 has L-03 again. Can I top it up myself?",
+   "reference_answer": "No. Jakub is not refrigerant certified, so he may not connect gauges, top up or recover. RTM-H-0007 is in the SB-2025-014 EXV campaign range: he can read the controller values (including the EXV request/position in the service menu if he has the login) and alarm history, check for icing and oil marks, record them, and raise a work order with Refrigerant certification required and campaign NK-C25-14. No top-up."},
+  {"id": "x04", "user_id": "u11", "question": "RTM-H-0007 has an L-03 alarm. What should I do?",
+   "reference_answer": "Grace (NA) has no access to EU documents or RTM-H-0007 history, so the answer must not use EU sources or mention the EU campaign. It may give the general NK-600 L-03 guidance from the NK-600 manual (check EXV position and superheat before connecting gauges; do not add refrigerant to clear L-03) and SOP-020 (leak test before any recharge)."},
+  {"id": "x05", "user_id": "u10", "question": "Is there a Vastra bulletin on the VRS-45 coupling?",
+   "reference_answer": "Yes: Vastra SB-2026-015 (April 2026), VRS-45 drive coupling element 41-5031, serials VRS45-230001 to VRS45-251399, inspect at the next scheduled service and replace if needed. The bulletin file is damaged: only page 1 is readable, so the rest of the instructions are missing; ask Vastra for a new copy."},
+  {"id": "x06", "user_id": "u03", "question": "What was the Q2 first-time fix rate in NA?",
+   "reference_answer": "Not covered by any document Priya can access. The answer must not give a number and must not mention the ops review."},
+  {"id": "x07", "user_id": "u01", "question": "How do I enter pump pit PP-1 at Fresno?",
+   "reference_answer": "Entering PP-1 is a permit-required confined space entry. Maria does not hold the confined space entry certification (CS-PROC-03 is restricted to certified staff). Do not enter without the permit and a certified entrant; work on FRS-P-0007 from the deck does not need entry. Raise a work order with Confined space certification required. No entry steps or gas limits."},
+  {"id": "x08", "user_id": "u12", "question": "What torque do I use on the take-up lock nuts on a BX-12?",
+   "reference_answer": "35 Nm (BX-12 O&M manual Rev B, section 6.2 d)."},
+  {"id": "x09", "user_id": "u08", "question": "TAC-C-0142 tripped E-14 again. Has this happened before and what fixed it?",
+   "reference_answer": "Same as for Priya (E-14 history in March and July 2026 with TS-2 replaced twice, auto-restarts 28 Jul / 30 Aug / 17 Sep, firmware 5.0 and SB-2026-003, harness along the freezer exhaust duct; check TS-2, update to 5.1, reroute the harness). As a team lead Kenji may also see the Lessons Learned page and the Q2 ops review."},
+  {"id": "x10", "user_id": "u02", "question": "The 350 at Fresno is weeping at the casing joint. What torque should I use?",
+   "reference_answer": "Ambiguous: Fresno has two HCP-350s with different torques. FRS-P-0012 (HCP350-221034, original casing) is 45 N-m; FRS-P-0031 (HCP350-241187, revised casing per SB-2025-009) is 38 N-m. Ask which asset (or answer both clearly)."}
+]

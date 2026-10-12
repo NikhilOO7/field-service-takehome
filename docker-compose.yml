@@ -1,0 +1,52 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: copilot
+      POSTGRES_PASSWORD: copilot
+      POSTGRES_DB: copilot
+    ports:
+      - "55432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U copilot -d copilot"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    env_file: .env
+    environment:
+      PROJECT_ROOT: /workspace
+      DATABASE_URL: postgresql+psycopg://copilot:copilot@db:5432/copilot
+      TEST_DATABASE_URL: postgresql+psycopg://copilot:copilot@db:5432/copilot_test
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    volumes:
+      # the whole project folder is the input; only var/ and reports/ are written
+      - .:/workspace:ro
+      - ./var:/workspace/var
+      - ./reports:/workspace/reports
+
+  web:
+    image: node:22-alpine
+    working_dir: /workspace/frontend
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/workspace/frontend
+      - /workspace/frontend/node_modules
+
+volumes:
+  pgdata:

@@ -1,0 +1,133 @@
+{
+  "_doc": "Grading rubrics (spec §10). patterns are case-insensitive regexes run over every rendered field (headline, blocks, conflicts, what-you-can-do, work order draft). Facts marked judge=true are decided by the LLM judge. A question is CORRECT only if: status matches, every critical fact is present, no must_not hit, at least one must_cite_any document is cited, nothing the user can't see is cited, and the work order (if required) has the expected fields.",
+  "q01": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["HDN-IOM-500", "HCP-500 IOM"],
+    "critical_facts": [
+      {"id": "cavitation", "fact": "P-07 means cavitation", "patterns": ["cavitation"]},
+      {"id": "trigger", "fact": "Trigger: suction pressure fluctuation above 15% for 10 s / NPSH available too low", "patterns": ["15\\s?%", "npsh"], "any": true},
+      {"id": "strainer_dp", "fact": "First read the strainer differential pressure at PI-01/PI-02", "patterns": ["PI-01"]},
+      {"id": "threshold", "fact": "If above 0.30 bar, clean the suction strainer (section 8.3)", "patterns": ["0[.,]30\\s?bar"]},
+      {"id": "valve", "fact": "Then confirm the suction isolation valve is fully open", "patterns": ["suction (isolation )?valve.{0,40}(fully )?open|fully open.{0,40}suction"]}
+    ],
+    "must_not": [{"id": "wrong_threshold", "desc": "0.25 bar given as the HCP-500 threshold", "patterns": ["0[.,]25\\s?bar"]}]
+  },
+  "q02": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["HCP-200", "HDN-BA-200"],
+    "critical_facts": [
+      {"id": "range", "fact": "0.38 - 0.50 mm", "patterns": ["0[.,]38\\s?(-|–|to)\\s?0[.,]50\\s?mm"]},
+      {"id": "source", "fact": "From the 1998 HCP-200 (scanned) manual", "patterns": ["1998|scan|HCP-200"], "any": true},
+      {"id": "wear_ring", "fact": "Above the upper limit, replace/renew the wear rings", "patterns": ["wear ring"]}
+    ],
+    "must_not": [{"id": "other_model", "desc": "HCP-350 or HCP-500 clearance given as the HCP-200 value", "patterns": ["0[.,]40\\s?(-|–|to)\\s?0[.,]55", "0[.,]45\\s?(-|–|to)\\s?0[.,]60"]}]
+  },
+  "q03": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["9821 0075 01 Rev C", "VRS-75 Service Manual Rev C"],
+    "critical_facts": [
+      {"id": "synlube", "fact": "6,000 h or 12 months with Vastra SynLube 46 (manual Rev C, April 2026)", "patterns": ["6[,.]?000\\s?h", "12 months"]},
+      {"id": "mineral", "fact": "Mineral oil stays at 4,000 h", "patterns": ["mineral.{0,80}4[,.]?000|4[,.]?000.{0,80}mineral"]},
+      {"id": "outdated", "fact": "Rev B and/or the 2024 wiki quick reference (4,000 h for all) are out of date", "judge": true}
+    ],
+    "must_not": [{"id": "old_interval", "desc": "States 4,000 h as the current interval for SynLube 46 units", "judge": true}]
+  },
+  "q04": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["SB-2025-009"],
+    "critical_facts": [
+      {"id": "torque", "fact": "38 N-m", "patterns": ["38\\s?N[-·\\s]?m"]},
+      {"id": "pattern", "fact": "Cross pattern, two passes", "patterns": ["cross", "two passes|2 passes|two-pass|first pass.{0,80}second pass"]},
+      {"id": "bulletin", "fact": "Serial HCP350-241187 is in the SB-2025-009 revised-casing range (from HCP350-240001)", "judge": true}
+    ],
+    "supporting_facts": [
+      {"id": "manual_45", "fact": "The 45 N-m in IOM Rev D applies only to earlier serials", "judge": true},
+      {"id": "crack", "fact": "Torquing this unit to 45 N-m cracked the gasket seat in June 2026 (case 00041988)", "judge": true}
+    ],
+    "must_not": [{"id": "use_45", "desc": "Recommends 45 N-m for FRS-P-0031", "judge": true}]
+  },
+  "q05": {
+    "expected_status": ["answered", "partial"],
+    "must_cite_any": ["HV-PROC-07"],
+    "critical_facts": [
+      {"id": "meaning", "fact": "E-31 is a VFD (output) overcurrent trip", "patterns": ["overcurrent"]},
+      {"id": "no_panel", "fact": "It can't be reset from the operator panel", "patterns": ["panel"]},
+      {"id": "isolate", "fact": "Isolate and lock out per HV-PROC-02", "patterns": ["HV-PROC-02"]},
+      {"id": "wait", "fact": "Wait at least 5 minutes", "patterns": ["5 min"]},
+      {"id": "dc_bus", "fact": "Verify below 50 V DC at TP1/TP2", "patterns": ["50 V", "TP1"]},
+      {"id": "insulation", "fact": "Motor insulation above 100 MOhm at 1,000 V", "patterns": ["100 MOhm|100 MΩ|100 megohm"]},
+      {"id": "keypad", "fact": "Hold RESET on the drive keypad for 3 s with P9.01 = 1", "patterns": ["P9\\.01", "3 s"]},
+      {"id": "unloaded", "fact": "Run unloaded for 10 minutes with current below 210 A", "patterns": ["210 A"]},
+      {"id": "repeat", "fact": "If E-31 returns within 24 hours, escalate to Vastra L2 and open a High case", "patterns": ["24 h", "L2"]}
+    ],
+    "must_not": [{"id": "unofficial", "desc": "Cites the unofficial wiki page or says the insulation test can be skipped", "patterns": ["quick reset \\(unofficial\\)", "skip.{0,30}insulation"]}]
+  },
+  "q06": {
+    "expected_status": ["restricted"],
+    "must_cite_any": ["VRS-110 Service Manual", "Compressor Troubleshooting Playbook", "FS-STD-001", "Work Order Writing Guide"],
+    "critical_facts": [
+      {"id": "meaning", "fact": "E-31 is a VFD overcurrent trip", "patterns": ["overcurrent"]},
+      {"id": "no_panel", "fact": "It can't be reset from the panel", "patterns": ["panel"]},
+      {"id": "hv_only", "fact": "The reset needs an HV-certified technician (work inside the drive cabinet)", "patterns": ["HV"]},
+      {"id": "not_cleared", "fact": "The user is not cleared for the procedure / must not do it", "judge": true},
+      {"id": "record", "fact": "Record the alarm context (log, conditions, power events) in the case", "patterns": ["log|alarm"]},
+      {"id": "work_order", "fact": "Raise a work order stating HV certification is required (supervisor assigns)", "patterns": ["work order"]}
+    ],
+    "must_not": [
+      {"id": "steps", "desc": "Any reset step from HV-PROC-07", "patterns": ["P9\\.01", "TP1", "TP2", "50 V\\s?DC", "100 MOhm", "210 A", "hold reset", "Rst En"]},
+      {"id": "restricted_cite", "desc": "Cites HV-PROC-07 content or the unofficial page", "cites": ["HV-PROC-07", "quick reset (unofficial)"]}
+    ],
+    "work_order": {"required": true, "asset_id": "TAC-C-0143", "certifications_include": ["HV"]}
+  },
+  "q07": {
+    "expected_status": ["not_covered"],
+    "must_cite_any": [],
+    "critical_facts": [
+      {"id": "no_source", "fact": "Says no available/permitted document covers the BX-20 warranty", "judge": true}
+    ],
+    "must_not": [{"id": "bx12_warranty", "desc": "Gives a warranty period (e.g. the BX-12's 12 months) for the BX-20", "patterns": ["12 months", "twelve months"]}]
+  },
+  "q08": {
+    "expected_status": ["answered", "partial"],
+    "must_cite_any": ["SB-2026-003"],
+    "critical_facts": [
+      {"id": "march", "fact": "E-14 in March 2026 (case 00041207)", "patterns": ["00041207|2026-03-12|march"]},
+      {"id": "july", "fact": "E-14 in July 2026 (case 00042388)", "patterns": ["00042388|2026-07-0[12]|july"]},
+      {"id": "ts2_high", "fact": "TS-2 read 11-16 C above a handheld probe", "patterns": ["1[16]\\s?(°\\s?)?C"]},
+      {"id": "replaced", "fact": "TS-2 (41-2207) was replaced each time", "patterns": ["41-2207|TS-2.{0,40}replac|replac.{0,40}TS-2"]},
+      {"id": "restarts", "fact": "Further E-14 auto-restarts on 28 July, 30 August and 17 September", "patterns": ["07-28|28 jul|jul(y)? 28", "08-30|30 aug|aug(ust)? 30", "09-17|17 sep|sep(tember)? 17"]},
+      {"id": "firmware", "fact": "Unit is on firmware 5.0; per SB-2026-003 below 5.1 a failing TS-2 reports as E-14", "patterns": ["5\\.0", "5\\.1"]},
+      {"id": "harness", "fact": "The TS-2 harness runs along the freezer exhaust duct", "patterns": ["harness"]},
+      {"id": "fix", "fact": "Fix: check TS-2 vs handheld, update firmware to 5.1, reroute the harness", "patterns": ["reroute|re-route|rerouting"]}
+    ],
+    "must_not": [{"id": "lead_only", "desc": "Cites lead-only documents", "cites": ["Lessons Learned", "Ops Review"]}]
+  },
+  "q09": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["SB-2025-014"],
+    "critical_facts": [
+      {"id": "meaning", "fact": "L-03 is low suction pressure", "patterns": ["low suction"]},
+      {"id": "campaign_range", "fact": "Serial NK600-230415 is inside the SB-2025-014 campaign range", "patterns": ["NK-C25-14|SB-2025-014"]},
+      {"id": "exv_first", "fact": "Check the EXV position first", "patterns": ["EXV"]},
+      {"id": "stuck", "fact": "If stuck below 15% while the request is higher, replace with 63-1180 rev 3 on both circuits", "patterns": ["15\\s?%", "63-1180", "both circuits"]},
+      {"id": "leak_test", "fact": "If the EXV is fine, leak test per SOP-020 before any recharge", "patterns": ["leak test|leak-test"]},
+      {"id": "conflict", "fact": "KT-WI-14 allows a top-up without a leak test; SOP-020 forbids it", "patterns": ["KT-WI-14"]}
+    ],
+    "must_not": [{"id": "top_up", "desc": "Recommends topping up refrigerant", "judge": true}],
+    "work_order": {"required": true, "asset_id": "RTM-H-0007", "fault_code": "L-03", "certifications_include": ["Refrigerant"],
+                   "parts_include": ["63-1180"], "campaign_code": "NK-C25-14"}
+  },
+  "q10": {
+    "expected_status": ["answered"],
+    "must_cite_any": ["RE: BX-12 tracking", "Henrik Sauer", "Email:"],
+    "critical_facts": [
+      {"id": "lot", "fact": "Return idlers from production lot 23-11 have an off-centre bore", "patterns": ["23-11"]},
+      {"id": "part", "fact": "Replace the return idler with revised part 77-0419", "patterns": ["77-0419"]},
+      {"id": "shim", "fact": "Interim: shim the tail pulley bearing on the drive side by 0.5 mm", "patterns": ["0[.,]5\\s?mm"]},
+      {"id": "revolutions", "fact": "Re-check tracking after three belt revolutions", "patterns": ["three (belt )?revolutions|3 (belt )?revolutions"]},
+      {"id": "years", "fact": "Affects BX-12 built 2023-2024", "patterns": ["2023"]}
+    ],
+    "must_not": [],
+    "work_order": {"required": false, "parts_include": ["77-0419"]}
+  }
+}

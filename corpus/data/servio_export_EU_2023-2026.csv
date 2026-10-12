@@ -1,0 +1,448 @@
+werkorder;datum;object;object_oud;locatie;type;storingscode;omschrijving;monteur;onderdelen;uren;draaiuren;status
+2300121;09-01-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;2,5;395;Gereed
+2300135;20-01-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;BVISSER;;1;2625;Gereed
+2300140;24-02-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO + controle regelaar, alarmhistorie leeg;SDEVRIES;;2,5;1547;Gereed
+2300147;01-03-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;BVISSER;;0;608;Gereed
+2300151;06-03-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;meterstand;BVISSER;;0;3370;Gereed
+2300160;06-03-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;Storing;L-06;L-06 flow storing, klant had afsluiter dicht na werk aan CHW. open, gereset;SDEVRIES;;3;;Gereed
+2300162;07-03-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;LHOFFMANN;;1;;Gereed
+2300171;08-03-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM. Fan 1 guard loose, fixed. Coils ok;JNOWAK;;3;1238;Gereed
+2300176;17-03-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;0,5;;Gereed
+2300183;11-04-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;PO;;PO 4000 uur: olie + filters vervangen. SynLube 46;BVISSER;1x 41-0046, 1x 41-1470, 1x 41-1510;3,5;1144;Gereed
+2300197;17-04-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;PO, nakoeler schoongeblazen. eindtemp 87 C;BVISSER;2x 41-0046, 1x 41-1480, 1x 41-1512;4;4098;Gereed
+2300206;17-04-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;BVISSER;;0,5;;Gereed
+2300211;24-04-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;LHOFFMANN;;1;;Gereed
+2300214;01-05-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;4349;Gereed
+2300222;04-05-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;meterstand;BVISSER;;0;1454;Gereed
+2300229;08-05-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;SDEVRIES;;2;2310;Gereed
+2300241;11-05-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;F-gas controle;;F-gas lekcontrole beide circuits, elektronisch, geen lekkage. logboek bijgewerkt;SDEVRIES;;1,5;;Gereed
+2300253;16-05-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3,5 bar c2 3,6 bar;JNOWAK;;2;2196;Gereed
+2300264;30-05-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Inspectie;;Inbedrijfstelling NK-600 dak hal B samen met Nordkyl. vulling cfm typeplaatje, beide circuits ok. sw 7.0;SDEVRIES;;6;;Gereed
+2300273;05-06-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 92 C;BVISSER;;0,5;1919;Gereed
+2300285;07-06-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;BVISSER;;0,5;;Gereed
+2300293;29-06-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;2267;Gereed
+2300296;04-07-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO: lamellen condensor gekamd, veel vuil (meeuwen). waterflow ok;SDEVRIES;;2,5;400;Gereed
+2300309;04-07-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO gedaan. elektrische aansluitingen nagetrokken, alles vast;SDEVRIES;;2,5;2946;Gereed
+2300323;06-07-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;Quarterly PM non-refrigerant side. Coils, fans, electrical. All normal;JNOWAK;;2;2942;Gereed
+2300331;10-07-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;BVISSER;;0;5578;Gereed
+2300342;17-07-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 83 C;BVISSER;;1;5686;Gereed
+2300345;02-08-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;LHOFFMANN;;1;;Gereed
+2300350;21-08-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;Storing;L-01;hoge druk L-01, condensor dicht met vuil. gereinigd, gereset;SDEVRIES;;1,5;;Gereed
+2300352;28-08-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;meterstand;BVISSER;;0;3040;Gereed
+2300364;28-08-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;Periodiek onderhoud uitgevoerd, filterdroger dT 1 C, ok;SDEVRIES;;2,5;3531;Gereed
+2300367;01-09-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO + controle regelaar, alarmhistorie leeg;SDEVRIES;;2,5;1077;Gereed
+2300374;03-09-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;1;6499;Gereed
+2300377;05-09-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;Alarm;L-03;L-03 c2 after weekend stop, auto restart, ok after;JNOWAK;;0,5;;Gereed
+2300389;05-09-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;BVISSER;;1;;Gereed
+2300397;06-09-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;hours read;LHOFFMANN;;0;6562;Gereed
+2300406;08-09-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM, controller readings normal. Did not connect gauges (not certified);JNOWAK;;2;3849;Gereed
+2300414;26-09-2023;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;2;;Gereed
+2300426;17-10-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Storing;;condensaatafvoer hing open, gereinigd;BVISSER;;1,5;;Gereed
+2300432;26-10-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;BVISSER;;0,5;;Gereed
+2300444;26-10-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;LHOFFMANN;;0,5;;Gereed
+2300457;29-10-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;BVISSER;;0;3910;Gereed
+2300469;30-10-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;7483;Gereed
+2300483;30-10-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 6,7 C. geen alarmen;SDEVRIES;;2;4185;Gereed
+2300489;02-11-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd, ventilatoren ok. zuigdruk c1 3,2 / c2 3,7 bar. kijkglas helder;SDEVRIES;;2,5;1726;Gereed
+2300502;06-11-2023;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2300510;07-11-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM done. LWT 6,6 C, no alarms in history;JNOWAK;;3;4726;Gereed
+2300524;15-11-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;F-gas controle;;lekcontrole ok, logboek getekend door klant;SDEVRIES;;1,5;;Gereed
+2300529;24-11-2023;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1,5;;Gereed
+2300538;29-11-2023;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Storing;L-01;hoge druk L-01, condensor dicht met vuil. gereinigd, gereset;BVISSER;;2;;Gereed
+2300543;30-11-2023;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM done. belt wear est 20%;ARAHMAN;;1;;Gereed
+2300553;04-12-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;BVISSER;;1;;Gereed
+2300559;05-12-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;PO 4000 uur: olie + oliefilter + luchtfilter vervangen. scheiderdruk 0,43 bar;LHOFFMANN;2x 41-0046, 1x 41-1480, 1x 41-1512;4;8114;Gereed
+2300564;06-12-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;LHOFFMANN;;1;4424;Gereed
+2300572;11-12-2023;GDN-H-0014;BPF-KM14;Gdansk BPF;F-gas controle;;Kontrola szczelnosci OK, brak wyciekow. F-gas log updated (Chlodtech);EXTERN-CHLODTECH;;0;;Gereed
+2300574;12-12-2023;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;PO;;PO 4000 uur, olie + oliefilter + luchtfilter. SynLube;LHOFFMANN;1x 41-0046, 1x 41-1470, 1x 41-1510;3,5;4518;Gereed
+2300577;17-12-2023;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Storing;E-02;E-02 fasefout na stroomuitval. gereset;BVISSER;;3;;Gereed
+2300590;29-12-2023;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;kwartaalcontrole, geen bijzonderheden. persdruk c1 11,5 bar;SDEVRIES;;2,5;4840;Gereed
+2400173;02-01-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;BVISSER;;0;4811;Gereed
+2400176;03-01-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1;;Gereed
+2400189;08-01-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1,5;;Gereed
+2400191;08-01-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;BVISSER;;0;8713;Gereed
+2400202;10-01-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3.4 bar c2 3.7 bar;JNOWAK;;2,5;5629;Gereed
+2400209;15-01-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Alarm;L-03;L-03 c2 kort na herstart winterstop, vanzelf hersteld na reset. geen actie;SDEVRIES;;0,5;;Gereed
+2400211;16-01-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Storing;E-11;E-11 hoge persdruk, klant had hoofdkraan dicht. gereset;LHOFFMANN;;1,5;;Gereed
+2400213;23-01-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 92 C;BVISSER;;1;8940;Gereed
+2400225;29-01-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 79 C;LHOFFMANN;;1;;Gereed
+2400236;02-02-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM ok;ARAHMAN;;2;;Gereed
+2400240;13-02-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1;;Gereed
+2400249;26-02-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO na winterstop. zuigdruk c1 3,4 / c2 3,3 bar. kijkglas helder beide circuits;SDEVRIES;;2,5;3037;Gereed
+2400254;28-02-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;LHOFFMANN;;0;9571;Gereed
+2400263;29-02-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;BVISSER;;0;5588;Gereed
+2400277;01-03-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO, oververhitting en onderkoeling beide circuits binnen waarden;BVISSER;;2,5;5496;Gereed
+2400290;05-03-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;LHOFFMANN;;0,5;;Gereed
+2400296;05-03-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 7,4 C. geen alarmen;SDEVRIES;;2;3126;Gereed
+2400307;06-03-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;2;;Gereed
+2400312;08-03-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;Quarterly PM non-refrigerant side. Coils, fans, electrical. All normal;JNOWAK;;2,5;6438;Gereed
+2400319;15-03-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;2;;Gereed
+2400331;18-03-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;BVISSER;;1;;Gereed
+2400336;24-03-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;Storing;C-03;C-03 belt slip, retensioned;ARAHMAN;;2;;Gereed
+2400348;03-04-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased bearings DE/NDE 25g each. vib DE 1.1;ARAHMAN;;0,5;616;Gereed
+2400361;05-04-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;Storing;;splice lifting, re-spliced;ARAHMAN;;3;;Gereed
+2400364;16-04-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;Storing;C-05;C-05 product jam, crate at transfer, cleared;ARAHMAN;;1;;Gereed
+2400371;17-04-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;BVISSER;;0,5;;Gereed
+2400374;17-04-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM, idlers checked, all spin free;ARAHMAN;;2;;Gereed
+2400380;25-04-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;BVISSER;;1;6344;Gereed
+2400384;26-04-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM done. belt wear est 40%;ARAHMAN;;1;;Gereed
+2400398;29-04-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;meterstand;BVISSER;;0;10618;Gereed
+2400401;29-04-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO + controle regelaar, alarmhistorie leeg;SDEVRIES;;2;6100;Gereed
+2400410;01-05-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;Storing;C-03;C-03 belt slip, retensioned;ARAHMAN;;1;;Gereed
+2400414;01-05-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;Periodiek onderhoud uitgevoerd, filterdroger dT 2 C, ok;SDEVRIES;;3;3783;Gereed
+2400425;04-05-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;Storing;P-06;dry run trip, glycol tank low. topped by site, restart ok;ARAHMAN;;2;;Gereed
+2400437;07-05-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;3;7263;Gereed
+2400442;09-05-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;hours read;LHOFFMANN;;0;6565;Gereed
+2400448;13-05-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp .11 bar;ARAHMAN;;0,5;1255;Gereed
+2400456;16-05-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;F-gas controle;;lekcontrole ok, logboek getekend door klant;SDEVRIES;;1,5;;Gereed
+2400459;19-05-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM done. belt wear est 35%;ARAHMAN;;1,5;;Gereed
+2400468;21-05-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Storing;E-11;E-11 hoge persdruk, klant had hoofdkraan dicht. gereset;LHOFFMANN;;3;;Gereed
+2400482;28-05-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;2;;Gereed
+2400484;03-06-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;1;;Gereed
+2400486;10-06-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased, vib ok, strainer ok;ARAHMAN;;0,5;;Gereed
+2400498;15-06-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;Storing;P-04;seal leaking, replaced seal kit;ARAHMAN;1x 18-0502;3;;Gereed
+2400510;17-06-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;LHOFFMANN;;0,5;7093;Gereed
+2400514;17-06-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1,5;;Gereed
+2400523;28-06-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;BVISSER;;0;7267;Gereed
+2400531;01-07-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO gedaan. elektrische aansluitingen nagetrokken, alles vast;SDEVRIES;;3;4484;Gereed
+2400538;03-07-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;2;;Gereed
+2400546;03-07-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Storing;L-09;L-09 ventilatorstoring, ventilator 1 lager. motor later vervangen;SDEVRIES;;3;;Gereed
+2400559;04-07-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;0,5;381;Gereed
+2400561;05-07-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Storing;;condensaatafvoer hing open, gereinigd;BVISSER;;1,5;;Gereed
+2400567;08-07-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO: lamellen condensor gekamd, veel vuil (meeuwen). waterflow ok;SDEVRIES;;2;6853;Gereed
+2400569;09-07-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM done. LWT 6,8 C, no alarms in history;JNOWAK;;2;8167;Gereed
+2400578;10-07-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;BVISSER;;0;11840;Gereed
+2400583;12-07-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer basket cleaned, mostly cardboard fibre;ARAHMAN;;1;;Gereed
+2400587;22-07-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;meterstand;LHOFFMANN;;0;562;Gereed
+2400596;22-07-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;LHOFFMANN;;1;12054;Gereed
+2400604;22-07-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM done. belt wear est 25%;ARAHMAN;;2;;Gereed
+2400617;23-07-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;onderhoud uitgevoerd, condensaatafvoer gereinigd, persluchtlekken gemeld aan klant;LHOFFMANN;2x 41-0046, 1x 41-1480, 1x 41-1512;4;12097;Gereed
+2400629;28-07-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;Storing;;splice lifting, re-spliced;ARAHMAN;;1,5;;Gereed
+2400633;31-07-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM, idlers checked, all spin free;ARAHMAN;;2;;Gereed
+2400644;01-08-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-01;L-01 high pressure, condenser blocked with dirt. cleaned, reset;JNOWAK;;2;;Gereed
+2400646;01-08-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;0,5;;Gereed
+2400649;12-08-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-06;L-06 flow fault, site closed CHW valve. opened, reset;JNOWAK;;2;;Gereed
+2400660;19-08-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspection: cooler clean, oil level ok;LHOFFMANN;;0,5;;Gereed
+2400671;21-08-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp before 0.11 bar;ARAHMAN;;0,5;;Gereed
+2400683;27-08-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;PO;;PO 4000 h olie ververst SynLube 46, filters;LHOFFMANN;1x 41-0046, 1x 41-1470, 1x 41-1510;3,5;8065;Gereed
+2400695;29-08-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;kwartaalcontrole, geen bijzonderheden. persdruk c1 10,9 bar;SDEVRIES;;2;5099;Gereed
+2400702;30-08-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;8122;Gereed
+2400704;02-09-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;2;;Gereed
+2400715;04-09-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;SDEVRIES;;2;7510;Gereed
+2400718;06-09-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2400725;09-09-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;0,5;12890;Gereed
+2400737;09-09-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;12926;Gereed
+2400747;10-09-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;1;;Gereed
+2400753;16-09-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM, controller readings normal. Did not connect gauges (not certified);JNOWAK;;2,5;9156;Gereed
+2400762;19-09-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;Storing;P-02;bearing temp after PM, over-greased. relief open, temp down;ARAHMAN;;1;;Gereed
+2400767;23-09-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;uren gelezen;MBIANCHI;;0;1288;Gereed
+2400776;30-09-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;1366;Gereed
+2400789;30-09-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM: strainer + grease. seal dry;ARAHMAN;;1;;Gereed
+2400798;02-10-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Storing;;condensaatafvoer hing open, gereinigd;MBIANCHI;;1;;Gereed
+2400805;04-10-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1,5;;Gereed
+2400811;08-10-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Software;;controller fw 4.8 -> 4.9;MBIANCHI;;1;;Gereed
+2400823;09-10-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Storing;E-02;E-02 fasefout na stroomuitval. gereset;LHOFFMANN;;2;;Gereed
+2400832;13-10-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Storing;E-18;E-18 air filter, replaced;MBIANCHI;1x 41-1510;1;;Gereed
+2400837;14-10-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1,5;;Gereed
+2400846;14-10-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;F-gas controle;;Jaarlijkse lekcontrole uitgevoerd cfm F-gassenverordening. geen lek. sticker vernieuwd;SDEVRIES;;1,5;;Gereed
+2400854;20-10-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Storing;L-06;L-06 flow storing, klant had afsluiter dicht na werk aan CHW. open, gereset;SDEVRIES;;1;;Gereed
+2400860;22-10-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;L-09;L-09 ventilatorstoring, ventilator 1 lager. motor later vervangen;BVISSER;;1,5;;Gereed
+2400867;23-10-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;13679;Gereed
+2400874;24-10-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;PO: lamellen condensor gekamd, veel vuil (meeuwen). waterflow ok;SDEVRIES;;2;570;Gereed
+2400880;25-10-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;L-06;L-06 flow storing, klant had afsluiter dicht na werk aan CHW. open, gereset;SDEVRIES;;2;;Gereed
+2400894;29-10-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;hours read;MBIANCHI;;0;13793;Gereed
+2400906;30-10-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;0,5;;Gereed
+2400919;01-11-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;vib DE 2,2 NDE 1,6 mm/s. ok;ARAHMAN;;0,5;;Gereed
+2400924;04-11-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;9000;Gereed
+2400937;04-11-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd, ventilatoren ok. zuigdruk c1 3,7 / c2 3,4 bar. kijkglas helder;BVISSER;;2,5;8148;Gereed
+2400949;04-11-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;Storing;C-05;C-05 product jam, crate at transfer, cleared;ARAHMAN;;3;;Gereed
+2400958;05-11-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO, oververhitting en onderkoeling beide circuits binnen waarden;SDEVRIES;;3;5870;Gereed
+2400960;05-11-2024;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;Storing;L-09;L-09 ventilatorstoring, ventilator 1 lager. motor later vervangen;SDEVRIES;;2;;Gereed
+2400974;06-11-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1,5;;Gereed
+2400987;12-11-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;;Gereed
+2401000;12-11-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM. Fan 1 guard loose, fixed. Coils ok;JNOWAK;;3;9967;Gereed
+2401006;14-11-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-09;L-09 fan fault, fan 1 bearing. motor replaced later;JNOWAK;;3;;Gereed
+2401011;17-11-2024;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;F-gas controle;;F-gas lekcontrole beide circuits, elektronisch, geen lekkage. logboek bijgewerkt;SDEVRIES;;1,5;;Gereed
+2401019;18-11-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1;;Gereed
+2401030;18-11-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;L-01;hoge druk L-01, condensor dicht met vuil. gereinigd, gereset;SDEVRIES;;1,5;;Gereed
+2401042;19-11-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;1922;Gereed
+2401052;29-11-2024;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM, cleaned strainer, new cover gasket 18-1121;ARAHMAN;;0,5;;Gereed
+2401065;02-12-2024;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;;Gereed
+2401072;08-12-2024;GDN-C-0130;BPF-CP30;Gdansk BPF;Storing;E-02;E-02 phase fault after power cut. reset;MBIANCHI;;1,5;;Gereed
+2401079;10-12-2024;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;;Gereed
+2401082;11-12-2024;GDN-H-0014;BPF-KM14;Gdansk BPF;F-gas controle;;Annual leak check done by Chlodtech, no leak found, log signed;EXTERN-CHLODTECH;;0;;Gereed
+2401089;12-12-2024;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM, idlers checked, all spin free;ARAHMAN;;2;;Gereed
+2401093;15-12-2024;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;Periodiek onderhoud uitgevoerd, filterdroger dT 1 C, ok;SDEVRIES;;3;1267;Gereed
+2401101;27-12-2024;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2500177;02-01-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspection, no alarms. disch 81 C;MBIANCHI;;0,5;;Gereed
+2500187;06-01-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;LHOFFMANN;;0;14960;Gereed
+2500201;06-01-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;LHOFFMANN;;0;9885;Gereed
+2500215;06-01-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;SDEVRIES;;2,5;8841;Gereed
+2500218;06-01-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;vib DE 3.3 NDE 2.7 mm/s. ok;ARAHMAN;;1;5084;Gereed
+2500230;07-01-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM done. LWT 6.6 C, no alarms in history;JNOWAK;;2,5;10781;Gereed
+2500232;15-01-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM ok;ARAHMAN;;2;;Gereed
+2500242;20-01-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;2635;Gereed
+2500253;20-01-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Alarm;L-03;L-03 c2 na herstart (klant winterstop), gereset, liep daarna normaal. geen actie;BVISSER;;0,5;;Gereed
+2500257;23-01-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 84 C;MBIANCHI;;0,5;10076;Gereed
+2500264;28-01-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;MBIANCHI;;1;15381;Gereed
+2500270;29-01-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;1;;Gereed
+2500276;11-02-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Storing;E-02;E-02 na netwerkzaamheden Stedin. fasevolgorde + spanningen ok, gereset.;LHOFFMANN;;1,5;15604;Gereed
+2500281;12-02-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased bearings DE/NDE 25g each. vib DE 2.9;ARAHMAN;;1;;Gereed
+2500285;17-02-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie, geen alarmen;MBIANCHI;;0,5;3003;Gereed
+2500294;18-02-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Software;;controller fw 4.9 -> 5.0;MBIANCHI;;1;;Gereed
+2500301;24-02-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;SDEVRIES;;3;2191;Gereed
+2500305;24-02-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;1,5;;Gereed
+2500314;27-02-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;meterstand;LHOFFMANN;;0;10554;Gereed
+2500318;03-03-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;2;;Gereed
+2500331;03-03-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;MBIANCHI;;0;15926;Gereed
+2500344;03-03-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 6,8 C. geen alarmen;SDEVRIES;;2;9402;Gereed
+2500355;04-03-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;Storing;P-07;P-07, strainer full of pallet wrap bits, dp 0,48 bar. cleaned, suction valve open. ok;ARAHMAN;18-1121;2;6033;Gereed
+2500359;06-03-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;BVISSER;;3;7263;Gereed
+2500361;11-03-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;2;11704;Gereed
+2500374;11-03-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 81 C;MBIANCHI;;1;16059;Gereed
+2500388;17-03-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;meterstand;MBIANCHI;;0;3272;Gereed
+2500396;17-03-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;PO done, olie ververst. all ok;LHOFFMANN;2x 41-0046, 1x 41-1480, 1x 41-1512;3,5;16207;Gereed
+2500399;18-03-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;LHOFFMANN;;1;10822;Gereed
+2500411;23-03-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased, vib ok, strainer ok;ARAHMAN;;0,5;;Gereed
+2500421;25-03-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;1;3407;Gereed
+2500427;30-03-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM ok;ARAHMAN;;1;;Gereed
+2500432;02-04-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;PO;;oil + oil filter + air filter, SynLube 46;MBIANCHI;1x 41-0046, 1x 41-1470, 1x 41-1510;3,5;11018;Gereed
+2500446;09-04-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM done. belt wear est 50%;ARAHMAN;;1;;Gereed
+2500453;14-04-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;Storing;C-02;tracking drift + noisy return idler bearing. idler repl 77-0410, tracking adj. ok;ARAHMAN;77-0410;2;;Gereed
+2500458;14-04-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;kwartaalcontrole, geen bijzonderheden. persdruk c1 10,6 bar;SDEVRIES;;3;2768;Gereed
+2500468;22-04-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-03;L-03 c2 after Easter shutdown. Chlodtech topped up 1,8 kg R513A, no leak found (visual), KT-WI-14. leak test to plan.;EXTERN-CHLODTECH;R513A 1,8 kg (contractor);3;;Gereed
+2500470;25-04-2025;GDN-C-0131;;Gdansk BPF;Meterstand;;hours read;MBIANCHI;;0;531;Gereed
+2500481;28-04-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp .07 bar;ARAHMAN;;1,5;6912;Gereed
+2500489;30-04-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;0,5;;Gereed
+2500503;30-04-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;Periodiek onderhoud uitgevoerd, filterdroger dT 2 C, ok;SDEVRIES;;2;10034;Gereed
+2500512;02-05-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;MBIANCHI;;1;;Gereed
+2500525;05-05-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;meterstand;MBIANCHI;;0;17053;Gereed
+2500529;05-05-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;hours read;MBIANCHI;;0;11476;Gereed
+2500539;05-05-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM done. belt wear est 25%;ARAHMAN;;1;;Gereed
+2500550;07-05-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;0,5;736;Gereed
+2500564;10-05-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO gedaan. elektrische aansluitingen nagetrokken, alles vast;SDEVRIES;;3;7960;Gereed
+2500566;11-05-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;F-gas controle;;Jaarlijkse lekcontrole uitgevoerd cfm F-gassenverordening. geen lek. sticker vernieuwd;SDEVRIES;;1,5;;Gereed
+2500575;12-05-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;Quarterly PM non-refrigerant side. Coils, fans, electrical. All normal;JNOWAK;;2,5;12572;Gereed
+2500577;14-05-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM, idlers checked, all spin free;ARAHMAN;;1,5;;Gereed
+2500583;20-05-2025;GDN-H-0015;;Gdansk BPF;PO;;PM done. LWT 6,4 C, no alarms in history;JNOWAK;;2,5;568;Gereed
+2500591;20-05-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Software;;sw update 7.0 -> 7.2 niet uitgevoerd, unit in bedrijf en klant wil niet stilleggen. volgende keer;SDEVRIES;;0,5;;Geannuleerd
+2500597;20-05-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;Software;;sw update 7.0 -> 7.2 uitgevoerd;SDEVRIES;;0,5;;Gereed
+2500606;21-05-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspection, no alarms. disch 83 C;MBIANCHI;;0,5;;Gereed
+2500617;21-05-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;hours read;MBIANCHI;;0;4060;Gereed
+2500623;21-05-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Software;;sw update 7.1 -> 7.2;SDEVRIES;;0,5;;Gereed
+2500633;22-05-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;PO;;PM done. oil + filters, cooler blown out;MBIANCHI;1x 41-0046, 1x oliefilter VRS-45, 1x 41-1510;3,5;4074;Gereed
+2500638;27-05-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;Storing;C-01;C-01, build-up under belt at tail. cleaned;ARAHMAN;;2;;Gereed
+2500644;30-05-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer basket cleaned, mostly glass fines;ARAHMAN;;0,5;;Gereed
+2500653;06-06-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1,5;;Gereed
+2500658;10-06-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;17632;Gereed
+2500670;13-06-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;LHOFFMANN;;1;;Gereed
+2500672;16-06-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Storing;E-18;E-18 air filter, replaced 41-1510;MBIANCHI;41-1510;3;;Gereed
+2500678;17-06-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;2;;Gereed
+2500691;19-06-2025;GDN-C-0131;;Gdansk BPF;Meterstand;;draaiuren;MBIANCHI;;0;1441;Gereed
+2500703;24-06-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;1485;Gereed
+2500715;25-06-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 7,1 C. geen alarmen;SDEVRIES;;2;3710;Gereed
+2500724;29-06-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;kwartaalcontrole, geen bijzonderheden. persdruk c1 10,5 bar;SDEVRIES;;2;10687;Gereed
+2500733;03-07-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;LHOFFMANN;;0;18033;Gereed
+2500739;04-07-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM, cleaned strainer, new cover gasket 18-1121;ARAHMAN;;1,5;7996;Gereed
+2500747;05-07-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;;Gereed
+2500755;07-07-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM, controller readings normal. Did not connect gauges (not certified);JNOWAK;;2;13342;Gereed
+2500763;07-07-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;LHOFFMANN;;0;12332;Gereed
+2500772;08-07-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;L-01;L-01 c1 bij 33 C. ventilator 3 lager vast, motor vervangen (Nordkyl). condensor gereinigd.;SDEVRIES;Fan motor Nordkyl (direct order);3;;Gereed
+2500783;09-07-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd, ventilatoren ok. zuigdruk c1 3,7 / c2 3,0 bar. kijkglas helder;SDEVRIES;;2,5;8681;Gereed
+2500792;09-07-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;2;;Gereed
+2500802;15-07-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;draaiuren;MBIANCHI;;0;4664;Gereed
+2500807;15-07-2025;GDN-P-0070;;Gdansk BPF;PO;;strainer cleaned, dp before 0.13 bar;ARAHMAN;;1;;Gereed
+2500815;21-07-2025;GDN-H-0015;;Gdansk BPF;PO;;PM done. LWT 6,8 C, no alarms in history;JNOWAK;;3;1324;Gereed
+2500823;21-07-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2500829;21-07-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;MBIANCHI;;0,5;;Gereed
+2500835;28-07-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 90 C;MBIANCHI;;1;12619;Gereed
+2500849;06-08-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp before 0.21 bar;ARAHMAN;;1;8515;Gereed
+2500852;11-08-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;inspection, no alarms. disch 83 C;MBIANCHI;;0,5;2322;Gereed
+2500860;11-08-2025;GDN-P-0070;;Gdansk BPF;Storing;P-04;seal leak P-04. seal flush line kinked behind coupling guard. re-routed flush line, replaced seal 18-0355. SF 00039115;ARAHMAN;1x 18-0356;4;582;Gereed
+2500872;12-08-2025;GDN-P-0070;;Gdansk BPF;Inspectie;;checked after 24 h, seal dry. closed;ARAHMAN;;0,5;;Gereed
+2500884;18-08-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-03;L-03 c2 again after summer shutdown. Chlodtech +1,2 kg, no leak found (visual). Sofie: full leak test to plan.;EXTERN-CHLODTECH;R513A 1,2 kg (contractor);2;;Gereed
+2500889;18-08-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1,5;;Gereed
+2500894;19-08-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;1;5063;Gereed
+2500905;22-08-2025;GDN-C-0131;;Gdansk BPF;Meterstand;;meterstand;MBIANCHI;;0;2509;Gereed
+2500909;25-08-2025;GDN-P-0070;;Gdansk BPF;PO;;PM: strainer + grease. seal dry;ARAHMAN;;0,5;793;Gereed
+2500921;25-08-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM, idlers checked, all spin free;ARAHMAN;;1;;Gereed
+2500925;26-08-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;PO, oververhitting en onderkoeling beide circuits binnen waarden;SDEVRIES;;3;4508;Gereed
+2500936;04-09-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3.5 bar c2 3.3 bar;JNOWAK;;2;14202;Gereed
+2500950;04-09-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO: lamellen condensor gekamd, veel vuil (meeuwen). waterflow ok;BVISSER;;3;11394;Gereed
+2500952;05-09-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;19136;Gereed
+2500966;08-09-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;MBIANCHI;;0;13207;Gereed
+2500972;09-09-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM: strainer + grease. seal dry;ARAHMAN;;1,5;9041;Gereed
+2500976;10-09-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO, oververhitting en onderkoeling beide circuits binnen waarden;SDEVRIES;;3;9382;Gereed
+2500979;15-09-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;0,5;;Gereed
+2500982;15-09-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;LHOFFMANN;;1;13299;Gereed
+2500987;15-09-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Storing;;oil carryover, separator element replaced 41-3075. checked after 1 week ok;MBIANCHI;41-3075;1;13327;Gereed
+2501001;21-09-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1;;Gereed
+2501012;23-09-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;5496;Gereed
+2501019;25-09-2025;GDN-H-0015;;Gdansk BPF;PO;;PM, controller readings normal. Did not connect gauges (not certified);JNOWAK;;2,5;2130;Gereed
+2501022;27-09-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie, geen alarmen;MBIANCHI;;1;5540;Gereed
+2501033;29-09-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1;;Gereed
+2501042;30-09-2025;GDN-P-0070;;Gdansk BPF;PO;;strainer cleaned, dp .04 bar;ARAHMAN;;0,5;;Gereed
+2501052;01-10-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;3122;Gereed
+2501066;06-10-2025;GDN-H-0015;;Gdansk BPF;Storing;L-04;L-04: BMS setpoint changed to 3 C by customer. reset to 7 C, local setpoint locked;JNOWAK;;2;2304;Gereed
+2501076;13-10-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;F-gas controle;;Periodieke lekcontrole, geen lekkage gevonden. olievlekken geen;SDEVRIES;;1,5;;Gereed
+2501079;14-10-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;Software;;regelaar sw 6.9 -> 7.2, nodig voor EXV service menu (campagne NK-C25-14);SDEVRIES;;0,5;;Gereed
+2501084;14-10-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;Storing;L-03;NK-C25-14: EXV beide circuits vervangen 63-1180 rev 3 + filterdroger 63-0410 2x. c2 klep zat vast. teveel vulling c2 teruggewonnen, beide circuits op gewicht cfm typeplaatje. met JNOWAK.;SDEVRIES;"63-1180 x2; 63-0410 x2";3;;Gereed
+2501092;15-10-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM: strainer + grease. seal dry;ARAHMAN;;1,5;;Gereed
+2501100;21-10-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM, idlers checked, all spin free;ARAHMAN;;2;;Gereed
+2501114;22-10-2025;GDN-C-0131;;Gdansk BPF;Meterstand;;draaiuren;MBIANCHI;;0;3485;Gereed
+2501128;24-10-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;PO: lamellen condensor gekamd, veel vuil (meeuwen). waterflow ok;SDEVRIES;;2;5288;Gereed
+2501138;27-10-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;4000h service, ran loaded 15 min, disch 87 C;MBIANCHI;2x 41-0046, 1x 41-1480, 1x 41-1512;3;20059;Gereed
+2501148;28-10-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO gedaan. elektrische aansluitingen nagetrokken, alles vast;SDEVRIES;;2;11951;Gereed
+2501152;30-10-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;LHOFFMANN;;0,5;;Gereed
+2501161;31-10-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 88 C;LHOFFMANN;;1;20111;Gereed
+2501171;02-11-2025;GDN-P-0070;;Gdansk BPF;PO;;greased bearings DE/NDE 18g each. vib DE 2.1;ARAHMAN;;1;1818;Gereed
+2501180;02-11-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;1;;Gereed
+2501191;05-11-2025;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO + controle regelaar, alarmhistorie leeg;SDEVRIES;;3;9979;Gereed
+2501202;09-11-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM. Fan 1 guard loose, fixed. Coils ok;JNOWAK;;2;15160;Gereed
+2501204;10-11-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;3805;Gereed
+2501213;10-11-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;hours read;LHOFFMANN;;0;20279;Gereed
+2501223;10-11-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;LHOFFMANN;;0;14098;Gereed
+2501229;13-11-2025;GDN-V-0241;;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;2;;Gereed
+2501240;14-11-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;uren gelezen;MBIANCHI;;0;6056;Gereed
+2501242;18-11-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer basket cleaned, mostly pallet wrap;ARAHMAN;;0,5;10206;Gereed
+2501251;19-11-2025;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;1;6118;Gereed
+2501263;24-11-2025;GDN-H-0015;;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3.1 bar c2 3.7 bar;JNOWAK;;2;2920;Gereed
+2501274;27-11-2025;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;2;;Gereed
+2501285;28-11-2025;GDN-C-0131;;Gdansk BPF;PO;;PM done. oil + filters, cooler blown out;MBIANCHI;2x 41-0046, 1x 41-1480, 1x 41-1512;3;4060;Gereed
+2501292;02-12-2025;GDN-C-0131;;Gdansk BPF;Storing;E-31;E-31 after storm outage. Marco no HV. Reset by Lena 03-12 per HV-PROC-07. 27 h down.;MBIANCHI;;3;;Gereed
+2501302;04-12-2025;GDN-P-0070;;Gdansk BPF;PO;;greased, vib ok, strainer ok;ARAHMAN;;1,5;2282;Gereed
+2501309;08-12-2025;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;2;;Gereed
+2501312;11-12-2025;GDN-H-0014;BPF-KM14;Gdansk BPF;F-gas controle;;Leak check both circuits, no leaks. Kontrola szczelnosci wykonana;EXTERN-CHLODTECH;;0;;Gereed
+2501316;13-12-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;20867;Gereed
+2501320;15-12-2025;GDN-V-0241;;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1;;Gereed
+2501329;16-12-2025;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;1;14598;Gereed
+2501338;16-12-2025;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;Periodiek onderhoud uitgevoerd, filterdroger dT 1 C, ok;SDEVRIES;;3;5974;Gereed
+2501344;22-12-2025;GDN-C-0131;;Gdansk BPF;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;1;;Gereed
+2501349;25-12-2025;GDN-C-0131;;Gdansk BPF;Meterstand;;hours read;MBIANCHI;;0;4542;Gereed
+2501359;26-12-2025;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased bearings DE/NDE 25g each. vib DE 1,6;ARAHMAN;;0,5;;Gereed
+2501370;30-12-2025;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;21137;Gereed
+2501381;30-12-2025;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd, ventilatoren ok. zuigdruk c1 3,6 / c2 3,7 bar. kijkglas helder;BVISSER;;2,5;12634;Gereed
+2600186;01-01-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM, idlers checked, all spin free;ARAHMAN;;1;;Gereed
+2600191;06-01-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;meterstand;MBIANCHI;;0;14879;Gereed
+2600204;07-01-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;6733;Gereed
+2600217;13-01-2026;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;Quarterly PM non-refrigerant side. Coils, fans, electrical. All normal;JNOWAK;;3;16043;Gereed
+2600227;13-01-2026;GDN-P-0070;;Gdansk BPF;PO;;vib DE 3.4 NDE 1.3 mm/s. ok;ARAHMAN;;1;;Gereed
+2600238;16-01-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;2;;Gereed
+2600251;18-01-2026;GDN-V-0241;;Gdansk BPF;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1,5;;Gereed
+2600263;19-01-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;6844;Gereed
+2600265;19-01-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;belt replaced (BX-20 belt, Belton direct). tension + tracking set;ARAHMAN;Belt BX-20 (Belton direct);1;;Gereed
+2600272;20-01-2026;GDN-H-0015;;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;2;3643;Gereed
+2600277;20-01-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;21502;Gereed
+2600286;02-02-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;15265;Gereed
+2600288;02-02-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp before 0,19 bar;ARAHMAN;;1;11447;Gereed
+2600300;09-02-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;inspectie, geen alarmen;MBIANCHI;;0,5;;Gereed
+2600303;09-02-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM ok;ARAHMAN;;2;;Gereed
+2600305;11-02-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM done. belt wear est 35%;ARAHMAN;;1,5;;Gereed
+2600314;13-02-2026;GDN-P-0070;;Gdansk BPF;PO;;strainer cleaned, dp .19 bar;ARAHMAN;;1;;Gereed
+2600319;16-02-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie + draaiuren genoteerd;MBIANCHI;;1;;Gereed
+2600330;19-02-2026;GDN-C-0131;;Gdansk BPF;Meterstand;;;MBIANCHI;;0;5476;Gereed
+2600334;20-02-2026;GDN-V-0241;;Gdansk BPF;PO;;PM, idlers checked, all spin free;ARAHMAN;;1;;Gereed
+2600347;24-02-2026;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Storing;L-03;L-03 circuit 2 na winterstop/herstart, zuigdruk 2,1 bar. 2,5 kg R513A bijgevuld, geen lek gevonden (visueel), cfm KT-WI-14. tekort < 10% vulling. SF 00041055;SDEVRIES;R513A 2,5 kg (cil. 4471);3;11252;Gereed
+2600357;25-02-2026;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Inspectie;;controle na bijvullen, zuigdruk c2 3,3 bar, geen alarm. klant geinformeerd;SDEVRIES;;1;;Gereed
+2600367;25-02-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;PO gedaan. elektrische aansluitingen nagetrokken, alles vast;SDEVRIES;;2;6863;Gereed
+2600376;02-03-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;uren gelezen;MBIANCHI;;0;22203;Gereed
+2600390;04-03-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO + controle regelaar, alarmhistorie leeg;SDEVRIES;;3;13313;Gereed
+2600400;04-03-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;greased, vib ok, strainer ok;ARAHMAN;;1;11932;Gereed
+2600412;09-03-2026;GDN-V-0241;;Gdansk BPF;Storing;C-04;C-04 pull cord too tight since install, retensioned to marks, tested;ARAHMAN;;2;;Gereed
+2600414;09-03-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;22355;Gereed
+2600418;09-03-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;hours read;LHOFFMANN;;0;15738;Gereed
+2600428;11-03-2026;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM. Fan 1 guard loose, fixed. Coils ok;JNOWAK;;2,5;16848;Gereed
+2600437;16-03-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;;Gereed
+2600440;16-03-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: gearbox oil level ok, guards ok;ARAHMAN;;1;;Gereed
+2600442;17-03-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Software;;fw 5.0.3 -> 5.1.0 (Vastra SB-2026-003). parameters + interval opnieuw ingesteld;LHOFFMANN;;1,5;;Gereed
+2600444;20-03-2026;GDN-P-0070;;Gdansk BPF;PO;;greased, vib ok, strainer ok;ARAHMAN;;0,5;;Gereed
+2600451;21-03-2026;GDN-H-0015;;Gdansk BPF;PO;;PM. Fan 1 guard loose, fixed. Coils ok;JNOWAK;;3;4409;Gereed
+2600461;25-03-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;meterstand;MBIANCHI;;0;7613;Gereed
+2600471;27-03-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;2;;Gereed
+2600474;27-03-2026;GDN-V-0241;;Gdansk BPF;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;1,5;;Gereed
+2600477;30-03-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;;filterdroger c2 dT 4 C. kern vervangen 63-0410, lektest na werk ok, dT 1 C;SDEVRIES;63-0410;1;7289;Gereed
+2600491;31-03-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;inspectie, geen alarmen;MBIANCHI;;0,5;6129;Gereed
+2600503;02-04-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;0,5;7653;Gereed
+2600516;08-04-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;vib DE 1.8 NDE 2.8 mm/s. ok;ARAHMAN;;1,5;12446;Gereed
+2600524;13-04-2026;GDN-H-0015;;Gdansk BPF;F-gas controle;;Kontrola szczelnosci OK, brak wyciekow. F-gas log updated (Chlodtech);EXTERN-CHLODTECH;;0;;Gereed
+2600529;20-04-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM done. belt wear est 25%;ARAHMAN;;2;;Gereed
+2600542;21-04-2026;GDN-C-0131;;Gdansk BPF;Meterstand;;uren gelezen;MBIANCHI;;0;6482;Gereed
+2600556;22-04-2026;GDN-P-0070;;Gdansk BPF;PO;;strainer cleaned, dp before 0.19 bar;ARAHMAN;;1;;Gereed
+2600560;22-04-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;1,5;;Gereed
+2600572;22-04-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;MBIANCHI;;0,5;23081;Gereed
+2600578;23-04-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;olie-interval in Servio aangepast naar 6000 h voor SynLube (Vastra manual rev C, april 2026). Alleen VRS-75.;LHOFFMANN;;0;;Gereed
+2600580;23-04-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 7,6 C. geen alarmen;SDEVRIES;;3;7626;Gereed
+2600591;28-04-2026;GDN-C-0131;;Gdansk BPF;Software;;fw 5.0.3 -> 5.1.0 -> 5.2.0. params checked after. SF case;MBIANCHI;;2,5;;Gereed
+2600599;29-04-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;PO, oververhitting en onderkoeling beide circuits binnen waarden;SDEVRIES;;2;13939;Gereed
+2600606;30-04-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;PO;;PM. oil change, filters, condensate drain cleaned. ok;MBIANCHI;1x 41-0046, 1x oliefilter VRS-45, 1x 41-1510;3,5;7993;Gereed
+2600616;04-05-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;0,5;;Gereed
+2600624;05-05-2026;GDN-V-0241;;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1;;Gereed
+2600634;08-05-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;F-gas controle;;Periodieke lekcontrole, geen lekkage gevonden. olievlekken geen;SDEVRIES;;1,5;;Gereed
+2600642;11-05-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;MBIANCHI;;0;23439;Gereed
+2600650;11-05-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;;MBIANCHI;;0;16590;Gereed
+2600658;12-05-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;Storing;P-02;P-02, grease low (April PM missed). greased 25 g each, 58 C after;ARAHMAN;;1;;Gereed
+2600670;14-05-2026;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM, controller readings normal. Did not connect gauges (not certified);JNOWAK;;2,5;17752;Gereed
+2600680;14-05-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer cleaned, dp .06 bar;ARAHMAN;;1;;Gereed
+2600685;15-05-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;0,5;;Gereed
+2600691;18-05-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;8208;Gereed
+2600704;18-05-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1;;Gereed
+2600712;19-05-2026;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd. zuigdruk c1 3,5 / c2 3,4 bar. geen alarmen sinds feb;SDEVRIES;;2,5;12189;Gereed
+2600726;23-05-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspection, no alarms. disch 81 C;MBIANCHI;;1;8246;Gereed
+2600734;01-06-2026;GDN-H-0015;;Gdansk BPF;PO;;Quarterly PM non-refrigerant side. Coils, fans, electrical. All normal;JNOWAK;;2,5;5288;Gereed
+2600747;01-06-2026;GDN-P-0070;;Gdansk BPF;PO;;greased bearings DE/NDE 18g each. vib DE 2,9;ARAHMAN;;1;;Gereed
+2600751;04-06-2026;GDN-V-0241;;Gdansk BPF;PO;;PM done. belt wear est 40%;ARAHMAN;;2;;Gereed
+2600756;08-06-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM done. belt wear est 40%;ARAHMAN;;1,5;;Gereed
+2600770;12-06-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM, cleaned strainer, new cover gasket 18-1121;ARAHMAN;;1;13550;Gereed
+2600774;17-06-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 95 C;LHOFFMANN;;0,5;;Gereed
+2600780;17-06-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;PO;;scheduled oil change, 6020 h since last change, SynLube 46. new 6,000 h interval. oil filter box says 41-1475. SF 00042210;MBIANCHI;1x 41-0046, 1x 41-1475, 1x 41-1510;3,5;17058;Gereed
+2600788;17-06-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;PO kwartaal. condensor gereinigd, ventilatoren ok. zuigdruk c1 3,6 / c2 3,3 bar. kijkglas helder;SDEVRIES;;3;8316;Gereed
+2600792;19-06-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;MBIANCHI;;0,5;17127;Gereed
+2600802;22-06-2026;GDN-C-0131;;Gdansk BPF;Meterstand;;;MBIANCHI;;0;7445;Gereed
+2600816;22-06-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;PO;;4000 h PM: oil, oil filter, air filter. sep dP 0,32 bar;LHOFFMANN;2x 41-0046, 1x 41-1480, 1x 41-1512;3;24146;Gereed
+2600824;24-06-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;inspection: cooler clean, oil level ok;MBIANCHI;;1;;Gereed
+2600831;24-06-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;2;;Gereed
+2600837;29-06-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;condensor schoongespoten, ventilator 2 lager maakt geluid, volgende keer kijken;SDEVRIES;;3;14554;Gereed
+2600845;06-07-2026;GDN-P-0070;;Gdansk BPF;PO;;PM, cleaned strainer, new cover gasket 18-1121;ARAHMAN;;1;5363;Gereed
+2600859;06-07-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM, idlers checked, all spin free;ARAHMAN;;1,5;;Gereed
+2600866;06-07-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;draaiuren;MBIANCHI;;0;17363;Gereed
+2600880;09-07-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;inspectie, geen alarmen;MBIANCHI;;1;8817;Gereed
+2600888;13-07-2026;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;2,5;18623;Gereed
+2600894;13-07-2026;GDN-V-0241;;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2600898;13-07-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;;LHOFFMANN;;0;24483;Gereed
+2600912;20-07-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;uren gelezen;MBIANCHI;;0;8931;Gereed
+2600914;21-07-2026;GDN-H-0015;;Gdansk BPF;PO;;PM: cleaned coils (dust from flour silo next door), checked contactors;JNOWAK;;2,5;5895;Gereed
+2600924;21-07-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;PM, cleaned strainer, new cover gasket 18-1121;ARAHMAN;;1;;Gereed
+2600928;22-07-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Storing;E-15;E-15 TS-2 open circuit at connector, replaced 41-2207;MBIANCHI;41-2207;2;;Gereed
+2600932;27-07-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM: tension ok, tracking ok, scrapers adjusted;ARAHMAN;;2;;Gereed
+2600934;30-07-2026;GDN-C-0131;;Gdansk BPF;PO;;PM. oil change, filters, condensate drain cleaned. ok;MBIANCHI;2x 41-0046, 1x 41-1480, 1x 41-1512;4;8122;Gereed
+2600942;03-08-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;;Gereed
+2600946;07-08-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspection, no alarms. disch 93 C;MBIANCHI;;0,5;17802;Gereed
+2600958;09-08-2026;GDN-P-0070;;Gdansk BPF;PO;;PM: strainer + grease. seal dry;ARAHMAN;;0,5;;Gereed
+2600972;15-08-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;PO;;kwartaalcontrole, geen bijzonderheden. persdruk c1 12,6 bar;BVISSER;;2;9057;Gereed
+2600983;17-08-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM. photo eye cleaned + aligned;ARAHMAN;;1,5;;Gereed
+2600985;17-08-2026;GDN-V-0241;;Gdansk BPF;PO;;PM. cleaned under belt, pull cord tested;ARAHMAN;;1;;Gereed
+2600993;18-08-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;;Gereed
+2601003;18-08-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;new belt 77-1012, tension set, tracking ok over 30 min;ARAHMAN;77-1012;1,5;;Gereed
+2601007;25-08-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Inspectie;;walk round ok. air leak at customer drop reported to site;MBIANCHI;;0,5;;Gereed
+2601021;25-08-2026;GDN-C-0131;;Gdansk BPF;Meterstand;;draaiuren;MBIANCHI;;0;8506;Gereed
+2601033;25-08-2026;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;PO;;PM (covering for Sofie, holiday): coils cleaned, fans ok, readings from controller normal. no gauges connected;ARAHMAN;;2;13299;Gereed
+2601038;27-08-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;strainer basket cleaned, mostly cardboard fibre;ARAHMAN;;1;;Gereed
+2601050;01-09-2026;RTM-V-0230;MFL-TB30;Rotterdam DC Maasvlakte;PO;;PM, idlers checked, all spin free;ARAHMAN;;2;;Gereed
+2601054;03-09-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Meterstand;;hours read;MBIANCHI;;0;18165;Gereed
+2601067;08-09-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;PO;;onderhoud volgens schema. LWT 7,4 C. geen alarmen;SDEVRIES;;2;15363;Gereed
+2601076;08-09-2026;RTM-H-0011;MFL-KM11;Rotterdam DC Maasvlakte;Storing;;condensor gereinigd op verzoek klant, lamellen gekamd;SDEVRIES;;1;;Gereed
+2601079;09-09-2026;GDN-H-0014;BPF-KM14;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3.1 bar c2 3.2 bar;JNOWAK;;3;19435;Gereed
+2601082;10-09-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Meterstand;;hours read;LHOFFMANN;;0;25521;Gereed
+2601086;13-09-2026;GDN-V-0240;BPF-TB40;Gdansk BPF;PO;;PM ok;ARAHMAN;;1;;Gereed
+2601090;14-09-2026;GDN-P-0070;;Gdansk BPF;PO;;strainer basket cleaned, mostly shrink film bits;ARAHMAN;;1,5;6424;Gereed
+2601097;14-09-2026;GDN-P-0070;;Gdansk BPF;Storing;P-07;P-07, strainer dp 0,44 bar, veg fibre. cleaned. suction valve fully open;ARAHMAN;18-1121;2;6443;Gereed
+2601099;17-09-2026;RTM-C-0120;MFL-CP20;Rotterdam DC Maasvlakte;Inspectie;;controle, olieniveau ok, condensaatafvoer werkt;LHOFFMANN;;0,5;;Gereed
+2601101;21-09-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Meterstand;;;MBIANCHI;;0;9649;Gereed
+2601112;21-09-2026;GDN-H-0015;;Gdansk BPF;PO;;PM: condenser coil cleaned, fans ok, readings from controller c1 suction 3.2 bar c2 3.7 bar;JNOWAK;;2;6692;Gereed
+2601119;21-09-2026;RTM-C-0121;MFL-CP21;Rotterdam DC Maasvlakte;Inspectie;;inspectie, geen alarmen;LHOFFMANN;;1;18399;Gereed
+2601127;21-09-2026;RTM-H-0008;MFL-KM08;Rotterdam DC Maasvlakte;Storing;L-03;L-03 c1 eenmalig na stroomstoring. gereset, normaal.;SDEVRIES;;2;;Gereed
+2601136;22-09-2026;GDN-V-0241;;Gdansk BPF;PO;;PM ok;ARAHMAN;;2;;Gereed
+2601146;25-09-2026;GDN-C-0130;BPF-CP30;Gdansk BPF;Storing;;knocking at start, rubber dust. coupling element 41-5031 cracked, replaced. room hot, vent fan off (customer);MBIANCHI;41-5031;2;9734;Open
+2601148;28-09-2026;RTM-H-0007;MFL-KM07;Rotterdam DC Maasvlakte;Storing;L-03;L-03 circuit 2 again, suction 1,9 bar. circuit 1 normal. no oil traces visible at joints. not F-gas certified - no gauges connected. unit running on circuit 1 only. needs certified tech. SF 00044102;JNOWAK;;1,5;13639;Open
+2601152;28-09-2026;RTM-P-0060;MFL-PO60;Rotterdam DC Maasvlakte;PO;;vib DE 1.7 NDE 1.0 mm/s. ok;ARAHMAN;;0,5;;Gereed
+2601159;29-09-2026;GDN-C-0131;;Gdansk BPF;Inspectie;;inspection, no alarms. disch 88 C;MBIANCHI;;1;;Gereed

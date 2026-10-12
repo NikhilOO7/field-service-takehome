@@ -1,0 +1,1713 @@
+{
+  "totalSize": 30,
+  "done": true,
+  "records": [
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000NbLGDVtk"
+      },
+      "Id": "5008d00000NbLGDVtk",
+      "CaseNumber": "00044102",
+      "Subject": "RTM-H-0007 L-03 again",
+      "Status": "Waiting on Technician",
+      "Priority": "Critical",
+      "Origin": "Email",
+      "CreatedDate": "2026-09-28T06:55:00.000+0000",
+      "ClosedDate": null,
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000gSr2Dycx"
+        },
+        "Name": "RTM-H-0007"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-230415",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "L-03",
+      "Description": "L-03 again on circuit 2. Same unit as February (00041055). Customer cold rooms in hall B affected.",
+      "Resolution__c": null,
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+        },
+        "Name": "Jakub Nowak"
+      },
+      "CaseComments": {
+        "totalSize": 3,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000FGBB44hp"
+            },
+            "Id": "00a8d00000FGBB44hp",
+            "CommentBody": "On site 14:10. L-03 circuit 2, suction 1.9 bar. Circuit 1 normal. No oil traces at joints or valves. I am not F-gas certified so no gauges connected. Unit running on circuit 1. Needs certified technician.",
+            "CreatedDate": "2026-09-28T13:40:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+              },
+              "Name": "Jakub Nowak"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000001LTNPUwg"
+            },
+            "Id": "00a8d000001LTNPUwg",
+            "CommentBody": "Customer (Pieter Jansen) escalated to me directly, unhappy about the repeat. Sofie attends Thu 01/10 07:00. Jakub to arrange roof access and work at height permit.",
+            "CreatedDate": "2026-09-29T07:25:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ocJ6muMJ"
+              },
+              "Name": "Lena Hoffmann"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000oytt487Y"
+            },
+            "Id": "00a8d00000oytt487Y",
+            "CommentBody": "Geen koudemiddel bijvullen voor ik er ben. EXV first.",
+            "CreatedDate": "2026-09-30T06:10:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          }
+        ]
+      },
+      "EmailMessages": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "EmailMessage",
+              "url": "/services/data/v60.0/sobjects/EmailMessage/02s8d00000pbZlL60A"
+            },
+            "Id": "02s8d00000pbZlL60A",
+            "Subject": "Storing koelmachine dak hal B",
+            "FromName": "Pieter Jansen",
+            "FromAddress": "p.jansen@maasvlaktefresh.nl",
+            "ToAddress": "service.eu@corvane.eu",
+            "MessageDate": "2026-09-28T06:55:00.000+0000",
+            "Incoming": true,
+            "TextBody": "Goedemorgen,\n\nThe chiller on the roof of hall B (your RTM-H-0007) is in alarm again since this morning, low pressure alarm, same as February. One circuit is off. Please send someone today.\n\nMet vriendelijke groet,\nPieter Jansen\nFacilities Manager | Maasvlakte Fresh Logistics"
+          }
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000czyswi5Z"
+      },
+      "Id": "5008d00000czyswi5Z",
+      "CaseNumber": "00044052",
+      "Subject": "coupling noise GDN-C-0130",
+      "Status": "Monitoring",
+      "Priority": "Medium",
+      "Origin": "Technician",
+      "CreatedDate": "2026-09-25T07:50:00.000+0000",
+      "ClosedDate": null,
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000unsedMOE"
+        },
+        "Name": "GDN-C-0130"
+      },
+      "Equipment_Model__c": "VRS-45",
+      "Serial_Number__c": "VRS45-240511",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": null,
+      "Description": "Knocking at start and rubber dust in the coupling guard.",
+      "Resolution__c": "Coupling element 41-5031 cracked at two teeth, replaced. Compressor room hot (vent fan off), customer informed. Monitoring.",
+      "Parts_Used__c": "41-5031 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000MntUq4Nz"
+            },
+            "Id": "00a8d00000MntUq4Nz",
+            "CommentBody": "Vastra bulletin for this coupling won't open on SharePoint, file is broken. Asked Anders Holm for a new copy.",
+            "CreatedDate": "2025-09-25T08:05:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+              },
+              "Name": "Marco Bianchi"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000ZiBZURzV"
+      },
+      "Id": "5008d00000ZiBZURzV",
+      "CaseNumber": "00043972",
+      "Subject": "L-03 kort RTM-H-0008",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Monitoring",
+      "CreatedDate": "2026-09-21T11:30:00.000+0000",
+      "ClosedDate": "2026-09-21T13:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000W7OoUdAL"
+        },
+        "Name": "RTM-H-0008"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-240702",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "L-03",
+      "Description": "L-03 circuit 1 kort na stroomonderbreking.",
+      "Resolution__c": "Na stroomstoring pump-down niet afgerond, L-03 eenmalig. Gereset, beide circuits normaal. Serienummer buiten Nordkyl campagne.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000pZvMHBQU"
+      },
+      "Id": "5008d00000pZvMHBQU",
+      "CaseNumber": "00043716",
+      "Subject": "P-07 GDN-P-0070",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2026-09-14T08:15:00.000+0000",
+      "ClosedDate": "2026-09-14T10:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000mnAgXqL4"
+        },
+        "Name": "GDN-P-0070"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-250877",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "P-07",
+      "Description": "Cavitation alarm, noise.",
+      "Resolution__c": "Strainer dP 0.44 bar, cleaned (lots of vegetable fibre). Suction valve checked fully open.",
+      "Parts_Used__c": "18-1121 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000gi3obgYm"
+      },
+      "Id": "5008d00000gi3obgYm",
+      "CaseNumber": "00043507",
+      "Subject": "Condensor reinigen RTM-H-0011",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Email",
+      "CreatedDate": "2026-09-08T05:30:00.000+0000",
+      "ClosedDate": "2026-09-08T09:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000008qP8FkTo"
+        },
+        "Name": "RTM-H-0011"
+      },
+      "Equipment_Model__c": "NK-300",
+      "Serial_Number__c": "NK300-220880",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Klant vraagt condensor reinigen, veel vervuiling door meeuwen.",
+      "Resolution__c": "Condensor gereinigd, lamellen gekamd. Geen storingen in log.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000gmvo5971"
+      },
+      "Id": "5008d00000gmvo5971",
+      "CaseNumber": "00043082",
+      "Subject": "Belt change GDN-V-0240",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-08-18T06:00:00.000+0000",
+      "ClosedDate": "2026-08-18T11:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000001V2FoDzY"
+        },
+        "Name": "GDN-V-0240"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-230441",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": null,
+      "Description": "Planned belt replacement, packing line.",
+      "Resolution__c": "New belt 77-1012 fitted. Tension set, tracking checked over 30 min, ok.",
+      "Parts_Used__c": "77-1012 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000fBqPBXoe"
+      },
+      "Id": "5008d00000fBqPBXoe",
+      "CaseNumber": "00042682",
+      "Subject": "E-15 sensor fault RTM-C-0120",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2026-07-22T04:45:00.000+0000",
+      "ClosedDate": "2026-07-22T08:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000z0Gyqolj"
+        },
+        "Name": "RTM-C-0120"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-220455",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "E-15",
+      "Description": "Compressor 0120 stopped with E-15, not restarting by itself.",
+      "Resolution__c": "TS-2 sensor faulty (open circuit at connector). Replaced 41-2207. Running.",
+      "Parts_Used__c": "41-2207 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Ne9bWt5U"
+      },
+      "Id": "5008d00000Ne9bWt5U",
+      "CaseNumber": "00042210",
+      "Subject": "Scheduled oil change RTM-C-0121",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-06-17T06:00:00.000+0000",
+      "ClosedDate": "2026-06-17T10:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000bHKZdWLy"
+        },
+        "Name": "RTM-C-0121"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-230640",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Scheduled oil change VRS-75.",
+      "Resolution__c": "Scheduled oil change at 6,020 h since the last change, SynLube 46. Oil filter and air filter replaced. Interval is now 6,000 h with SynLube 46 (Vastra manual Rev C).",
+      "Parts_Used__c": "41-0046 x1; 41-1475 x1; 41-1510 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000cRI9Mfa0"
+      },
+      "Id": "5008d00000cRI9Mfa0",
+      "CaseNumber": "00042032",
+      "Subject": "GDN-H-0014 quarterly PM",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-06-02T07:00:00.000+0000",
+      "ClosedDate": "2026-06-02T10:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000wgkOc8Ih"
+        },
+        "Name": "GDN-H-0014"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-221190",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": null,
+      "Description": "Quarterly PM, non-refrigerant side.",
+      "Resolution__c": "Coils cleaned, fans and electrical checked, readings from controller normal both circuits.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+        },
+        "Name": "Jakub Nowak"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Z45EQdNt"
+      },
+      "Id": "5008d00000Z45EQdNt",
+      "CaseNumber": "00041802",
+      "Subject": "Bearing temp RTM-P-0060",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Monitoring",
+      "CreatedDate": "2026-05-12T07:05:00.000+0000",
+      "ClosedDate": "2026-05-12T09:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000lBvda7Xz"
+        },
+        "Name": "RTM-P-0060"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-240333",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "P-02",
+      "Description": "P-02 bearing temperature alarm.",
+      "Resolution__c": "Bearing grease low (missed PM in April). Greased 25 g per bearing, temperature down to 58 C.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000iiwxFPk1"
+      },
+      "Id": "5008d00000iiwxFPk1",
+      "CaseNumber": "00041653",
+      "Subject": "Firmware update GDN-C-0131",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-04-28T08:00:00.000+0000",
+      "ClosedDate": "2026-04-28T10:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000LU0puewH"
+        },
+        "Name": "GDN-C-0131"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-250102",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": null,
+      "Description": "Controller firmware update requested by Lena for all EU VRS-110.",
+      "Resolution__c": "Updated to 5.2. Parameters checked after.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000HpRzCnJv"
+      },
+      "Id": "5008d00000HpRzCnJv",
+      "CaseNumber": "00041377",
+      "Subject": "Filter drier RTM-H-0008",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-03-30T06:20:00.000+0000",
+      "ClosedDate": "2026-03-30T12:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000W7OoUdAL"
+        },
+        "Name": "RTM-H-0008"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-240702",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Temperatuurverschil over filterdroger circuit 2 te hoog (4 C).",
+      "Resolution__c": "Filterdroger kern vervangen (63-0410), circuit 2. Gelekzocht na werk, geen lek. dT nu 1 C.",
+      "Parts_Used__c": "63-0410 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000pMRpaBvZ"
+      },
+      "Id": "5008d00000pMRpaBvZ",
+      "CaseNumber": "00041178",
+      "Subject": "Pull cord nuisance stops GDN-V-0241",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Phone",
+      "CreatedDate": "2026-03-09T09:40:00.000+0000",
+      "ClosedDate": "2026-03-09T11:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000q2OYCvhy"
+        },
+        "Name": "GDN-V-0241"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-250120",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "C-04",
+      "Description": "E-stop pull cord stopping the new conveyor without anyone pulling it.",
+      "Resolution__c": "Pull cord tension too high after installation, switch on the edge of tripping. Re-tensioned to the marks. Tested.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000z3PmOJLL"
+      },
+      "Id": "5008d00000z3PmOJLL",
+      "CaseNumber": "00041055",
+      "Subject": "L-03 circuit 2 RTM-H-0007",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2026-02-24T06:40:00.000+0000",
+      "ClosedDate": "2026-02-25T10:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000gSr2Dycx"
+        },
+        "Name": "RTM-H-0007"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-230415",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "L-03",
+      "Description": "L-03 lage zuigdruk circuit 2 na herstart na de winterstop. Klant (P. Jansen) belde 07:30.",
+      "Resolution__c": "L-03 circuit 2 after winter restart, suction 2.1 bar. Visual inspection, no leak found, deficit under 10% of nameplate. Topped up 2,5 kg R-513A per KT-WI-14. Monitoring.",
+      "Parts_Used__c": "R-513A 2.5 kg",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": {
+        "totalSize": 4,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000QYo9DaC2"
+            },
+            "Id": "00a8d00000QYo9DaC2",
+            "CommentBody": "Unit stond ca. 6 weken stil (winterstop klant). Na herstart L-03 op circuit 2, circuit 1 normaal.",
+            "CreatedDate": "2026-02-24T12:15:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000xRyLIpKT"
+            },
+            "Id": "00a8d00000xRyLIpKT",
+            "CommentBody": "Controle na bijvullen: zuigdruk c2 3,3 bar, geen alarm meer. Afgesloten.",
+            "CreatedDate": "2026-02-25T10:28:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000YHgGpu4T"
+            },
+            "Id": "00a8d00000YHgGpu4T",
+            "CommentBody": "Linked to 00044102, L-03 again on the same circuit. Customer escalated.",
+            "CreatedDate": "2026-09-29T07:20:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ocJ6muMJ"
+              },
+              "Name": "Lena Hoffmann"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000DJ25NnhG"
+            },
+            "Id": "00a8d00000DJ25NnhG",
+            "CommentBody": "EXV not checked at this visit. Will check it on site 01/10 before anything else, see 00044102.",
+            "CreatedDate": "2026-09-30T06:05:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000pA9eLyRo"
+      },
+      "Id": "5008d00000pA9eLyRo",
+      "CaseNumber": "00040932",
+      "Subject": "PM postponed RTM-C-0121",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-02-05T10:20:00.000+0000",
+      "ClosedDate": "2026-02-05T10:25:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000bHKZdWLy"
+        },
+        "Name": "RTM-C-0121"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-230640",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Oil change due, customer asked to postpone (stock count week).",
+      "Resolution__c": "Postponed on customer request.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000hLdInKlS"
+      },
+      "Id": "5008d00000hLdInKlS",
+      "CaseNumber": "00040792",
+      "Subject": "Belt replacement RTM-V-0230",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2026-01-19T08:30:00.000+0000",
+      "ClosedDate": "2026-01-19T14:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000fKs1sFHO"
+        },
+        "Name": "RTM-V-0230"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-230202",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Planned belt replacement, belt worn through at edge.",
+      "Resolution__c": "Belt replaced (Belton BX-20 belt, direct order). Tension and tracking set, ran 1 h.",
+      "Parts_Used__c": "Belt BX-20 (Belton direct)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000002hhYXcro"
+      },
+      "Id": "5008d000002hhYXcro",
+      "CaseNumber": "00040413",
+      "Subject": "GDN-C-0131 E-31 after storm",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-12-02T04:40:00.000+0000",
+      "ClosedDate": "2025-12-03T13:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000LU0puewH"
+        },
+        "Name": "GDN-C-0131"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-250102",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "E-31",
+      "Description": "VRS-110 down on E-31 after power outage during the storm. Marco on site at 08:00, cannot reset (needs HV).",
+      "Resolution__c": "Reset by Lena Hoffmann per HV-PROC-07 on 03/12. Unit down 27 h. Customer ran on GDN-C-0130 only.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": {
+        "totalSize": 3,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000LXSK1Nhp"
+            },
+            "Id": "00a8d00000LXSK1Nhp",
+            "CommentBody": "On site. E-31 active, panel reset not possible. Recorded alarm log and load at trip. Need HV technician.",
+            "CreatedDate": "2025-12-02T07:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+              },
+              "Name": "Marco Bianchi"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000mpLdftoR"
+            },
+            "Id": "00a8d00000mpLdftoR",
+            "CommentBody": "Flying to Gdansk tonight, on site tomorrow 08:00.",
+            "CreatedDate": "2025-12-02T08:15:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ocJ6muMJ"
+              },
+              "Name": "Lena Hoffmann"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000IQsQUdJy"
+            },
+            "Id": "00a8d00000IQsQUdJy",
+            "CommentBody": "Reset done, no repeat after 4 h. 27 h down because we have no HV-certified tech in Poland. Raised in the leads meeting.",
+            "CreatedDate": "2025-12-03T13:01:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000ocJ6muMJ"
+              },
+              "Name": "Lena Hoffmann"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000ixi51ch6"
+      },
+      "Id": "5008d00000ixi51ch6",
+      "CaseNumber": "00040281",
+      "Subject": "F-gas lekcontrole RTM-H-0007",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2025-11-18T07:00:00.000+0000",
+      "ClosedDate": "2025-11-18T10:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000gSr2Dycx"
+        },
+        "Name": "RTM-H-0007"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-230415",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Jaarlijkse F-gas lekcontrole.",
+      "Resolution__c": "Geen lekkage gevonden, beide circuits. Logboek bijgewerkt.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000BSVJ1aQT"
+      },
+      "Id": "5008d00000BSVJ1aQT",
+      "CaseNumber": "00039873",
+      "Subject": "NK-C25-14 EXV campagne GDN-H-0014",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Technician",
+      "CreatedDate": "2025-10-14T05:30:00.000+0000",
+      "ClosedDate": "2025-10-15T14:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000wgkOc8Ih"
+        },
+        "Name": "GDN-H-0014"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-221190",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "L-03",
+      "Description": "Nordkyl campagne NK-C25-14 (SB-2025-014), serienummer in bereik. Twee keer L-03 op circuit 2 in 2025 met bijvullen.",
+      "Resolution__c": "EXV replaced on both circuits with 63-1180 rev 3, filter drier cores 63-0410 on both circuits. Circuit 2 valve (rev 2) visibly sticking at restart. Excess charge recovered from circuit 2, both circuits charged by weight to nameplate. Controller software 6.9 -> 7.2 first (EXV service menu). Campaign label fitted, claim submitted under NK-C25-14.",
+      "Parts_Used__c": "63-1180 x2; 63-0410 x2",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000yawWNkVO"
+            },
+            "Id": "00a8d00000yawWNkVO",
+            "CommentBody": "EXV c2: positie bleef op 9% bij vraag 70% na herstart. Klep zit vast. Jakub helpt mee, goed leermoment.",
+            "CreatedDate": "2025-10-14T08:40:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000oXVMczQ2"
+            },
+            "Id": "00a8d00000oXVMczQ2",
+            "CommentBody": "Beide kleppen vervangen, c2 had 2,6 kg te veel na de bijvullingen. Oude kleppen retour Nordkyl.",
+            "CreatedDate": "2025-10-15T14:28:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000ms8YUiqR"
+      },
+      "Id": "5008d00000ms8YUiqR",
+      "CaseNumber": "00039773",
+      "Subject": "Freeze protection GDN-H-0015",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2025-10-06T11:10:00.000+0000",
+      "ClosedDate": "2025-10-06T13:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000QozVdKwP"
+        },
+        "Name": "GDN-H-0015"
+      },
+      "Equipment_Model__c": "NK-300",
+      "Serial_Number__c": "NK300-250316",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "L-04",
+      "Description": "L-04 freeze protection on the new NK-300.",
+      "Resolution__c": "Customer BMS changed the setpoint to 3 C. Reset to 7 C with the customer's controls engineer, locked the local setpoint.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+        },
+        "Name": "Jakub Nowak"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000d43lAY6y"
+      },
+      "Id": "5008d00000d43lAY6y",
+      "CaseNumber": "00039528",
+      "Subject": "Oil carryover RTM-C-0121",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2025-09-15T07:00:00.000+0000",
+      "ClosedDate": "2025-09-22T08:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000bHKZdWLy"
+        },
+        "Name": "RTM-C-0121"
+      },
+      "Equipment_Model__c": "VRS-75",
+      "Serial_Number__c": "VRS75-230640",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": null,
+      "Description": "Customer reports oil at the air dryer drain.",
+      "Resolution__c": "Separator element replaced (41-3075). Scavenge line clear. Checked after a week, no oil.",
+      "Parts_Used__c": "41-3075 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000LncoSJSb"
+      },
+      "Id": "5008d00000LncoSJSb",
+      "CaseNumber": "00039198",
+      "Subject": "GDN-H-0014 L-03 again",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-08-18T05:50:00.000+0000",
+      "ClosedDate": "2025-08-19T14:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000wgkOc8Ih"
+        },
+        "Name": "GDN-H-0014"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-221190",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "L-03",
+      "Description": "L-03 circuit 2 again, after the two-week summer shutdown.",
+      "Resolution__c": "Chlodtech topped up 1.2 kg per KT-WI-14, visual check, no leak found, small deficit. Monitoring. Leak test to be planned.",
+      "Parts_Used__c": "R-513A 1.2 kg (contractor)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+        },
+        "Name": "Jakub Nowak"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000Wr0O0Q4i"
+            },
+            "Id": "00a8d00000Wr0O0Q4i",
+            "CommentBody": "Twee keer bijvullen sinds april zonder lek. Volledige lektest inplannen bij het volgende bezoek, niet weer bijvullen.",
+            "CreatedDate": "2025-08-19T07:10:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000chLibCLO"
+            },
+            "Id": "00a8d00000chLibCLO",
+            "CommentBody": "Ok. Chlodtech only checked visually again. Will plan the full leak test with them.",
+            "CreatedDate": "2025-08-19T14:02:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+              },
+              "Name": "Jakub Nowak"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Cun6r5wF"
+      },
+      "Id": "5008d00000Cun6r5wF",
+      "CaseNumber": "00039115",
+      "Subject": "seal leak GDN-P-0070",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2025-08-11T06:20:00.000+0000",
+      "ClosedDate": "2025-08-12T08:15:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000mnAgXqL4"
+        },
+        "Name": "GDN-P-0070"
+      },
+      "Equipment_Model__c": "HCP-350",
+      "Serial_Number__c": "HCP350-250877",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "P-04",
+      "Description": "HCP-350 seal leaking, P-04 on the panel.",
+      "Resolution__c": "Seal flush line kinked behind the coupling guard. Re-routed the flush line and replaced the seal with 18-0356. Dry after 24 h.",
+      "Parts_Used__c": "18-0356 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000MIIOOObW"
+            },
+            "Id": "00a8d00000MIIOOObW",
+            "CommentBody": "Flush line was pinched when the guard was refitted after commissioning. Rerouted with a wider bend.",
+            "CreatedDate": "2025-08-11T13:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+              },
+              "Name": "Aisha Rahman"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d0000088FYiXXv"
+      },
+      "Id": "5008d0000088FYiXXv",
+      "CaseNumber": "00038687",
+      "Subject": "RTM-H-0008 HP trip heatwave",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-07-08T12:20:00.000+0000",
+      "ClosedDate": "2025-07-09T15:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000W7OoUdAL"
+        },
+        "Name": "RTM-H-0008"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-240702",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "L-01",
+      "Description": "Hoge druk storing L-01 op circuit 1, buitentemperatuur 33 C.",
+      "Resolution__c": "Condenser fan 3 motor failed (bearing). Fan motor replaced (Nordkyl, non-stock). Coils cleaned. Running both circuits.",
+      "Parts_Used__c": "Fan motor Nordkyl (direct order)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+        },
+        "Name": "Sofie de Vries"
+      },
+      "CaseComments": {
+        "totalSize": 2,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000uGbCVYFy"
+            },
+            "Id": "00a8d00000uGbCVYFy",
+            "CommentBody": "Ventilator 3 draait niet, lager vast. Motor besteld bij Nordkyl, morgen geleverd. Unit draait op 1 circuit.",
+            "CreatedDate": "2025-07-08T14:00:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          },
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d00000ntWznbp3"
+            },
+            "Id": "00a8d00000ntWznbp3",
+            "CommentBody": "Motor vervangen, beide circuits in bedrijf. Persdruk c1 16,1 bar bij 31 C buiten.",
+            "CreatedDate": "2025-07-09T15:28:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d00000thhiN5ZG"
+              },
+              "Name": "Sofie de Vries"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000001uMOgoWF"
+      },
+      "Id": "5008d000001uMOgoWF",
+      "CaseNumber": "00038395",
+      "Subject": "Air filter alarm GDN-C-0130",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Monitoring",
+      "CreatedDate": "2025-06-16T06:30:00.000+0000",
+      "ClosedDate": "2025-06-16T08:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000unsedMOE"
+        },
+        "Name": "GDN-C-0130"
+      },
+      "Equipment_Model__c": "VRS-45",
+      "Serial_Number__c": "VRS45-240511",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "E-18",
+      "Description": null,
+      "Resolution__c": "Replaced air filter 41-1510.",
+      "Parts_Used__c": "41-1510 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000iE8KWyz8"
+        },
+        "Name": "Marco Bianchi"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d000005Ch39Rpw"
+      },
+      "Id": "5008d000005Ch39Rpw",
+      "CaseNumber": "00038140",
+      "Subject": "RTM-V-0230 drive overload",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Phone",
+      "CreatedDate": "2025-05-27T09:00:00.000+0000",
+      "ClosedDate": "2025-05-27T11:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000fKs1sFHO"
+        },
+        "Name": "RTM-V-0230"
+      },
+      "Equipment_Model__c": "BX-20",
+      "Serial_Number__c": "BX20-230202",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "C-01",
+      "Description": "Conveyor in hall A stopping on C-01.",
+      "Resolution__c": "Product build-up under the belt at the tail pulley. Cleaned. Asked site to add it to their cleaning list.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000amFtd2Ex"
+      },
+      "Id": "5008d00000amFtd2Ex",
+      "CaseNumber": "00037700",
+      "Subject": "L-03 circuit 2 GDN-H-0014",
+      "Status": "Closed",
+      "Priority": "High",
+      "Origin": "Phone",
+      "CreatedDate": "2025-04-22T06:40:00.000+0000",
+      "ClosedDate": "2025-04-23T13:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000wgkOc8Ih"
+        },
+        "Name": "GDN-H-0014"
+      },
+      "Equipment_Model__c": "NK-600",
+      "Serial_Number__c": "NK600-221190",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "L-03",
+      "Description": "Chiller alarm L-03 circuit 2 after the Easter shutdown (plant idle 4 days).",
+      "Resolution__c": "Contractor (Chlodtech) attended for refrigerant work. Visual check, no leak found, small deficit. Topped up 1.8 kg R-513A per KT-WI-14. Full leak test to be planned at next visit.",
+      "Parts_Used__c": "R-513A 1.8 kg (contractor)",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+        },
+        "Name": "Jakub Nowak"
+      },
+      "CaseComments": {
+        "totalSize": 1,
+        "done": true,
+        "records": [
+          {
+            "attributes": {
+              "type": "CaseComment",
+              "url": "/services/data/v60.0/sobjects/CaseComment/00a8d000002acy2u4r"
+            },
+            "Id": "00a8d000002acy2u4r",
+            "CommentBody": "On site. Circuit 2 suction low, circuit 1 normal. Called Chlodtech for the refrigerant side, they come tomorrow morning.",
+            "CreatedDate": "2025-04-22T09:30:00.000+0000",
+            "IsPublished": false,
+            "CreatedBy": {
+              "attributes": {
+                "type": "User",
+                "url": "/services/data/v60.0/sobjects/User/0058d000006RdKNTV3"
+              },
+              "Name": "Jakub Nowak"
+            }
+          }
+        ]
+      },
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000JNNKjXMQ"
+      },
+      "Id": "5008d00000JNNKjXMQ",
+      "CaseNumber": "00037600",
+      "Subject": "Tracking drift GDN-V-0240",
+      "Status": "Closed",
+      "Priority": "Low",
+      "Origin": "Technician",
+      "CreatedDate": "2025-04-14T08:10:00.000+0000",
+      "ClosedDate": "2025-04-14T12:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000002m8WLsSd"
+        },
+        "Name": "Baltic Prime Foods"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d000001V2FoDzY"
+        },
+        "Name": "GDN-V-0240"
+      },
+      "Equipment_Model__c": "BX-12",
+      "Serial_Number__c": "BX12-230441",
+      "Site__c": "GDN - Gdansk Food Processing",
+      "Fault_Code__c": "C-02",
+      "Description": "Belt drifting on the packing line BX-12, C-02 occasionally. Return idler bearing noisy.",
+      "Resolution__c": "Return idler bearing rough, idler replaced with 77-0410 from stock. Tracking adjusted, ok.",
+      "Parts_Used__c": "77-0410 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000V0HZe8XT"
+      },
+      "Id": "5008d00000V0HZe8XT",
+      "CaseNumber": "00037076",
+      "Subject": "P-07 on RTM-P-0060",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Email",
+      "CreatedDate": "2025-03-04T08:20:00.000+0000",
+      "ClosedDate": "2025-03-04T11:00:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000lBvda7Xz"
+        },
+        "Name": "RTM-P-0060"
+      },
+      "Equipment_Model__c": "HCP-500",
+      "Serial_Number__c": "HCP500-240333",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "P-07",
+      "Description": "Cavitation alarm on the glycol pump in the plant room.",
+      "Resolution__c": "Strainer full of plastic wrap fragments, dP 0.48 bar before cleaning. Cleaned, suction valve checked open. Alarm cleared.",
+      "Parts_Used__c": "18-1121 x1",
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000azDL6Tik"
+        },
+        "Name": "Aisha Rahman"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    },
+    {
+      "attributes": {
+        "type": "Case",
+        "url": "/services/data/v60.0/sobjects/Case/5008d00000Xcip3rVN"
+      },
+      "Id": "5008d00000Xcip3rVN",
+      "CaseNumber": "00036813",
+      "Subject": "RTM-C-0120 phase fault after power works",
+      "Status": "Closed",
+      "Priority": "Medium",
+      "Origin": "Phone",
+      "CreatedDate": "2025-02-11T06:15:00.000+0000",
+      "ClosedDate": "2025-02-11T09:30:00.000+0000",
+      "Account": {
+        "attributes": {
+          "type": "Account",
+          "url": "/services/data/v60.0/sobjects/Account/0018d000003rgeLjhS"
+        },
+        "Name": "Maasvlakte Fresh Logistics"
+      },
+      "Asset__r": {
+        "attributes": {
+          "type": "Asset",
+          "url": "/services/data/v60.0/sobjects/Asset/02i8d00000z0Gyqolj"
+        },
+        "Name": "RTM-C-0120"
+      },
+      "Equipment_Model__c": "VRS-110",
+      "Serial_Number__c": "VRS110-220455",
+      "Site__c": "RTM - Rotterdam Distribution Hub",
+      "Fault_Code__c": "E-02",
+      "Description": "Compressor 0120 down on E-02 after Stedin worked on the site supply overnight.",
+      "Resolution__c": "Phase rotation and voltages checked, all ok. Reset, running. Customer to inform us before planned grid work.",
+      "Parts_Used__c": null,
+      "Owner": {
+        "attributes": {
+          "type": "User",
+          "url": "/services/data/v60.0/sobjects/User/0058d00000ocJ6muMJ"
+        },
+        "Name": "Lena Hoffmann"
+      },
+      "CaseComments": null,
+      "EmailMessages": null
+    }
+  ]
+}

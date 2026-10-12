@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Field Service : EU Chiller Field Guide</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first"><span><a href="index.html">Field Service</a></span></li>
+                            <li><span><a href="Field-Service-Home_98306.html">Field Service Home</a></span></li>
+                            <li><span><a href="EU-ex-Kyltek_1376259.html">EU (ex-Kyltek)</a></span></li>
+                            <li><span><a href="Chillers_1376270.html">Chillers</a></span></li>
+                        </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            Field Service : EU Chiller Field Guide
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        Created by <span class='author'> Sofie de Vries</span>, last modified on Oct 14, 2025
+                    </div>
+                    <div id="main-content" class="wiki-content group">
+<p><style type="text/css">/*<![CDATA[*/div.rbtoc1759392840211 {padding: 0px;} div.rbtoc1759392840211 ul {list-style: disc;margin-left: 0px;} div.rbtoc1759392840211 li {margin-left: 0px;padding-left: 0px;} /*]]>*/</style></p><div class="toc-macro rbtoc1759392840211"><ul class="toc-indentation"><li><a href="#EUChillerFieldGuide-Whatthiscovers">What this covers</a></li><li><a href="#EUChillerFieldGuide-Beforeyougocertification">Before you go: certification</a></li><li><a href="#EUChillerFieldGuide-HowtheNK-600islaidout">How the NK-600 is laid out</a></li><li><a href="#EUChillerFieldGuide-Thealarmsweactuallysee">The alarms we actually see</a></li><li><a href="#EUChillerFieldGuide-L-01highdischargepressure">L-01 high discharge pressure</a></li><li><a href="#EUChillerFieldGuide-L-03lowsuctionpressure">L-03 low suction pressure</a></li><li><a href="#EUChillerFieldGuide-Leaktesting">Leak testing</a></li><li><a href="#EUChillerFieldGuide-Records">Records</a></li><li><a href="#EUChillerFieldGuide-Sitespecifics">Site specifics</a></li><li><a href="#EUChillerFieldGuide-Dutchyoullhearonsite">Dutch you'll hear on site</a></li></ul></div>
+<div class="confluence-information-macro confluence-information-macro-information"><p class="title">About this page</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Migrated from the Kyltek Kennisbank in August 2024 (original page: <em>Koelmachines in het veld</em>, first written in 2019). I translated it myself, so blame me for the English. I've kept some Dutch where the team actually uses the Dutch word on site. There's a list at the bottom.</p></div></div>
+<div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>NK-600 EXV campaign (added 14 October 2025).</strong> Nordkyl issued Service Bulletin SB-2025-014 in September 2025. On NK-600 units in the bulletin's serial range, the EXV-2 expansion valve can stick after idle periods. The unit then gives L-03 (low suction pressure) <strong>with a normal refrigerant charge</strong>. It looks exactly like a leak or an undercharge.</p><p>Before you follow KT-WI-14 or add any refrigerant to an NK-600, check the serial against the table in SB-2025-014. If it's in the range, the bulletin comes first: replace the EXV on both circuits with the rev 3 assembly (63-1180) and put the campaign code NK-C25-14 on the work order so Nordkyl pays for it. The old rev 2 valve is 63-1170, if you see one on the shelf it's for out-of-range units only.</p><p><a href="/display/~s.devries" class="confluence-userlink user-mention" data-username="s.devries" data-linked-resource-type="userinfo">Sofie de Vries</a></p></div></div>
+<h2 id="EUChillerFieldGuide-Whatthiscovers">What this covers</h2>
+<p>Nordkyl NK-300 and NK-600 air-cooled chillers at our EU sites, Rotterdam (Maasvlakte Fresh Logistics) and Gdansk (Baltic Prime Foods). All of them run R-513A. This is field knowledge from the Kyltek years, not a procedure. The procedures are on SharePoint, and where this page and a procedure disagree, follow the procedure and tell me.</p>
+<p>Not covered: the customers' own ammonia plants (not ours, don't touch), the NA chiller at Fresno (Grace looks after that one and has her own notes), and anything to do with the chilled water side beyond the flow switch.</p>
+<h2 id="EUChillerFieldGuide-Beforeyougocertification">Before you go: certification</h2>
+<p>Anything that touches the refrigerant circuit needs an F-gas certificate (Category I). That means connecting gauges, recovering, charging, brazing, opening a valve to the circuit. Without the certificate you can still do a lot: read pressures and temperatures on the controller, look for oil marks and icing, check the condenser coil and the fans, read the alarm history, and talk to the customer. Do all that, write it in the case, and raise the work order with <em>refrigerant certification required</em>. The supervisor sends someone certified.</p>
+<p>If you're working towards your certificate, come out with me or another certified engineer as often as you can. You learn more on a roof in Maasvlakte in February than on the course.</p>
+<h2 id="EUChillerFieldGuide-HowtheNK-600islaidout">How the NK-600 is laid out</h2>
+<p>Two independent refrigerant circuits, each with its own compressors, condenser coil section, EXV-2 electronic expansion valve and filter drier. The controller shows each circuit separately, so always note which circuit alarmed. Circuit 1 is the one nearest the control panel on every NK-600 we have.</p>
+<p>The NK-300 is a smaller single-circuit version with the same controller and the same alarm codes, so most of this page applies to both.</p>
+<p>The controller keeps an alarm history with the suction and discharge pressure at the moment of each alarm. Read it before anything else. It tells you whether the alarm came at start-up, after an idle period, or under full load, and those are three different stories.</p>
+<h2 id="EUChillerFieldGuide-Thealarmsweactuallysee">The alarms we actually see</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Code</th>
+<th class="confluenceTh">What it means</th>
+<th class="confluenceTh">What it usually is for us</th>
+</tr>
+<tr>
+<td class="confluenceTd">L-01</td>
+<td class="confluenceTd">High discharge pressure</td>
+<td class="confluenceTd">Dirty condenser coil. In Rotterdam: salt, sand, and in June the poplar fluff from the trees along the access road. In Gdansk: flour dust</td>
+</tr>
+<tr>
+<td class="confluenceTd">L-03</td>
+<td class="confluenceTd">Low suction pressure (below 2.4 bar for 60 s)</td>
+<td class="confluenceTd">Low charge from a leak, an iced evaporator, low water flow, a blocked filter drier, or on campaign-range NK-600s a sticking EXV. See below</td>
+</tr>
+<tr>
+<td class="confluenceTd">L-06</td>
+<td class="confluenceTd">Chilled water flow switch</td>
+<td class="confluenceTd">Customer's pump stopped or a strainer on their side blocked. Ask before you open anything</td>
+</tr>
+</tbody></table></div>
+<p>There are more codes in the Nordkyl manual (chapter on alarms). These three are 90% of our call-outs.</p>
+<h2 id="EUChillerFieldGuide-L-01highdischargepressure">L-01 high discharge pressure</h2>
+<p>Clean the condenser coil. Every L-01 I've seen in Rotterdam in summer was the coil. Use the coil cleaner and low-pressure water, from the inside out where the fans allow it. Never use a pressure washer on the fins, they fold flat and then you've made it worse permanently. Check all the condenser fans run. A dead fan on one section shows up as L-01 on that circuit only on hot days.</p>
+<p>If the coil is clean and the fans run and L-01 continues, it can be non-condensables in the circuit after a repair that wasn't evacuated properly. That's certified work.</p>
+<h2 id="EUChillerFieldGuide-L-03lowsuctionpressure">L-03 low suction pressure</h2>
+<p>This is the important one, and the one where we have made mistakes. The procedure for low suction pressure on chillers in the EU is <strong><a href="https://corvane.sharepoint.com/sites/FieldProcedures/Shared%20Documents/KT-WI-14_Low_Suction_Pressure_Chillers_EN.docx" class="external-link" rel="nofollow">KT-WI-14 Low Suction Pressure on Chillers</a></strong>. I wrote the original in 2021 for Kyltek and it was translated in 2024 with the other work instructions. Follow it step by step.</p>
+<p>In short, KT-WI-14 has you rule out the causes that aren't a refrigerant loss first, inspect for leaks, and then decide what to do about the charge. It has a rule for a small deficit with no visible leak, where you can top up and plan a full leak test for the next planned visit. Read the instruction for the exact condition. Don't do it from memory.</p>
+<p><strong>But first read the warning panel at the top of this page.</strong> On NK-600s in the SB-2025-014 serial range, check the bulletin before you go anywhere near KT-WI-14.</p>
+<p>Corvane has its own procedure for leak testing and recharging, SOP-020, which is stricter about topping up. As far as I know KT-WI-14 is still valid for the EU, because FS-STD-001 says the legacy Kyltek instructions stay valid until they're superseded, and nobody has superseded it. Lena has asked for the two to be reviewed together. Until then, if you're unsure, call me or Lena before you charge anything.</p>
+<h3 id="EUChillerFieldGuide-Thingstocheckbeforeyouthinkaboutthecharge">Things to check before you think about the charge</h3>
+<ol><li>Which circuit, and when. L-03 at start-up after a long stop is different from L-03 under load.</li><li>Ice on the evaporator or the suction line. An iced evaporator gives low suction pressure with a perfectly good charge.</li><li>Chilled water flow. Low flow through the evaporator does the same. Check the customer's pump and the differential across the evaporator.</li><li>Filter drier. Feel both ends. If the outlet is noticeably colder than the inlet, the drier is restricting. (Kyltek rule of thumb: if you can feel the difference with your hand, it's too much.) Part 63-0410 for the core.</li><li>EXV. On the controller service menu, watch the valve opening percentage while the circuit runs. If it sits at one value and doesn't move with load, or it's at 100% with low suction, the valve isn't doing its job. On campaign units, see the bulletin.</li><li>Sight glass. Bubbles in the liquid line sight glass with the circuit running steady suggest a low charge. Bubbles just after start-up mean nothing.</li><li>Oil marks. Where refrigerant leaks, oil comes with it. Look at flare nuts, Schrader valves, the compressor connections and the brazed joints at the coil headers.</li></ol>
+<h3 id="EUChillerFieldGuide-Winterrestarts">Winter restarts</h3>
+<p>Several of our units in Rotterdam run at very low load or stand idle for weeks in winter, when the customer doesn't need much cooling. The first big restart in February or March is when L-03 tends to show up. We used to put this down to the cold. Since SB-2025-014 I'm less sure that was the whole story on the NK-600s. If you get L-03 on an NK-600 after a winter idle period, that's exactly the pattern the bulletin describes.</p>
+<h2 id="EUChillerFieldGuide-Leaktesting">Leak testing</h2>
+<p>For leak searching (<em>lekzoeken</em>) use the electronic detector, slowly, below the joints because R-513A is heavier than air. Confirm with bubble solution before you open anything. For pressure testing (<em>afpersen</em>) and evacuation (<em>vacuumtrekken</em>), follow the work instruction or SOP you're working under. I'm not repeating the pressures and vacuum levels here, they're in the documents.</p>
+<p>Always replace the filter drier core when the circuit has been opened.</p>
+<h2 id="EUChillerFieldGuide-Records">Records</h2>
+<p>Since January 2025 we record everything in Salesforce on the work order, plus the refrigerant log for every kilo recovered or charged, with the cylinder number. The F-gas regulation requires it, and inspectors do ask. The old history (2023 and earlier) is in Servio, and you can see it in the monthly Servio export. The Servio notes are in Dutch, and a lot of them say <em>bijgevuld</em> (topped up) with a kilo figure. If you see the same unit topped up more than once in a year in Servio, tell me.</p>
+<h2 id="EUChillerFieldGuide-Sitespecifics">Site specifics</h2>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Site</th>
+<th class="confluenceTh">Units</th>
+<th class="confluenceTh">Notes</th>
+</tr>
+<tr>
+<td class="confluenceTd">Rotterdam (RTM)</td>
+<td class="confluenceTd">RTM-H-0007 (NK-600), RTM-H-0008 (NK-600), RTM-H-0011 (NK-300)</td>
+<td class="confluenceTd">All on the roof. Work at height permit every time. See <a href="Rotterdam-Site-Notes.html" data-linked-resource-type="page">Rotterdam Site Notes</a></td>
+</tr>
+<tr>
+<td class="confluenceTd">Gdansk (GDN)</td>
+<td class="confluenceTd">GDN-H-0014 (NK-600), GDN-H-0015 (NK-300)</td>
+<td class="confluenceTd">Ground level, in the yard behind the processing hall. Flour dust on the coils. The customer's ammonia plant is next door, know where the wind sock is</td>
+</tr>
+</tbody></table></div>
+<h2 id="EUChillerFieldGuide-Dutchyoullhearonsite">Dutch you'll hear on site</h2>
+<p>For colleagues who didn't come from Kyltek. Some of this is proper Dutch, some is just how we talk.</p>
+<div class="table-wrap"><table class="confluenceTable"><tbody>
+<tr>
+<th class="confluenceTh">Word</th>
+<th class="confluenceTh">Literally</th>
+<th class="confluenceTh">What we mean by it</th>
+</tr>
+<tr>
+<td class="confluenceTd">zuigdruk</td>
+<td class="confluenceTd">suction pressure</td>
+<td class="confluenceTd">Suction pressure. "De zuigdruk zakt weg": suction pressure is dropping away</td>
+</tr>
+<tr>
+<td class="confluenceTd">persdruk / persgas</td>
+<td class="confluenceTd">discharge pressure / discharge gas</td>
+<td class="confluenceTd">High side</td>
+</tr>
+<tr>
+<td class="confluenceTd">kijkglas</td>
+<td class="confluenceTd">sight glass</td>
+<td class="confluenceTd">Liquid line sight glass</td>
+</tr>
+<tr>
+<td class="confluenceTd">bellen in het kijkglas</td>
+<td class="confluenceTd">bubbles in the sight glass</td>
+<td class="confluenceTd">Usually means short of charge, if the circuit is running steady</td>
+</tr>
+<tr>
+<td class="confluenceTd">bijvullen</td>
+<td class="confluenceTd">to fill up</td>
+<td class="confluenceTd">Topping up refrigerant. The thing we want to do less of</td>
+</tr>
+<tr>
+<td class="confluenceTd">een kilootje erbij</td>
+<td class="confluenceTd">a little kilo extra</td>
+<td class="confluenceTd">The old habit of adding a kilo to make the alarm go away. Not a technique</td>
+</tr>
+<tr>
+<td class="confluenceTd">de klep hangt</td>
+<td class="confluenceTd">the valve is hanging</td>
+<td class="confluenceTd">The expansion valve is stuck</td>
+</tr>
+<tr>
+<td class="confluenceTd">lekzoeken</td>
+<td class="confluenceTd">leak searching</td>
+<td class="confluenceTd">Leak testing with the detector and bubble spray</td>
+</tr>
+<tr>
+<td class="confluenceTd">snuffelen</td>
+<td class="confluenceTd">sniffing</td>
+<td class="confluenceTd">Leak searching with the electronic detector specifically</td>
+</tr>
+<tr>
+<td class="confluenceTd">afpersen</td>
+<td class="confluenceTd">pressing off</td>
+<td class="confluenceTd">Nitrogen pressure test</td>
+</tr>
+<tr>
+<td class="confluenceTd">vacuumtrekken</td>
+<td class="confluenceTd">pulling vacuum</td>
+<td class="confluenceTd">Evacuation</td>
+</tr>
+<tr>
+<td class="confluenceTd">ijsvorming</td>
+<td class="confluenceTd">ice forming</td>
+<td class="confluenceTd">Icing on the evaporator or suction line</td>
+</tr>
+<tr>
+<td class="confluenceTd">winterstop</td>
+<td class="confluenceTd">winter stop</td>
+<td class="confluenceTd">The low-load or idle period in winter</td>
+</tr>
+<tr>
+<td class="confluenceTd">de koeler</td>
+<td class="confluenceTd">the cooler</td>
+<td class="confluenceTd">Can mean the whole chiller or just the condenser coil, depending on who's talking. Ask</td>
+</tr>
+</tbody></table></div>
+<div id="expander-4497" class="expand-container"><div id="expander-control-4497" class="expand-control"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Old Kyltek notes on the NK-300 (from the original page, kept for history)</span></div><div id="expander-content-4497" class="expand-content"><p>The NK-300s were first installed in 2022 (RTM-H-0011). Early units had the controller on firmware 6.x, which did not log the pressure at the moment of the alarm. All our NK-300s are now on 7.2. If you find an old printout in the plant room that doesn't have pressures in the alarm list, that's why.</p><p>The NK-300 has a single circuit, so an L-03 takes the whole unit down. Customers notice those faster.</p></div></div>
+                    </div>
+
+
+                    <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="comments" class="pageSectionTitle">Comments (4)</h2>
+                        </div>
+                        <table border="0" width="100%">
+                        <tbody>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316402"></a>
+                <font class="smallfont"><p>For GDN-H-0014: serial is in the SB-2025-014 range. EXV replaced on both circuits in October under NK-C25-14, with Sofie. No L-03 since.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Jakub Nowak at Nov 06, 2025 08:12
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316439"></a>
+                <font class="smallfont"><p>Thanks Jakub. And the old valve was properly sticking, you could see it on the opening percentage before we changed it.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Sofie de Vries at Nov 06, 2025 09:30
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666;">
+                <a name="comment-98316476"></a>
+                <font class="smallfont"><p>Sofie, could we lose the "een kilootje erbij" line? Customers sometimes read over our shoulder on the tablet.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Lena Hoffmann at Mar 03, 2026 14:55
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="border-top: 1px dashed #666666; padding-left: 30px;">
+                <a name="comment-98316513"></a>
+                <font class="smallfont"><p>I'd rather keep it, it's there so people know what it means when they hear it. The table already says it isn't a technique.</p></font>
+                <div class="smallfont" align="left" style="color: #666666; width: 98%; margin-bottom: 10px;">
+                    <img src="images/icons/contenttypes/comment_16.png" height="16" width="16" border="0" align="absmiddle"/>
+                    Posted by Sofie de Vries at Mar 03, 2026 16:21
+                </div>
+            </td>
+        </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>             </div>
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on Oct 02, 2026 09:14</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

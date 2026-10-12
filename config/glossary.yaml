@@ -1,0 +1,33 @@
+# Dutch / German field terms -> English (spec M7). Appended to embed_text so English questions find
+# Dutch Servio notes, the KT-WI and the German HCP-200 manual.
+zuigdruk: suction pressure
+persdruk: discharge pressure
+kijkglas: sight glass
+bijvullen: top up refrigerant
+bijgevuld: topped up refrigerant
+lekzoeken: leak search
+snuffelen: leak search with electronic detector
+afpersen: nitrogen pressure test
+vacuumtrekken: evacuation vacuum
+ijsvorming: icing
+winterstop: winter shutdown idle period
+filterdroger: filter drier
+expansieventiel: expansion valve
+storing: fault breakdown
+storingscode: fault code
+koelmachine: chiller
+condensor: condenser coil
+ventilator: fan
+lekcontrole: leak check
+koudemiddel: refrigerant
+herstart: restart
+Spaltmaß: impeller clearance wear ring clearance
+Spaltring: wear ring
+Anzugsmoment: tightening torque
+Gehäuseschrauben: casing bolts
+Gleitringdichtung: mechanical seal
+Saugsieb: suction strainer
+Trockenlauf: dry running
+Störung: fault
+Wartung: maintenance
+Laufrad: impeller
