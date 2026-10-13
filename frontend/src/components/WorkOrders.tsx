@@ -166,7 +166,7 @@ function WODetail({ id, me, notify }: { id: string; me: User; notify: (m: string
   const w = wo.data
   const p = w.payload
   const editable = w.status === 'draft' && w.created_by === me.id
-  const canApprove = w.status === 'pending_approval' && me.can_approve
+  const canApprove = w.status === 'pending_approval' && me.can_approve && w.created_by !== me.id
   const set = (k: string, v: unknown) => setForm((f) => ({ ...f, [k]: v }))
   const changes = () => Object.fromEntries(Object.entries(form).filter(([k, v]) =>
     k in p && !k.startsWith('_') && JSON.stringify(v) !== JSON.stringify(p[k].value)))

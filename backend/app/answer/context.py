@@ -116,6 +116,25 @@ def _conflict_positions() -> dict:
     return yaml.safe_load(path.read_text()) if path.exists() else {}
 
 
+def conflict_sources(defs: dict) -> set[str]:
+    """Every document path a conflict's positions and resolution draw on. A conflict without declared sources
+    has nothing to check against, so it gets an impossible path and is never shown (default deny)."""
+    paths: set[str] = set()
+    for cid, c in defs.items():
+        declared = [s for p in c.get("positions", []) for s in p.get("sources", [])] + c.get("resolution_sources", [])
+        paths |= set(declared) if declared and all(p.get("sources") for p in c.get("positions", [])) \
+            else {f"<undeclared sources for {cid}>"}
+    return paths
+
+
+def _visible_documents(conn: Connection, user: UserContext, paths: set[str]) -> set[str]:
+    rows = conn.execute(
+        text(f"SELECT d.path FROM documents d WHERE d.path = ANY(CAST(:paths AS text[])) AND {acl_clause('d')}"),
+        {"paths": sorted(paths), **acl_params(user)},
+    )
+    return {r[0] for r in rows}
+
+
 def build_context(
     conn: Connection,
     user: UserContext,
@@ -135,7 +154,10 @@ def build_context(
     history_chunks: list[str] = []
 
     # computed facts: asset card, bulletin applicability, history patterns
+    visible_cards = set(fetch_chunks(conn, user, [a.source_chunk for a in assets if a.source_chunk]))
     for a in assets:
+        if a.source_chunk not in visible_cards:  # the fleet register row is itself ACL'd content
+            continue
         facts.append(Fact(
             f"F{len(facts) + 1}", f"Fleet register · {a.asset_id}",
             f"Asset {a.asset_id}: {a.model}, serial {a.serial}, site {a.site_name} ({a.customer}), region "
@@ -187,8 +209,13 @@ def build_context(
     context_doc_numbers = {r["doc_number"] for r in rows.values() if r["doc_number"]}
     conflicts: list[ConflictInfo] = []
     resolution_chunks: dict[str, str] = {}
+    visible_docs = _visible_documents(conn, user, conflict_sources(conflict_defs))
     for cid, c in conflict_defs.items():
         if not (set(c.get("models", [])) & set(models)):
+            continue
+        # Positions and the resolution restate document content: include the conflict only if the user can
+        # see every document behind it. One hidden side means the whole conflict stays out of the prompt.
+        if not conflict_sources({cid: c}) <= visible_docs:
             continue
         if not (set(c.get("doc_numbers", [])) & context_doc_numbers) and cid != "C5":
             continue
@@ -197,7 +224,7 @@ def build_context(
         res_chunk = _best_chunk_in_doc(conn, user, c.get("resolution_doc"), c["resolution"])
         if res_chunk:
             resolution_chunks[cid] = res_chunk
-        conflicts.append(ConflictInfo(cid, c["topic"], c.get("positions", []), c["resolution"], None))
+        conflicts.append(ConflictInfo(cid, c["topic"], [p["text"] for p in c["positions"]], c["resolution"], None))
 
     chunk_order = chunk_order + procedure_chunks + list(resolution_chunks.values()) + history_chunks
     rows = fetch_chunks(conn, user, list(dict.fromkeys(chunk_order)))

@@ -254,11 +254,20 @@ class RejectIn(BaseModel):
 
 
 def _wo_call(fn, *args):
+    pending: list = []  # files to write once the transaction has committed (outbox export)
     try:
         with get_engine().begin() as conn:
-            return fn(conn, *args)
+            conn.info["pending_files"] = pending
+            try:
+                result = fn(conn, *args)
+            finally:
+                conn.info.pop("pending_files", None)
     except wo.WorkOrderError as exc:
         raise HTTPException(exc.status, {"message": str(exc), "errors": exc.details}) from None
+    for path, content in pending:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(content, encoding="utf-8")
+    return result
 
 
 def _wo_out(conn, w: dict) -> dict:

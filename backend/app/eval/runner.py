@@ -32,7 +32,13 @@ HOW_GRADED = (
     "Paraphrase is fine; wrong numbers are not. Checks run over every rendered field (headline, blocks, "
     "conflicts, what-you-can-do, work order). Numbers and forbidden tokens are checked with regular "
     "expressions; facts that need understanding are decided by a single LLM judge run. **Partially correct** = "
-    "right behaviour, no must-not hit, at least half of the critical facts."
+    "right behaviour, no must-not hit, at least half of the critical facts. A judge item with no verdict fails.\n\n"
+    "**Permission leaks** counts three checks per question: (1) every cited source is visible to the user; "
+    "(2) everything the model was given is visible: all sources, the chunks behind computed facts, and every "
+    "document behind a conflict in the context; (3) a scan of the displayed answer and work order for distinctive "
+    "values (numbers with units, test points, parameters) that occur only in documents the user can't see.\n\n"
+    "**Not checked:** that each citation semantically supports its sentence. The validator checks that values, "
+    "units and identifiers appear in the cited source, not that they refer to the same component or condition."
 )
 
 
@@ -80,6 +86,49 @@ def cited_labels(response: dict) -> list[str]:
 def cited_chunk_ids(response: dict) -> list[str]:
     ids = set(re.findall(r'"(S\d+)"', json.dumps(response["answer"])))
     return [s["chunk_id"] for s in response["sources"] if s["id"] in ids]
+
+
+PERMISSION_CHECKS = ("acl_of_citations", "acl_of_context", "output_leak_scan")
+
+
+def permission_checks(engine: Engine, user, response: dict, body: str, question: str):
+    """Permission failures across everything, not just S-citations:
+    - acl_of_citations: every cited S-source chunk is visible to the user
+    - acl_of_context: everything the model was given is visible: all sources (cited or not), the chunks behind
+      every computed F-fact, and every document behind each conflict in the context
+    - output_leak_scan: no distinctive value from a document the user can't see appears in the displayed
+      answer or work order (values that also appear in permitted documents or the question don't count)"""
+    from app.answer.context import _conflict_positions, conflict_sources
+    from app.answer.validate import build_fingerprints, leak_hits
+    from app.auth.acl import not_acl_clause
+
+    cited = set(cited_chunk_ids(response))
+    context = {s["chunk_id"] for s in response["sources"]} | {
+        c for f in response.get("facts", []) for c in f.get("chunk_ids", [])}
+    defs = _conflict_positions()
+    conflict_docs = conflict_sources({cid: defs[cid] for cid in response.get("context_conflicts", []) if cid in defs})
+    with engine.connect() as conn:
+        def visible(ids):
+            return {str(x[0]) for x in conn.execute(
+                text(f"SELECT c.id FROM chunks c WHERE c.id = ANY(CAST(:ids AS uuid[])) AND {acl_clause('c')}"),
+                {"ids": sorted(ids), **acl_params(user)})}
+        visible_docs = {x[0] for x in conn.execute(
+            text(f"SELECT d.path FROM documents d WHERE d.path = ANY(CAST(:p AS text[])) AND {acl_clause('d')}"),
+            {"p": sorted(conflict_docs), **acl_params(user)})}
+        permitted = "\n".join(x[0] for x in conn.execute(
+            text(f"SELECT c.text FROM chunks c WHERE {acl_clause('c')}"), acl_params(user)))
+        hidden = [x[0] for x in conn.execute(
+            text(f"SELECT c.text FROM chunks c WHERE {not_acl_clause('c')}"), acl_params(user))]
+        bad_cited = cited - visible(cited) if cited else set()
+        bad_context = context - visible(context) if context else set()
+    bad_conflicts = conflict_docs - visible_docs
+    # computed facts are permitted text too: their own provenance is checked by acl_of_context above
+    facts_text = "\n".join(f.get("text", "") for f in response.get("facts", []))
+    hits = leak_hits(body, build_fingerprints(hidden, f"{permitted}\n{facts_text}\n{question}"))
+    yield "acl_of_citations", not bad_cited, f"{len(bad_cited)} inaccessible"
+    yield ("acl_of_context", not bad_context and not bad_conflicts,
+           f"{len(bad_context)} inaccessible context chunks; conflict documents not visible: {sorted(bad_conflicts)}")
+    yield "output_leak_scan", not hits, f"restricted values in the output: {hits}" if hits else "none"
 
 
 @dataclass
@@ -155,21 +204,19 @@ def grade(engine: Engine, q: dict, rubric: dict | None, response: dict, wo_paylo
                 for c in wo_rule.get("certifications_include", []):
                     if c not in (v.get("required_certifications") or []):
                         problems.append(f"missing cert {c}")
+                have = {x.get("part_no"): x.get("qty") for x in v.get("parts") or []}
                 for p in wo_rule.get("parts_include", []):
-                    if p not in [x.get("part_no") for x in v.get("parts") or []]:
-                        problems.append(f"missing part {p}")
+                    part_no, qty = (p["part_no"], p.get("qty")) if isinstance(p, dict) else (p, None)
+                    if part_no not in have:
+                        problems.append(f"missing part {part_no}")
+                    elif qty is not None and have[part_no] != qty:
+                        problems.append(f"part {part_no} qty {have[part_no]} (expected {qty})")
                 if wo_rule.get("campaign_code") and v.get("campaign_code") != wo_rule["campaign_code"]:
                     problems.append(f"campaign {v.get('campaign_code')}")
                 r.add("work_order", not problems, "; ".join(problems) or "fields match")
 
-    # every cited chunk must be visible to the asking user
-    chunks = cited_chunk_ids(response)
-    if chunks:
-        with engine.connect() as conn:
-            visible = {str(x[0]) for x in conn.execute(
-                text(f"SELECT c.id FROM chunks c WHERE c.id = ANY(CAST(:ids AS uuid[])) AND {acl_clause('c')}"),
-                {"ids": chunks, **acl_params(user)})}
-        r.add("acl_of_citations", set(chunks) <= visible, f"{len(set(chunks) - visible)} inaccessible")
+    for name, ok, detail in permission_checks(engine, user, response, body, q["question"]):
+        r.add(name, ok, detail)
 
     if judge_items:
         listing = "\n".join(f"- id={j['id']} [{j['kind']}] {j['text']}" for j in judge_items)
@@ -180,13 +227,14 @@ def grade(engine: Engine, q: dict, rubric: dict | None, response: dict, wo_paylo
         by_id = {i.id: i for i in result.items}
         for j in judge_items:
             item = by_id.get(j["id"])
-            holds = bool(item and item.holds)
-            ok = holds if j["kind"] == "fact" else not holds
-            r.add(f"judge:{j['id']}", ok, f"{j['text']} | {item.evidence if item else 'no verdict'}",
-                  j.get("critical", True))
+            if item is None:  # a missing verdict is a failed check, never a silent pass
+                r.add(f"judge:{j['id']}", False, f"{j['text']} | judge returned no verdict", j.get("critical", True))
+                continue
+            ok = item.holds if j["kind"] == "fact" else not item.holds
+            r.add(f"judge:{j['id']}", ok, f"{j['text']} | {item.evidence}", j.get("critical", True))
 
     failed_critical = [c for c in r.checks if c["critical"] and not c["ok"]]
-    hard_fail = any(c["check"].startswith(("must_not", "acl_of_citations")) and not c["ok"] for c in r.checks)
+    hard_fail = any(c["check"].startswith(("must_not",) + PERMISSION_CHECKS) and not c["ok"] for c in r.checks)
     fact_checks = [c for c in r.checks if c["check"].startswith(("fact:", "judge:")) and c["critical"]
                    and not c["check"].startswith("judge:" + "x")]
     facts_ok = sum(c["ok"] for c in fact_checks)
@@ -240,7 +288,7 @@ def run_eval(engine: Engine, settings: Settings, questions_file: Path, rubrics_f
         "correct": sum(r.verdict == "correct" for r in results),
         "partial": sum(r.verdict == "partial" for r in results),
         "incorrect": sum(r.verdict == "incorrect" for r in results),
-        "leaks": sum(1 for r in results for c in r.checks if c["check"] in {"acl_of_citations"} and not c["ok"]),
+        "leaks": sum(1 for r in results for c in r.checks if c["check"] in PERMISSION_CHECKS and not c["ok"]),
         "models": {"answer": settings.answer_model, "fast": settings.fast_model, "judge": settings.judge_model,
                    "embed": settings.embed_model},
     }

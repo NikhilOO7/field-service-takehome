@@ -13,10 +13,12 @@ CERT_LABELS = {"cert-hv": "HV", "cert-refrigerant": "Refrigerant", "cert-confine
 
 
 def group_kind(group_id: str) -> str:
+    """Kind of a group by its prefix. Unknown prefixes (e.g. a new 'site-gdansk') are 'other': the ACL still
+    enforces them, and the disclosure policy treats them like region groups (reveal nothing)."""
     for prefix, kind in GROUP_KIND_BY_PREFIX.items():
         if group_id.startswith(prefix):
             return kind
-    raise ValueError(f"Unknown group kind for {group_id!r}")
+    return "other"
 
 
 def tech_code(name: str) -> str:

@@ -24,7 +24,7 @@ export type Source = {
   id: string; chunk_id: string; label: string; doc_id: string; doc_type: string; doc_status: string
   locator: Record<string, unknown>; cited: boolean; text: string
 }
-export type Fact = { id: string; label: string; text: string; cited: boolean }
+export type Fact = { id: string; label: string; text: string; cited: boolean; chunk_ids?: string[] }
 export type AskResponse = {
   message_id: string; conversation_id: string
   answer: Answer

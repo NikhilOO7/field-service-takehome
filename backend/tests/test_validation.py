@@ -68,6 +68,59 @@ def test_uncited_number_in_headline_is_replaced():
     assert "45" not in fixed.headline.text and report.fields["headline"].status == "replaced"
 
 
+def test_number_with_wrong_unit_fails_even_if_the_bare_number_appears():
+    # S1 says 38 N-m; "38 bar" must not pass just because 38 is in the source
+    a = answer(headline={"text": "Set the pressure to 38 bar.", "citations": ["S1"]})
+    assert "headline" in failing(a)
+    assert any("source gives 38 n-m" in r for r in failing(a)["headline"])
+
+
+def test_units_explicit_conversions_and_table_headers():
+    from app.answer.validate import _grounded_numbers, numbers_in
+
+    def missing(answer_text, source):
+        return _grounded_numbers(numbers_in(answer_text), source)
+
+    assert missing("insulation 2400 MOhm", "insulation resistance 2.4 GOhm") == []
+    assert missing("hold for 2 min", "hold the circuit for 120 s") == []
+    assert missing("torque 38 N-m", "Bolt | Torque (N-m)\nCasing | 38") == []   # unit in the header
+    assert missing("38 bar", "Bolt | Torque (N-m)\nCasing | 38") != []          # header unit is N-m
+    assert missing("38 bar", "Item 38 on the parts list") != []                  # no bar anywhere
+    assert missing("4 bar", "below 4 C for 60 s") != []                          # unit clash on a bare match
+
+
+def test_failed_step_withholds_the_whole_procedure():
+    # reviewer's reproduction: the isolation step is unsupported; "Press RESET" alone must not be shown
+    a = answer(blocks=[
+        {"type": "step", "text": "Isolate the drive and wait 15 min for the DC bus to discharge.", "citations": ["S5"]},
+        {"type": "step", "text": "Press RESET.", "citations": ["S5"]},
+    ])
+    report = validate_answer(a, vctx())
+    assert "blocks[0]" in {p for p, r in report.fields.items() if r.reasons}
+    fixed = apply_failures(a, report, vctx())
+    assert [b for b in fixed.blocks if b.type == "step"] == []
+    assert fixed.status == "partial" and report.procedure_withheld
+    assert "could not be checked" in fixed.blocks[0].text and fixed.blocks[0].citations == ["S5"]
+
+
+def test_failed_note_does_not_withhold_valid_steps():
+    a = answer(blocks=[
+        {"type": "step", "text": "Tighten to 38 N-m in a cross pattern, two passes.", "citations": ["S1"]},
+        {"type": "note", "text": "Re-check after 99 h.", "citations": ["S1"]},
+    ])
+    report = validate_answer(a, vctx())
+    fixed = apply_failures(a, report, vctx())
+    assert [b.type for b in fixed.blocks] == ["step"] and fixed.status == "answered"
+
+
+def test_failed_warning_without_steps_does_not_claim_a_procedure():
+    a = answer(status="not_covered", headline={"text": "No document covers this.", "citations": ["S3"]},
+               blocks=[{"type": "warning", "text": "Never exceed 99 bar.", "citations": ["S3"]}])
+    report = validate_answer(a, vctx())
+    fixed = apply_failures(a, report, vctx())
+    assert fixed.blocks == [] and not report.procedure_withheld and fixed.status == "not_covered"
+
+
 def test_cross_model_value_in_headline():
     a = answer(headline={"text": "The BX-20 warranty is 12 months.", "citations": ["S3"]})
     assert "headline" in failing(a, vctx(models=("BX-20",)))

@@ -61,9 +61,10 @@ def sha256_file(path: Path) -> str:
 def guess_doc_type(rel_path: str) -> str:
     p = rel_path.lower()
     name = Path(p).name
-    if "/bulletins/" in p or re.search(r"\bsb-\d{4}-\d{3}", name):
+    # folder first; for files dropped elsewhere (e.g. new_docs/) fall back to the file name
+    if "/bulletins/" in p or re.search(r"(?<![a-z0-9])sb-\d{4}-\d{3}", name) or "bulletin" in name:
         return "oem_bulletin"
-    if "/manuals/" in p:
+    if "/manuals/" in p or re.search(r"(?<![a-z0-9])(iom|manual)(?![a-z])", name):
         return "oem_manual"
     if "/confluence/" in p:
         return "wiki"
@@ -71,12 +72,14 @@ def guess_doc_type(rel_path: str) -> str:
         return "email"
     if "/chat/" in p:
         return "chat"
+    if name.startswith("kt-wi"):
+        return "legacy_wi"
+    if re.match(r"(sop|hv-proc|cs-proc|fs-std)", name):
+        return "controlled_procedure"
     if "/sharepoint/" in p:
-        if name.startswith("kt-wi"):
-            return "legacy_wi"
-        if re.match(r"(sop|hv-proc|cs-proc|fs-std)", name):
-            return "controlled_procedure"
         return "record"
+    if name.endswith((".html", ".htm")):
+        return "wiki"
     if "fleet" in name:
         return "asset_register"
     if "salesforce" in name or "case" in name:
@@ -136,6 +139,12 @@ def _as_date(value) -> date | None:
     return None
 
 
+def _revision_from_name(path: str) -> str | None:
+    """'Halden_HCP-500_IOM_RevC.pdf' -> 'C'. Only used when neither the manifest nor the parser found one."""
+    m = re.search(r"(?:^|[_\s-])rev(?:ision)?[_\s-]?([A-Z]|\d+)(?=[_.\s-]|$)", Path(path).name, re.I)
+    return m.group(1).upper() if m else None
+
+
 def document_metadata(spec: DocSpec, parsed_meta: dict) -> dict:
     """Merge curated manifest, parser findings and path rules into the documents row."""
     m = spec.manifest
@@ -157,7 +166,8 @@ def document_metadata(spec: DocSpec, parsed_meta: dict) -> dict:
         "title": spec.title,
         "doc_number": m.get("doc_number") or parsed_meta.get("doc_number")
         or (entities.doc_numbers[0] if entities.doc_numbers else None),
-        "revision": str(m["revision"]) if m.get("revision") is not None else parsed_meta.get("revision"),
+        "revision": str(m["revision"]) if m.get("revision") is not None else parsed_meta.get("revision")
+        or _revision_from_name(spec.path),
         "effective_date": effective,
         "source_system": spec.source_system,
         "doc_type": doc_type,

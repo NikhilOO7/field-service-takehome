@@ -269,12 +269,15 @@ def validate_work_order(conn: Connection, creator: UserContext, payload: dict, p
 
 
 # ------------------------------------------------------------------ repository (owner-scoped)
-def _load(conn: Connection, wo_id: str) -> dict | None:
+def _load(conn: Connection, wo_id: str, lock: bool = False) -> dict | None:
+    """lock=True takes a row lock for the rest of the transaction: state transitions (submit, approve, reject,
+    edit) are serialised, so of two concurrent requests the second sees the first one's result."""
     try:
         uuid.UUID(str(wo_id))
     except ValueError:
         return None
-    row = conn.execute(text("SELECT * FROM work_orders WHERE id = :id"), {"id": wo_id}).mappings().first()
+    sql = "SELECT * FROM work_orders WHERE id = :id" + (" FOR UPDATE" if lock else "")
+    row = conn.execute(text(sql), {"id": wo_id}).mappings().first()
     return dict(row) if row else None
 
 
@@ -282,13 +285,37 @@ def is_approver(user: UserContext) -> bool:
     return get_settings().wo_approver_role == "any" or user.is_lead
 
 
+def reviewer_can_read(conn: Connection, reviewer: UserContext, wo: dict) -> bool:
+    """Approval authority is not read access. A reviewer may see another user's work order only if they could
+    have seen everything it was built from: every chunk in the source answer's context, and the machine's
+    region. Otherwise the queue would carry one user's permitted evidence into another user's view."""
+    if wo["source_message"]:
+        hidden = conn.execute(
+            text(f"""SELECT count(*) FROM messages m, unnest(m.context_chunk_ids) AS cid
+                     JOIN chunks c ON c.id = cid
+                     WHERE m.id = :m AND NOT {acl_clause('c')}"""),
+            {"m": wo["source_message"], **acl_params(reviewer)}).scalar_one()
+        missing = conn.execute(
+            text("""SELECT count(*) FROM messages m, unnest(m.context_chunk_ids) AS cid
+                    WHERE m.id = :m AND NOT EXISTS (SELECT 1 FROM chunks c WHERE c.id = cid)"""),
+            {"m": wo["source_message"]}).scalar_one()
+        if hidden or missing:  # a chunk deleted since is unknown content: deny
+            return False
+    asset = _asset_row(conn, (wo["payload"].get("asset_id") or {}).get("value"))
+    return asset is None or asset["region"] in user_regions(reviewer)
+
+
+def _reviewable(conn: Connection, reviewer: UserContext, wo: dict) -> bool:
+    return (is_approver(reviewer) and wo["created_by"] != reviewer.id
+            and (wo["status"] == "pending_approval" or wo["approved_by"] == reviewer.id)
+            and reviewer_can_read(conn, reviewer, wo))
+
+
 def get_work_order(conn: Connection, wo_id: str, user: UserContext) -> dict | None:
     wo = _load(conn, wo_id)
     if wo is None:
         return None
-    if wo["created_by"] == user.id:
-        return wo
-    if is_approver(user) and (wo["status"] == "pending_approval" or wo["approved_by"] == user.id):
+    if wo["created_by"] == user.id or _reviewable(conn, user, wo):
         return wo
     audit(conn, user.id, "ownership_denied", "work_order", str(wo_id), "404")
     return None
@@ -296,13 +323,14 @@ def get_work_order(conn: Connection, wo_id: str, user: UserContext) -> dict | No
 
 def list_work_orders(conn: Connection, user: UserContext) -> list[dict]:
     rows = conn.execute(
-        text("""SELECT id, status, created_by, payload, validation, approved_by, created_at, updated_at
+        text("""SELECT id, status, created_by, payload, validation, approved_by, created_at, updated_at,
+                       source_message
                 FROM work_orders WHERE created_by = :u
                    OR (:approver AND status = 'pending_approval') OR approved_by = :u
                 ORDER BY updated_at DESC"""),
         {"u": user.id, "approver": is_approver(user)},
     ).mappings().all()
-    return [dict(r) for r in rows]
+    return [dict(r) for r in rows if r["created_by"] == user.id or _reviewable(conn, user, dict(r))]
 
 
 def _permitted_text_for(conn: Connection, user: UserContext, message: dict | None) -> str:
@@ -417,7 +445,7 @@ def create_from_message(conn: Connection, user: UserContext, message_id: str) ->
 
 
 def update_draft(conn: Connection, user: UserContext, wo_id: str, changes: dict) -> dict:
-    wo = _load(conn, wo_id)
+    wo = _load(conn, wo_id, lock=True)
     if wo is None or wo["created_by"] != user.id:
         audit(conn, user.id, "ownership_denied", "work_order", str(wo_id), "404")
         raise WorkOrderError(404, "work order not found")
@@ -462,7 +490,7 @@ def _errors(wo: dict) -> list[dict]:
 
 
 def submit(conn: Connection, user: UserContext, wo_id: str) -> dict:
-    wo = _load(conn, wo_id)
+    wo = _load(conn, wo_id, lock=True)
     if wo is None or wo["created_by"] != user.id:
         audit(conn, user.id, "ownership_denied", "work_order", str(wo_id), "404")
         raise WorkOrderError(404, "work order not found")
@@ -481,14 +509,15 @@ def submit(conn: Connection, user: UserContext, wo_id: str) -> dict:
 
 
 def approve(conn: Connection, approver: UserContext, wo_id: str) -> dict:
-    wo = _load(conn, wo_id)
-    if wo is None or not is_approver(approver) or (
-            wo["status"] not in {"pending_approval"} and wo["approved_by"] != approver.id
-            and wo["created_by"] != approver.id):
+    wo = _load(conn, wo_id, lock=True)
+    if wo is None or not (wo["created_by"] == approver.id or _reviewable(conn, approver, wo)):
         audit(conn, approver.id, "ownership_denied", "work_order", str(wo_id), "404")
         raise WorkOrderError(404, "work order not found")
     if wo["status"] != "pending_approval":
         raise WorkOrderError(409, f"work order is {wo['status']}")
+    if wo["created_by"] == approver.id:  # four-eyes: nobody approves their own work order
+        audit(conn, approver.id, "self_approval_denied", "work_order", str(wo_id), "403")
+        raise WorkOrderError(403, "you can't approve your own work order")
     creator = get_user(conn, wo["created_by"])
     message = get_message(conn, str(wo["source_message"]), creator) if wo["source_message"] else None
     issues = validate_work_order(conn, creator, wo["payload"], _permitted_text_for(conn, creator, message))
@@ -517,23 +546,26 @@ def send(conn: Connection, actor: UserContext, wo_id: str) -> None:
     conn.execute(text("INSERT INTO outbox (work_order_id, payload) VALUES (:w, CAST(:p AS jsonb))"),
                  {"w": wo_id, "p": json.dumps(record, default=str)})
     conn.execute(text("UPDATE work_orders SET status = 'sent', updated_at = now() WHERE id = :id"), {"id": wo_id})
-    out_dir = get_settings().var_dir / "outbox"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / f"{wo_id}.json").write_text(json.dumps(record, indent=2, default=str), encoding="utf-8")
+    # The outbox row is the record. The JSON file is an export, written by the caller only after the
+    # transaction commits (see app.main._wo_call), so a rollback never leaves a file behind.
+    pending = conn.info.get("pending_files")
+    if pending is not None:
+        pending.append((get_settings().var_dir / "outbox" / f"{wo_id}.json",
+                        json.dumps(record, indent=2, default=str)))
     _event(conn, wo_id, actor.id, "sent")
 
 
 def reject(conn: Connection, approver: UserContext, wo_id: str, reason: str) -> dict:
-    wo = _load(conn, wo_id)
-    # Same visibility rule as approve: an approver only sees the pending queue (and their own / decided
-    # work orders). Anything else is "not found" so its existence isn't revealed.
-    if wo is None or not is_approver(approver) or (
-            wo["status"] != "pending_approval" and wo["approved_by"] != approver.id
-            and wo["created_by"] != approver.id):
+    wo = _load(conn, wo_id, lock=True)
+    # Same visibility rule as approve: anything the user can't read is "not found" so its existence isn't revealed.
+    if wo is None or not (wo["created_by"] == approver.id or _reviewable(conn, approver, wo)):
         audit(conn, approver.id, "ownership_denied", "work_order", str(wo_id), "404")
         raise WorkOrderError(404, "work order not found")
     if wo["status"] != "pending_approval":
         raise WorkOrderError(409, f"work order is {wo['status']}")
+    if wo["created_by"] == approver.id:
+        audit(conn, approver.id, "self_approval_denied", "work_order", str(wo_id), "403")
+        raise WorkOrderError(403, "you can't reject your own work order")
     if not reason.strip():
         raise WorkOrderError(422, "a reason is required")
     conn.execute(text("""UPDATE work_orders SET status = 'rejected', rejected_reason = :r, approved_by = NULL,

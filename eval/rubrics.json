@@ -50,7 +50,7 @@
     "expected_status": ["answered", "partial"],
     "must_cite_any": ["HV-PROC-07"],
     "critical_facts": [
-      {"id": "meaning", "fact": "E-31 is a VFD (output) overcurrent trip", "patterns": ["overcurrent"]},
+      {"id": "meaning", "fact": "E-31 is a VFD (output) overcurrent trip", "patterns": ["overcurrent|over-current|output current exceeded"]},
       {"id": "no_panel", "fact": "It can't be reset from the operator panel", "patterns": ["panel"]},
       {"id": "isolate", "fact": "Isolate and lock out per HV-PROC-02", "patterns": ["HV-PROC-02"]},
       {"id": "wait", "fact": "Wait at least 5 minutes", "patterns": ["5 min"]},
@@ -66,7 +66,7 @@
     "expected_status": ["restricted"],
     "must_cite_any": ["VRS-110 Service Manual", "Compressor Troubleshooting Playbook", "FS-STD-001", "Work Order Writing Guide"],
     "critical_facts": [
-      {"id": "meaning", "fact": "E-31 is a VFD overcurrent trip", "patterns": ["overcurrent"]},
+      {"id": "meaning", "fact": "E-31 is a VFD overcurrent trip", "patterns": ["overcurrent|over-current|output current exceeded"]},
       {"id": "no_panel", "fact": "It can't be reset from the panel", "patterns": ["panel"]},
       {"id": "hv_only", "fact": "The reset needs an HV-certified technician (work inside the drive cabinet)", "patterns": ["HV"]},
       {"id": "not_cleared", "fact": "The user is not cleared for the procedure / must not do it", "judge": true},
@@ -115,7 +115,7 @@
     ],
     "must_not": [{"id": "top_up", "desc": "Recommends topping up refrigerant", "judge": true}],
     "work_order": {"required": true, "asset_id": "RTM-H-0007", "fault_code": "L-03", "certifications_include": ["Refrigerant"],
-                   "parts_include": ["63-1180"], "campaign_code": "NK-C25-14"}
+                   "parts_include": [{"part_no": "63-1180", "qty": 2}], "campaign_code": "NK-C25-14"}
   },
   "q10": {
     "expected_status": ["answered"],
@@ -128,6 +128,6 @@
       {"id": "years", "fact": "Affects BX-12 built 2023-2024", "patterns": ["2023"]}
     ],
     "must_not": [],
-    "work_order": {"required": false, "parts_include": ["77-0419"]}
+    "work_order": {"required": false, "parts_include": [{"part_no": "77-0419", "qty": 1}]}
   }
 }

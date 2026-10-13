@@ -48,7 +48,7 @@ class Settings(BaseSettings):
     context_k: int = 10
     coverage_threshold: float = 1.5
 
-    wo_approver_role: str = Field(default="any", pattern="^(any|role-lead)$")
+    wo_approver_role: str = Field(default="role-lead", pattern="^(any|role-lead)$")
     demo_auth: bool = True
     session_secret: str = "change-me-for-anything-but-a-local-demo"
 

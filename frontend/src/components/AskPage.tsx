@@ -204,7 +204,7 @@ export function AskPage({ me, users, onSwitch, onOpenWO, notify }: {
               {busy ? <Spinner /> : <ArrowUp className="h-5 w-5" />}
             </button>
           </div>
-          <p className="mt-2 text-center text-xs text-slate-400">Tip: include the machine ID for answers about that exact unit.</p>
+          <p className="mt-2 text-center text-xs text-slate-400">Each question is answered on its own, so include the machine ID every time (e.g. TAC-C-0143).</p>
         </form>
       </section>
     </div>

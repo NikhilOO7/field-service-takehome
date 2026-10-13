@@ -6,7 +6,7 @@ import pytest
 from sqlalchemy import text
 
 from app.auth.acl import can_view, disclosure, missing_groups
-from app.auth.users import UserContext
+from app.auth.users import UserContext, group_kind
 from tests.conftest import visible_paths
 
 
@@ -69,3 +69,17 @@ def test_disclosure_policy():
     olu = UserContext("u12", "Olu", None, frozenset({"region-na", "family-conveyors"}))
     assert disclosure(missing_groups(olu, ["cert-hv", "family-compressors"]), "listed") == "family"
     assert can_view(priya, [], "listed") and not can_view(priya, [], "unlisted")
+
+
+def test_unknown_group_kind_is_enforced_and_never_disclosed(conn):
+    # New documents may bring group names we have no rule for (e.g. a site group). They must not crash
+    # anything, must still gate access, and must reveal nothing, even when combined with a cert group.
+    priya = UserContext("u03", "Priya", None, frozenset({"region-na", "family-compressors"}))
+    assert group_kind("site-gdansk") == "other"
+    assert disclosure(missing_groups(priya, ["site-gdansk"]), "listed") == "none"
+    assert disclosure(missing_groups(priya, ["cert-hv", "site-gdansk"]), "listed") == "none"
+    assert not can_view(priya, ["site-gdansk"], "listed")
+    gdansk_priya = UserContext("u03", "Priya", None, priya.groups | {"site-gdansk"})
+    assert can_view(gdansk_priya, ["site-gdansk"], "listed")
+    # the groups table accepts the 'other' kind (migration 0002)
+    conn.execute(text("INSERT INTO groups (id, description, kind) VALUES ('site-test', 'test', 'other')"))

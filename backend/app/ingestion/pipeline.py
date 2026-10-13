@@ -36,7 +36,7 @@ RECORD_DOC_TYPES = {"cmms_export", "case_export", "chat", "asset_register"}
 @dataclass
 class DocResult:
     path: str
-    status: str  # ingested | unchanged | duplicate | failed
+    status: str  # ingested | unchanged | acl updated | duplicate | failed
     parse_status: str
     acl: str
     doc_type: str
@@ -231,6 +231,15 @@ def rebuild_catalogues(conn: Connection, settings: Settings) -> None:
     """Supersession links, legacy IDs, bulletins + applicability, conflicts, parts catalogue."""
     manifest = yaml.safe_load((settings.config_dir / "corpus_manifest.yaml").read_text()) or {}
     for path, m in manifest.items():
+        # Status comes from the manifest and is refreshed on every run, so marking an old revision superseded
+        # works without re-parsing it (its bytes are unchanged). The chunks carry a copy for search scoring.
+        status = m.get("status") or ("superseded" if m.get("superseded_by") else None)
+        if status:
+            conn.execute(text("UPDATE documents SET status = :s WHERE path = :p AND status <> :s"),
+                         {"p": path, "s": status})
+            conn.execute(text("""UPDATE chunks SET doc_status = :s WHERE doc_status <> :s
+                                 AND document_id = (SELECT id FROM documents WHERE path = :p)"""),
+                         {"p": path, "s": status})
         if m.get("superseded_by"):
             conn.execute(
                 text("""UPDATE documents d SET superseded_by = s.id FROM documents s
@@ -375,7 +384,17 @@ def ingest(engine: Engine, settings: Settings, full: bool = False, only: Path | 
             ).first()
             retry_ocr = existing is not None and existing[1] == "ocr_pending" and ocr is not None
             if existing and existing[0] == spec.sha256 and not full and not retry_ocr:
-                report.results.append(DocResult(spec.path, "unchanged", existing[1], spec.acl_status, spec.doc_type))
+                # Content is the same, but permissions may have changed: the ACL is copied onto every row
+                # the retrieval filter reads, so update it everywhere.
+                acl = {"p": spec.path, "g": spec.required_groups, "s": spec.acl_status}
+                changed = conn.execute(text("""UPDATE documents SET required_groups = :g, acl_status = :s
+                    WHERE path = :p AND (required_groups <> CAST(:g AS text[]) OR acl_status <> :s)"""), acl).rowcount
+                if changed:
+                    for table in ("chunks", "asset_events"):
+                        conn.execute(text(f"""UPDATE {table} SET required_groups = :g, acl_status = :s
+                            WHERE document_id = (SELECT id FROM documents WHERE path = :p)"""), acl)
+                report.results.append(DocResult(spec.path, "acl updated" if changed else "unchanged", existing[1],
+                                                spec.acl_status, spec.doc_type))
                 continue
             if existing:
                 conn.execute(text("DELETE FROM asset_events WHERE document_id IN "

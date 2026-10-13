@@ -78,6 +78,108 @@ STAGE_MESSAGES = {
 }
 
 
+@dataclass
+class Prepared:
+    """Everything the answer model is given (user_message is its entire input besides SYSTEM_PROMPT)."""
+    user_message: str
+    vctx: ValidationContext
+    pack: ContextPack
+    assets: list
+    bulletins: dict
+    history: dict
+    hints: list
+    ambiguous: list
+
+
+def prepare(conn, user: UserContext, question: str, usage: Usage, lap=lambda name: None) -> Prepared:
+    """Steps 1-5: analysis, structured lookups, search, restricted probe and context. No answer-model call,
+    so tests can inspect exactly what the model would see."""
+    settings = get_settings()
+    # 1. analysis
+    ent = extract_entities(question)
+    plan = _plan(question, usage)
+    lap("analysis")
+    resolution = resolve_assets(conn, question, ent)
+    assets = resolution.assets
+    models = set(ent.models) | {a.model for a in assets}
+    for m in plan.equipment_models:
+        mm = re.match(r"([A-Za-z]+)-?(\d+)", m)
+        if mm and normalize_model(mm.group(1), mm.group(2)):
+            models.add(normalize_model(mm.group(1), mm.group(2)))
+    models = sorted(models)
+    codes = sorted(set(ent.fault_codes) | {c for c in plan.fault_codes if re.fullmatch(r"[EPLC]-\d{2}", c)})
+
+    # 2. structured lookups
+    bulletins = {a.asset_id: applicable_bulletins(conn, a, user) for a in assets}
+    history = {}
+    if plan.needs_history or codes or plan.intent in {"troubleshoot", "history"}:
+        history = {a.asset_id: asset_history(conn, a.asset_id, user, codes[0] if codes else None)
+                   for a in assets}
+    lap("structured")
+
+    # 3. hybrid search
+    queries = [question] + [r for r in plan.rewrites[:2] if r.strip()]
+    vectors = get_llm().embed(queries)
+    boost = {b.document_id for bs in bulletins.values() for b in bs if b.visible}
+    candidates = hybrid_search(conn, user, queries, vectors, models, [a.asset_id for a in assets], codes,
+                               ent.part_numbers, ent.doc_numbers, boost, top_k=settings.top_k)
+    lap("search")
+    if settings.reranker == "llm" and candidates:
+        candidates = llm_rerank(question, candidates, usage=usage)
+    lap("rerank")
+    coverage = max((c.rerank or 0) for c in candidates) if candidates else 0
+
+    # 4. restricted probe (metadata only)
+    hidden_bulletin_docs = {b.document_id for bs in bulletins.values() for b in bs if not b.visible}
+    hints, restricted_chunk_ids = restricted_probe(conn, user, vectors[0], codes, models, hidden_bulletin_docs)
+    for h in hints:
+        audit(conn, user.id, "restricted_hint", "document", h.document_id, h.disclosure,
+              {"title": h.title, "missing": h.missing_groups})
+
+    # 5. context
+    pack = build_context(conn, user, question, candidates, assets, bulletins, history, models,
+                         settings.context_k,
+                         expand_procedures=plan.needs_procedure or plan.intent in {"procedure", "troubleshoot"},
+                         asset_note_chunks=asset_notes(conn, user, [a.asset_id for a in assets], vectors[0]))
+    lap("context")
+
+    # restricted texts stay on the server: used only to build the leak fingerprint set
+    restricted_texts = [r[0] for r in conn.execute(
+        text("SELECT text FROM chunks WHERE id = ANY(CAST(:ids AS uuid[]))"), {"ids": restricted_chunk_ids})]
+    permitted_text = "\n".join([question] + [pack.grounding(i) for i in pack.ids()])
+    fingerprints = build_fingerprints(restricted_texts, permitted_text)
+
+    hint_lines = [f"- {h.title}" + (f" ({h.doc_number})" if h.doc_number else "")
+                  + f": requires {', '.join(CERT_LABELS.get(g, g) for g in h.missing_groups)}"
+                  for h in hints if h.disclosure == "certification"]
+    hint_lines += [f"- documents for equipment the user is not trained on ({', '.join(h.missing_groups)})"
+                   for h in hints if h.disclosure == "family"]
+    ambiguous = [[a.asset_id for a in group] for group in resolution.ambiguous]
+    coverage_note = "high" if coverage >= 2 else ("medium" if coverage >= 1 else "low")
+    if models and not any(set(s.models) & set(models) for s in pack.sources if s.models):
+        coverage_note += f" (no source covers the asked model(s) {', '.join(models)})"
+
+    user_message = "\n".join([
+        _user_block(user),
+        f"QUESTION: {question}",
+        f"COVERAGE: {coverage_note}",
+        "AMBIGUOUS ASSETS: " + (json.dumps(ambiguous) if ambiguous else "none"),
+        "RESTRICTED HINTS (procedures this user may not see; never describe their content):",
+        "\n".join(hint_lines) or "- none",
+        "",
+        render_context(pack),
+    ])
+
+    vctx = ValidationContext(
+        pack=pack, question_models=models,
+        question_identifiers={*ent.asset_ids, *ent.fault_codes, *ent.part_numbers, *ent.serials,
+                              *ent.doc_numbers, *ent.case_numbers} | {a.asset_id for a in assets},
+        restricted_fingerprints=fingerprints,
+        clarify_options=sorted({a for g in ambiguous for a in g}),
+    )
+    return Prepared(user_message, vctx, pack, assets, bulletins, history, hints, ambiguous)
+
+
 def ask(engine: Engine, user: UserContext, question: str, conversation_id: str | None = None,
         persist: bool = True, progress=None) -> AskResult:
     settings = get_settings()
@@ -101,90 +203,12 @@ def ask(engine: Engine, user: UserContext, question: str, conversation_id: str |
             audit(conn, user.id, "ownership_denied", "conversation", conversation_id, "404")
             raise AskError(404, "conversation not found")
 
-        # 1. analysis
-        ent = extract_entities(question)
-        plan = _plan(question, usage)
-        lap("analysis")
-        resolution = resolve_assets(conn, question, ent)
-        assets = resolution.assets
-        models = set(ent.models) | {a.model for a in assets}
-        for m in plan.equipment_models:
-            mm = re.match(r"([A-Za-z]+)-?(\d+)", m)
-            if mm and normalize_model(mm.group(1), mm.group(2)):
-                models.add(normalize_model(mm.group(1), mm.group(2)))
-        models = sorted(models)
-        codes = sorted(set(ent.fault_codes) | {c for c in plan.fault_codes if re.fullmatch(r"[EPLC]-\d{2}", c)})
-
-        # 2. structured lookups
-        bulletins = {a.asset_id: applicable_bulletins(conn, a, user) for a in assets}
-        history = {}
-        if plan.needs_history or codes or plan.intent in {"troubleshoot", "history"}:
-            history = {a.asset_id: asset_history(conn, a.asset_id, user, codes[0] if codes else None)
-                       for a in assets}
-        lap("structured")
-
-        # 3. hybrid search
-        queries = [question] + [r for r in plan.rewrites[:2] if r.strip()]
-        vectors = get_llm().embed(queries)
-        boost = {b.document_id for bs in bulletins.values() for b in bs if b.visible}
-        candidates = hybrid_search(conn, user, queries, vectors, models, [a.asset_id for a in assets], codes,
-                                   ent.part_numbers, ent.doc_numbers, boost, top_k=settings.top_k)
-        lap("search")
-        if settings.reranker == "llm" and candidates:
-            candidates = llm_rerank(question, candidates, usage=usage)
-        lap("rerank")
-        coverage = max((c.rerank or 0) for c in candidates) if candidates else 0
-
-        # 4. restricted probe (metadata only)
-        hidden_bulletin_docs = {b.document_id for bs in bulletins.values() for b in bs if not b.visible}
-        hints, restricted_chunk_ids = restricted_probe(conn, user, vectors[0], codes, models, hidden_bulletin_docs)
-        for h in hints:
-            audit(conn, user.id, "restricted_hint", "document", h.document_id, h.disclosure,
-                  {"title": h.title, "missing": h.missing_groups})
-
-        # 5. context
-        pack = build_context(conn, user, question, candidates, assets, bulletins, history, models,
-                             settings.context_k,
-                             expand_procedures=plan.needs_procedure or plan.intent in {"procedure", "troubleshoot"},
-                             asset_note_chunks=asset_notes(conn, user, [a.asset_id for a in assets], vectors[0]))
-        lap("context")
-
-        # restricted texts stay on the server: used only to build the leak fingerprint set
-        restricted_texts = [r[0] for r in conn.execute(
-            text("SELECT text FROM chunks WHERE id = ANY(CAST(:ids AS uuid[]))"), {"ids": restricted_chunk_ids})]
-        permitted_text = "\n".join([question] + [pack.grounding(i) for i in pack.ids()])
-        fingerprints = build_fingerprints(restricted_texts, permitted_text)
-
-        hint_lines = [f"- {h.title}" + (f" ({h.doc_number})" if h.doc_number else "")
-                      + f": requires {', '.join(CERT_LABELS.get(g, g) for g in h.missing_groups)}"
-                      for h in hints if h.disclosure == "certification"]
-        hint_lines += [f"- documents for equipment the user is not trained on ({', '.join(h.missing_groups)})"
-                       for h in hints if h.disclosure == "family"]
-        ambiguous = [[a.asset_id for a in group] for group in resolution.ambiguous]
-        coverage_note = "high" if coverage >= 2 else ("medium" if coverage >= 1 else "low")
-        if models and not any(set(s.models) & set(models) for s in pack.sources if s.models):
-            coverage_note += f" (no source covers the asked model(s) {', '.join(models)})"
-
-        user_message = "\n".join([
-            _user_block(user),
-            f"QUESTION: {question}",
-            f"COVERAGE: {coverage_note}",
-            "AMBIGUOUS ASSETS: " + (json.dumps(ambiguous) if ambiguous else "none"),
-            "RESTRICTED HINTS (procedures this user may not see; never describe their content):",
-            "\n".join(hint_lines) or "- none",
-            "",
-            render_context(pack),
-        ])
+        prep = prepare(conn, user, question, usage, lap)
+        user_message, vctx, pack = prep.user_message, prep.vctx, prep.pack
+        assets, bulletins, history, hints, ambiguous = prep.assets, prep.bulletins, prep.history, prep.hints, prep.ambiguous
 
         # 6. generate, validate, repair
         llm = get_llm()
-        vctx = ValidationContext(
-            pack=pack, question_models=models,
-            question_identifiers={*ent.asset_ids, *ent.fault_codes, *ent.part_numbers, *ent.serials,
-                                  *ent.doc_numbers, *ent.case_numbers} | {a.asset_id for a in assets},
-            restricted_fingerprints=fingerprints,
-            clarify_options=sorted({a for g in ambiguous for a in g}),
-        )
         answer = llm.structured("answer", SYSTEM_PROMPT, user_message, AnswerJSON, usage=usage)
         lap("generate")
         report = validate_answer(answer, vctx)
@@ -264,6 +288,7 @@ def _response(answer: AnswerJSON, report, pack: ContextPack, user: UserContext, 
         "answer": {**answer.model_dump(), "follow_up": follow_up},
         "validation": report.as_dict(),
         "repaired": repaired,
+        "procedure_withheld": report.procedure_withheld,
         "restricted": {"required_certifications": required_certs,
                        "procedures": [{"title": h.title, "doc_number": h.doc_number} for h in hints
                                       if h.disclosure == "certification"]} if hints else None,
@@ -280,7 +305,9 @@ def _response(answer: AnswerJSON, report, pack: ContextPack, user: UserContext, 
         "sources": [{"id": s.id, "chunk_id": s.chunk_id, "label": s.label, "doc_id": s.doc_id,
                      "doc_type": s.doc_type, "doc_status": s.doc_status, "locator": s.locator,
                      "cited": s.id in cited, "text": s.text} for s in pack.sources],
-        "facts": [{"id": f.id, "label": f.label, "text": f.text, "cited": f.id in cited} for f in pack.facts],
+        "facts": [{"id": f.id, "label": f.label, "text": f.text, "cited": f.id in cited, "chunk_ids": f.chunk_ids}
+                  for f in pack.facts],
+        "context_conflicts": [c.id for c in pack.conflicts],
         "user": {"id": user.id, "name": user.name, "groups": sorted(user.groups)},
     }
 

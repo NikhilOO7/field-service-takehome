@@ -23,6 +23,26 @@ def project_path(value: Path) -> Path:
     return resolve_inside(settings.project_root, candidate.resolve())
 
 
+def check_permission_keys(settings, perms_file: Path, only: Path | None) -> None:
+    """Warn before ingesting if permission keys don't match file paths: unmatched files are denied to everyone."""
+    from app.ingestion.manifest import discover, load_permissions
+
+    keys = set(load_permissions(perms_file))
+    if not keys:
+        console.print(f"[red]{perms_file.name} has no entries under \"documents\"; "
+                      "expected {\"documents\": {\"<path from the project root>\": {...}}}[/red]")
+        return
+    found = {s.path for s in discover(settings, only=only)}
+    by_name = {Path(p).name: p for p in found}
+    for key in sorted(keys - found):
+        hint = f" — did you mean [bold]{by_name[Path(key).name]}[/bold]?" if Path(key).name in by_name else ""
+        console.print(f"[red]Permission key matches no file: {key}{hint}[/red]")
+    unlisted = sorted(found - keys - set(load_permissions(settings.permissions_file)))
+    for p in unlisted:
+        console.print(f"[yellow]No permission entry for {p}: it will be hidden from every user.[/yellow]")
+    console.print("Keys are paths relative to the project root, e.g. new_docs/my_file.pdf or corpus/manuals/x.pdf.")
+
+
 @app.command()
 def ingest(
     full: bool = typer.Option(False, help="Re-ingest every file, even if unchanged."),
@@ -36,8 +56,14 @@ def ingest(
     from app.ingestion.pipeline import write_report
 
     settings = get_settings()
-    only = project_path(path) if path else None
-    perms = project_path(permissions) if permissions else None
+    try:
+        only = project_path(path) if path else None
+        perms = project_path(permissions) if permissions else None
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]\nCopy the files into the project first (e.g. new_docs/), then pass that folder.")
+        raise typer.Exit(1) from e
+    if perms:
+        check_permission_keys(settings, perms, only)
     result = run_ingest(get_engine(), settings, full=full, only=only, permissions_file=perms, embed=embed)
 
     table = Table(title="Ingestion")

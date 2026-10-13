@@ -44,11 +44,13 @@ def disclosure(missing: list[str], acl_status: str) -> str:
 
     - 'certification': name the procedure and the certification it needs (safety gate)
     - 'family': say it is covered for equipment the user isn't trained on, no titles
-    - 'none': behave as if the document does not exist (region, role-lead, unlisted)
+    - 'none': behave as if the document does not exist (region, role-lead, unknown group kinds, unlisted)
     """
     if acl_status != "listed" or not missing:
         return "none"
     kinds = {group_kind(g) for g in missing}
+    if "other" in kinds:
+        return "none"
     if kinds == {"cert"}:
         return "certification"
     if kinds <= {"cert", "family"} and "family" in kinds:

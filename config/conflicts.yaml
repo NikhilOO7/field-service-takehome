@@ -1,71 +1,106 @@
 # Curated conflict register (spec M6). The answer's conflict box must agree with `resolution`.
+#
+# Every position and the resolution name the documents (paths from the project root) whose content they
+# restate. A conflict enters the model's context only if the user can see EVERY one of those documents:
+# with one side hidden, the conflict text would leak the hidden side, so it is left out entirely.
 
 C1:
   topic: "VRS-75 oil change interval"
   models: [VRS-75]
   doc_numbers: ["9821 0075 01"]
   positions:
-    - "VRS-75 Service Manual Rev B (2024) and the 2024 wiki quick reference: 4,000 h for all oils"
-    - "VRS-75 Service Manual Rev C (2026-04-20): 6,000 h or 12 months with Vastra SynLube 46; mineral oil stays at 4,000 h"
+    - text: "VRS-75 Service Manual Rev B (2024) and the 2024 wiki quick reference: 4,000 h for all oils"
+      sources:
+        - corpus/manuals/Vastra_VRS-75_Service_Manual_RevB_2024.pdf
+        - corpus/confluence/VRS-Series-Oil-and-Filter-Quick-Reference.html
+    - text: "VRS-75 Service Manual Rev C (2026-04-20): 6,000 h or 12 months with Vastra SynLube 46; mineral oil stays at 4,000 h"
+      sources: [corpus/manuals/Vastra_VRS-75_Service_Manual_RevC_2026.pdf]
   resolution: "Rev C is the current manual and supersedes Rev B; the 2024 wiki page is out of date."
   resolution_doc: "9821 0075 01"
+  resolution_sources: [corpus/manuals/Vastra_VRS-75_Service_Manual_RevC_2026.pdf]
 
 C2:
   topic: "HCP-350 casing bolt torque"
   models: [HCP-350]
   doc_numbers: [HDN-IOM-350, SB-2025-009]
   positions:
-    - "HDN-IOM-350 Rev D (2023): 45 N-m in sections 4.3, 8.4 and 8.7"
-    - "Halden SB-2025-009 (2025): 38 N-m for serials from HCP350-240001 (revised casing)"
+    - text: "HDN-IOM-350 Rev D (2023): 45 N-m in sections 4.3, 8.4 and 8.7"
+      sources: [corpus/manuals/Halden_HCP-350_IOM_RevD.pdf]
+    - text: "Halden SB-2025-009 (2025): 38 N-m for serials from HCP350-240001 (revised casing)"
+      sources: [corpus/bulletins/Halden_SB-2025-009_HCP-350_Casing_Torque.pdf]
   resolution: "The bulletin applies to the serial range it names (FS-STD-001 section 8; IOM 1.1): 38 N-m from HCP350-240001, 45 N-m for earlier serials with the original cover."
   resolution_doc: SB-2025-009
+  resolution_sources:
+    - corpus/bulletins/Halden_SB-2025-009_HCP-350_Casing_Torque.pdf
+    - corpus/manuals/Halden_HCP-350_IOM_RevD.pdf
+    - corpus/sharepoint/FS-STD-001_Field_Service_Standard.docx
 
 C3:
   topic: "HCP-350 mechanical seal kit"
   models: [HCP-350]
   doc_numbers: [HDN-IOM-350, SB-2025-018]
   positions:
-    - "HDN-IOM-350 Rev D lists seal kit 18-0355"
-    - "Halden SB-2025-018: 18-0356 replaces 18-0355"
+    - text: "HDN-IOM-350 Rev D lists seal kit 18-0355"
+      sources: [corpus/manuals/Halden_HCP-350_IOM_RevD.pdf]
+    - text: "Halden SB-2025-018: 18-0356 replaces 18-0355"
+      sources: [corpus/bulletins/Halden_SB-2025-018_Seal_Kit_Supersession.pdf]
   resolution: "Use 18-0356; 18-0355 stock may be used up (interchangeable)."
   resolution_doc: SB-2025-018
+  resolution_sources: [corpus/bulletins/Halden_SB-2025-018_Seal_Kit_Supersession.pdf]
 
 C4:
   topic: "HCP-500 suction strainer cleaning interval"
   models: [HCP-500]
   doc_numbers: [HDN-IOM-500]
   positions:
-    - "HCP-500 Maintenance Quick Reference wiki (2023): every 500 h"
-    - "HDN-IOM-500 Rev B (2025): 750 h, or when the strainer dP alarm is active"
+    - text: "HCP-500 Maintenance Quick Reference wiki (2023): every 500 h"
+      sources: [corpus/confluence/HCP-500-Maintenance-Quick-Reference.html]
+    - text: "HDN-IOM-500 Rev B (2025): 750 h, or when the strainer dP alarm is active"
+      sources: [corpus/manuals/Halden_HCP-500_IOM_RevB.pdf]
   resolution: "The manual (Rev B) applies; the wiki page predates the change."
   resolution_doc: HDN-IOM-500
+  resolution_sources: [corpus/manuals/Halden_HCP-500_IOM_RevB.pdf]
 
 C5:
   topic: "Refrigerant top-up without a leak test (low suction pressure on chillers)"
   models: [NK-300, NK-600]
   doc_numbers: [KT-WI-14, SOP-020]
   positions:
-    - "KT-WI-14 (Kyltek, 2021) 5.6.5: if no leak is visible and the deficit is below 10% of nameplate charge, top up and plan a leak test at the next visit"
-    - "SOP-020 (Corvane, 2025) section 5 and 6.2: never top up to clear a low suction pressure alarm; no top-up without a leak test; check bulletins and campaigns first"
+    - text: "KT-WI-14 (Kyltek, 2021) 5.6.5: if no leak is visible and the deficit is below 10% of nameplate charge, top up and plan a leak test at the next visit"
+      sources: [corpus/sharepoint/KT-WI-14_Low_Suction_Pressure_Chillers_EN.docx]
+    - text: "SOP-020 (Corvane, 2025) section 5 and 6.2: never top up to clear a low suction pressure alarm; no top-up without a leak test; check bulletins and campaigns first"
+      sources: [corpus/sharepoint/SOP-020_Chiller_Leak_Test_and_Recharge.docx]
   resolution: "The stricter rule applies (FS-STD-001 section 1): no top-up without a leak test, and check open bulletins/campaigns for the serial first. The NK-600 manual (6.3, 8.3) also forbids adding refrigerant to clear L-03."
   resolution_doc: FS-STD-001
+  resolution_sources:
+    - corpus/sharepoint/FS-STD-001_Field_Service_Standard.docx
+    - corpus/sharepoint/SOP-020_Chiller_Leak_Test_and_Recharge.docx
+    - corpus/manuals/Nordkyl_NK-600_Service_Manual_RevC.pdf
 
 C6:
   topic: "NK-600 EXV position reading"
   models: [NK-600]
   doc_numbers: [NK-SM-600-EN, SB-2025-014]
   positions:
-    - "NK-600 Service Manual Rev C 6.3/7.4: the displayed EXV position is calculated from steps sent, so a sticking valve can show a normal position; use the manual test"
-    - "Nordkyl SB-2025-014: the position feedback reports the real needle position; position below 15% while the request is higher means the valve is stuck"
+    - text: "NK-600 Service Manual Rev C 6.3/7.4: the displayed EXV position is calculated from steps sent, so a sticking valve can show a normal position; use the manual test"
+      sources: [corpus/manuals/Nordkyl_NK-600_Service_Manual_RevC.pdf]
+    - text: "Nordkyl SB-2025-014: the position feedback reports the real needle position; position below 15% while the request is higher means the valve is stuck"
+      sources: [corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf]
   resolution: "For NK-600 units in the SB-2025-014 serial range the bulletin's diagnosis applies; otherwise use the manual's manual test (7.4.3)."
   resolution_doc: SB-2025-014
+  resolution_sources:
+    - corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf
+    - corpus/manuals/Nordkyl_NK-600_Service_Manual_RevC.pdf
 
 C7:
   topic: "NK-600 EXV replacement method"
   models: [NK-600]
   doc_numbers: [NK-SM-600-EN, SB-2025-014]
   positions:
-    - "NK-600 Service Manual Rev C 7.5: flanged assembly, no brazing"
-    - "Nordkyl SB-2025-014: braze the new rev 3 valve with a nitrogen purge"
+    - text: "NK-600 Service Manual Rev C 7.5: flanged assembly, no brazing"
+      sources: [corpus/manuals/Nordkyl_NK-600_Service_Manual_RevC.pdf]
+    - text: "Nordkyl SB-2025-014: braze the new rev 3 valve with a nitrogen purge"
+      sources: [corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf]
   resolution: "For campaign units follow the bulletin (rev 3 kit)."
   resolution_doc: SB-2025-014
+  resolution_sources: [corpus/bulletins/Nordkyl_SB-2025-014_NK-600_EXV_Campaign.pdf]

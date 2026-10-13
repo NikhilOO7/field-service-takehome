@@ -10,7 +10,7 @@ import re
 from dataclasses import dataclass, field
 
 from app.answer.context import ContextPack
-from app.answer.schema import AnswerJSON
+from app.answer.schema import AnswerJSON, Block
 from app.ingestion.entities import extract_entities
 
 # path pattern -> profile; '[]' = list index. The renderer and work order builder only use these paths.
@@ -37,6 +37,9 @@ UNIT = r"(?:N[-·\s]?m|Nm|bar|mm|m3/h|m³/h|h|hours?|°C|C|K|kg|g|V\s?DC|V|A|MOh
 NUM_RE = re.compile(rf"(?<![\w.-])(\d{{1,3}}(?:[.,]\d{{3}})+|\d+(?:[.,]\d+)?)\s?({UNIT})?(?![\w])")
 PARAM_RE = re.compile(r"\b(?:[A-Z]\d+\.\d+|TP\d|[A-Z]{1,3}\d?-\d{1,2}\b)")
 
+INCOMPLETE_PROCEDURE = ("Part of this procedure could not be checked against your documents, so the steps are "
+                        "not shown. Follow the procedure document itself (see sources) and do not work from memory.")
+
 STATUS_TEMPLATES = {
     "answered": "See the steps below.",
     "partial": "Partly covered by your documents: see below.",
@@ -58,6 +61,7 @@ class ValidationReport:
     fields: dict[str, FieldResult] = field(default_factory=dict)
     leak: bool = False
     leak_tokens: list[str] = field(default_factory=list)
+    procedure_withheld: bool = False
 
     @property
     def failures(self) -> dict[str, list[str]]:
@@ -108,14 +112,45 @@ def identifiers_in(text: str) -> set[str]:
     return ids
 
 
+# Explicit conversions only: (dimension, factor to the base unit). Anything else must match its unit exactly.
+CONVERSIONS = {"s": ("time", 1), "min": ("time", 60), "h": ("time", 3600), "g": ("mass", 1), "kg": ("mass", 1000),
+               "mohm": ("resistance", 1e6), "gohm": ("resistance", 1e9)}
+
+
+def _same_quantity(a: tuple[str, str], b: tuple[str, str]) -> bool:
+    (na, ua), (nb, ub) = a, b
+    if ua == ub:
+        return na == nb
+    if ua in CONVERSIONS and ub in CONVERSIONS and CONVERSIONS[ua][0] == CONVERSIONS[ub][0]:
+        va, vb = float(na) * CONVERSIONS[ua][1], float(nb) * CONVERSIONS[ub][1]
+        return abs(va - vb) <= 0.005 * max(abs(va), abs(vb))
+    return False
+
+
 def _grounded_numbers(nums: set[tuple[str, str]], grounding: str) -> list[str]:
-    available = numbers_in(_strip_identifiers(grounding)) | {(n, "") for n, _ in numbers_in(grounding)}
-    plain = {n for n, _ in available}
+    """Every number in the answer must be in its cited sources. With a unit, the unit must agree: the same
+    number with a different unit ("38 bar" against "38 N-m") fails even if the bare number also appears."""
+    stripped = numbers_in(_strip_identifiers(grounding))
+    with_unit = {(n, u) for n, u in stripped if u}
+    bare_any = {n for n, _ in numbers_in(grounding)}
+    bare_plain = {n for n, u in stripped if not u}
+    units_in_source = {u for _, u in with_unit} | {
+        _norm_unit(m) for m in re.findall(rf"(?<![\w]){UNIT}(?![\w])", grounding)}
     missing = []
     for num, unit in nums:
-        if (num, unit) in available or num in plain:
+        if not unit:
+            if num not in bare_any:
+                missing.append(num)
             continue
-        missing.append(f"{num}{(' ' + unit) if unit else ''}")
+        if any(_same_quantity((num, unit), q) for q in with_unit):
+            continue
+        clash = sorted(u for n, u in with_unit if n == num)
+        if clash:
+            missing.append(f"{num} {unit} (source gives {num} {', '.join(clash)})")
+        elif num in bare_plain and unit in units_in_source:
+            continue  # unit stated elsewhere in the source, e.g. a table header "Torque (N-m)"
+        else:
+            missing.append(f"{num} {unit}")
     return missing
 
 
@@ -277,12 +312,27 @@ def apply_failures(answer: AnswerJSON, report: ValidationReport, vctx: Validatio
     for p in failing:
         report.fields[p].status = "dropped"
 
+    # A procedure with a step or safety warning removed can be dangerous (drop "isolate first" and what's left
+    # is "press RESET"). So if any step or warning fails, withhold every step and say the answer is incomplete.
+    has_procedure = any(b.type == "step" for b in answer.blocks)
+    procedure_broken = has_procedure and any(f"blocks[{i}]" in failing for i, b in enumerate(answer.blocks)
+                                             if b.type in {"step", "warning"})
+    if procedure_broken:
+        step_sources = sorted({c for b in answer.blocks if b.type == "step" for c in b.citations
+                               if c in vctx.pack.ids() and c != "Q"})
+        answer.blocks = [b for i, b in enumerate(answer.blocks)
+                         if f"blocks[{i}]" not in failing and b.type != "step"]
+        answer.blocks.insert(0, Block(type="warning", text=INCOMPLETE_PROCEDURE, citations=step_sources))
+        if answer.status == "answered":
+            answer.status = "partial"
+        report.procedure_withheld = True
+    else:
+        answer.blocks = [b for i, b in enumerate(answer.blocks) if f"blocks[{i}]" not in failing]
+
     if "headline" in failing:
         answer.headline.text = STATUS_TEMPLATES[answer.status]
         answer.headline.citations = []
         report.fields["headline"].status = "replaced"
-
-    answer.blocks = [b for i, b in enumerate(answer.blocks) if f"blocks[{i}]" not in failing]
 
     curated = {c.id: c for c in vctx.pack.conflicts}
     kept = []
@@ -323,7 +373,9 @@ def apply_failures(answer: AnswerJSON, report: ValidationReport, vctx: Validatio
             hint.estimated_duration_h = None
         hint.parts = [p for i, p in enumerate(hint.parts) if f"{base}.parts[{i}]" not in failing]
         hint.procedure_refs = [d for i, d in enumerate(hint.procedure_refs) if f"{base}.procedure_refs[{i}]" not in failing]
-        hint.work_steps = [s for i, s in enumerate(hint.work_steps) if f"{base}.work_steps[{i}]" not in failing]
+        # same rule for work-order steps: a partial step list is not offered as the work to do
+        if any(p.startswith(f"{base}.work_steps") for p in failing):
+            hint.work_steps = []
 
     if failing and answer.confidence == "high":
         answer.confidence = "medium"

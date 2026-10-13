@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query'
+import { useQueries, useQuery } from '@tanstack/react-query'
 import { Cpu, ExternalLink, FileText, ScanLine, X } from 'lucide-react'
 import { useEffect } from 'react'
 import { api, type AskResponse } from '../api'
@@ -51,6 +51,7 @@ export function SourceDrawer({ id, number, response, onClose }:
             <>
               <p className="rounded-xl bg-slate-50 p-4 leading-relaxed text-slate-800">{fact.text}</p>
               <p className="text-xs text-slate-500">Worked out by the system from the equipment list, the manufacturer notices' serial ranges and the service history you can access.</p>
+              <FactEvidence chunkIds={fact.chunk_ids ?? []} />
             </>
           )}
           {source && detail.isLoading && <p className="flex items-center gap-2 text-slate-500"><Spinner />Loading…</p>}
@@ -79,6 +80,31 @@ export function SourceDrawer({ id, number, response, onClose }:
           </footer>
         )}
       </aside>
+    </div>
+  )
+}
+
+/** The records a computed fact was built from, each opened through the same access-checked source endpoint. */
+function FactEvidence({ chunkIds }: { chunkIds: string[] }) {
+  const results = useQueries({
+    queries: chunkIds.slice(0, 10).map((id) => ({ queryKey: ['source', id], queryFn: () => api.source(id) })),
+  })
+  if (chunkIds.length === 0) return null
+  return (
+    <div>
+      <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Based on</p>
+      <ul className="space-y-2">
+        {results.map((r, i) => r.data ? (
+          <li key={chunkIds[i]} className="rounded-xl p-3 ring-1 ring-slate-200">
+            <p className="text-xs font-medium text-slate-500">{r.data.label}</p>
+            <p className="mt-1 line-clamp-3 whitespace-pre-wrap text-slate-700">{r.data.text}</p>
+            <a href={api.fileUrl(r.data.doc_id, r.data.locator.page)} target="_blank" rel="noreferrer"
+              className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-indigo-700 hover:underline">
+              <ExternalLink className="h-3 w-3" />Open the original
+            </a>
+          </li>
+        ) : r.isLoading ? <li key={chunkIds[i]} className="text-xs text-slate-400">Loading…</li> : null)}
+      </ul>
     </div>
   )
 }
