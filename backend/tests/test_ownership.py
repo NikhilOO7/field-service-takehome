@@ -253,3 +253,17 @@ def test_outbox_file_is_written_only_after_commit(engine, settings, tmp_path):
         assert ok.exists()
     finally:
         main.get_engine = original
+
+
+def test_eligible_reviewers_are_reported(engine, client, daniel_objects, settings, monkeypatch):
+    monkeypatch.setattr(settings, "wo_approver_role", "role-lead")
+    d = login(client, "u02")
+    body = d.get(f"/api/work-orders/{daniel_objects['wo']}").json()
+    # Kenji (NA lead, compressors + HV) can read everything behind Daniel's E-31 answer; Lena (EU) cannot
+    assert [r["id"] for r in body["eligible_reviewers"]] == ["u08"]
+
+    from app.workorders import service as wo
+    with engine.connect() as conn:
+        w = wo._load(conn, daniel_objects["wo"])
+        # the same order created by Kenji: the only other lead is in the wrong region -> nobody can review it
+        assert wo.eligible_reviewers(conn, w | {"created_by": "u08"}) == []

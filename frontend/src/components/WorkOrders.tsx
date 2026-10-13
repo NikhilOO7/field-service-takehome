@@ -200,6 +200,19 @@ function WODetail({ id, me, notify }: { id: string; me: User; notify: (m: string
           ))}
         </ol>
         {w.rejected_reason && <p className="mt-4 rounded-xl bg-red-50 p-3 text-sm text-red-800">Rejected: {w.rejected_reason}</p>}
+        {w.created_by === me.id && w.eligible_reviewers && (
+          w.eligible_reviewers.length === 0 ? (
+            <p className="mt-4 flex gap-2 rounded-xl bg-amber-50 p-3 text-sm text-amber-900 ring-1 ring-amber-200">
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+              <span><span className="font-semibold">Nobody can approve this yet.</span> No team lead can see all the documents this work order is based on, so it would wait unseen. Ask your supervisor who should review it.</span>
+            </p>
+          ) : (
+            <p className="mt-4 text-sm text-slate-600">
+              {w.status === 'draft' ? 'When sent, goes to ' : 'Waiting for '}
+              <span className="font-medium text-slate-900">{w.eligible_reviewers.map((r) => r.name).join(' or ')}</span>
+            </p>
+          )
+        )}
         {errors.length > 0 && (
           <div className="mt-4 rounded-xl bg-red-50 p-3 ring-1 ring-red-100">
             <p className="flex items-center gap-2 text-sm font-semibold text-red-800"><AlertCircle className="h-4 w-4" />{errors.length} thing{errors.length > 1 ? 's' : ''} to fix before {editable ? 'submitting' : 'approval'}</p>

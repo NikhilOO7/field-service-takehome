@@ -305,6 +305,16 @@ def reviewer_can_read(conn: Connection, reviewer: UserContext, wo: dict) -> bool
     return asset is None or asset["region"] in user_regions(reviewer)
 
 
+def eligible_reviewers(conn: Connection, wo: dict) -> list[dict]:
+    """Who could approve this work order: approvers other than the creator who can read all of its evidence.
+    Empty means it would sit in the queue unseen; the UI warns the technician before and after submitting."""
+    from app.auth.users import list_users
+
+    people = [UserContext(u["id"], u["name"], u["title"], frozenset(u["groups"])) for u in list_users(conn)]
+    return [{"id": u.id, "name": u.name, "title": u.title} for u in people
+            if u.id != wo["created_by"] and is_approver(u) and reviewer_can_read(conn, u, wo)]
+
+
 def _reviewable(conn: Connection, reviewer: UserContext, wo: dict) -> bool:
     return (is_approver(reviewer) and wo["created_by"] != reviewer.id
             and (wo["status"] == "pending_approval" or wo["approved_by"] == reviewer.id)

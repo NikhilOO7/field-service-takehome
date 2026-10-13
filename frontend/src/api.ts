@@ -53,6 +53,7 @@ export type WorkOrder = {
   validation: { field: string; severity: 'error' | 'warning'; message: string }[]
   events?: { actor: string; action: string; diff: unknown; at: string }[]
   source_message?: string
+  eligible_reviewers?: { id: string; name: string; title: string | null }[]
 }
 
 export interface Asset { asset_id: string; model: string; serial: string; site_name: string | null }

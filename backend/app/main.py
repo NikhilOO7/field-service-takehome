@@ -271,7 +271,10 @@ def _wo_call(fn, *args):
 
 
 def _wo_out(conn, w: dict) -> dict:
-    return {**w, "events": wo.events(conn, str(w["id"]))}
+    out = {**w, "events": wo.events(conn, str(w["id"]))}
+    if w["status"] in {"draft", "pending_approval"}:
+        out["eligible_reviewers"] = wo.eligible_reviewers(conn, w)
+    return out
 
 
 @app.post("/api/work-orders")
