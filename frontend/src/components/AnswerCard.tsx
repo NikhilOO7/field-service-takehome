@@ -1,6 +1,6 @@
 import {
   AlertTriangle, BookOpen, Check, CheckCircle2, ChevronDown, ClipboardList, Copy, FileWarning, HelpCircle,
-  History, Info, Lock, MoreHorizontal, Scale, ShieldAlert,
+  History, Info, ListChecks, Lock, MoreHorizontal, Scale, ShieldAlert, ShieldCheck, Wrench,
 } from 'lucide-react'
 import { useMemo, useState, type ReactNode } from 'react'
 import type { AskResponse, User } from '../api'
@@ -15,6 +15,24 @@ const STATUS = {
   not_covered: { label: 'Not in your documents', icon: FileWarning, cls: 'bg-slate-100 text-slate-700 ring-slate-200' },
   clarify: { label: 'Which machine?', icon: HelpCircle, cls: 'bg-sky-50 text-sky-800 ring-sky-200' },
 } as const
+
+// Per-outcome look of the answer card: soft tint, icon badge, label.
+const TONE: Record<string, { card: string; badge: string; label: string; text: string }> = {
+  answered: { card: 'from-emerald-50 ring-emerald-100', badge: 'bg-emerald-500', label: 'Answer', text: 'text-emerald-700' },
+  partial: { card: 'from-amber-50 ring-amber-100', badge: 'bg-amber-500', label: 'Partial answer', text: 'text-amber-700' },
+  restricted: { card: 'from-orange-50 ring-orange-100', badge: 'bg-orange-500', label: 'Certification required', text: 'text-orange-700' },
+  not_covered: { card: 'from-slate-100 ring-slate-200', badge: 'bg-slate-500', label: 'Not in your documents', text: 'text-slate-600' },
+  clarify: { card: 'from-sky-50 ring-sky-100', badge: 'bg-sky-500', label: 'Which machine?', text: 'text-sky-700' },
+}
+
+// Values a technician scans for: fault codes, document numbers, measurements with units.
+const KEY_RE = /(\b[EPLC]-\d{2}\b|\b(?:SB-\d{4}-\d{3}|HV-PROC-\d+|CS-PROC-\d+|SOP-\d+|FS-STD-\d+|KT-WI-\d+|HDN-IOM-\d+)\b|\b\d+(?:[.,]\d+)*\s?(?:N-m|Nm|bar|mm|°C|V DC|V|A|kg|min|months?|hours?|h|s|%)(?![\w]))/g
+
+function highlight(text: string): ReactNode[] {
+  return text.split(KEY_RE).map((part, i) => i % 2
+    ? <mark key={i} className="rounded-md bg-white px-1.5 py-0.5 font-semibold text-slate-900 ring-1 ring-slate-200">{part}</mark>
+    : part)
+}
 
 const BASIS: Record<string, string> = {
   newer_revision: 'Why: the newer revision replaces the older one.',
@@ -102,26 +120,48 @@ export function AnswerCard({ response, question, users, creatingWO, onCreateWork
     </Button>
   )
   const machine = response.assets[0]
+  const tone = TONE[a.status] ?? TONE.answered
+  const faultCodes = [...new Set((question + ' ' + a.headline.text).match(/\b[EPLC]-\d{2}\b/g) ?? [])]
+  const pastJobs = Object.values(response.history).reduce((n, h) => n + h.events.length, 0)
+  // At-a-glance facts, all taken from structured data rather than the model's prose.
+  const glance: { icon: typeof Wrench; text: string; title?: string; cls?: string }[] = [
+    ...(machine ? [{ icon: Wrench, text: `${machine.asset_id} · ${machine.model}`, title: machine.site ?? undefined }] : []),
+    ...faultCodes.map((c) => ({ icon: AlertTriangle, text: `Fault ${c}`, cls: 'text-red-700 ring-red-200' })),
+    ...certs.map((c) => ({ icon: Lock, text: `Needs ${CERT_PLAIN[c] ?? c} certification`, cls: 'text-orange-700 ring-orange-200' })),
+    ...(steps.length ? [{ icon: ListChecks, text: `${steps.length} steps` }] : []),
+    ...response.bulletins.map((b) => ({ icon: ShieldAlert, text: `Notice ${b.number} applies`, cls: 'text-indigo-700 ring-indigo-200' })),
+    ...(a.conflicts.length ? [{ icon: Scale, text: 'Documents disagree', cls: 'text-amber-700 ring-amber-200' }] : []),
+    ...(pastJobs ? [{ icon: History, text: `${pastJobs} past job${pastJobs === 1 ? '' : 's'}` }] : []),
+  ]
   const hasDetail = notes.length > 0 || response.bulletins.length > 0 || a.conflicts.length > 0
     || history.length > 0 || Object.values(response.history).some((h) => h.events.length)
 
   return (
     <Card className="overflow-visible">
       <div className="space-y-5 p-5 sm:p-6">
-        {/* 1. the answer */}
-        <div>
-          {a.status !== 'answered' && (
-            <p className={cx('mb-2 inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1', status.cls)}>
-              <status.icon className="h-3.5 w-3.5" />{status.label}
-            </p>
-          )}
-          <p className="text-base leading-relaxed text-slate-800">
-            {a.headline.text}{cite(a.headline.citations)}
+        {/* 1. the answer: the one thing to read first */}
+        <div className={cx('rounded-2xl bg-gradient-to-br to-white p-5 ring-1', tone.card)}>
+          <div className="flex items-center gap-2.5">
+            <span className={cx('flex h-8 w-8 shrink-0 items-center justify-center rounded-xl text-white shadow-sm', tone.badge)}>
+              <status.icon className="h-4 w-4" />
+            </span>
+            <span className={cx('text-sm font-semibold', tone.text)}>{tone.label}</span>
+            <span className="ml-auto inline-flex items-center gap-1 text-xs text-slate-500" title="Every value was checked against the documents you can access">
+              <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />Checked against {sourceList.length} source{sourceList.length === 1 ? '' : 's'}
+            </span>
+          </div>
+          <p className="mt-3 text-lg leading-relaxed text-slate-900 sm:text-xl sm:leading-relaxed">
+            {highlight(a.headline.text)}{cite(a.headline.citations)}
           </p>
-          {machine && (
-            <p className="mt-1.5 text-sm text-slate-500">
-              <span className="font-mono font-medium text-slate-700">{machine.asset_id}</span> · {machine.model} · {machine.site}
-            </p>
+          {glance.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {glance.map((g) => (
+                <span key={g.text} title={g.title}
+                  className={cx('inline-flex items-center gap-1.5 rounded-full bg-white px-2.5 py-1 text-xs font-medium ring-1', g.cls ?? 'text-slate-700 ring-slate-200')}>
+                  <g.icon className="h-3.5 w-3.5" />{g.text}
+                </span>
+              ))}
+            </div>
           )}
         </div>
 
@@ -129,10 +169,7 @@ export function AnswerCard({ response, question, users, creatingWO, onCreateWork
         <NextStep>
           {a.status === 'restricted' ? (
             <>
-              <p className="font-semibold text-slate-900">
-                {certs.length ? `This needs a ${certs.map((c) => CERT_PLAIN[c] ?? c).join(' and ')} certified technician.` : 'This needs a certified technician.'}
-              </p>
-              <Button variant="primary" className="mt-3" disabled={creatingWO} onClick={() => onCreateWorkOrder(response.message_id)}>
+              <Button variant="primary" disabled={creatingWO} onClick={() => onCreateWorkOrder(response.message_id)}>
                 {creatingWO ? <Spinner /> : <ClipboardList className="h-4 w-4" />}{ctaLabel}
               </Button>
               {a.restricted_notice && a.restricted_notice.what_you_can_do.length > 0 && (
@@ -178,12 +215,12 @@ export function AnswerCard({ response, question, users, creatingWO, onCreateWork
 
         {/* 3. everything else, on demand */}
         {hasDetail && (
-          <details className="group rounded-xl ring-1 ring-slate-200">
-            <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50">
-              <Info className="h-4 w-4 text-slate-400" />More detail
-              <ChevronDown className="ml-auto h-4 w-4 text-slate-400 transition group-open:rotate-180" />
+          <details className="group">
+            <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800">
+              <Info className="h-4 w-4" />More detail
+              <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
             </summary>
-            <div className="space-y-5 px-4 pb-4 text-sm">
+            <div className="mt-3 space-y-5 rounded-xl bg-slate-50 p-4 text-sm">
               {notes.length > 0 && (
                 <ul className="space-y-1.5">
                   {notes.map((n, i) => (
@@ -292,7 +329,7 @@ function NextStep({ children }: { children: ReactNode }) {
   // renders nothing when the outcome has no next step (a plain fact answer)
   const empty = children === null || children === false
   if (empty) return null
-  return <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">{children}</div>
+  return <div className="rounded-2xl bg-slate-50 p-4">{children}</div>
 }
 
 function Warnings({ items, cite, title }: {
@@ -327,7 +364,7 @@ function GuidedSteps({ steps, warnings, cite }: {
     <div>
       {i === 0 && !finished && <Warnings items={warnings} cite={cite} title="Before you start" />}
       {finished ? (
-        <p className="flex items-center gap-2 font-medium text-emerald-700"><CheckCircle2 className="h-5 w-5" />All {steps.length} steps done.</p>
+        <p className="flex items-center gap-1.5 text-sm text-emerald-700"><CheckCircle2 className="h-4 w-4" />All {steps.length} steps done.</p>
       ) : (
         <>
           <div className="mb-2 flex items-center justify-between text-sm">
