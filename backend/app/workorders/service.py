@@ -389,7 +389,11 @@ def create_from_message(conn: Connection, user: UserContext, message_id: str) ->
             raise WorkOrderError(403, "the answer cites documents you can no longer access")
 
     answer = response.get("answer", {})
-    hint = (answer.get("follow_up") or {}).get("work_order_hint") or {}
+    hint = (answer.get("follow_up") or {}).get("work_order_hint")
+    if hint is None:  # drafted on demand, not with every answer (app/workorders/hint.py)
+        from app.workorders.hint import generate_hint
+
+        hint = generate_hint(conn, user, message["question"], response) or {}
     assets = response.get("assets", [])
     asset = _asset_row(conn, assets[0]["asset_id"]) if assets else None
     fault = (hint.get("fault_code") or {}).get("value") or next(

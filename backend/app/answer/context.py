@@ -113,7 +113,9 @@ def _source_from_row(sid: str, r: dict) -> Source:
 
 def _conflict_positions() -> dict:
     path = get_settings().config_dir / "conflicts.yaml"
-    return yaml.safe_load(path.read_text()) if path.exists() else {}
+    if not get_settings().conflict_register or not path.exists():
+        return {}
+    return yaml.safe_load(path.read_text()) or {}
 
 
 def conflict_sources(defs: dict) -> set[str]:

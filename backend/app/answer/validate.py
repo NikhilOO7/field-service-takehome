@@ -31,7 +31,8 @@ FIELD_REGISTRY: dict[str, str] = {
     "follow_up.work_order_hint.estimated_duration_h": "number",
 }
 # Non-text fields that are enums or computed in code (no grounding needed).
-NON_FACTUAL_FIELDS = {"status", "confidence", "follow_up.needed", "follow_up.reasons[]", "conflicts[].conflict_id"}
+NON_FACTUAL_FIELDS = {"status", "confidence", "follow_up.needed", "follow_up.reasons[]", "conflicts[].conflict_id",
+                      "conflicts[].basis"}  # basis is an enum, checked against document metadata in code
 
 UNIT = r"(?:N[-·\s]?m|Nm|bar|mm|m3/h|m³/h|h|hours?|°C|C|K|kg|g|V\s?DC|V|A|MOhm|GOhm|%|min|minutes?|s|seconds?|ppm|months?)"
 NUM_RE = re.compile(rf"(?<![\w.-])(\d{{1,3}}(?:[.,]\d{{3}})+|\d+(?:[.,]\d+)?)\s?({UNIT})?(?![\w])")
@@ -300,9 +301,43 @@ def validate_answer(answer: AnswerJSON, vctx: ValidationContext) -> ValidationRe
             if b.type == "step":
                 report.fields[f"blocks[{i}]"].reasons.append("restricted answer contains procedure steps")
     for i, c in enumerate(answer.conflicts):
-        if c.conflict_id not in {ci.id for ci in vctx.pack.conflicts}:
-            report.fields[f"conflicts[{i}].resolution"].reasons.append("unknown conflict id")
+        if c.basis == "curated" or c.conflict_id != "auto":
+            if c.conflict_id not in {ci.id for ci in vctx.pack.conflicts}:
+                report.fields[f"conflicts[{i}].resolution"].reasons.append("unknown conflict id")
+        else:
+            report.fields[f"conflicts[{i}].resolution"].reasons += check_conflict_basis(c, vctx.pack)
     return report
+
+
+def check_conflict_basis(c, pack: ContextPack) -> list[str]:
+    """A conflict the model found itself is kept only if document metadata supports the rule it names.
+    These rules need no curation, so they apply to new documents as they are ingested."""
+    def cited(ids):
+        return [s for s in (pack.source(x) for x in ids if x.startswith("S")) if s]
+
+    sides = [cited(p.citations) for p in c.positions]
+    if len(sides) < 2 or any(not s for s in sides):
+        return ["a conflict needs two positions, each citing a source"]
+    if len({frozenset(x.doc_id for x in s) for s in sides}) < 2:
+        return ["both positions cite the same document"]
+    winners = cited(c.resolution.citations)
+    win_docs = {w.doc_id for w in winners}
+    losers = [x for s in sides for x in s if x.doc_id not in win_docs]
+    if c.basis == "unresolved":
+        return ["an unresolved conflict must not pick a value"] if numbers_in(_strip_identifiers(c.resolution.text)) else []
+    if not winners or not losers:
+        return ["the resolution must cite the winning side"]
+    if c.basis == "newer_revision":
+        ok = any(w.doc_status == "current" for w in winners) and any(
+            x.doc_status in {"superseded", "stale"} for x in losers)
+    elif c.basis == "applicable_bulletin":
+        checked = {f.label.split(" · ")[0] for f in pack.facts if "serial check" in f.label}
+        ok = any(w.doc_type == "oem_bulletin" and w.doc_number in checked for w in winners)
+    elif c.basis == "higher_authority":
+        ok = min(w.authority_rank for w in winners) < min(x.authority_rank for x in losers)
+    else:
+        ok = False
+    return [] if ok else [f"basis '{c.basis}' is not supported by the cited documents' metadata"]
 
 
 # ------------------------------------------------------------------ apply failures after repair
@@ -314,7 +349,8 @@ def apply_failures(answer: AnswerJSON, report: ValidationReport, vctx: Validatio
 
     # A procedure with a step or safety warning removed can be dangerous (drop "isolate first" and what's left
     # is "press RESET"). So if any step or warning fails, withhold every step and say the answer is incomplete.
-    has_procedure = any(b.type == "step" for b in answer.blocks)
+    # only an answer that offers a procedure can have one withheld; elsewhere failing blocks are just dropped
+    has_procedure = answer.status in {"answered", "partial"} and any(b.type == "step" for b in answer.blocks)
     procedure_broken = has_procedure and any(f"blocks[{i}]" in failing for i, b in enumerate(answer.blocks)
                                              if b.type in {"step", "warning"})
     if procedure_broken:
@@ -337,8 +373,12 @@ def apply_failures(answer: AnswerJSON, report: ValidationReport, vctx: Validatio
     curated = {c.id: c for c in vctx.pack.conflicts}
     kept = []
     for i, c in enumerate(answer.conflicts):
-        if f"conflicts[{i}].topic" in failing or any(p.startswith(f"conflicts[{i}].positions") for p in failing) \
-                or c.conflict_id not in curated:
+        if f"conflicts[{i}].topic" in failing or any(p.startswith(f"conflicts[{i}].positions") for p in failing):
+            continue
+        if c.conflict_id not in curated:  # found by the model: kept only if every field, basis included, passed
+            if f"conflicts[{i}].resolution" in failing:
+                continue
+            kept.append(c)
             continue
         if f"conflicts[{i}].resolution" in failing:
             ci = curated[c.conflict_id]
@@ -389,3 +429,10 @@ def mark_superseded(answer: AnswerJSON, pack: ContextPack) -> None:
         if cited and all(s and s.doc_status in {"superseded", "stale", "unofficial"} for s in cited):
             if not re.search(r"out of date|superseded|outdated|older|no longer|stale", b.text, re.I):
                 b.text += " (out of date: this source has been superseded)"
+
+
+def procedure_failing(answer: AnswerJSON, report: ValidationReport) -> bool:
+    """A step or safety warning failed in an answer that offers a procedure: worth one repair before withholding."""
+    return answer.status in {"answered", "partial"} and any(b.type == "step" for b in answer.blocks) and any(
+        report.fields.get(f"blocks[{i}]") and report.fields[f"blocks[{i}]"].reasons
+        for i, b in enumerate(answer.blocks) if b.type in {"step", "warning"})

@@ -11,12 +11,13 @@ from pathlib import Path
 from sqlalchemy import Engine, text
 
 from app.answer.context import ContextPack, build_context, render_context
-from app.answer.schema import AnswerJSON, QueryPlan
+from app.answer.schema import AnswerDraft, AnswerJSON, QueryPlan
 from app.answer.validate import (
     ValidationContext,
     apply_failures,
     build_fingerprints,
     mark_superseded,
+    procedure_failing,
     validate_answer,
 )
 from app.auth.acl import acl_clause
@@ -209,7 +210,7 @@ def ask(engine: Engine, user: UserContext, question: str, conversation_id: str |
 
         # 6. generate, validate, repair
         llm = get_llm()
-        answer = llm.structured("answer", SYSTEM_PROMPT, user_message, AnswerJSON, usage=usage)
+        answer = llm.structured("answer", SYSTEM_PROMPT, user_message, AnswerDraft, usage=usage).full()
         lap("generate")
         report = validate_answer(answer, vctx)
         if report.leak:
@@ -218,18 +219,19 @@ def ask(engine: Engine, user: UserContext, question: str, conversation_id: str |
                 "answer", SYSTEM_PROMPT,
                 user_message + "\n\nIMPORTANT: your previous answer contained details of a restricted procedure. "
                 "Do not include any steps, values, parameters or test points for restricted work.",
-                AnswerJSON, effort="high", usage=usage)
+                AnswerDraft, effort="high", usage=usage).full()
             report = validate_answer(answer, vctx)
         # A full repair call costs as much as the answer; only worth it when the headline or several fields
         # fail. Otherwise the failing fields are dropped below.
-        if report.failures and ("headline" in report.failures or len(report.failures) > 2):
+        if report.failures and ("headline" in report.failures or len(report.failures) > 2
+                                or procedure_failing(answer, report)):
             failing = "\n".join(f"- {p}: {'; '.join(r)}" for p, r in report.failures.items())
             answer = llm.structured(
                 "answer", SYSTEM_PROMPT,
                 user_message + "\n\nYour previous answer had these problems; fix them by citing the source that "
                 f"contains each value or removing the unsupported value:\n{failing}\n\nPrevious answer:\n"
                 + answer.model_dump_json(),
-                AnswerJSON, effort="high", usage=usage)
+                AnswerDraft, effort="high", usage=usage).full()
             report = validate_answer(answer, vctx)
             for r in report.fields.values():
                 if not r.reasons:

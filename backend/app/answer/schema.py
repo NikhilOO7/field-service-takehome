@@ -41,7 +41,13 @@ class ConflictPosition(BaseModel):
 
 
 class Conflict(BaseModel):
-    conflict_id: str = Field(description="Id of a conflict listed under CONFLICTS, e.g. C5")
+    conflict_id: str = Field(description="Id of a conflict listed under CONFLICTS (e.g. C5), or 'auto' for a "
+                                         "disagreement you found in the sources yourself")
+    basis: Literal["newer_revision", "applicable_bulletin", "higher_authority", "unresolved", "curated"] = Field(
+        description="What decides it: newer_revision (current revision over a superseded/stale one), "
+                    "applicable_bulletin (a bulletin FACTS confirms for this serial), higher_authority (bulletin > "
+                    "manual > Corvane procedure > legacy work instruction > records/wiki/email/chat), unresolved "
+                    "(none of these decides it), curated (an entry listed under CONFLICTS)")
     topic: str
     positions: list[ConflictPosition]
     resolution: CitedText
@@ -93,3 +99,27 @@ class AnswerJSON(BaseModel):
     clarify_question: CitedText | None
     follow_up: FollowUp
     confidence: Literal["high", "medium", "low"]
+
+
+# What the answer model writes. The work-order hint is not part of it: it's 17% of the answer's output tokens
+# and only needed if the technician creates a work order, so it is generated then (app/workorders/hint.py).
+class FollowUpDraft(BaseModel):
+    needed: bool
+    reasons: list[Literal["parts required", "certified technician required", "OEM campaign", "return visit",
+                          "escalation"]]
+
+
+class AnswerDraft(BaseModel):
+    status: Literal["answered", "partial", "not_covered", "restricted", "clarify"]
+    headline: CitedText
+    blocks: list[Block]
+    conflicts: list[Conflict]
+    restricted_notice: RestrictedNotice | None
+    clarify_question: CitedText | None
+    follow_up: FollowUpDraft
+    confidence: Literal["high", "medium", "low"]
+
+    def full(self) -> "AnswerJSON":
+        data = self.model_dump()
+        data["follow_up"]["work_order_hint"] = None
+        return AnswerJSON.model_validate(data)

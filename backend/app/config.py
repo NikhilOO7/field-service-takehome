@@ -26,7 +26,7 @@ class Settings(BaseSettings):
 
     openai_api_key: str = ""
     answer_model: str = "gpt-6.1-sol"
-    answer_effort: str = "medium"
+    answer_effort: str = "low"  # measured: halves generation time, no accuracy loss (README, Latency)
     answer_escalate_model: str = "gpt-6-astra"
     fast_model: str = "gpt-6-luna"
     fast_effort: str = "low"
@@ -35,6 +35,9 @@ class Settings(BaseSettings):
     embed_model: str = "text-embedding-3-large"
     embed_dims: int = 3072
     reranker: str = "llm"
+    # The curated conflict register (config/conflicts.yaml) holds business-judgment overrides. Off = general
+    # rules only, to measure what generalises to documents nobody has curated.
+    conflict_register: bool = True
 
     corpus_root: Path = Path("./corpus")
     users_file: Path = Path("./users.json")

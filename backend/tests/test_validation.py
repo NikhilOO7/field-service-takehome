@@ -121,13 +121,55 @@ def test_failed_warning_without_steps_does_not_claim_a_procedure():
     assert fixed.blocks == [] and not report.procedure_withheld and fixed.status == "not_covered"
 
 
+def test_model_found_conflicts_are_kept_only_when_metadata_supports_the_rule():
+    from app.answer.context import Source
+
+    def s(sid, doc, status, dtype, rank, text):
+        return Source(sid, f"c-{sid}", sid, doc, doc, dtype, None, status, rank, text, {}, ["VRS-75"], [])
+
+    pack = ContextPack(sources=[s("S1", "revB", "superseded", "oem_manual", 2, "Change oil every 4,000 h."),
+                                s("S2", "revC", "current", "oem_manual", 2, "Change oil every 6,000 h."),
+                                s("S3", "wiki", "current", "wiki", 5, "Change oil every 5,000 h.")],
+                       facts=[], conflicts=[], question="VRS-75 oil interval?")
+    ctx = ValidationContext(pack, ["VRS-75"], set(), set(), [])
+
+    def conflict(basis, winner):
+        return answer(headline={"text": "Every 6,000 h.", "citations": ["S2"]}, conflicts=[{
+            "conflict_id": "auto", "basis": basis, "topic": "Oil interval",
+            "positions": [{"text": "Rev B: 4,000 h.", "citations": ["S1"]}, {"text": "Rev C: 6,000 h.", "citations": ["S2"]}],
+            "resolution": {"text": f"Use {'6,000' if winner == 'S2' else '4,000'} h.", "citations": [winner]}}])
+
+    ok = conflict("newer_revision", "S2")
+    assert apply_failures(ok, validate_answer(ok, ctx), ctx).conflicts  # current beats superseded
+    wrong = conflict("newer_revision", "S1")  # claims the superseded revision wins
+    assert apply_failures(wrong, validate_answer(wrong, ctx), ctx).conflicts == []
+    unsupported = conflict("applicable_bulletin", "S2")  # no bulletin, no serial check
+    assert apply_failures(unsupported, validate_answer(unsupported, ctx), ctx).conflicts == []
+
+
+def test_stray_step_in_a_not_covered_answer_is_dropped_without_a_procedure_notice():
+    a = answer(status="not_covered", headline={"text": "No document covers this.", "citations": ["S3"]},
+               blocks=[{"type": "step", "text": "Retension to 99 N-m.", "citations": ["S3"]}])
+    report = validate_answer(a, vctx())
+    fixed = apply_failures(a, report, vctx())
+    assert fixed.blocks == [] and not report.procedure_withheld
+
+
+def test_failing_step_triggers_a_repair_first():
+    from app.answer.validate import procedure_failing
+    a = answer(blocks=[{"type": "step", "text": "Tighten to 99 N-m.", "citations": ["S1"]}])
+    assert procedure_failing(a, validate_answer(a, vctx()))
+    ok = answer(blocks=[{"type": "step", "text": "Tighten to 38 N-m.", "citations": ["S1"]}])
+    assert not procedure_failing(ok, validate_answer(ok, vctx()))
+
+
 def test_cross_model_value_in_headline():
     a = answer(headline={"text": "The BX-20 warranty is 12 months.", "citations": ["S3"]})
     assert "headline" in failing(a, vctx(models=("BX-20",)))
 
 
 def test_conflict_resolution_contradicting_register_is_replaced():
-    a = answer(conflicts=[{"conflict_id": "C5", "topic": "Refrigerant top-up",
+    a = answer(conflicts=[{"conflict_id": "C5", "basis": "curated", "topic": "Refrigerant top-up",
                            "positions": [{"text": "SOP-020 forbids topping up.", "citations": ["S4"]}],
                            "resolution": {"text": "KT-WI-14 applies: top up 2,5 kg.", "citations": ["S4"]}}])
     report = validate_answer(a, vctx(models=("NK-600",)))
@@ -136,7 +178,7 @@ def test_conflict_resolution_contradicting_register_is_replaced():
 
 
 def test_unknown_conflict_id_is_dropped():
-    a = answer(conflicts=[{"conflict_id": "C99", "topic": "x", "positions": [{"text": "y", "citations": ["S1"]}],
+    a = answer(conflicts=[{"conflict_id": "C99", "basis": "curated", "topic": "x", "positions": [{"text": "y", "citations": ["S1"]}],
                            "resolution": {"text": "z", "citations": ["S1"]}}])
     assert apply_failures(a, validate_answer(a, vctx()), vctx()).conflicts == []
 

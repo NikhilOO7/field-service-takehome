@@ -7,7 +7,7 @@ export type User = {
 export type Cited = { text: string; citations: string[] }
 export type Block = { type: 'fact' | 'step' | 'warning' | 'history' | 'note'; text: string; citations: string[] }
 export type Conflict = {
-  conflict_id: string; topic: string
+  conflict_id: string; basis?: 'newer_revision' | 'applicable_bulletin' | 'higher_authority' | 'unresolved' | 'curated'; topic: string
   positions: { text: string; citations: string[] }[]; resolution: Cited
 }
 export type Answer = {

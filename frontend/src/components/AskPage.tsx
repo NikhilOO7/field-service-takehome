@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { ArrowUp, Check, ClipboardCheck, FileSearch, History, PanelLeft, Plus, ScrollText, Siren, X } from 'lucide-react'
+import { ArrowUp, ClipboardCheck, FileSearch, History, PanelLeft, Plus, ScrollText, Siren, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { ApiError, api, askStream, type AskResponse, type User } from '../api'
 import { timeAgo } from '../lib/labels'
@@ -10,15 +10,6 @@ import { Card, Spinner, cx } from './ui'
 const NEW = '__new__'
 
 type Turn = { question: string; response?: AskResponse; error?: string; stage?: number }
-
-const STAGES = ['Understanding', 'Searching documents', 'Writing the answer', 'Double-checking facts']
-function stageOf(message: string) {
-  const m = message.toLowerCase()
-  if (m.includes('understanding')) return 0
-  if (m.includes('writing')) return 2
-  if (m.includes('checking every')) return 3
-  return 1
-}
 
 // Suggestions tailored to what the technician works on.
 const SUGGESTIONS: Record<string, { icon: typeof Siren; title: string; text: string }[]> = {
@@ -82,8 +73,7 @@ export function AskPage({ me, users, onSwitch, onOpenWO, notify }: {
     const conversation = fresh || convId === NEW ? null : convId
     setTurns((t) => [...(fresh ? [] : t), { question: q, stage: 0 }])
     try {
-      const response = await askStream(q, conversation, (message) =>
-        setTurns((t) => t.map((x, i) => (i === t.length - 1 ? { ...x, stage: stageOf(message) } : x))))
+      const response = await askStream(q, conversation, () => {})
       setTurns((t) => t.map((x, i) => (i === t.length - 1 ? { question: q, response } : x)))
       loadedByUs.current = response.conversation_id
       setConvId(response.conversation_id)
@@ -175,7 +165,7 @@ export function AskPage({ me, users, onSwitch, onOpenWO, notify }: {
               <div className="flex justify-end">
                 <p className="max-w-[85%] rounded-2xl rounded-br-md bg-slate-900 px-4 py-2.5 text-sm text-white">{t.question}</p>
               </div>
-              {t.stage !== undefined && !t.response && !t.error && <Progress stage={t.stage} />}
+              {t.stage !== undefined && !t.response && !t.error && <Progress />}
               {t.error && (
                 <Card className="p-4 text-sm text-red-700">
                   {t.error}
@@ -211,21 +201,14 @@ export function AskPage({ me, users, onSwitch, onOpenWO, notify }: {
   )
 }
 
-function Progress({ stage }: { stage: number }) {
+function Progress() {
+  // One plain line and an elapsed counter: the user needs to know it's working, not how the pipeline works.
+  const [seconds, setSeconds] = useState(0)
+  useEffect(() => { const id = setInterval(() => setSeconds((s) => s + 1), 1000); return () => clearInterval(id) }, [])
   return (
-    <Card className="p-5">
-      <div className="flex items-center gap-2 text-sm font-medium text-slate-700"><Spinner className="text-indigo-600" />{STAGES[stage]}…</div>
-      <ol className="mt-4 grid grid-cols-4 gap-2">
-        {STAGES.map((s, i) => (
-          <li key={s}>
-            <div className={cx('h-1.5 rounded-full transition-all', i < stage ? 'bg-emerald-500' : i === stage ? 'animate-pulse bg-indigo-500' : 'bg-slate-200')} />
-            <p className={cx('mt-1.5 hidden items-center gap-1 text-[11px] sm:flex', i <= stage ? 'text-slate-700' : 'text-slate-400')}>
-              {i < stage && <Check className="h-3 w-3 text-emerald-600" />}{s}
-            </p>
-          </li>
-        ))}
-      </ol>
-      <p className="mt-3 text-xs text-slate-400">Answers are checked against the documents before they're shown. This can take up to a minute.</p>
+    <Card className="flex items-center gap-2 p-4 text-sm text-slate-600">
+      <Spinner className="text-indigo-600" />Looking through your documents…
+      <span className="ml-auto tabular-nums text-xs text-slate-400">{seconds} s</span>
     </Card>
   )
 }

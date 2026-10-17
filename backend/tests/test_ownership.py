@@ -38,7 +38,9 @@ def daniel_objects(engine, client):
         conv = create_conversation(conn, daniel)
         response = {"answer": {"status": "answered", "headline": {"text": "x", "citations": ["S1"]}, "blocks": [],
                                "conflicts": [], "restricted_notice": None, "clarify_question": None,
-                               "follow_up": {"needed": True, "reasons": [], "work_order_hint": None},
+                               "follow_up": {"needed": True, "reasons": [], "work_order_hint": {
+                                   "fault_code": None, "summary": None, "observations": None, "parts": [],
+                                   "procedure_refs": [], "work_steps": [], "estimated_duration_h": None}},
                                "confidence": "high"},
                     "sources": [{"id": "S1", "chunk_id": hv_chunk, "label": "HV-PROC-07", "cited": True, "text": ""}],
                     "facts": [], "assets": [{"asset_id": "TAC-C-0143"}], "history": {}, "restricted": None}
